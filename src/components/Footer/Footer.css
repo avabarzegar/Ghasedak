@@ -1,0 +1,16 @@
+.section_title_links_footer {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.parent_section_footer {
+   background-color: #F5F5F5;
+}
+
+.offer_to_download_app {
+   color: #A2A6AB;
+   font-weight: 700;
+   font-size: 16px;
+   margin-top: 1.5rem;
+}

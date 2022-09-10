@@ -1,0 +1,11 @@
+.links_footer_subtitle {
+   color: #292D32;
+   font-weight: 700;
+   font-size: 18px;
+   text-decoration: none;
+   margin-top: 1.75rem;
+}
+
+.links_footer_subtitle:hover{
+   color: #292D32;
+}

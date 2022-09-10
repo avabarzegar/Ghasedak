@@ -9,7 +9,7 @@ const SearchInput =(props)=>{
         <div className="search-input-container">
             <input className="search-input" placeholder={props.placeholder} />
             <div className="search-icon">
-              <img src={HeadPhone} />
+              <img src={HeadPhone} alt='search icon' />
             </div>
         </div>
     )

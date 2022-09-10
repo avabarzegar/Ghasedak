@@ -1,10 +1,38 @@
-.custom-btn{
-    color:#ffffff;
-    padding:.5rem 1rem;
+.custom-btn {
+    color: #ffffff;
+    padding: .5rem 1rem;
     border-radius: 15px;
+    display: flex;
 }
 
-.purple{
-    background-color:var(--main-purple);
+a {
+    text-decoration: none;
 }
 
+a:hover {
+    color: var(--white-color);
+}
+
+.purple {
+    background-color: var(--main-purple);
+}
+
+.play-store-button {
+    padding: .7rem 1.1rem;
+    background: linear-gradient(270deg, #24C7BD -0.09%, #31D472 100%);
+}
+
+.App-store-button {
+    padding: .7rem 1.1rem;
+    background: linear-gradient(270deg, #2451C7 -0.09%, #3186D4 100%);
+}
+
+.cafe-bazar-button {
+    padding: .7rem 1.1rem;
+    background: linear-gradient(270deg, #26A81B 0%, #86C81B 99.88%);
+}
+
+.ghasedak_download-app {
+    padding: .7rem 1.1rem;
+    background: linear-gradient(270deg, #6B2AD3 -0.09%, #7B61FF 100%);
+}

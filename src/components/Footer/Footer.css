@@ -33,6 +33,8 @@
    color: var(--white-color);
    border-radius: 12px;
    margin-top: 1.5rem;
+   font-weight: 500;
+   font-size: 18px;
 }
 
 .support_team_social_media {
@@ -61,4 +63,38 @@
    width: 1.35rem;
    height: 1.35rem;
    padding-left: .2rem;
+}
+
+@media screen and (max-width:1390px){
+   .btn_footer_inner_text {
+      margin-left: .35rem;
+   }
+   
+}
+@media screen and (max-width:1200px){
+   .btn_footer_inner_text {
+      margin-left: .35rem;
+   }
+   
+}
+
+@media screen and (max-width:768px) {
+   .support_team {
+      text-align: center;
+      padding: 9px;
+      font-size: .9rem ;
+   }
+   .offer_to_download_app {
+      margin: .85rem 0 0rem;
+   }
+}
+
+@media screen and (max-width:295px) {
+
+   .support_team_social_media {
+      flex-direction: column;
+   }
+   .support_team_number {
+      margin-top: 1rem;
+   }
 }

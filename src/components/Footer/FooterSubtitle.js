@@ -7,6 +7,10 @@ const FooterSubtitle = (props) =>{
          {props.children}
       </a>
    )
+
+
+
 }
 
 export default FooterSubtitle;
+

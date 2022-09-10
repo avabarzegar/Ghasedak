@@ -1,11 +1,9 @@
 import React from "react";
-import StyledButton from './components/UI/Button/Button';
+import Footer from "./components/Footer/Footer";
 
 const App =()=>{
     return(
-        <div>
-           
-        </div>
+        <Footer />
     )
 }
 

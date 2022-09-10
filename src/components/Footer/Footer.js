@@ -19,7 +19,7 @@ const Footer = () => {
                      </Footertitle>
                      <FooterSubtitle href={'#'}>صفحه اصلی</FooterSubtitle>
                      <FooterSubtitle href={'#'}>فروشگاه ها </FooterSubtitle>
-                     <FooterSubtitle href={'#'}> حساب کاربری</FooterSubtitle>
+                     <FooterSubtitle href={'#'}> حساب کاربری</FooterSubtitle>                
                   </div>
                </Col>
                <Col md={3}>

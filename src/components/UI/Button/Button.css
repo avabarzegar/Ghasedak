@@ -1,8 +1,10 @@
 .custom-btn{
-    background-color:var(--main-purple);
     color:#ffffff;
     padding:.5rem 1rem;
     border-radius: 15px;
-   
-
 }
+
+.purple{
+    background-color:var(--main-purple);
+}
+

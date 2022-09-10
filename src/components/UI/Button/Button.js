@@ -5,7 +5,7 @@ import './Button.css';
 
 const StyledButton =(props)=>{
     return(
-        <a className='custom-btn' href={props.href}>
+        <a className={`custom-btn ${props.button}`} href={props.href}>
             {props.children}
         </a>
     )

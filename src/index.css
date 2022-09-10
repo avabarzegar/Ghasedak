@@ -25,12 +25,12 @@
 /* === adding fonts ===  */
 @font-face {
   font-family: IranYekanRegular;
-  src: url(../public/fonts/woff2/IRANYekanWebRegular.woff2);
+  src: url(../public/fonts/ttf/IRANYekanWebRegular.ttf);
 }
 
 @font-face {
   font-family: IranYekanBold;
-  src: url(../public/fonts/woff2/IRANYekanWebExtraBold.woff2);
+  src: url(../public/fonts/ttf/IRANYekanWebBold.ttf);
 }
 
 /* === adding fonts end ===  */

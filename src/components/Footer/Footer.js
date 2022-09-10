@@ -6,14 +6,14 @@ import Col from 'react-bootstrap/Col';
 import Footertitle from './Footertitle';
 import FooterSubtitle from './FooterSubtitle';
 import StyledButton from '../UI/Button/Button';
-import PlayStore from '../../assets/Images/icon/icon/Vector.svg';
-import CafeBazar from '../../assets/Images/icon/icon/Vector (2).svg';
-import AppStore from '../../assets/Images/icon/icon/Vector (1).svg';
-import Ghasedak from '../../assets/Images/icon/icon/Logo.svg';
-import HeadPhone from '../../assets/Images/icon/icon/headphone.svg';
-import Instagram from '../../assets/Images/icon/icon/Vector (5).svg';
-import twitter from '../../assets/Images/icon/icon/Vector (4).svg';
-import LinkedIn from '../../assets/Images/icon/icon/Vector (3).svg';
+import PlayStore from '../../assets/Images/icon/Vector.svg';
+import CafeBazar from '../../assets/Images/icon/Vector (2).svg';
+import AppStore from '../../assets/Images/icon/Vector (1).svg';
+import Ghasedak from '../../assets/Images/icon/Logo.svg';
+import HeadPhone from '../../assets/Images/icon/headphone.svg';
+import Instagram from '../../assets/Images/icon/Vector (5).svg';
+import twitter from '../../assets/Images/icon/Vector (4).svg';
+import LinkedIn from '../../assets/Images/icon/Vector (3).svg';
 
 const Footer = () => {
    return (
@@ -85,7 +85,6 @@ const Footer = () => {
                         </div>
                      </div>                     
                   </div>
-
                </Col>
             </Row>
          </Container>
@@ -96,4 +95,4 @@ const Footer = () => {
 
 
 
-export default Footer
+export default Footer;

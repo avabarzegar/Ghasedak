@@ -3,14 +3,16 @@
     padding: .5rem 1rem;
     border-radius: 15px;
     display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    font-size: 14px;
 }
 
-a {
-    text-decoration: none;
-}
 
-a:hover {
+.custom-btn:hover {
     color: var(--white-color);
+    opacity:.8;
 }
 
 .purple {
@@ -36,3 +38,7 @@ a:hover {
     padding: .7rem 1.1rem;
     background: linear-gradient(270deg, #6B2AD3 -0.09%, #7B61FF 100%);
 }
+.gray{
+    background-color: var(--input-bg);
+}
+

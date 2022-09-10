@@ -1,0 +1,16 @@
+.search-input {
+    background-color: var(--input-bg);
+    border-radius: 15px;
+    padding: .5rem 1rem;
+    width:100%;
+}
+
+.search-input-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.search-icon{
+   margin-inline-start: -2rem;
+
+}

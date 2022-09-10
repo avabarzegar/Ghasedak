@@ -1,8 +1,12 @@
 import React from "react";
-import Footer from "./components/Footer/Footer";
+import Layout from "./components/Layout/Layout";
 
 const App =()=>{
-    
+    return(
+        <div>
+           <Layout />
+        </div>
+    )
 }
 
 export default App;

@@ -16,6 +16,7 @@
   --web-main-shadow: 0px 1px 40px rgba(0, 0, 0, 0.12);
   --store-shadow: 0px 1px 20px rgba(0, 0, 0, 0.12);
   --inner-shadow: inset 0px 1px 4px rgba(38, 50, 56, 0.04);
+  --border-radius:15px;
 }
 
 /* === define variables end === */
@@ -61,6 +62,10 @@ span {
   -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+input {
+  border: none;
 }
 
 *:focus {

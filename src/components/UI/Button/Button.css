@@ -4,7 +4,7 @@
     border-radius: 15px;
     display: flex;
     flex-direction: row;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     font-size: 14px;
 }
@@ -12,7 +12,7 @@
 
 .custom-btn:hover {
     color: var(--white-color);
-    opacity:.8;
+    opacity: .8;
 }
 
 .purple {
@@ -52,49 +52,64 @@
     justify-content: center;
 }
 
+.btn_add_cart_suggest_book {
+    background-color: var(--main-purple);
+    margin-top: 1.5rem;
+    padding: .75rem 1rem;
+}
+
+.btn_add_cart_suggest_book span {
+    margin-right: .25rem;
+    font-weight: 400;
+    font-size: 16px;
+}
+
 @media screen and (max-width:1390px) {
-    .ghasedak_download-app ,
-    .cafe-bazar-button ,
-    .App-store-button , 
-    .play-store-button
-     {
+
+    .ghasedak_download-app,
+    .cafe-bazar-button,
+    .App-store-button,
+    .play-store-button {
         width: 8.25rem;
         padding: .5rem 1rem;
-     }
+    }
 }
 
 @media screen and (max-width:1200px) {
-    .App-store-button , 
-    .play-store-button{
+
+    .App-store-button,
+    .play-store-button {
         margin-top: 1rem;
 
     }
-    .ghasedak_download-app ,
-    .cafe-bazar-button ,
-    .App-store-button , 
-    .play-store-button
-     {
+
+    .ghasedak_download-app,
+    .cafe-bazar-button,
+    .App-store-button,
+    .play-store-button {
         width: 13.5rem;
-     }
-}
- @media screen and (max-width:992px) {
-    .ghasedak_download-app ,
-    .cafe-bazar-button ,
-    .App-store-button , 
-    .play-store-button
-     {
-        width: 10rem;
-     }
- }
-@media screen and (max-width:768px) {
-    .ghasedak_download-app ,
-    .cafe-bazar-button ,
-    .App-store-button , 
-    .play-store-button
-     {
-       width: 100%;
-       justify-content: center;
-       margin-top: 1.25rem;
     }
- }
+}
+
+@media screen and (max-width:992px) {
+
+    .ghasedak_download-app,
+    .cafe-bazar-button,
+    .App-store-button,
+    .play-store-button {
+        width: 10rem;
+    }
+}
+
+@media screen and (max-width:768px) {
+
+    .ghasedak_download-app,
+    .cafe-bazar-button,
+    .App-store-button,
+    .play-store-button {
+        width: 100%;
+        justify-content: center;
+        margin-top: 1.25rem;
+    }
+}
 

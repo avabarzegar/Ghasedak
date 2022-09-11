@@ -2,15 +2,21 @@
     background-color: var(--input-bg);
     border-radius: 15px;
     padding: .5rem 1rem;
-    width:100%;
+    width: 100%;
 }
 
-.search-input-container{
+.search-input::placeholder {
+    font-size: 14px;
+}
+
+.search-input-container {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-.search-icon{
-   margin-inline-start: -2rem;
 
+.search-icon {
+    margin-inline-start: -2.5rem;
+    width: 28px;
+    height: 28px;
 }

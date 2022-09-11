@@ -1,0 +1,22 @@
+.links_footer_subtitle {
+   color: #292D32;
+   font-weight: 500;
+   font-size: 15px;
+   text-decoration: none;
+   margin-top: 1.5rem;
+}
+
+.links_footer_subtitle:hover{
+   color: #292D32;
+}
+
+@media screen and (max-width:768px) {
+   .links_footer_subtitle{
+      margin-top: 1rem;
+   }
+}
+@media screen and (max-width:436px) {
+   .links_footer_subtitle{
+      font-size: 13px;
+   }
+}

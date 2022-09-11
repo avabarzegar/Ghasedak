@@ -19,6 +19,11 @@
     background-color: var(--main-purple);
 }
 
+
+.gray{
+    background-color: var(--input-bg);
+}
+
 .play-store-button {
     padding: .7rem 1.1rem;
     background: linear-gradient(270deg, #24C7BD -0.09%, #31D472 100%);
@@ -92,9 +97,4 @@
        margin-top: 1.25rem;
     }
  }
-
-
-.gray{
-    background-color: var(--input-bg);
-}
 

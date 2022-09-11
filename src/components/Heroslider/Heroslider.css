@@ -1,0 +1,114 @@
+/* .swiper {
+   width: 63rem !important;
+   height: 25rem;
+   position: relative !important;
+ }
+ 
+ .swiper-slide {
+   text-align: center;
+   font-size: 18px;
+
+ 
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: -webkit-flex;
+   display: flex;
+   -webkit-box-pack: center;
+   -ms-flex-pack: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+   -webkit-box-align: center;
+   -ms-flex-align: center;
+   -webkit-align-items: center;
+   align-items: center;
+
+
+   
+ }
+ 
+ .swiper-slide div {
+   display: block;
+   
+   object-fit: cover;
+   background-image: url(../../assets/Images/Rectangle\ 2.png);
+   background-size: cover;
+   background-repeat: no-repeat;
+   width: 100%;
+   height: 100%;
+   
+}
+ 
+ .swiper {
+   margin-left: auto;
+   margin-right: auto;
+ }
+ 
+
+ .swiper-button-next, .swiper-button-prev{
+   right: 0 !important;
+   top: unset !important;
+   bottom: 0 !important;
+ } */
+
+ .slider_parent_section{
+   width: 60%;
+ }
+
+
+ .carousel-control-next-icon {
+   background-image: url(../../assets/Images/icon/arrow-square-right.png) !important;
+}
+
+.carousel-control-prev-icon {
+   background-image: url(../../assets/Images/icon/arrow-square-left.png);
+   
+
+}
+
+.carousel-control-prev, .carousel-control-next {
+   width: 2rem;
+   height: 2rem;
+   top: unset;
+   border-radius: 8px;
+   background-color: white;
+   padding: 1.5px;
+   bottom: 7%;
+} 
+
+.carousel-control-next{
+   right: 1rem;
+}
+
+.carousel-control-prev {
+   right: 20%;
+}
+
+.carousel-indicators{
+   left: unset;
+   right: 7% ;
+   bottom: 2%;
+   margin-right: 0%;
+   background-color: var(--white-color);
+   opacity: .5;
+   border-radius: 20px;
+   box-shadow: 0px 1px 32px rgba(0, 0, 0, 0.16);
+   padding: inherit .75rem;
+}
+.carousel-indicators [data-bs-target]{
+   width: 10px;
+   height: 10px;
+   background-color: var(--second-text);
+   border-radius: 50%;
+}
+
+.carousel-indicators .active{
+   background-color: var(--green-color);
+}
+
+.carousel-item {
+   border-radius: 20px;
+}
+
+.carousel-inner {
+   border-radius: 15px;
+}

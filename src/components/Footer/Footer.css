@@ -5,9 +5,11 @@
 }
 
 .parent_section_footer {
-   background-color: #F5F5F5;
+   background-color: var(--white-color);
    padding: 3rem 0;
-   font-family: IranYekanRegular !important;
+   position: relative;
+   display: flex;
+   flex-direction: column;
 }
 
 .offer_to_download_app {
@@ -64,6 +66,17 @@
    height: 1.35rem;
    padding-left: .2rem;
 }
+
+.shape_end_footer{
+   background-image: url(../../assets/Images/Background/footer-shape.png);
+   background-repeat: no-repeat;
+   background-size: cover;
+
+}
+
+/* .parent_copyright_text_logo_footer{
+   background-color: white;
+} */
 
 @media screen and (max-width:1390px){
    .btn_footer_inner_text {

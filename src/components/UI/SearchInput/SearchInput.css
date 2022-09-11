@@ -20,3 +20,12 @@
     width: 28px;
     height: 28px;
 }
+
+@media screen and (max-width:992px) {
+    .search-input{
+        display: none;
+    }
+    .search-icon{
+        margin-inline-start:0rem;
+    }
+}

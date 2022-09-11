@@ -13,9 +13,9 @@ const TopNavbar = () => {
     return (
         <Container className='top-nav-container'>
             <Row className='top-navbar'>
-              <Col xs={8}>
+              <Col xl={8} lg={7} sm={6} xs={8}>
                 <Row className='top-navbar-right' >
-                  <Col xs={3} className='logo-container'>
+                  <Col xl={3} lg={4} md={5} xs={6} className='logo-container'>
                     <div className='nav-logo'>
                      <img src={Logo} width='100%' height='100%' alt='logo' />
                     </div>
@@ -23,12 +23,12 @@ const TopNavbar = () => {
                      <img src={LogoText} width='100%' height='100%' alt='logo text' />
                     </div>
                   </Col>
-                  <Col style={{paddingRight:'0'}} xs={8}>
+                  <Col style={{paddingRight:'0'}} xl={9} lg={8} md={7} xs={6} >
                     <SearchInput placeholder='نام کتاب، نویسنده، ناشر و ... را جستجو کنید' />
                   </Col>
                 </Row>
               </Col>   
-              <Col  sm={4}  className='top-navbar-left'>
+              <Col xl={4} lg={5} sm={6} xs={4} className='top-navbar-left'>
                 <ButtonLayout
                 button='purple'
                 src={Profile}

@@ -1,5 +1,6 @@
 import React from "react";
 import TopNavbar from "./TopNavbar/TopNavbar";
+import './Navbar.css';
 
 // == define navbar section ==
 const Navbar = () =>{

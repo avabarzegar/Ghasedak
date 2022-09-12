@@ -1,26 +1,11 @@
 import React from 'react'
-import Navbar from '../Navigation/Navbar/Navbar';
-import Footer from '../Footer/Footer';
 import './Layout.css'
-import Hreoslider from '../Heroslider/Hreoslider';
-import Herosuggest from '../../HeroSuggest/Herosuggest'
+import Home from '../../Cotainers/Home/Home';
 
 
 const Layout = (props) => {
   return (
-    <div>
-      <div>
-      <Navbar />
-      
-      <main className="content">{props.children}</main>
-      <Footer />
-      
-    </div>
-    <div>
-      <Herosuggest />
-
-    </div>
-    </div>
+    <Home />
   )
 }
 

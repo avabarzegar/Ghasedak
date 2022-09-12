@@ -14,12 +14,14 @@ import HeadPhone from '../../assets/Images/icon/headphone.svg';
 import Instagram from '../../assets/Images/icon/Vector (5).svg';
 import twitter from '../../assets/Images/icon/Vector (4).svg';
 import LinkedIn from '../../assets/Images/icon/Vector (3).svg';
+import LogoType from '../../assets/Images/Logo/logo-text-white.png';
+import Logo from '../../assets/Images/Logo/Logo.png';
 
 const Footer = () => {
    return (
 
       <Container fluid className='parent_section_footer'>
-         <Container >
+         <Container>
             <Row>
                <Col md={3}>
                   <div className='section_title_links_footer'>
@@ -50,30 +52,30 @@ const Footer = () => {
                      <p className='offer_to_download_app'>شما میتوانید اپلیکیشن قاصدک را از طریق لینک های زیر دربافت و نصب نمایید</p>
                      <div className='outer_section_footer_btn'>
                         <Row>
-                           <Col xl={3} lg={6}  md={6} xs={12} sm={6}>
-                           <StyledButton  href='#' button='ghasedak_download-app'>
-                              <span className='btn_footer_inner_text'>Ghasedak</span>
-                              <img src={Ghasedak} alt='img' />
-                           </StyledButton>
-                        </Col>
-                        <Col xl={3} lg={6}  md={6} xs={12} sm={6}>
-                           <StyledButton  href='#' button='cafe-bazar-button'>
-                              <span className='btn_footer_inner_text'>Bazar</span>
-                              <img src={CafeBazar} alt='img' />
-                           </StyledButton>
-                        </Col>
-                        <Col xl={3} lg={6}  md={6} xs={12} sm={6}>
-                           <StyledButton  href='#' button='App-store-button'>
-                              <span className='btn_footer_inner_text'>App Store</span>
-                              <img src={AppStore} alt='img' />
-                           </StyledButton>
-                        </Col>
-                        <Col xl={3} lg={6}  md={6} xs={12} sm={6}>
-                           <StyledButton  href='#' button='play-store-button'>
-                              <span className='btn_footer_inner_text'>Play Store</span>
-                              <img src={PlayStore} alt='img' />
-                           </StyledButton>
-                        </Col>
+                           <Col xl={3} lg={6} md={6} xs={12} sm={6}>
+                              <StyledButton href='#' button='ghasedak_download-app'>
+                                 <span className='btn_footer_inner_text'>Ghasedak</span>
+                                 <img src={Ghasedak} alt='img' />
+                              </StyledButton>
+                           </Col>
+                           <Col xl={3} lg={6} md={6} xs={12} sm={6}>
+                              <StyledButton href='#' button='cafe-bazar-button'>
+                                 <span className='btn_footer_inner_text'>Bazar</span>
+                                 <img src={CafeBazar} alt='img' />
+                              </StyledButton>
+                           </Col>
+                           <Col xl={3} lg={6} md={6} xs={12} sm={6}>
+                              <StyledButton href='#' button='App-store-button'>
+                                 <span className='btn_footer_inner_text'>App Store</span>
+                                 <img src={AppStore} alt='img' />
+                              </StyledButton>
+                           </Col>
+                           <Col xl={3} lg={6} md={6} xs={12} sm={6}>
+                              <StyledButton href='#' button='play-store-button'>
+                                 <span className='btn_footer_inner_text'>Play Store</span>
+                                 <img src={PlayStore} alt='img' />
+                              </StyledButton>
+                           </Col>
                         </Row>
                      </div>
                      <p className='support_team'>تیم پشتیبانی قاصدک همیشه پاسخگوی شمااست</p>
@@ -97,7 +99,20 @@ const Footer = () => {
                   </div>
                </Col>
             </Row>
+
          </Container>
+         <Container fluid className='parent_copyright_text_logo_footer shape_end_footer'>
+            <Container className=''>
+               <div >
+                  <div className='logo_img_footer'>
+                     <img src={Logo} alt='logo'></img>
+                     <img src={LogoType} alt='logo'></img>
+                  </div>
+                  <p>تمامی حقوق مادی و معنوی این سایت متعلق به پلتفرم قاصدک میباشد و هرگونه کپی برداری از آن پیگرد قانونی دارد. </p>
+               </div>
+            </Container>
+         </Container>
+
       </Container>
    )
 }

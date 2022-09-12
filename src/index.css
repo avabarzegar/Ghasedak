@@ -97,4 +97,10 @@ li {
   list-style-type: none;
 }
 
+.center{
+  display: flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items: center;
+}
 /* === general styles end ===  */

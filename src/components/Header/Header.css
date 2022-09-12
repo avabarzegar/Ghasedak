@@ -1,0 +1,22 @@
+.header{
+   margin-top: 10rem;
+}
+
+@media screen and (max-width:1200px) {
+ .herosuggest_book{
+      margin-top: 3.5rem;
+   }  
+}
+
+
+@media screen and (max-width:768px) {
+   .heroslider_grid{
+      padding: 0 .25rem;
+   }
+ .herosuggest_book{
+      margin-top: 3.5rem;
+   }  
+}
+
+
+ 

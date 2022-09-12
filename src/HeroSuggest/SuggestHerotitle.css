@@ -1,0 +1,11 @@
+.SuggestHerotitle{
+   color: var(--placeholder-text);
+   font-size: 14px;
+   font-weight: 700;
+}
+
+.font-bold {
+   color: var(--main-text) !important;
+   font-size: 14px !important;
+   font-weight: 700 !important;
+}

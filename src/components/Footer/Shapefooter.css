@@ -1,0 +1,23 @@
+.parent_copyright_text_logo_footer {
+   background-image: url(../../assets/Images/Background/footer-shape.svg);
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+.parent_copyright_text_logo_footer p {
+   text-align: center;
+   color: #292D32;
+   font-weight: 700;
+   font-size: 16px;
+}
+
+.logo_img_footer {
+   width: fit-content;
+   position: relative;
+}
+
+.logo_type_footer {
+   position: absolute;
+   right: 115px;
+   bottom: -18px;
+}

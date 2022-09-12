@@ -1,11 +1,16 @@
 import React from 'react'
 import './Layout.css'
-import Home from '../../Cotainers/Home/Home';
+import Navbar from '../Navigation/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
 
 
 const Layout = (props) => {
   return (
-    <Home />
+    <>
+      <Navbar />
+        <main>{props.children}</main>
+      <Footer />
+    </>
   )
 }
 

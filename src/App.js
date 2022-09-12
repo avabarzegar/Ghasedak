@@ -1,12 +1,12 @@
 import React from "react";
 import {Route,BrowserRouter as Router , Routes } from 'react-router-dom';
 import Layout from "./components/Layout/Layout";
-import Home from "./Cotainers/Home/Home";
-import Blog from "./Cotainers/Blog/Blog";
-import Product from "./Cotainers/Product/Product";
-import Search from "./Cotainers/Search/Search"
-import SearchNull from "./Cotainers/SearchNull/SearchNull";
-import SingleBlog from "./Cotainers/SingleBlog/SingleBlog";
+import Home from "./cotainers/Home/Home";
+import Blog from "./cotainers/Blog/Blog";
+import Product from "./cotainers/Product/Product";
+import Search from "./cotainers/Search/Search"
+import SearchNull from "./cotainers/SearchNull/SearchNull";
+import SingleBlog from "./cotainers/SingleBlog/SingleBlog";
 
 const App =()=>{
     return(

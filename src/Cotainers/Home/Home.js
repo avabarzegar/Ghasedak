@@ -1,9 +1,16 @@
-import React from "react";
-
-const Home =()=>{
-    return(
-    <h2>pages</h2>
-    )
+import React from 'react'
+import Footer from '../../components/Footer/Footer';
+import Header from '../../components/Header/Header'
+import Navbar from '../../components/Navigation/Navbar/Navbar'
+const Home = () => {
+   return (
+      <>
+         <Navbar />
+         <Header />
+         <Footer />
+      </>
+   )
 }
+
 
 export default Home;

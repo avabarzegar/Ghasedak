@@ -1,5 +1,5 @@
 import React from "react";
-import Toman from '../assets/Images/icon/toman.png';
+import Toman from '../assets/Images/icon/toman.svg';
 import './Herosuggest.css';
 import Plague from '../assets/Images/Books/Rectangle 13.png';
 import { Container, Row, Col } from 'react-bootstrap';

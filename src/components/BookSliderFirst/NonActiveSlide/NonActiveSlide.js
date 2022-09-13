@@ -1,5 +1,6 @@
 import { React}  from 'react';
 import axios from 'axios';
+import BookSimpleCard from '../../BookCard/BookSimpleCard/BookSimpleCard';
 
 
 // == define active slide == 
@@ -7,7 +8,7 @@ const NonActiveSlide =()=>{
 
     return(
         <>
-        bye
+        <BookSimpleCard />
         </>
     )
 

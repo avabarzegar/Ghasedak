@@ -1,6 +1,6 @@
 import React from "react";
 import Header from '../../components/Header/Header'
-import BookSlidesFirst from "../../components/BookSliderFirst/BookSlidesFirst/BookSlidesFirst";
+import BookSliderFirst from "../../components/BookSliderFirst/BookSliderFirst";
 import { Container } from "react-bootstrap";
 
 const Home =()=>{
@@ -8,7 +8,7 @@ const Home =()=>{
     // === the first type of slider used in home page ===
     <Container style={{marginTop:'13rem'}}>
         <Header />
-        <BookSlidesFirst />
+        <BookSliderFirst />
     </Container>
     // === the first type of slider used in home page end ===
 

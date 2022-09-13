@@ -1,0 +1,18 @@
+.swiper .swiper-wrapper .swiper-slide-active {
+    width:400px !important;
+    height: 400px !important;
+    transition:.4s;
+
+}
+
+.swiper .swiper-wrapper .swiper-slide:not(.swiper-slide-active) {
+    width: 240px !important;
+    height: 400px !important;
+    transition: .4s;
+}
+
+.book-swiper {
+    padding: 24px;
+    background-color: var(--off-color);
+    border-radius: 20px;
+}

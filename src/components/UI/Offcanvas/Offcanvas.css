@@ -1,0 +1,9 @@
+.offcanvas-btn {
+    background-color: transparent;
+    padding:0;
+    border: 0;
+}
+
+.offcanvas-btn:hover {
+    background-color: transparent !important;
+}

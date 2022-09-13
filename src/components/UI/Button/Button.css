@@ -1,0 +1,115 @@
+.custom-btn {
+    color: #ffffff;
+    padding: .5rem 1rem;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+
+.custom-btn:hover {
+    color: var(--white-color);
+    opacity: .8;
+}
+
+.purple {
+    background-color: var(--main-purple);
+}
+
+
+.gray{
+    background-color: var(--input-bg);
+}
+
+.play-store-button {
+    padding: .7rem 1.1rem;
+    background: linear-gradient(270deg, #24C7BD -0.09%, #31D472 100%);
+    width: 9rem;
+    justify-content: center;
+}
+
+.App-store-button {
+    padding: .7rem 1.1rem;
+    background: linear-gradient(270deg, #2451C7 -0.09%, #3186D4 100%);
+    width: 9rem;
+    justify-content: center;
+}
+
+.cafe-bazar-button {
+    padding: .7rem 1.1rem;
+    background: linear-gradient(270deg, #26A81B 0%, #86C81B 99.88%);
+    width: 8.75rem;
+    justify-content: center;
+}
+
+.ghasedak_download-app {
+    padding: .7rem 1.1rem;
+    background: linear-gradient(270deg, #6B2AD3 -0.09%, #7B61FF 100%);
+    width: 9rem;
+    justify-content: center;
+}
+
+.btn_add_cart_suggest_book {
+    background-color: var(--main-purple);
+    margin-top: 1.5rem;
+    padding: .75rem 1rem;
+}
+
+.btn_add_cart_suggest_book span {
+    margin-right: .25rem;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+@media screen and (max-width:1390px) {
+
+    .ghasedak_download-app,
+    .cafe-bazar-button,
+    .App-store-button,
+    .play-store-button {
+        width: 8.25rem;
+        padding: .5rem 1rem;
+    }
+}
+
+@media screen and (max-width:1200px) {
+
+    .App-store-button,
+    .play-store-button {
+        margin-top: 1rem;
+
+    }
+
+    .ghasedak_download-app,
+    .cafe-bazar-button,
+    .App-store-button,
+    .play-store-button {
+        width: 13.5rem;
+    }
+}
+
+@media screen and (max-width:992px) {
+
+    .ghasedak_download-app,
+    .cafe-bazar-button,
+    .App-store-button,
+    .play-store-button {
+        width: 10rem;
+    }
+}
+
+@media screen and (max-width:768px) {
+
+    .ghasedak_download-app,
+    .cafe-bazar-button,
+    .App-store-button,
+    .play-store-button {
+        width: 100%;
+        justify-content: center;
+        margin-top: 1.25rem;
+    }
+}
+

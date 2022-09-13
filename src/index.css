@@ -1,0 +1,106 @@
+/* === define variables === */
+:root {
+  --main-purple: #6B2AD3;
+  --main-orange: #FFAA00;
+  --main-text: #292D32;
+  --second-text: #CBCFD3;
+  --placeholder-text: #A2A6AB;
+  --input-bg: #EEF0F3;
+  --wrong-color: #D95262;
+  --white-color: #FFFFFF;
+  --green-color: #41BF74;
+  --off-color: #EB364C;
+  --menu-section: #EFF3F8;
+  --main-shadow: 0px 1px 8px rgba(0, 0, 0, 0.16);
+  --book-shadow: 0px 4px 8px rgba(0, 0, 0, 0.24);
+  --web-main-shadow: 0px 1px 40px rgba(0, 0, 0, 0.12);
+  --store-shadow: 0px 1px 20px rgba(0, 0, 0, 0.12);
+  --inner-shadow: inset 0px 1px 4px rgba(38, 50, 56, 0.04);
+  --border-radius:15px;
+}
+
+/* === define variables end === */
+
+
+/* === adding fonts ===  */
+@font-face {
+  font-family: IranYekanRegular;
+  src: url(../public/fonts/ttf/IRANYekanWebRegular.ttf);
+}
+
+@font-face {
+  font-family: IranYekanBold;
+  src: url(../public/fonts/ttf/IRANYekanWebBold.ttf);
+}
+
+/* === adding fonts end ===  */
+
+/* === general styles ===  */
+html {
+  direction: rtl;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: IranYekanRegular !important;
+}
+
+
+a,
+button {
+  line-height: inherit;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+a,
+button,
+img,
+input,
+span {
+  -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+input {
+  border: none;
+}
+
+*:focus {
+  outline: none !important;
+}
+
+a:focus {
+  color: inherit;
+  outline: none;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+
+li {
+  list-style-type: none;
+}
+
+.center{
+  display: flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items: center;
+}
+/* === general styles end ===  */

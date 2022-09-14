@@ -73,7 +73,8 @@ const BookSlidesFirst =()=>{
       swiperChange.slideTo(0)
     }, [swiperRef]);
  
-   
+  //  let SwiperSlide;
+
     return(
        <>
         {/* first section of slider  */}
@@ -131,7 +132,17 @@ const BookSlidesFirst =()=>{
                 // == return swiper slides ==
 
                 <SwiperSlide className='book-slide' key={item.id}>
-                    {({ isActive }) => {
+                  {()=>{
+                    if(item.id==0){
+                      return <ActiveSlide />
+                    }
+                    else{
+                      return <NonActiveSlide />
+                    }
+                  }
+
+                  }
+                    {/* {({ isActive }) => {
                         if(isActive){
                             return <ActiveSlide />
                         }
@@ -139,7 +150,7 @@ const BookSlidesFirst =()=>{
                             return <NonActiveSlide />
                         }
                       }
-                    }
+                    } */}
                 </SwiperSlide>
                 // == return swiper slides end ==
             )           

@@ -6,7 +6,7 @@ import { Container } from "react-bootstrap";
 const Home =()=>{
     return(
     // === the first type of slider used in home page ===
-    <Container style={{marginTop:'13rem'}}>
+    <Container >
         <Header />
         <BookSliderFirst />
     </Container>

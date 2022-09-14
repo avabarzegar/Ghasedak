@@ -83,7 +83,10 @@ const BookSlidesFirst =()=>{
          textBorder='orange-bottom'
          containerBorder='purple-border'
          >
-          
+         <div className='first-slider-left-container'>
+            <div className='first-slider-label'>
+              <span>پایان مهلت تا : 1 روز 22 ساعت 16 ثانیه</span>
+            </div>
         {/* navigation  */}
           <SliderNavigation
           handleLeftClick={handleLeftClick}
@@ -92,6 +95,7 @@ const BookSlidesFirst =()=>{
           navigationNextRef={navigationNextRef}
           />   
         {/* navigation end */}
+         </div>
          </SliderTopLine>
         {/* first section of slider end  */}
 

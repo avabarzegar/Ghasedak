@@ -5,7 +5,7 @@
 }
 
 .parent_section_footer {
-   background-color: var(--white-color);
+   background: #F4F6F9;
    padding: 3rem 0;
    position: relative;
    display: flex;
@@ -67,12 +67,6 @@
    padding-left: .2rem;
 }
 
-
-.parent_copyright_text_logo_footer{
-   background-image: url(../../assets/Images/Background/footer-shape.svg);
-   background-repeat: no-repeat;
-   background-size: cover;
-}
 
 @media screen and (max-width:1390px){
    .btn_footer_inner_text {

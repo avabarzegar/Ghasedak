@@ -14,13 +14,13 @@ import HeadPhone from '../../assets/Images/icon/headphone.svg';
 import Instagram from '../../assets/Images/icon/Vector (5).svg';
 import twitter from '../../assets/Images/icon/Vector (4).svg';
 import LinkedIn from '../../assets/Images/icon/Vector (3).svg';
-import LogoType from '../../assets/Images/Logo/logo-text-white.png';
-import Logo from '../../assets/Images/Logo/Logo.png';
+import Shapefooter from './Shapefooter';
 
 const Footer = () => {
    return (
 
-      <Container fluid className='parent_section_footer'>
+      <>
+         <Container fluid className='parent_section_footer'>
          <Container>
             <Row>
                <Col md={3}>
@@ -99,21 +99,13 @@ const Footer = () => {
                   </div>
                </Col>
             </Row>
-
          </Container>
-         <Container fluid className='parent_copyright_text_logo_footer shape_end_footer'>
-            <Container className=''>
-               <div >
-                  <div className='logo_img_footer'>
-                     <img src={Logo} alt='logo'></img>
-                     <img src={LogoType} alt='logo'></img>
-                  </div>
-                  <p>تمامی حقوق مادی و معنوی این سایت متعلق به پلتفرم قاصدک میباشد و هرگونه کپی برداری از آن پیگرد قانونی دارد. </p>
-               </div>
-            </Container>
-         </Container>
-
+         
       </Container>
+      <Shapefooter />
+      </>
+      
+
    )
 }
 

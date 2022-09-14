@@ -4,6 +4,7 @@
     flex-direction:row;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: .2rem;
 }
 
 .header-slider-txt {
@@ -12,6 +13,7 @@
     font-size:24px;
     line-height: 34px;
     margin-inline-start: 1.5rem;
+    margin-bottom: -1rem;
     color: var(--main-text);
    
 }
@@ -21,4 +23,9 @@
 .purple-border{
     border-bottom: 4px solid var(--off-color);
 
+}
+@media screen and (max-width:768px) {
+    .header-slider-txt{
+        margin-bottom: -.5rem;
+    }
 }

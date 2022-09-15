@@ -6,7 +6,7 @@ import axios from 'axios';
 import SliderTopLine from '../../SliderTopLine/SliderTopLine';
 import SliderNavigation from '../../SliderNavigation/SliderNavigation';
 import BestshopSingleslide from '../bestshopSingleslide/BestshopSingleslide';
-import Eyeseeall from '../../../assets/Images/icon/vuesax.png'
+import SeeAllShops from '../../seeallshops/Seeallshops';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -126,12 +126,10 @@ const BestshopsSlides =()=>{
 
         >
 
-          <div className='see-all-shops'>
-            <img src={Eyeseeall}  alt='img eye'/>
-            <p>مشاهده همه فروشگاه ها</p>
-          </div>
-        
-
+          {/* seeallshops btn */}
+          <SeeAllShops />
+       
+         {/* seeallshops btn */}
           {slide.map((item) => {
             return(
                 // == return swiper slides ==

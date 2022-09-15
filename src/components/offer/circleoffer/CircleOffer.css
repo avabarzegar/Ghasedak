@@ -1,0 +1,12 @@
+.circle-offer-parent {
+   width: 247px;
+   height: 247px;
+   border-radius: 50%;
+   border: 8px solid var(--white-color);
+   background: var(--off-color);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 0px;
+}

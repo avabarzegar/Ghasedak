@@ -3,22 +3,22 @@ import {  SwiperSlide ,Swiper } from 'swiper/react';
 import SwiperCore,{ Virtual , Navigation , Autoplay } from 'swiper';
 import { React ,useState ,useEffect , useRef ,useCallback}  from 'react';
 import axios from 'axios';
-import SliderTopLine from '../SliderTopLine/SliderTopLine';
-import SliderNavigation from '../SliderNavigation/SliderNavigation';
-import Singleslidenearestshops from '../nearestshops/singleslide/Singleslidenearestshops'
-import Eyeseeall from '../../assets/Images/icon/vuesax.png'
+import SliderTopLine from '../../SliderTopLine/SliderTopLine';
+import SliderNavigation from '../../SliderNavigation/SliderNavigation';
+import BestshopSingleslide from '../bestshopSingleslide/BestshopSingleslide';
+import Eyeseeall from '../../../assets/Images/icon/vuesax.png'
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 
-import './nearestshopsslides.css';
+import './BestshopsSlides.css';
 
 // === mapping swiper slides ===
-const Nearestshopsslides =()=>{
+const BestshopsSlides =()=>{
     
   // refer hook
-  const navigationPrevRef = useRef(null) 
+  const navigationPrevRef = useRef(null)
   const navigationNextRef = useRef(null)
 
   // refer hook end
@@ -77,7 +77,7 @@ const Nearestshopsslides =()=>{
        <>
         {/* first section of slider  */}
         <SliderTopLine 
-         text='نزدیکترین فروشگاه ها  '
+         text='  فروشگاه های برتر  '
          textBorder='purple-bottom'
          paddingText='padding-bottom'
          >
@@ -139,10 +139,10 @@ const Nearestshopsslides =()=>{
                 <SwiperSlide className='nearshop-slide width-slides' key={item.id}>
                   {()=>{
                     if(item.id==0){
-                      return <Singleslidenearestshops />
+                      return <BestshopSingleslide />
                     }
                     else{
-                      return <Singleslidenearestshops />
+                      return <BestshopSingleslide />
                     }
                   }
 
@@ -167,4 +167,4 @@ const Nearestshopsslides =()=>{
 }
 
 
-export default Nearestshopsslides;
+export default BestshopsSlides;

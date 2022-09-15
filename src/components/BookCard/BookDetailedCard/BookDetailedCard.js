@@ -13,7 +13,7 @@ const BookDetailedCard = (props) =>{
         <div className='outest_section_book-cart'>
             <div className='book-card-parent'>
                <Row className='book-card-container'>
-                  <Col md={6}>
+                  <Col xs={6}>
                      <div className="parent_info_book">
                         <div>
                            <span className="font-bold">کتاب:</span>
@@ -42,7 +42,7 @@ const BookDetailedCard = (props) =>{
                         </div>
                      </div>
                   </Col>
-                  <Col md={6}>
+                  <Col xs={6}>
                      <div className="book_pic_suggest">
                         <img src={Plague} width='100%' height='100%' alt='book image' />
                      </div>

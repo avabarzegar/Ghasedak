@@ -4,7 +4,6 @@
     flex-direction:row;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: .2rem;
 }
 
 .header-slider-txt {
@@ -13,7 +12,7 @@
     font-size:24px;
     line-height: 34px;
     margin-inline-start: 1.5rem;
-    margin-bottom: -1rem;
+    margin-bottom: -.6rem;
     color: var(--main-text);
    
 }
@@ -24,8 +23,15 @@
     border-bottom: 4px solid var(--off-color);
 
 }
+
 @media screen and (max-width:768px) {
     .header-slider-txt{
-        margin-bottom: -.5rem;
+        margin-bottom: -.26rem;
+    }
+}
+@media screen and (max-width:576px) {
+    .header-slider-txt{
+        font-size: 1.2rem;
+        margin-bottom: -.22rem;
     }
 }

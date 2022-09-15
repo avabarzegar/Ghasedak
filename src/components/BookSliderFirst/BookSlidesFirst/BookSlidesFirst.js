@@ -1,12 +1,13 @@
 // Import Swiper React components
 import {  SwiperSlide ,Swiper } from 'swiper/react';
-import SwiperCore,{ Virtual , Navigation , Autoplay } from 'swiper';
+import SwiperCore,{  Navigation , Autoplay } from 'swiper';
 import { React ,useState ,useEffect , useRef ,useCallback}  from 'react';
 import axios from 'axios';
 import SliderTopLine from '../../SliderTopLine/SliderTopLine';
-import ActiveSlide from '../ActiveSlide/ActiveSlide';
-import NonActiveSlide from '../NonActiveSlide/NonActiveSlide';
 import SliderNavigation from '../../SliderNavigation/SliderNavigation';
+import BookSimpleCard from '../../BookCard/BookSimpleCard/BookSimpleCard';
+import BookDetailedCard from '../../BookCard/BookDetailedCard/BookDetailedCard';
+import './BookSlidesFirst.css';
 
 
 // Import Swiper styles
@@ -14,7 +15,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 
-import './BookSlidesFirst.css';
+
+
 
 // === mapping swiper slides ===
 const BookSlidesFirst =()=>{
@@ -57,20 +59,18 @@ const BookSlidesFirst =()=>{
     } , [])
     
     // == use swiper autoplay ==
-    // SwiperCore.use([Autoplay])
+    SwiperCore.use([Autoplay])
     // == use swiper autoplay end ==
     SwiperCore.use([Navigation])
    
     const handleLeftClick = useCallback(() => {
       if (!swiperRef) return;
       swiperRef.slidePrev();
-      swiperChange.slideTo(0)
     }, [swiperRef]);
  
     const handleRightClick = useCallback(() => {
       if (!swiperRef) return;
       swiperRef.slideNext();
-      swiperChange.slideTo(0)
     }, [swiperRef]);
  
   //  let SwiperSlide;
@@ -106,15 +106,13 @@ const BookSlidesFirst =()=>{
           className='book-swiper'
           onSlideChange={setSwiperChange}
           onSwiper={setSwiperRef}
-          modules={[Navigation , Virtual]}
+          modules={[Autoplay , Navigation]}
 
           autoplay={{delay: 2000}}
           spaceBetween={20}
           slidesPerView ={4}
           initialSlide={0}
-          slidesPerGroup={1}
           loop={false}
-          slideToClickedSlide={(0,false,false)}
           navigation={{
             prevEl: navigationPrevRef.current,
             nextEl: navigationNextRef.current,
@@ -127,7 +125,24 @@ const BookSlidesFirst =()=>{
             el: '.swiper-scrollbar',
             draggable: true,
           }}
-
+          breakpoints= {{
+            // when window width is >= 320px
+            320: {
+              slidesPerView: 1,
+            },
+            //  when window width is >= 480px
+            480: {
+              slidesPerView: '1.5',
+            },
+            // when window width is >= 640px
+            640: {
+              slidesPerView: '1.5',
+            },
+            992: {
+              slidesPerView: '3',
+              spaceBetween: 20
+            }
+          }}
         >
         
 
@@ -138,10 +153,10 @@ const BookSlidesFirst =()=>{
                 <SwiperSlide className='book-slide' key={item.id}>
                   {()=>{
                     if(item.id==0){
-                      return <ActiveSlide />
+                      return <BookDetailedCard />
                     }
                     else{
-                      return <NonActiveSlide />
+                      return <BookSimpleCard />
                     }
                   }
 

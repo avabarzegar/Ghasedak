@@ -17,9 +17,9 @@
    
 }
 .orange-bottom{
-     border-bottom:4px solid var(--main-orange);
+    border-bottom:4px solid var(--main-orange);
 }
-.purple-border{
+.off-bottom{
     border-bottom: 4px solid var(--off-color);
 
 }

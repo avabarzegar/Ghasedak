@@ -1,13 +1,13 @@
 // Import Swiper React components
 import {  SwiperSlide ,Swiper } from 'swiper/react';
 import SwiperCore,{  Navigation , Autoplay } from 'swiper';
-import { React ,useState ,useEffect , useRef ,useCallback}  from 'react';
+import { React , useState ,useEffect , useRef , useCallback}  from 'react';
 import axios from 'axios';
 import SliderTopLine from '../../SliderTopLine/SliderTopLine';
 import SliderNavigation from '../../SliderNavigation/SliderNavigation';
 import BookSimpleCard from '../../BookCard/BookSimpleCard/BookSimpleCard';
 import BookDetailedCard from '../../BookCard/BookDetailedCard/BookDetailedCard';
-import './BookSlidesFirst.css';
+import './MostSaleSlides.css';
 
 
 // Import Swiper styles
@@ -19,21 +19,20 @@ import 'swiper/css/scrollbar';
 
 
 // === mapping swiper slides ===
-const BookSlidesFirst =()=>{
+const MostSaleSlides =()=>{
     
   // refer hook
   const navigationPrevRef = useRef(null)
   const navigationNextRef = useRef(null)
-
   // refer hook end
   
   // state hook 
   const [swiperRef, setSwiperRef] = useState();
-    const [slide , setSlide] =useState([]);
-    const [swiperChange , setSwiperChange] =useState();
+  const [slide , setSlide] =useState([]);
   // state hook end
 
-    useEffect(()=>{
+
+  useEffect(()=>{
        
     //    === get slides data from api ===
         axios.get('https://jsonplaceholder.typicode.com/todos')
@@ -78,15 +77,13 @@ const BookSlidesFirst =()=>{
     return(
        <>
         {/* first section of slider  */}
+
         <SliderTopLine 
-         text='تخفیف های ویژه'
-         textBorder='orange-bottom'
-         containerBorder='off-bottom'
+         text='پرفروش ترین ها'
+         textBorder='off-bottom'
+         containerBorder='purple-border'
          >
          <div className='first-slider-left-container'>
-            <div className='first-slider-label'>
-              <span>پایان مهلت تا : 1 روز 22 ساعت 16 ثانیه</span>
-            </div>
         {/* navigation  */}
           <SliderNavigation
           handleLeftClick={handleLeftClick}
@@ -97,19 +94,20 @@ const BookSlidesFirst =()=>{
         {/* navigation end */}
          </div>
          </SliderTopLine>
+
         {/* first section of slider end  */}
 
 
 
         {/* // slider  */}
         <Swiper
-          className='book-swiper'
+          className='most-sale-swiper'
           slidesPerGroup={1}
           slidesPerView={'auto'}
           modules={[Navigation , Autoplay]}
           onSwiper={setSwiperRef}
           autoplay={{delay: 2000}}
-          spaceBetween={20}
+          spaceBetween={40}
           initialSlide={0}
           navigation={{
             prevEl: navigationPrevRef.current,
@@ -159,15 +157,6 @@ const BookSlidesFirst =()=>{
                   }
 
                   }
-                    {/* {({ isActive }) => {
-                        if(isActive){
-                            return <ActiveSlide />
-                        }
-                        if(!isActive){
-                            return <NonActiveSlide />
-                        }
-                      }
-                    } */}
                 </SwiperSlide>
                 // == return swiper slides end ==
             )           
@@ -179,4 +168,4 @@ const BookSlidesFirst =()=>{
 }
 
 
-export default BookSlidesFirst;
+export default MostSaleSlides;

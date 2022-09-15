@@ -1,14 +1,14 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import BookSliderLayout from '../BookSliderLayout/BookSliderLayout';
 import './BookSliderFirst.css';
 import BookSlidesFirst from "./BookSlidesFirst/BookSlidesFirst";
 
 // === first book slider layout ===
 const BookSliderFirst = ()=>{
     return(
-        <Container className='book-slider-layout'>
+        <BookSliderLayout>
             <BookSlidesFirst />
-        </Container>
+        </BookSliderLayout>
     )
 }
 

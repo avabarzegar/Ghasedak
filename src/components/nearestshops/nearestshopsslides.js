@@ -5,8 +5,8 @@ import { React ,useState ,useEffect , useRef ,useCallback}  from 'react';
 import axios from 'axios';
 import SliderTopLine from '../SliderTopLine/SliderTopLine';
 import SliderNavigation from '../SliderNavigation/SliderNavigation';
-import Singleslidenearestshops from '../nearestshops/singleslide/Singleslidenearestshops'
-import Eyeseeall from '../../assets/Images/icon/vuesax.png'
+import Singleslidenearestshops from '../nearestshops/singleslide/Singleslidenearestshops';
+import SeeAllShops from '../seeallshops/Seeallshops';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -106,7 +106,7 @@ const Nearestshopsslides =()=>{
 
           autoplay={{delay: 2000}}
           spaceBetween={20}
-          slidesPerView ={4}
+          slidesPerView ={'auto'}
           initialSlide={0}
           slidesPerGroup={1}
           loop={false}
@@ -126,11 +126,10 @@ const Nearestshopsslides =()=>{
 
         >
 
-          <div className='see-all-shops'>
-            <img src={Eyeseeall}  alt='img eye'/>
-            <p>مشاهده همه فروشگاه ها</p>
-          </div>
-        
+          {/* seeallshops btn */}
+          <SeeAllShops />
+       
+         {/* seeallshops btn */}
 
           {slide.map((item) => {
             return(

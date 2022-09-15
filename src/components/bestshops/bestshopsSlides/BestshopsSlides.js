@@ -106,7 +106,7 @@ const BestshopsSlides =()=>{
 
           autoplay={{delay: 2000}}
           spaceBetween={20}
-          slidesPerView ={4}
+          slidesPerView ={'auto'}
           initialSlide={0}
           slidesPerGroup={1}
           loop={false}

@@ -11,6 +11,7 @@
 
 .btn-title {
     font-size: 14px;
+    color: #ffffff !important;
 }
 
 @media screen and (max-width:1200px) {

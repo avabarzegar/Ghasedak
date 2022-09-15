@@ -58,10 +58,10 @@ const BookSlidesFirst =()=>{
 
     } , [])
     
-    // == use swiper autoplay ==
-    SwiperCore.use([Autoplay])
-    // == use swiper autoplay end ==
-    SwiperCore.use([Navigation])
+    // == use swiper core autoplay / navigation ==
+    SwiperCore.use([Autoplay , Navigation])
+    // == use swiper autoplay core autoplay / navigation end ==
+    
    
     const handleLeftClick = useCallback(() => {
       if (!swiperRef) return;
@@ -104,15 +104,13 @@ const BookSlidesFirst =()=>{
         {/* // slider  */}
         <Swiper
           className='book-swiper'
-          onSlideChange={setSwiperChange}
+          slidesPerGroup={1}
+          slidesPerView={'auto'}
+          modules={[Navigation , Autoplay]}
           onSwiper={setSwiperRef}
-          modules={[Autoplay , Navigation]}
-
           autoplay={{delay: 2000}}
           spaceBetween={20}
-          slidesPerView ={4}
           initialSlide={0}
-          loop={false}
           navigation={{
             prevEl: navigationPrevRef.current,
             nextEl: navigationNextRef.current,
@@ -125,24 +123,24 @@ const BookSlidesFirst =()=>{
             el: '.swiper-scrollbar',
             draggable: true,
           }}
-          breakpoints= {{
-            // when window width is >= 320px
-            320: {
-              slidesPerView: 1,
-            },
-            //  when window width is >= 480px
-            480: {
-              slidesPerView: '1.5',
-            },
-            // when window width is >= 640px
-            640: {
-              slidesPerView: '1.5',
-            },
-            992: {
-              slidesPerView: '3',
-              spaceBetween: 20
-            }
-          }}
+          // breakpoints= {{
+           
+          //   320: {
+          //     slidesPerView: 1,
+          //   },
+          
+          //   480: {
+          //     slidesPerView: '1.5',
+          //   },
+           
+          //   640: {
+          //     slidesPerView: '1.5',
+          //   },
+          //   992: {
+          //     slidesPerView: 3,
+          //     spaceBetween: 20
+          //   }
+          // }}
         >
         
 

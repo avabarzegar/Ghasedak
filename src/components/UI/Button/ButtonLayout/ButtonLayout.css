@@ -13,12 +13,24 @@
     font-size: 14px;
 }
 
+.btn-download-info-book {
+    background-color: var(--main-orange) !important;
+    box-shadow: var(--main-shadow);
+    color: var(--main-text);
+    font-weight: 600;
+    font-size: 13px;
+}
+.btn-download-info-book:hover{
+    background-color: var(--main-orange) !important;
+    color: var(--main-text);
+}
 @media screen and (max-width:1200px) {
-    .btn-title{
-        font-size:12px;
+    .btn-title {
+        font-size: 12px;
     }
-    .btn-img{
-        width:25px;
-        height:25px;
+
+    .btn-img {
+        width: 25px;
+        height: 25px;
     }
 }

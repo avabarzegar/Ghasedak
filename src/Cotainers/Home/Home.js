@@ -4,6 +4,7 @@ import BookSliderFirst from "../../components/BookSliderFirst/BookSliderFirst";
 import { Container } from "react-bootstrap";
 import Nearestshops from '../../components/nearestshops/nearestshops'
 import Bestshops from '../../components/bestshops/Bestshops'
+import Offer from "../../components/offer/Offer";
 const Home =()=>{
     return(
     // === the first type of slider used in home page ===
@@ -12,6 +13,7 @@ const Home =()=>{
         <BookSliderFirst />
         <Nearestshops />
         <Bestshops />
+        <Offer />
     </Container>
     // === the first type of slider used in home page end ===
 

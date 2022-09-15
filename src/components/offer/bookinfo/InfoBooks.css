@@ -1,0 +1,34 @@
+.date-publish {
+   display: flex;
+   align-items: baseline;
+}
+
+.publisher-info {
+   display: flex;
+   justify-content: space-between;
+}
+
+.infobooks-parent {
+   display: flex;
+   flex-direction: column;
+}
+
+.head-title-info-book {
+   font-weight: 500;
+   font-size: 55px;
+   color: var(--white-color);
+}
+
+.sub-head-info-book {
+   font-weight: 500;
+   font-size: 32px;
+}
+
+.date-publish {
+   font-weight:500;
+   font-size: 25px;
+}
+.publisher-name{
+   font-weight: 500;
+   font-size: 25px;
+}

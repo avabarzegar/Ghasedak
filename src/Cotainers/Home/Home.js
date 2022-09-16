@@ -8,7 +8,8 @@ import { Container } from "react-bootstrap";
 import Nearestshops from '../../components/nearestshops/nearestshops'
 import Bestshops from '../../components/bestshops/Bestshops'
 import Offer from "../../components/offer/Offer";
-import PopularBooksSlider from "../../components/PopularBooksSlider/PopularBooksSlides/PopularBooksSlides";
+import PopularBooksSlider from "../../components/PopularBooksSlider/PopularBooksSlider";
+import ThirdPublisherSlider from "../../components/ThirdPublisherSlider/ThirdPublisherSlider";
 const Home =()=>{
     return(
     // === the first type of slider used in home page ===
@@ -20,6 +21,7 @@ const Home =()=>{
         <Offer />
         <PopularBooksSlider />
         <Bestshops />
+        <ThirdPublisherSlider />
         
     </Container>
     // === the first type of slider used in home page end ===

@@ -1,17 +1,17 @@
 import React from "react";
 import BookSliderLayout from "../BookSliderLayout/BookSliderLayout";
-import MostSaleSlides from "./MostSlaleSlides/MostSaleSlides";
-import './PopularBooksSlider.css';
+import ThirdPublisherSlides from './ThirdPublisherSlides/ThirdPublisherSlides';
+import './ThirdPublisherSlider.css';
 
 // === most sale slider layout ===
-const PopularBooksSlider = ()=>{
+const ThirdPublisherSlider= ()=>{
     return(
         <BookSliderLayout className='book-slider-layout'>
-            <MostSaleSlides />
+            <ThirdPublisherSlides />
         </BookSliderLayout>
     )
 }
 
 // === first book slider layout end ===
 
-export default PopularBooksSlider;
+export default ThirdPublisherSlider;

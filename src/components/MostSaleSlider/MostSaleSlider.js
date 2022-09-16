@@ -3,7 +3,7 @@ import BookSliderLayout from "../BookSliderLayout/BookSliderLayout";
 import MostSaleSlides from "./MostSlaleSlides/MostSaleSlides";
 import './MostSaleSlider.css';
 
-// === most sale slider layout ===
+// === most sale slider  ===
 const MostSaleSlider = ()=>{
     return(
         <BookSliderLayout className='book-slider-layout'>
@@ -12,6 +12,7 @@ const MostSaleSlider = ()=>{
     )
 }
 
-// === first book slider layout end ===
+// === most sale slider end  ===
+
 
 export default MostSaleSlider;

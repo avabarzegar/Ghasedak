@@ -10,6 +10,7 @@ import Bestshops from '../../components/bestshops/Bestshops'
 import Offer from "../../components/offer/Offer";
 import PopularBooksSlider from "../../components/PopularBooksSlider/PopularBooksSlider";
 import ThirdPublisherSlider from "../../components/ThirdPublisherSlider/ThirdPublisherSlider";
+import SamiPublisherSlider from "../../components/SamiPublisherSlider/SamiPublisherSlider";
 const Home =()=>{
     return(
     // === the first type of slider used in home page ===
@@ -22,7 +23,7 @@ const Home =()=>{
         <PopularBooksSlider />
         <Bestshops />
         <ThirdPublisherSlider />
-        
+        <SamiPublisherSlider />
     </Container>
     // === the first type of slider used in home page end ===
 

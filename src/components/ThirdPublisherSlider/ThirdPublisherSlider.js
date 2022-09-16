@@ -3,7 +3,7 @@ import BookSliderLayout from "../BookSliderLayout/BookSliderLayout";
 import ThirdPublisherSlides from './ThirdPublisherSlides/ThirdPublisherSlides';
 import './ThirdPublisherSlider.css';
 
-// === most sale slider layout ===
+// === third publisher slider  ===
 const ThirdPublisherSlider= ()=>{
     return(
         <BookSliderLayout className='book-slider-layout'>
@@ -12,6 +12,7 @@ const ThirdPublisherSlider= ()=>{
     )
 }
 
-// === first book slider layout end ===
+// === third publisher slider end  ===
+
 
 export default ThirdPublisherSlider;

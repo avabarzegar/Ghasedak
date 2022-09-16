@@ -1,6 +1,7 @@
-.special-discount .header-slider-txt{
-    margin-bottom: -.6rem;
+.special-discount .header-slider-txt {
+    margin-bottom: -.55rem;
 }
+
 .book-swiper .swiper-wrapper .swiper-slide {
     width: 240px !important;
     transition: .4s;
@@ -29,8 +30,8 @@
     background-color: var(--off-color);
     border-radius: 20px 20px 0 0;
     padding: .5rem 1rem;
-
     margin-inline-end: 1.5rem;
+    margin-bottom: -0.1rem;
 }
 
 .first-slider-label span {
@@ -47,16 +48,18 @@
     .first-slider-label {
         display: none;
     }
+
     .special-discount .header-slider-txt {
-        margin-bottom: -.26rem;
+        margin-bottom: -.4rem;
     }
 }
 
 @media screen and (max-width:576px) {
     .special-discount .header-slider-txt {
-        margin-bottom: -.22rem ;
+        margin-bottom: -.42rem;
     }
 }
+
 @media screen and (max-width:500px) {
 
     .book-swiper .swiper-wrapper .swiper-slide:first-child,

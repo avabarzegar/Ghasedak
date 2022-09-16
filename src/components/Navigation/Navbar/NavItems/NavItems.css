@@ -8,7 +8,10 @@ nav {
     background-color: var(--input-bg);
     border-radius: 15px;
 }
-
+.navbar-parent{
+    z-index:333;
+    position: relative;
+}
 .navbar-parent .navbar-toggler:focus {
     box-shadow: none;
 }

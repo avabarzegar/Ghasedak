@@ -161,7 +161,7 @@ const MostSaleSlides =()=>{
          {/* see all products  */}
            <SeeAllShops
            height='height-book-slider'
-           title='مشاهده همه محصولات'
+           title='مشـــــاهده  همـــــــــــــه  محصــولات '
            />
           {/* see all products end */}
          </Col>

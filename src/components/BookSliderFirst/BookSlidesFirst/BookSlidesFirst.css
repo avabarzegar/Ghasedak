@@ -1,3 +1,6 @@
+.special-discount .header-slider-txt{
+    margin-bottom: -.6rem;
+}
 .book-swiper .swiper-wrapper .swiper-slide {
     width: 240px !important;
     transition: .4s;
@@ -44,8 +47,16 @@
     .first-slider-label {
         display: none;
     }
+    .special-discount .header-slider-txt {
+        margin-bottom: -.26rem;
+    }
 }
 
+@media screen and (max-width:576px) {
+    .special-discount .header-slider-txt {
+        margin-bottom: -.22rem ;
+    }
+}
 @media screen and (max-width:500px) {
 
     .book-swiper .swiper-wrapper .swiper-slide:first-child,

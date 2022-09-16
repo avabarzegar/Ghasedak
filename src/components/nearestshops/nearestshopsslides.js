@@ -103,9 +103,9 @@ const Nearestshopsslides =()=>{
           onSlideChange={setSwiperChange}
           onSwiper={setSwiperRef}
           modules={[Navigation , Virtual]}
-
+          dir={'rtl'}
           autoplay={{delay: 2000}}
-          spaceBetween={20}
+          spaceBetween={20} 
           slidesPerView ={'auto'}
           initialSlide={0}
           slidesPerGroup={1}

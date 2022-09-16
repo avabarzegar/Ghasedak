@@ -29,8 +29,7 @@ const BookSlidesFirst =()=>{
   
   // state hook 
   const [swiperRef, setSwiperRef] = useState();
-    const [slide , setSlide] =useState([]);
-    const [swiperChange , setSwiperChange] =useState();
+  const [slide , setSlide] =useState([]);
   // state hook end
 
     useEffect(()=>{
@@ -47,6 +46,7 @@ const BookSlidesFirst =()=>{
                 })     
             }
            setSlide(slideData)
+           console.log(slideData)
         })
         .catch((err)=>{
             console.log(err.message)
@@ -76,7 +76,7 @@ const BookSlidesFirst =()=>{
   //  let SwiperSlide;
 
     return(
-       <>
+       <section className='special-discount'>
         {/* first section of slider  */}
         <SliderTopLine 
          text='تخفیف های ویژه'
@@ -174,7 +174,7 @@ const BookSlidesFirst =()=>{
           })}
         </Swiper>  
         {/* // slider end */}
-    </>
+    </section>
     )
 }
 

@@ -108,4 +108,7 @@ li {
   align-items: center;
 }
 
+.swiper{
+  direction:rtl;
+}
 /* === general styles end ===  */

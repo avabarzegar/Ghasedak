@@ -103,7 +103,7 @@ const BestshopsSlides =()=>{
           onSlideChange={setSwiperChange}
           onSwiper={setSwiperRef}
           modules={[Navigation , Virtual]}
-
+          dir={'rtl'}
           autoplay={{delay: 2000}}
           spaceBetween={20}
           slidesPerView ={'auto'}

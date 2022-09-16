@@ -2,11 +2,13 @@
 import {  SwiperSlide ,Swiper } from 'swiper/react';
 import SwiperCore,{  Navigation , Autoplay } from 'swiper';
 import { React , useState ,useEffect , useRef , useCallback}  from 'react';
+import Col from 'react-bootstrap/Col';
 import axios from 'axios';
 import SliderTopLine from '../../SliderTopLine/SliderTopLine';
 import SliderNavigation from '../../SliderNavigation/SliderNavigation';
 import BookSimpleCard from '../../BookCard/BookSimpleCard/BookSimpleCard';
 import BookDetailedCard from '../../BookCard/BookDetailedCard/BookDetailedCard';
+import SeeAllShops from '../../seeallshops/Seeallshops';
 import './MostSaleSlides.css';
 
 
@@ -14,6 +16,7 @@ import './MostSaleSlides.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
+import SliderLayout from '../../SliderLayout/SliderLayout';
 
 
 
@@ -50,9 +53,6 @@ const MostSaleSlides =()=>{
         .catch((err)=>{
             console.log(err.message)
         })
-
-      
-     
     //    === get slides data from api ===
 
     } , [])
@@ -75,13 +75,14 @@ const MostSaleSlides =()=>{
   //  let SwiperSlide;
 
     return(
-       <>
+
+      <section>
         {/* first section of slider  */}
 
         <SliderTopLine 
          text='پرفروش ترین ها'
          textBorder='off-bottom'
-         containerBorder='purple-border'
+         containerBorder='gray-bottom'
          >
          <div className='first-slider-left-container'>
         {/* navigation  */}
@@ -98,12 +99,16 @@ const MostSaleSlides =()=>{
         {/* first section of slider end  */}
 
 
+        {/* slider container section  */}
+        <SliderLayout>
 
-        {/* // slider  */}
+          {/* // slider  */}
+          <Col xl={11} lg={10} className='most-sale-swiper-container'>
         <Swiper
           className='most-sale-swiper'
           slidesPerGroup={1}
           slidesPerView={'auto'}
+          dir={'rtl'}
           modules={[Navigation , Autoplay]}
           onSwiper={setSwiperRef}
           autoplay={{delay: 2000}}
@@ -148,7 +153,7 @@ const MostSaleSlides =()=>{
 
                 <SwiperSlide className='book-slide' key={item.id}>
                   {()=>{
-                    if(item.id==0){
+                    if(item.id == 0){
                       return <BookDetailedCard />
                     }
                     else{
@@ -162,8 +167,22 @@ const MostSaleSlides =()=>{
             )           
           })}
         </Swiper>  
+          </Col>
         {/* // slider end */}
-    </>
+
+         <Col xl={1} lg={2} className='see-all-column'>
+         {/* see all products  */}
+           <SeeAllShops
+           title='مشاهده همه محصولات'
+           />
+          {/* see all products end */}
+         </Col>
+
+
+        </SliderLayout>
+        {/* slider container section end */}
+
+      </section>
     )
 }
 

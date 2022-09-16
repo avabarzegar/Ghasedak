@@ -1,0 +1,43 @@
+.see-all-container{
+   display: flex;
+   justify-content: flex-end;
+   width:100%;
+}
+.see-all-shops {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   padding: 1.5rem;
+   background-color: var(--main-orange);
+   border-radius: 20px;
+   justify-content: center;
+   z-index: 55;
+   box-shadow: 0px 1px 40px rgba(0, 0, 0, 0.12);
+}
+.height-book-slider{
+    height: 430px;
+}
+.see-img {
+   width: 28px;
+   height: 24px;
+   margin-bottom: 1.5rem;
+}
+
+.see-all-shops p {
+   line-height: 25px;
+   margin-top: .75rem;
+   color: var(--white-color);
+   font-size: 16px;
+   text-align: center;
+}
+
+@media screen and (max-width:1200px) {
+   .see-all-container{
+      width:80%;
+   }
+}
+@media screen and (max-width:992px) {
+   .see-all-shops {
+      padding: .5rem;
+   }
+}

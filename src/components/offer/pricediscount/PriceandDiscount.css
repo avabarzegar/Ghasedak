@@ -1,0 +1,30 @@
+
+.green-price-parent {
+   display: flex;
+   align-items: center;
+   color: var(--green-color);
+   font-weight: 700;
+   font-size: 46px;
+}
+
+.green-price-parent img {
+   width: 66px;
+   height: 66px;
+}
+
+.parnet-section-price .red-price-child {
+   font-weight: 400;
+   font-size: 42px;
+   color: var(--off-color) !important ;
+}
+.parnet-section-price{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   padding: 1.5rem .75rem;  
+   background-color: var(--white-color);
+   height: min-content;
+   padding: 20px 20px;
+   border-radius: 20px;
+   margin-top: 6.1rem;
+}

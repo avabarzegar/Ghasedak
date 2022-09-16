@@ -5,9 +5,11 @@
 }
 
 .parent_section_footer {
-   background-color: #F5F5F5;
+   background: #F4F6F9;
    padding: 3rem 0;
-   font-family: IranYekanRegular !important;
+   position: relative;
+   display: flex;
+   flex-direction: column;
 }
 
 .offer_to_download_app {
@@ -64,6 +66,7 @@
    height: 1.35rem;
    padding-left: .2rem;
 }
+
 
 @media screen and (max-width:1390px){
    .btn_footer_inner_text {

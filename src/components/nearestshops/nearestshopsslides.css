@@ -1,0 +1,47 @@
+.swiper .swiper-wrapper .nearshop-swiper .swiper-slide {
+   width: 200px !important;
+   height: 120px !important;
+   transition: .4s;
+}
+
+.width-slides {
+   max-width: 200px !important;
+
+   max-height: 120px !important;
+}
+
+.nearshop-swiper {
+   padding: 24px;
+   border-radius: 20px;
+   margin-top: 3rem;
+}
+
+.first-slider-left-container {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+.first-slider-label {
+   background-color: var(--off-color);
+   border-radius: 20px 20px 0 0;
+   padding: .5rem 1rem;
+   color: #ffffff;
+   margin-inline-end: 1.5rem;
+}
+
+.purple-bottom {
+   border-bottom: 4px solid var(--main-purple);
+}
+
+.padding-bottom {
+   padding-bottom: .5rem;
+}
+
+
+
+@media screen and (max-width:768px) {
+   .first-slider-label {
+      display: none;
+   }
+}

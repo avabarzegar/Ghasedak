@@ -16,7 +16,7 @@
   --web-main-shadow: 0px 1px 40px rgba(0, 0, 0, 0.12);
   --store-shadow: 0px 1px 20px rgba(0, 0, 0, 0.12);
   --inner-shadow: inset 0px 1px 4px rgba(38, 50, 56, 0.04);
-  --border-radius:15px;
+  --border-radius: 15px;
 }
 
 /* === define variables end === */
@@ -46,6 +46,10 @@ body {
   font-family: IranYekanRegular !important;
 }
 
+* {
+  box-sizing: border-box;
+  color: var(--main-text);
+}
 
 a,
 button {
@@ -97,4 +101,14 @@ li {
   list-style-type: none;
 }
 
+.center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper{
+  direction:rtl;
+}
 /* === general styles end ===  */

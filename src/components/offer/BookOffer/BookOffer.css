@@ -1,0 +1,11 @@
+.parent-section-bookoffer img {
+   width: 100%;
+}
+
+.parent-section-bookoffer {
+   width: 304px;
+   height: 440px;
+   position: absolute;
+    bottom: -21%;
+    right: 4%;
+}

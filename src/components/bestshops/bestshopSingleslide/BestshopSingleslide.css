@@ -1,0 +1,29 @@
+.bg-color-nearestshops{
+   width: 5rem;
+   height: 5rem;
+   background-color: red;
+   border-radius: 50%;
+   margin-top: -1rem;
+   position: absolute;
+   top: -1rem;
+}
+.slides-near-shops{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+   position: relative;
+}
+
+.slides-near-shops{
+   box-shadow: 0px 1px 40px rgba(0, 0, 0, 0.12);
+   padding: 0 0 1rem ;
+   margin-top: 1rem;
+   border-radius: 20px;
+
+}
+
+.slides-near-shops span {
+   margin-top: 4.5rem;
+}
+

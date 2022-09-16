@@ -7,12 +7,12 @@ const PriceandDiscount = () => {
    return (
       <div className="parnet-section-price">
          <div className="green-price-parent">
-            <PriceLabel className='green-price-child'>50.000</PriceLabel>
+            <PriceLabel customstyle="green-color-txt">50.000</PriceLabel>
             <img src={Toman} alt='price img' />
          </div>
-         <div className="red-price-child">
-            <PriceLabel>100.000</PriceLabel>
-         </div>
+       
+            <PriceLabel customstyle="red-color">100.000</PriceLabel>
+      
       </div>
    )
 }

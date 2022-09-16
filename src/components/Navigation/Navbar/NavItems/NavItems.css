@@ -7,10 +7,12 @@ nav {
     padding: 2.5rem 1.2rem 1rem 1.2rem !important;
     background-color: var(--input-bg);
     border-radius: 15px;
+    box-shadow:var(--nav-shadow);
 }
 .navbar-parent{
     z-index:333;
     position: relative;
+
 }
 .navbar-parent .navbar-toggler:focus {
     box-shadow: none;

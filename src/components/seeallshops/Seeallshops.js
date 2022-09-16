@@ -4,7 +4,7 @@ import './Seeallshops.css';
 
 const SeeAllShops = (props) => {
    return (
-      <div className='see-all-container'>
+      <div className={`see-all-container ${props.height}`}>
          <div className='see-all-shops'>
            <div className='see-img'>
              <img src={EyeSeeAll} width='100%' height='100%' alt='img eye' />

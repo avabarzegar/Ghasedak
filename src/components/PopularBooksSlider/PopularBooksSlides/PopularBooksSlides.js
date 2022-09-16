@@ -9,7 +9,7 @@ import SliderNavigation from '../../SliderNavigation/SliderNavigation';
 import BookSimpleCard from '../../BookCard/BookSimpleCard/BookSimpleCard';
 import BookDetailedCard from '../../BookCard/BookDetailedCard/BookDetailedCard';
 import SeeAllShops from '../../seeallshops/Seeallshops';
-import './MostSaleSlides.css';
+import './PopularBooksSlides.css';
 
 
 // Import Swiper styles
@@ -22,7 +22,7 @@ import SliderLayout from '../../SliderLayout/SliderLayout';
 
 
 // === mapping swiper slides ===
-const MostSaleSlides =()=>{
+const PopularBooksSlides =()=>{
     
   // refer hook
   const navigationPrevRef = useRef(null)
@@ -81,11 +81,11 @@ const MostSaleSlides =()=>{
 
     return(
 
-      <section>
+      <section className='popular-books'>
         {/* first section of slider  */}
 
         <SliderTopLine 
-         text='پرفروش ترین ها'
+         text='محبوب ترین کتاب ها'
          textBorder='off-bottom'
          containerBorder='gray-bottom'
          >
@@ -175,4 +175,4 @@ const MostSaleSlides =()=>{
 }
 
 
-export default MostSaleSlides;
+export default PopularBooksSlides;

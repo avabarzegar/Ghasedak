@@ -38,13 +38,14 @@ const BookSlidesFirst =()=>{
         axios.get('https://jsonplaceholder.typicode.com/todos')
         .then((response)=>{
             const slideData=[];
-            for(const item in response.data.splice(0,12)){
-                slideData.push({
-                    id:item ,
-                    title:response.data[item].title,
-                    body:response.data[item].body
-                })     
-            }
+            response.data.splice(0,12).map((item)=>{
+              slideData.push({
+                  id:item.id ,
+                  title:item.title,
+                  body:item.body
+                })  
+                console.log(item)  
+            })
            setSlide(slideData)
            console.log(slideData)
         })
@@ -123,24 +124,6 @@ const BookSlidesFirst =()=>{
             el: '.swiper-scrollbar',
             draggable: true,
           }}
-          // breakpoints= {{
-           
-          //   320: {
-          //     slidesPerView: 1,
-          //   },
-          
-          //   480: {
-          //     slidesPerView: '1.5',
-          //   },
-           
-          //   640: {
-          //     slidesPerView: '1.5',
-          //   },
-          //   992: {
-          //     slidesPerView: 3,
-          //     spaceBetween: 20
-          //   }
-          // }}
         >
         
 
@@ -150,7 +133,7 @@ const BookSlidesFirst =()=>{
 
                 <SwiperSlide className='book-slide' key={item.id}>
                   {()=>{
-                    if(item.id==0){
+                    if(item.id==1){
                       return <BookDetailedCard />
                     }
                     else{

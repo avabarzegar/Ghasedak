@@ -1,18 +1,18 @@
-.most-sale-swiper .swiper-wrapper .swiper-slide {
+.type-two-book-slider .swiper-wrapper .swiper-slide {
     width: 240px !important;
     transition: .4s;
 }
 
-.most-sale-swiper .swiper-wrapper .swiper-slide:first-child {
+.type-two-book-slider .swiper-wrapper .swiper-slide:first-child {
     width: 400px !important;
 }
 
-.most-sale-swiper {
+.type-two-book-slider {
     background-color: #ffffff;
     border-radius: 20px;
 }
 
-.most-sale-swiper .swiper-wrapper {
+.type-two-book-slider .swiper-wrapper {
     padding: 24px !important;
 }
 
@@ -30,7 +30,7 @@
 
 @media screen and (min-width:1200px) {
     
-.most-sale-swiper-container{
+.type-two-book-slider-container{
     padding-left: 3rem;
 }
 }
@@ -47,8 +47,8 @@
 }
 
 @media screen and (max-width:500px) {
-    .most-sale-swiper .swiper-wrapper .swiper-slide:first-child,
-    .most-sale-swiper .swiper-wrapper .swiper-slide {
+    .type-two-book-slider .swiper-wrapper .swiper-slide:first-child,
+    .type-two-book-slider .swiper-wrapper .swiper-slide {
         width: auto !important;
     }
   

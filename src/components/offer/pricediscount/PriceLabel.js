@@ -4,7 +4,7 @@ import React from "react";
 
 const PriceLabel = (props) => {
    return (
-      <span>{props.children}</span>
+      <span className={`${props.customstyle} color `}>{props.children}</span>
    )
 }
 

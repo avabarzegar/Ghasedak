@@ -18,7 +18,7 @@ const InfoBooks = () => {
                <InfoBookstitle>1399</InfoBookstitle>
             </div>
          </div>
-         <ButtonLayout button='btn-download-info-book' src={CartImage} alt={'cartimg'} title={'افزودن به سبد خرید'} />
+         <ButtonLayout button='btn-download-info-book' spancolordark="color-dard" src={CartImage} alt={'cartimg'} title={'افزودن به سبد خرید'} />
       </div>
    )
 }

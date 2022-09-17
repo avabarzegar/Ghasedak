@@ -22,7 +22,7 @@ const TopNavbar = () => {
             <Row className='top-navbar'>
               <Col xl={8} lg={7} sm={6} xs={8}>
                 <Row className='top-navbar-right' >
-                  <Col xl={3} lg={4} md={5} xs={6} className='logo-container'>
+                  <Col xl={3} lg={4} md={5} xs={7} className='logo-container'>
                     <div className='nav-logo'>
                      <img src={Logo} width='100%' height='100%' alt='logo' />
                     </div>
@@ -30,7 +30,7 @@ const TopNavbar = () => {
                      <img src={LogoText} width='100%' height='100%' alt='logo text' />
                     </div>
                   </Col>
-                  <Col style={{paddingRight:'0'}} xl={9} lg={8} md={7} xs={6} >
+                  <Col style={{paddingRight:'0'}} xl={9} lg={8} md={7} xs={5} >
                     <div className='search-box-nav'>
                       {searchInputResponsive}
                     </div>

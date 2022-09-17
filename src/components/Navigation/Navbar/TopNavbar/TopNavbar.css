@@ -115,7 +115,7 @@
 
     .top-navbar .offcanvas-btn {
         display: block;
-        width:28px;
+        width: 28px;
         height: 28px;
     }
 
@@ -176,7 +176,13 @@
 
     .nav-logo,
     .nav-logo-text {
-        width: 100px;
+        width: 60px;
         margin-inline-end: .5rem;
+    }
+
+    .top-navbar .offcanvas-btn {
+        display: block;
+        width: 24px;
+        height: 24px;
     }
 }

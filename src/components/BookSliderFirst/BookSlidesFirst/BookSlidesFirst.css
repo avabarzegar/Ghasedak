@@ -1,5 +1,5 @@
 .special-discount .header-slider-txt {
-    margin-bottom: -.55rem;
+    margin-bottom: -.6rem;
 }
 
 .book-swiper .swiper-wrapper .swiper-slide {
@@ -41,6 +41,13 @@
 @media screen and (min-width:992px) {
     .first-slider-label {
         margin-bottom: -.02rem;
+    }
+
+}
+
+@media screen and (max-width:992px) {
+    .special-discount .header-slider-txt {
+        margin-bottom: -.55rem;
     }
 }
 

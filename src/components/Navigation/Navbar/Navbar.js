@@ -5,6 +5,7 @@ import './Navbar.css';
 
 // == define navbar section ==
 const Navbar = () =>{
+
     return(
         <div className='nav-container'>
           <div className="top-menu">

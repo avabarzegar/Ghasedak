@@ -37,7 +37,7 @@ const ThirdPublisherSlider =()=>{
   useEffect(()=>{
        
     //    === get slides data from api ===
-        axios.get('https://jsonplaceholder.typicode.com/todos')
+        axios.get(' ')
         .then((response)=>{
             const slideData=[];
             response.data.splice(0,12).map((item)=>{

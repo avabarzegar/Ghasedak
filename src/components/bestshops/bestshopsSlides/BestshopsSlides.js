@@ -32,7 +32,7 @@ const BestshopsSlides =()=>{
     useEffect(()=>{
        
     //    === get slides data from api ===
-        axios.get('https://jsonplaceholder.typicode.com/todos')
+        axios.get(' ')
         .then((response)=>{
             const slideData=[];
             for(const item in response.data.splice(0,12)){

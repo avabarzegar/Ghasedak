@@ -36,16 +36,39 @@ const PopularBooksSlides =()=>{
 
 
   useEffect(()=>{
-       
+    // axios.get('http://localhost:5000/api/xxx', //proxy uri
+    // {
+    //    headers: {
+    //       authorization: ' xxxxxxxxxx' ,
+    //       'Content-Type': 'application/json'
+    //    } 
+    // }).then(function (response) {
+    //    console.log(response);
+    // });
+    // const config = {
+      
+    // };
     //    === get slides data from api ===
-        axios.get('https://jsonplaceholder.typicode.com/todos')
+        axios.post('/books/show', 
+        {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            authorization :'Bearer token',
+            "Access-Control-Allow-Methods": "GET,PUT",
+          }
+        }
+        )
         .then((response)=>{
             const slideData=[];
-            response.data.splice(0,12).map((item)=>{
+            console.log(response.data)
+            response.data.map((item)=>{
               slideData.push({
                   id:item.id ,
-                  title:item.title,
-                  body:item.body
+                  name:item.name,
+                  author: item.author,
+                  publisher:item.publisher,
+                  image:item.images.data.image_url,
+
                 })  
                 console.log(item)  
             })
@@ -141,7 +164,12 @@ const PopularBooksSlides =()=>{
                 <SwiperSlide className='book-slide' key={item.id}>
                   {()=>{
                     if(item.id == 1){
-                      return <BookDetailedCard />
+                      return <BookDetailedCard
+                      name={item.name}
+                      author={item.author}
+                      publisher={item.publisher}
+                      img={item.image}
+                      />
                     }
                     else{
                       return <BookSimpleCard />

@@ -5,7 +5,7 @@ import BookSliderFirst from "../../components/BookSliderFirst/BookSliderFirst";
 import MostSaleSlider from '../../components/MostSaleSlider/MostSaleSlider';
 // Home page section components end
 import { Container } from "react-bootstrap";
-import NearestShops from '../../components/NearestShops/NearestShops'
+import NearestShops from '../../components/NearestShops/NearestShops';
 import BestShops from '../../components/BestShops/BestShops'
 import Offer from "../../components/Offer/Offer";
 import PopularBooksSlider from "../../components/PopularBooksSlider/PopularBooksSlider";

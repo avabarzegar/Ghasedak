@@ -36,18 +36,35 @@ const MostSaleSlides =()=>{
 
 
   useEffect(()=>{
-       
+    const token ='iLDhAayZTRWLPLpWvYDK1yhAVfHl46GAfzxKb8aO';
+   
+    const config = {
+      headers: { Authorization: `Bearer ${token}` }
+  };
+  
+  const bodyParameters = {
+     key: "value"
+  };
+  
+   
     //    === get slides data from api ===
-        axios.post(' ')
-        .then((response)=>{
+    axios.post( 
+      '/books/list/all',
+      bodyParameters,
+      config
+    ).then((response)=>{
+           
             const slideData=[];
-            response.data.splice(0,12).map((item)=>{
+            response.data.data.map((item)=>{
               slideData.push({
                   id:item.id ,
-                  title:item.title,
-                  body:item.body
+                  name:item.name,
+                  author: item.author,
+                  publisher:item.publisher,
+                  image:item.images.data.image_url,
+
                 })  
-                console.log(item)  
+                 
             })
            setSlide(slideData)
            console.log(slideData)

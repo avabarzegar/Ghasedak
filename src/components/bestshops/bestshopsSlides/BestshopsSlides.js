@@ -31,20 +31,40 @@ const BestShopsSlides =()=>{
   const [slide , setSlide] =useState([]);
   // state hook end
 
-    useEffect(()=>{
-       
+  
+  useEffect(()=>{
+    const token ='iLDhAayZTRWLPLpWvYDK1yhAVfHl46GAfzxKb8aO';
+   
+    const config = {
+      headers: { Authorization: `Bearer ${token}` }
+  };
+  
+  const bodyParameters = {
+     key: "value"
+  };
+  
+   
     //    === get slides data from api ===
-        axios.post(' ')
-        .then((response)=>{
+    axios.post( 
+      '/books/list/all',
+      bodyParameters,
+      config
+    ).then((response)=>{
+           
             const slideData=[];
-            for(const item in response.data.splice(0,12)){
-                slideData.push({
-                    id:item ,
-                    title:response.data[item].title,
-                    body:response.data[item].body
-                })     
-            }
+            response.data.data.map((item)=>{
+              slideData.push({
+                  id:item.id ,
+                  name:item.name,
+                  author: item.author,
+                  publisher:item.publisher,
+                  image:item.images.data.image_url,
+
+                })  
+                 
+            })
            setSlide(slideData)
+           console.log(slideData)
         })
         .catch((err)=>{
             console.log(err.message)

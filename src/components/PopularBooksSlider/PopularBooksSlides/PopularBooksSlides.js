@@ -36,21 +36,26 @@ const PopularBooksSlides =()=>{
 
 
   useEffect(()=>{
-
-   const token ='ln9cmSRAFLIDY6X9MOjoomOzEzghPZqE0skQQc8X';
-
-   let config ={
-    headers:{
-      'Authorization' :'Bearer' + token, 
-    }
-   }
+    const token ='iLDhAayZTRWLPLpWvYDK1yhAVfHl46GAfzxKb8aO';
+   
+    const config = {
+      headers: { Authorization: `Bearer ${token}` }
+  };
+  
+  const bodyParameters = {
+     key: "value"
+  };
+  
+   
     //    === get slides data from api ===
-        axios.get('/books/list/all', config
-        )
-        .then((response)=>{
+    axios.post( 
+      '/books/list/all',
+      bodyParameters,
+      config
+    ).then((response)=>{
+           
             const slideData=[];
-            console.log(response.data)
-            response.data.map((item)=>{
+            response.data.data.map((item)=>{
               slideData.push({
                   id:item.id ,
                   name:item.name,
@@ -59,7 +64,7 @@ const PopularBooksSlides =()=>{
                   image:item.images.data.image_url,
 
                 })  
-                console.log(item)  
+                 
             })
            setSlide(slideData)
            console.log(slideData)
@@ -152,7 +157,7 @@ const PopularBooksSlides =()=>{
 
                 <SwiperSlide className='book-slide' key={item.id}>
                   {()=>{
-                    if(item.id == 1){
+                    if(item.id == 30){
                       return <BookDetailedCard
                       name={item.name}
                       author={item.author}

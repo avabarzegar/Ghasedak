@@ -25,6 +25,10 @@
     border-bottom: 4px solid var(--off-color);
 }
 
+.purple-bottom {
+    border-bottom: 4px solid var(--purple-color);
+}
+
 .gray-bottom {
     border-bottom: 4px solid var(--input-bg);
 }

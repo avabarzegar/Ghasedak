@@ -1,6 +1,6 @@
 import React from "react";
 import EyeSeeAll from '../../assets/Images/icon/vuesax.png';
-import './Seeallshops.css';
+import './SeeAllShops.css';
 
 const SeeAllShops = (props) => {
    return (

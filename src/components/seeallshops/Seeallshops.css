@@ -1,8 +1,9 @@
-.see-all-container{
+.see-all-container {
    display: flex;
    justify-content: flex-end;
-   width:100%;
+   width: 100%;
 }
+
 .see-all-shops {
    display: flex;
    align-items: center;
@@ -14,13 +15,19 @@
    z-index: 55;
    box-shadow: 0px 1px 40px rgba(0, 0, 0, 0.12);
 }
-.height-book-slider{
-    height: 430px;
+
+.height-book-slider {
+   height: 430px;
 }
+
+.see-shop-height {
+   height: 240px;
+}
+
 .see-img {
    width: 28px;
    height: 24px;
-   margin-bottom: 1.5rem;
+   margin-bottom: 1rem;
 }
 
 .see-all-shops p {
@@ -32,12 +39,25 @@
 }
 
 @media screen and (max-width:1200px) {
-   .see-all-container{
-      width:80%;
+   .see-all-container {
+      width: 80%;
    }
 }
+
 @media screen and (max-width:992px) {
    .see-all-shops {
       padding: .5rem;
+   }
+}
+
+@media screen and (max-width:768px) {
+   .see-all-shops p {
+      font-size: 12px;
+   }
+}
+
+@media screen and (max-width:576px) {
+   .see-all-shops p {
+      font-size: 10px;
    }
 }

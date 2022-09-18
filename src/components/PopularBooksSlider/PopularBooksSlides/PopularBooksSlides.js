@@ -8,7 +8,7 @@ import SliderTopLine from '../../SliderTopLine/SliderTopLine';
 import SliderNavigation from '../../SliderNavigation/SliderNavigation';
 import BookSimpleCard from '../../BookCard/BookSimpleCard/BookSimpleCard';
 import BookDetailedCard from '../../BookCard/BookDetailedCard/BookDetailedCard';
-import SeeAllShops from '../../seeallshops/Seeallshops';
+import SeeAllShops from '../../SeeAllShops/SeeAllShops';
 import './PopularBooksSlides.css';
 
 
@@ -36,27 +36,16 @@ const PopularBooksSlides =()=>{
 
 
   useEffect(()=>{
-    // axios.get('http://localhost:5000/api/xxx', //proxy uri
-    // {
-    //    headers: {
-    //       authorization: ' xxxxxxxxxx' ,
-    //       'Content-Type': 'application/json'
-    //    } 
-    // }).then(function (response) {
-    //    console.log(response);
-    // });
-    // const config = {
-      
-    // };
+
+   const token ='ln9cmSRAFLIDY6X9MOjoomOzEzghPZqE0skQQc8X';
+
+   let config ={
+    headers:{
+      'Authorization' :'Bearer' + token, 
+    }
+   }
     //    === get slides data from api ===
-        axios.post('/books/show', 
-        {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            authorization :'Bearer token',
-            "Access-Control-Allow-Methods": "GET,PUT",
-          }
-        }
+        axios.get('/books/list/all', config
         )
         .then((response)=>{
             const slideData=[];
@@ -109,7 +98,7 @@ const PopularBooksSlides =()=>{
 
         <SliderTopLine 
          text='محبوب ترین کتاب ها'
-         textBorder='off-bottom'
+         textBorder='purple-bottom'
          containerBorder='gray-bottom'
          >
          <div className='first-slider-left-container'>

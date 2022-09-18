@@ -1,16 +1,16 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import BestshopsSlides from "./bestshopsSlides/BestshopsSlides";
-import './Bestshops.css'
+import BestShopsSlides from "./BestShopsSlides/BestShopsSlides";
+import './BestShops.css'
 // === first book slider layout ===
-const Bestshops = ()=>{
+const BestShops = ()=>{
     return(
         <Container className='book-slider-layout'>
-            <BestshopsSlides />
+            <BestShopsSlides />
         </Container>
     )
 }
 
 // === first book slider layout end ===
 
-export default Bestshops;
+export default BestShops;

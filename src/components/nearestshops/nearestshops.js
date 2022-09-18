@@ -1,17 +1,17 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import './nearestshops.css';
-import Nearestshopsslides from "./nearestshopsslides";
+import './NearestShops.css';
+import NearestShopsSlides from "./NearestShopsSlides";
 
 // === first book slider layout ===
-const Nearestshops = ()=>{
+const  NearestShops = ()=>{
     return(
         <Container className='book-slider-layout'>
-            <Nearestshopsslides />
+            <NearestShopsSlides />
         </Container>
     )
 }
 
 // === first book slider layout end ===
 
-export default Nearestshops;
+export default  NearestShops;

@@ -7,7 +7,7 @@ import axios from 'axios';
 import SliderTopLine from '../../SliderTopLine/SliderTopLine';
 import SliderNavigation from '../../SliderNavigation/SliderNavigation';
 import BookSimpleCard from '../../BookCard/BookSimpleCard/BookSimpleCard';
-import SeeAllShops from '../../seeallshops/Seeallshops';
+import SeeAllShops from '../../SeeAllShops/SeeAllShops';
 import './SamiPublisherSlides.css';
 
 
@@ -37,7 +37,7 @@ const SamiPublisherSlides =()=>{
   useEffect(()=>{
        
     //    === get slides data from api ===
-        axios.get(' ')
+        axios.post(' ')
         .then((response)=>{
             const slideData=[];
             response.data.splice(0,12).map((item)=>{
@@ -85,7 +85,7 @@ const SamiPublisherSlides =()=>{
 
         <SliderTopLine 
          text='انتشارات سمیع'
-         textBorder='off-bottom'
+         textBorder='purple-bottom'
          containerBorder='gray-bottom'
          >
          <div className='first-slider-left-container'>

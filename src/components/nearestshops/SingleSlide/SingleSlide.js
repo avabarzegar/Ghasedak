@@ -1,11 +1,11 @@
 import React from 'react';
-import './BestshopSingleslide.css'
+import './SingleSlide.css'
 
-const BestshopSingleslide = () => {
+const SingleSlide = () => {
    return (
       <div>
          <div className='slides-near-shops'>
-            <div className='bg-color-nearestshops'>
+            <div className='bg-color-shops'>
                
             </div>
             <span>کتاب فروشی سیمرغ</span>
@@ -14,4 +14,4 @@ const BestshopSingleslide = () => {
    )
 }
 
-export default BestshopSingleslide;
+export default SingleSlide;

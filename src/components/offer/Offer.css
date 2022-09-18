@@ -10,7 +10,7 @@
 .parent-discont-component {
    display: flex;
    align-items: center;
-   justify-content: end;
+   justify-content: start;
 }
 
 .parent-info-books {
@@ -19,9 +19,6 @@
 }
 
 @media screen and (max-width:1200px) {
-   .parent-discont-component {
-      justify-content: end;
-   }
 
    .parent-section-offer {
       padding: 2rem 0;
@@ -45,10 +42,16 @@
 
    .parent-info-books {
       margin-top: 1rem;
-      justify-content: start;
    }
 }
-
+@media screen and (max-width:768px) {
+   .parent-section-offer{
+      position: relative;
+   }
+   .parent-discont-component{
+      position:absolute;
+   }
+}
 @media screen and (max-width:420px) {
    .parent-discont-component {
 
@@ -67,7 +70,6 @@
 
 @media screen and (max-width:350px) {
    .parent-discont-component {
-
       justify-content: center;
    }
 

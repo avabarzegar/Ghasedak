@@ -8,7 +8,7 @@ import SliderTopLine from '../../SliderTopLine/SliderTopLine';
 import SliderNavigation from '../../SliderNavigation/SliderNavigation';
 import BookSimpleCard from '../../BookCard/BookSimpleCard/BookSimpleCard';
 import BookDetailedCard from '../../BookCard/BookDetailedCard/BookDetailedCard';
-import SeeAllShops from '../../seeallshops/Seeallshops';
+import SeeAllShops from '../../SeeAllShops/SeeAllShops';
 import './MostSaleSlides.css';
 
 
@@ -38,7 +38,7 @@ const MostSaleSlides =()=>{
   useEffect(()=>{
        
     //    === get slides data from api ===
-        axios.get(' ')
+        axios.post(' ')
         .then((response)=>{
             const slideData=[];
             response.data.splice(0,12).map((item)=>{
@@ -86,7 +86,7 @@ const MostSaleSlides =()=>{
 
         <SliderTopLine 
          text='پرفروش ترین ها'
-         textBorder='off-bottom'
+         textBorder='purple-bottom'
          containerBorder='gray-bottom'
          >
          <div className='first-slider-left-container'>

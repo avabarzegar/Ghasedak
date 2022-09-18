@@ -1,21 +1,24 @@
 // Import Swiper React components
 import {  SwiperSlide ,Swiper } from 'swiper/react';
-import SwiperCore,{ Virtual , Navigation , Autoplay } from 'swiper';
+import SwiperCore,{ Navigation , Autoplay } from 'swiper';
 import { React ,useState ,useEffect , useRef ,useCallback}  from 'react';
 import axios from 'axios';
 import SliderTopLine from '../../SliderTopLine/SliderTopLine';
 import SliderNavigation from '../../SliderNavigation/SliderNavigation';
-import BestshopSingleslide from '../bestshopSingleslide/BestshopSingleslide';
-import SeeAllShops from '../../seeallshops/Seeallshops';
+import BestShopsSingleSlide from '../BestShopsSingleSlide/BestShopsSingleSlide';
+import SeeAllShops from '../../SeeAllShops/SeeAllShops';
+import { Col } from 'react-bootstrap';
+import SliderLayout from '../../SliderLayout/SliderLayout';
+
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 
-import './BestshopsSlides.css';
+import './BestShopsSlides.css';
 
 // === mapping swiper slides ===
-const BestshopsSlides =()=>{
+const BestShopsSlides =()=>{
     
   // refer hook
   const navigationPrevRef = useRef(null)
@@ -25,14 +28,13 @@ const BestshopsSlides =()=>{
   
   // state hook 
   const [swiperRef, setSwiperRef] = useState();
-    const [slide , setSlide] =useState([]);
-    const [swiperChange , setSwiperChange] =useState();
+  const [slide , setSlide] =useState([]);
   // state hook end
 
     useEffect(()=>{
        
     //    === get slides data from api ===
-        axios.get(' ')
+        axios.post(' ')
         .then((response)=>{
             const slideData=[];
             for(const item in response.data.splice(0,12)){
@@ -54,32 +56,30 @@ const BestshopsSlides =()=>{
 
     } , [])
     
-    // == use swiper autoplay ==
-    // SwiperCore.use([Autoplay])
+    // == use swiper autoplay & navigation ==
+    SwiperCore.use([Navigation , Autoplay])
     // == use swiper autoplay end ==
-    SwiperCore.use([Navigation])
+   
    
     const handleLeftClick = useCallback(() => {
       if (!swiperRef) return;
       swiperRef.slidePrev();
-      swiperChange.slideTo(0)
     }, [swiperRef]);
  
     const handleRightClick = useCallback(() => {
       if (!swiperRef) return;
       swiperRef.slideNext();
-      swiperChange.slideTo(0)
     }, [swiperRef]);
  
-  //  let SwiperSlide;
+
 
     return(
-       <>
+       <section>
         {/* first section of slider  */}
         <SliderTopLine 
-         text='  فروشگاه های برتر  '
+         text='فروشگاه های برتر'
          textBorder='purple-bottom'
-         paddingText='padding-bottom'
+         containerBorder='gray-bottom'
          >
          <div className='first-slider-left-container'>
             
@@ -97,12 +97,15 @@ const BestshopsSlides =()=>{
 
 
 
+        {/* slider container section  */}
+        <SliderLayout>
+
         {/* // slider  */}
+        <Col xl={11} xs={10} className='type-two-book-slider-container'>
         <Swiper
           className='nearshop-swiper'
-          onSlideChange={setSwiperChange}
           onSwiper={setSwiperRef}
-          modules={[Navigation , Virtual]}
+          modules={[Navigation , Autoplay]}
           dir={'rtl'}
           autoplay={{delay: 2000}}
           spaceBetween={20}
@@ -125,44 +128,32 @@ const BestshopsSlides =()=>{
           }}
 
         >
-
-          {/* seeallshops btn */}
-          <SeeAllShops />
-       
-         {/* seeallshops btn */}
+          
           {slide.map((item) => {
             return(
                 // == return swiper slides ==
 
                 <SwiperSlide className='nearshop-slide width-slides' key={item.id}>
-                  {()=>{
-                    if(item.id==0){
-                      return <BestshopSingleslide />
-                    }
-                    else{
-                      return <BestshopSingleslide />
-                    }
-                  }
-
-                  }
-                    {/* {({ isActive }) => {
-                        if(isActive){
-                            return <ActiveSlide />
-                        }
-                        if(!isActive){
-                            return <NonActiveSlide />
-                        }
-                      }
-                    } */}
+                  <BestShopsSingleSlide />
                 </SwiperSlide>
                 // == return swiper slides end ==
             )           
           })}
-        </Swiper>  
-        {/* // slider end */}
-    </>
+          
+        </Swiper> 
+        </Col> 
+       
+          {/* // slider end */}
+          <Col xl={1} xs={2} className='see-all-column'>
+          {/* see all products  */}
+           <SeeAllShops
+           height='see-shop-height'
+           title='مشـــــاهده  همـــــــــــــه  فروشگاه ها '
+           />
+          {/* see all products end */}
+         </Col>
+         </SliderLayout>
+    </section>
     )
 }
-
-
-export default BestshopsSlides;
+export default BestShopsSlides;

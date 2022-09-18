@@ -44,7 +44,7 @@ const BookDetailedCard = (props) =>{
                   </Col>
                   <Col xs={6}>
                      <div className="book_pic_suggest">
-                        <img src={props.img} width='100%' height='100%' alt='book image' />
+                        <img src={Plague} width='100%' height='100%' alt='book image' />
                      </div>
                   </Col>
                </Row>

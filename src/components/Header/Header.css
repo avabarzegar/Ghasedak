@@ -1,11 +1,14 @@
 .header{
-   margin-top: 10rem;
+   margin-top: 12rem;
 }
 
 @media screen and (max-width:1200px) {
  .herosuggest_book{
-      margin-top: 3.5rem;
+      display: none;
    }  
+   .header{
+      margin-top: 10rem;
+   }
 }
 
 
@@ -16,14 +19,12 @@
  .herosuggest_book{
       margin-top: 4rem;
    }  
-   .header{
-      margin-top: 8rem;
-   }
+   
    
 }
 @media screen and (max-width:295px) {
    .header{
-      margin-top: 7rem;
+      margin-top: 10rem;
    }
    .slider_parent_section{
       height: 140%;

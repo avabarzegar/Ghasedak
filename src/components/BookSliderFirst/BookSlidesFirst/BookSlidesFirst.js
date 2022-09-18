@@ -35,7 +35,7 @@ const BookSlidesFirst =()=>{
     useEffect(()=>{
        
     //    === get slides data from api ===
-        axios.get(' ')
+        axios.post(' ')
         .then((response)=>{
             const slideData=[];
             response.data.splice(0,12).map((item)=>{
@@ -81,7 +81,7 @@ const BookSlidesFirst =()=>{
         {/* first section of slider  */}
         <SliderTopLine 
          text='تخفیف های ویژه'
-         textBorder='orange-bottom'
+         textBorder='off-bottom'
          containerBorder='off-bottom'
          >
          <div className='first-slider-left-container'>
@@ -142,15 +142,7 @@ const BookSlidesFirst =()=>{
                   }
 
                   }
-                    {/* {({ isActive }) => {
-                        if(isActive){
-                            return <ActiveSlide />
-                        }
-                        if(!isActive){
-                            return <NonActiveSlide />
-                        }
-                      }
-                    } */}
+                   
                 </SwiperSlide>
                 // == return swiper slides end ==
             )           

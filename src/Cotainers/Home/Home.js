@@ -5,23 +5,23 @@ import BookSliderFirst from "../../components/BookSliderFirst/BookSliderFirst";
 import MostSaleSlider from '../../components/MostSaleSlider/MostSaleSlider';
 // Home page section components end
 import { Container } from "react-bootstrap";
-import Nearestshops from '../../components/nearestshops/nearestshops'
-import Bestshops from '../../components/bestshops/Bestshops'
-import Offer from "../../components/offer/Offer";
+import NearestShops from '../../components/NearestShops/NearestShops'
+import BestShops from '../../components/BestShops/BestShops'
+import Offer from "../../components/Offer/Offer";
 import PopularBooksSlider from "../../components/PopularBooksSlider/PopularBooksSlider";
 import ThirdPublisherSlider from "../../components/ThirdPublisherSlider/ThirdPublisherSlider";
 import SamiPublisherSlider from "../../components/SamiPublisherSlider/SamiPublisherSlider";
 const Home =()=>{
     return(
     // === the first type of slider used in home page ===
-    <Container style={{paddingBottom : '4rem'}} >
+    <Container>
         <Header />
         <BookSliderFirst />
         <MostSaleSlider />
-        <Nearestshops />
+        <NearestShops />
         <Offer />
         <PopularBooksSlider />
-        <Bestshops />
+        <BestShops />
         <ThirdPublisherSlider />
         <SamiPublisherSlider />
     </Container>

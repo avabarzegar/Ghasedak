@@ -19,16 +19,16 @@
 }
 @media screen and (max-width:992px) {
    .parent-section-bookoffer {
-      width: 175px;
+      width: 130px;
       height: 175px;
-      bottom: 10%;
+      bottom: 5%;
       right: 4%;
    }
 }
 
-@media screen and (max-width:768px) {
+@media screen and (min-width:768px) {
    .parent-section-bookoffer {
-      display: none;
+      display: block;
    }
 }
 

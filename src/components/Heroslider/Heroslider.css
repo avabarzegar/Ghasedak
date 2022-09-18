@@ -72,14 +72,14 @@
    height: 100%;
 }
 
-.container_section_heroslider {
-   height: 30rem;
+.slider_parent_section .container_section_heroslider {
+   height: 100%;
 }
 
 @media screen and (max-width:1400px) {
 
    .container_section_heroslider {
-      height: 35rem;
+      height: 100%;
    }
 }
 

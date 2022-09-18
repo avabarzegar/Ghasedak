@@ -25,15 +25,7 @@
       right: 4%;
    }
 }
-@media screen and (max-width:768px) {
-   .parent-section-bookoffer{
-      position: relative;
-   }
-   .book-offer-parent{
-      display: flex;
-      align: center;
-   }
-}
+
 @media screen and (max-width:420px) {
    .parent-section-bookoffer {
       display: none;

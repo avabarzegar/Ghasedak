@@ -151,19 +151,14 @@ const PopularBooksSlides =()=>{
         >
         
 
-          {slide.map((item) => {
+        {slide.map((item,index) => {
             return(
                 // == return swiper slides ==
 
                 <SwiperSlide className='book-slide' key={item.id}>
                   {()=>{
-                    if(item.id == 30){
-                      return <BookDetailedCard
-                      name={item.name}
-                      author={item.author}
-                      publisher={item.publisher}
-                      img={item.image}
-                      />
+                    if(index == 0){
+                      return <BookDetailedCard />
                     }
                     else{
                       return <BookSimpleCard />
@@ -171,10 +166,12 @@ const PopularBooksSlides =()=>{
                   }
 
                   }
+                   
                 </SwiperSlide>
                 // == return swiper slides end ==
             )           
           })}
+          
         </Swiper>  
           </Col>
         {/* // slider end */}

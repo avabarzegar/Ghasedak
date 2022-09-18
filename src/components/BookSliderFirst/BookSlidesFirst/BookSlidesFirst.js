@@ -144,13 +144,13 @@ const BookSlidesFirst =()=>{
         >
         
 
-          {slide.map((item) => {
+          {slide.map((item,index) => {
             return(
                 // == return swiper slides ==
 
                 <SwiperSlide className='book-slide' key={item.id}>
                   {()=>{
-                    if(item == 0){
+                    if(index == 0){
                       return <BookDetailedCard />
                     }
                     else{

@@ -26,7 +26,7 @@
    }
 }
 
-@media screen and (max-width:420px) {
+@media screen and (max-width:768px) {
    .parent-section-bookoffer {
       display: none;
    }

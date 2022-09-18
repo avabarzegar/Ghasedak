@@ -1,9 +1,9 @@
 import React from "react";
-import './PriceAndDiscount.css';
+import './PriceandDiscount.css';
 import Toman from '../../../assets/Images/icon/toman.svg'
 import PriceLabel from "./PriceLabel";
 
-const PriceAndDiscount = () => {
+const PriceandDiscount = () => {
    return (
       <div className="parnet-section-price">
          <div className="green-price-parent">
@@ -17,4 +17,4 @@ const PriceAndDiscount = () => {
    )
 }
 
-export default PriceAndDiscount;
+export default PriceandDiscount;

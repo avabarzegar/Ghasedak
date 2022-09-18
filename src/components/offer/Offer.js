@@ -1,9 +1,9 @@
 import React from "react";
 import { Container, Col, Row } from "react-bootstrap";
-import InfoBooks from "./BookInfo/InfoBooks";
+import InfoBooks from "./bookinfo/InfoBooks";
 import BookOffer from "./BookOffer/BookOffer";
 import PriceAndDiscount from "./PriceAndDiscount/PriceAndDiscount";
-import CircleOffer from "./CircleOffer/CircleOffer";
+import CircleOffer from "./circleoffer/CircleOffer";
 import Book from '../../assets/Images/Books/image 1.png'
 import './Offer.css';
 

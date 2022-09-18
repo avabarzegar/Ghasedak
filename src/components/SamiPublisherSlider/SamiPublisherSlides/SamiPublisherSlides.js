@@ -7,7 +7,7 @@ import axios from 'axios';
 import SliderTopLine from '../../SliderTopLine/SliderTopLine';
 import SliderNavigation from '../../SliderNavigation/SliderNavigation';
 import BookSimpleCard from '../../BookCard/BookSimpleCard/BookSimpleCard';
-import SeeAllShops from '../../SeeAllShops/SeeAllShops';
+import SeeAllShops from '../../seeallshops/Seeallshops';
 import './SamiPublisherSlides.css';
 
 

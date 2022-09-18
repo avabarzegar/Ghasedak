@@ -8,7 +8,7 @@ import SliderTopLine from '../../SliderTopLine/SliderTopLine';
 import SliderNavigation from '../../SliderNavigation/SliderNavigation';
 import BookSimpleCard from '../../BookCard/BookSimpleCard/BookSimpleCard';
 import BookDetailedCard from '../../BookCard/BookDetailedCard/BookDetailedCard';
-import SeeAllShops from '../../SeeAllShops/SeeAllShops';
+import SeeAllShops from '../../seeallshops/Seeallshops';
 import './PopularBooksSlides.css';
 
 

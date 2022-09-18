@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const BestShopsSingleSlide = () => {
+const BestShopssingleslide = () => {
    return (
       <div>
          <div className='slides-near-shops'>
@@ -14,4 +14,4 @@ const BestShopsSingleSlide = () => {
    )
 }
 
-export default BestShopsSingleSlide;
+export default BestShopssingleslide;

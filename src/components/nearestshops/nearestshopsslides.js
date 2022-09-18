@@ -6,7 +6,7 @@ import axios from 'axios';
 import SliderTopLine from '../SliderTopLine/SliderTopLine';
 import SliderNavigation from '../SliderNavigation/SliderNavigation';
 import SingleSlide from './SingleSlide/SingleSlide';
-import SeeAllShops from '../SeeAllShops/SeeAllShops';
+import SeeAllShops from '../seeallshops/Seeallshops';
 import { Col } from 'react-bootstrap';
 import SliderLayout from '../SliderLayout/SliderLayout';
 
@@ -15,7 +15,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 
-import './NearestShopsSlides.css';
+import './nearestshopsslides.css';
 
 
 // === mapping swiper slides ===

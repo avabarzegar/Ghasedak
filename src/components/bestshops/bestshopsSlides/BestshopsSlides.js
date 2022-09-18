@@ -5,8 +5,8 @@ import { React ,useState ,useEffect , useRef ,useCallback}  from 'react';
 import axios from 'axios';
 import SliderTopLine from '../../SliderTopLine/SliderTopLine';
 import SliderNavigation from '../../SliderNavigation/SliderNavigation';
-import BestShopsSingleSlide from '../BestShopsSingleSlide/BestShopsSingleSlide';
-import SeeAllShops from '../../SeeAllShops/SeeAllShops';
+import BestShopssingleslide from '../../bestshops/BestShopsSingleSlide/BestShopsSingleSlide';
+import SeeAllShops from '../../seeallshops/Seeallshops';
 import { Col } from 'react-bootstrap';
 import SliderLayout from '../../SliderLayout/SliderLayout';
 
@@ -15,7 +15,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 
-import './BestShopsSlides.css';
+import './BestshopsSlides.css';
 
 // === mapping swiper slides ===
 const BestShopsSlides =()=>{
@@ -134,7 +134,7 @@ const BestShopsSlides =()=>{
                 // == return swiper slides ==
 
                 <SwiperSlide className='nearshop-slide width-slides' key={item.id}>
-                  <BestShopsSingleSlide />
+                  <BestShopssingleslide />
                 </SwiperSlide>
                 // == return swiper slides end ==
             )           

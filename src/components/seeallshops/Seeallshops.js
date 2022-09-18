@@ -1,8 +1,8 @@
 import React from "react";
 import EyeSeeAll from '../../assets/Images/icon/vuesax.png';
-import './SeeAllShops.css';
+import './Seeallshops.css';
 
-const SeeAllShops = (props) => {
+const seeallshops = (props) => {
    return (
       <div className={`see-all-container ${props.height}`}>
          <div className='see-all-shops'>
@@ -15,4 +15,4 @@ const SeeAllShops = (props) => {
    )
 } 
 
-export default SeeAllShops;
+export default seeallshops;

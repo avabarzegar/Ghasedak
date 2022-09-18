@@ -1,7 +1,7 @@
 import React from 'react';
-import './SingleSlide.css'
+import './SingleSlide';
 
-const SingleSlide = () => {
+const singleslide = () => {
    return (
       <div>
          <div className='slides-near-shops'>
@@ -14,4 +14,4 @@ const SingleSlide = () => {
    )
 }
 
-export default SingleSlide;
+export default singleslide;

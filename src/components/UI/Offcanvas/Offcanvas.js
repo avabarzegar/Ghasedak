@@ -17,7 +17,7 @@ function StyledOffcanvas(props) {
         {props.btnChildren}
       </Button>
 
-      <Offcanvas placement='top' show={show} onHide={handleClose}>
+      <Offcanvas className='search-offcanvas' placement='top' show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>{props.title}</Offcanvas.Title>
         </Offcanvas.Header>

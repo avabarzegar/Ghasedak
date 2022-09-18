@@ -71,10 +71,10 @@
    border-radius: 15px;
    height: 100%;
 }
-
-.slider_parent_section .container_section_heroslider {
+.container_section_heroslider{
    height: 100%;
 }
+
 
 @media screen and (max-width:1400px) {
 
@@ -269,9 +269,6 @@
       padding: 1px;
    }
 
-   .slider_parent_section {
-      height: 125%;
-   }
 
    .slider_parent_section .carousel-indicators {
       bottom: -2px;

@@ -5,7 +5,7 @@ import Offer from '../offer/Offer';
 
 const OfferSliderBook = () => {
    return (
-      <Container className="container_section_heroslider">
+      <Container className="offer-container container_section_heroslider">
          <Carousel className='slider_parent_section slider-parent-section-offer-book'>
             <Carousel.Item interval={1000}>
               <Offer />

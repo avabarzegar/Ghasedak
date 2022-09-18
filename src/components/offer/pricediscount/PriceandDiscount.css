@@ -81,6 +81,12 @@
    }
 }
 
+@media screen and (max-width:768px){
+   .parnet-section-price {
+      margin-top: 0rem;
+   }
+}
+
 @media screen and (max-width:420px) {
    .green-color-txt {
       color: var(--green-color);

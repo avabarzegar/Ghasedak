@@ -49,6 +49,11 @@
    }
 }
 
+@media screen and (max-width:768px) {
+   .parent-info-books{
+      justify-content: center ;
+   }
+}
 @media screen and (max-width:420px) {
    .parent-discont-component {
 

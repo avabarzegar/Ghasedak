@@ -1,7 +1,7 @@
 .see-all-container{
    display: flex;
    justify-content: flex-end;
-   width:100%;
+   width:5%;
 }
 .see-all-shops {
    display: flex;
@@ -33,7 +33,7 @@
 
 @media screen and (max-width:1200px) {
    .see-all-container{
-      width:80%;
+      width:5%;
    }
 }
 @media screen and (max-width:992px) {

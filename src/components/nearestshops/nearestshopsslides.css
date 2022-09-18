@@ -24,3 +24,8 @@
    padding-bottom: .5rem;
 }
 
+.parent-seeall-slider-near{
+   display: flex;
+   justify-content: space-between;
+}
+

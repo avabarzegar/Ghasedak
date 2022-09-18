@@ -7,7 +7,7 @@ import MostSaleSlider from '../../components/MostSaleSlider/MostSaleSlider';
 import { Container } from "react-bootstrap";
 import NearestShops from '../../components/nearestshops/nearestshops';
 import BestShops from '../../components/bestshops/Bestshops';
-import Offer from "../../components/offer/Offer";
+import OfferSliderBook from "../../components/OfferSliderBook/OfferSliderBook";
 import PopularBooksSlider from "../../components/PopularBooksSlider/PopularBooksSlider";
 import ThirdPublisherSlider from "../../components/ThirdPublisherSlider/ThirdPublisherSlider";
 import SamiPublisherSlider from "../../components/SamiPublisherSlider/SamiPublisherSlider";
@@ -19,7 +19,7 @@ const Home =()=>{
         <BookSliderFirst />
         <MostSaleSlider />
         <NearestShops />
-        <Offer />
+        <OfferSliderBook />
         <PopularBooksSlider />
         <BestShops />
         <ThirdPublisherSlider />

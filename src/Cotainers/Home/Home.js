@@ -18,7 +18,6 @@ const Home =()=>{
         <Header />
         <BookSliderFirst />
         <MostSaleSlider />
-        <NearestShops />
         <OfferSliderBook />
         <PopularBooksSlider />
         <BestShops />

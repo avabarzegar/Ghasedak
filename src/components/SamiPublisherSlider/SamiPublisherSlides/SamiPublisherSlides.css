@@ -1,0 +1,12 @@
+.slider-last-one .swiper-wrapper .swiper-slide:first-child {
+    width: 240px !important;
+}
+
+@media screen and (max-width:500px) {
+
+    .slider-last-one .swiper-wrapper .swiper-slide:first-child,
+    .slider-last-one .swiper-wrapper .swiper-slide {
+        width: auto !important;
+    }
+
+}

@@ -126,7 +126,7 @@ const ThirdPublisherSlider =()=>{
           {/* // slider  */}
           <Col xl={11} xs={10} className='type-two-book-slider-container'>
         <Swiper
-          className='type-two-book-slider'
+          className='slider-last-one type-two-book-slider'
           slidesPerGroup={1}
           slidesPerView={'auto'}
           dir={'rtl'}

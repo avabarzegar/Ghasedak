@@ -32,6 +32,13 @@
    }
 }
 
+@media screen and (max-width:767px) {
+   .parent-section-bookoffer {
+      display: none;
+   }
+}
+
+
 @media screen and (max-width:350px) {
    .parent-section-bookoffer {
       display: none;

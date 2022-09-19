@@ -21,7 +21,7 @@
    background-color: white;
    opacity: 1 !important;
    padding: 10;
-   bottom: 14%;
+   bottom: 26%;
 }
 
 .slider-parent-section-offer-book .carousel-control-next {
@@ -36,7 +36,7 @@
 
 .slider-parent-section-offer-book .carousel-indicators {
    left: .5%;
-   bottom: 11%;
+   bottom: 23%;
    right: unset;
    margin-left: 5% !important;
    background-color: var(--white-color);
@@ -94,8 +94,8 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom: 8.5%;
-      left: 20%;
+      bottom: 28%;
+      left: 1%;
       padding: .01rem .25rem;
       right: unset;
    }
@@ -112,6 +112,7 @@
       width: 2rem;
       height: 2rem;
       padding: 1px;
+      bottom: 30%;
    }
 
    .slider_parent_section {
@@ -121,7 +122,10 @@
 
 
    .slider-parent-section-offer-book .carousel-control-next {
-      left: 50%;
+      left: 17.5%;
+   }
+   .slider-parent-section-offer-book .carousel-control-prev{
+      left: 2%;
    }
 
 }
@@ -130,7 +134,7 @@
 
    .slider-parent-section-offer-book .carousel-control-prev,
    .slider-parent-section-offer-book .carousel-control-next {
-      bottom: -6%;
+      bottom: 8%;
    }
 
    .slider-parent-section-offer-book .carousel-control-next {
@@ -138,7 +142,7 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom: -10%;
+      bottom: 4%;
       left: 2%;
       padding: .01rem .25rem;
       right: unset;
@@ -166,7 +170,7 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom: -10%;
+      bottom: 29%;
       left: 6%;
       padding: .01rem .25rem;
       right: unset;
@@ -183,7 +187,7 @@
    .slider-parent-section-offer-book .carousel-control-next {
       width: 2rem;
       height: 2rem;
-      bottom: -6%;
+      bottom:32%;
       padding: 1px;
    }
 
@@ -214,7 +218,7 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom: -10%;
+      bottom: 28%;
       left: 5%;
       padding: .01rem .25rem;
       right: unset;
@@ -232,6 +236,7 @@
       width: 2rem;
       height: 2rem;
       padding: 1px;
+      bottom: 31%;
    }
 
    .slider_parent_section {
@@ -259,7 +264,7 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom: -8.5%;
+      bottom: 3%;
       left: 10%;
       padding: .01rem .25rem;
       right: unset;
@@ -277,7 +282,7 @@
       width: 2rem;
       height: 2rem;
       padding: 1px;
-      bottom: -5%;
+      bottom: 6%;
    }
 
    .slider_parent_section {
@@ -304,7 +309,7 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom: -8.5%;
+      bottom: 2.5%;
       left: 10%;
       padding: .01rem .25rem;
       right: unset;
@@ -322,7 +327,7 @@
       width: 2rem;
       height: 2rem;
       padding: 1px;
-      bottom: -5%;
+      bottom: 6%;
    }
 
    .slider_parent_section {
@@ -353,7 +358,7 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom: -9%;
+      bottom: 2%;
       left: 10%;
       right: unset;
       padding: .1rem .25rem;
@@ -370,7 +375,7 @@
    .slider-parent-section-offer-book .carousel-control-next {
       width: 2rem;
       height: 2rem;
-      bottom: -5%;
+      bottom: 5%;
    }
 }
 
@@ -387,7 +392,7 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom: -9%;
+      bottom:1%;
       left: 15% !important;
       padding: .1rem .5rem;
    }
@@ -424,7 +429,7 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom: -9%;
+      bottom: 1%;
       left: 15% !important;
       padding: .1rem .5rem;
    }

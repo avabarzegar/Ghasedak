@@ -57,7 +57,7 @@
       font-size: 25px;
       border:4px solid var(--white-color);
       bottom: unset;
-      top: -10%;
+      top: 0%;
    }
 }
 
@@ -69,6 +69,6 @@
       font-size: 25px;
       border:4px solid var(--white-color);
       bottom: unset;
-      top: -10%;
+      top: 0%;
    }
 }

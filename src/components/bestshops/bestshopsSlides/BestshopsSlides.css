@@ -4,11 +4,6 @@
    transition: .4s;
 }
 
-.width-slides {
-   max-width: 150px !important;
-
-   max-height: 130px !important;
-}
 
 .nearshop-swiper {
    padding: 40px;
@@ -23,4 +18,19 @@
 
 .padding-bottom {
    padding-bottom: .5rem;
+}
+
+@media screen and (min-width:576px) {
+
+   .width-slides {
+      max-width: 150px !important;
+      max-height: 130px !important;
+   }
+}
+
+@media screen and (max-width:576px) {
+   .nearshop-swiper .book-slide-two {
+      margin: auto 5px !important;
+   }
+
 }

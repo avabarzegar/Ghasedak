@@ -4,7 +4,7 @@ import MostSaleSlides from "./MostSlaleSlides/MostSaleSlides";
 
 
 // === most sale slider  ===
-const MostSaleSlider = ()=>{
+const MostSaleMonthSlider = ()=>{
     return(
         <BookSliderLayout className='book-slider-layout'>
             <MostSaleSlides />
@@ -15,4 +15,4 @@ const MostSaleSlider = ()=>{
 // === most sale slider end  ===
 
 
-export default MostSaleSlider;
+export default MostSaleMonthSlider;

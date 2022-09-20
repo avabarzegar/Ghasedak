@@ -11,6 +11,10 @@ import OfferSliderBook from "../../components/OfferSliderBook/OfferSliderBook";
 import PopularBooksSlider from "../../components/PopularBooksSlider/PopularBooksSlider";
 import ThirdPublisherSlider from "../../components/ThirdPublisherSlider/ThirdPublisherSlider";
 import SamiPublisherSlider from "../../components/SamiPublisherSlider/SamiPublisherSlider";
+import MostSaleMonthSlider from "../../components/MostSaleMonthSlider/MostSaleMonthSlider";
+import MostSaleYearSlider from "../../components/MostSaleYearSlider/MostSaleYearSlider";
+
+
 const Home =()=>{
     return(
     // === the first type of slider used in home page ===
@@ -18,6 +22,8 @@ const Home =()=>{
         <Header />
         <BookSliderFirst />
         <MostSaleSlider />
+        <MostSaleMonthSlider />
+        <MostSaleYearSlider />
         <NearestShops />
         <OfferSliderBook />
         <PopularBooksSlider />

@@ -5,7 +5,6 @@
     padding: 1.5rem;
     border-radius: 20px;
     position: relative;
-    box-shadow: var(--web-main-shadow);
 }
 
 .simple-book-card {
@@ -62,11 +61,4 @@
 .simple-card-prices{
     display: flex;
     flex-direction: column;
-}
-
-@media screen and (min-width:1200px) {
-
-    .simple-card-container {
-        height: 380px
-    }
 }

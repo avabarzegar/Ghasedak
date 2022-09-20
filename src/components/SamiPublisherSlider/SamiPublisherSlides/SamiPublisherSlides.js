@@ -127,14 +127,11 @@ const SamiPublisherSlides =()=>{
           <Col xl={11} xs={10} className='type-two-book-slider-container'>
         <Swiper
           className='slider-last-one type-two-book-slider'
-          slidesPerGroup={1}
-          slidesPerView={'auto'}
-          dir={'rtl'}
-          modules={[Navigation , Autoplay]}
+          modules={[Navigation , Autoplay ]}
           onSwiper={setSwiperRef}
           autoplay={{delay: 2000}}
-          spaceBetween={40}
-          initialSlide={0}
+          loop={true}
+          slidesPerGroup={1}
           navigation={{
             prevEl: navigationPrevRef.current,
             nextEl: navigationNextRef.current,
@@ -147,6 +144,36 @@ const SamiPublisherSlides =()=>{
             el: '.swiper-scrollbar',
             draggable: true,
           }}
+
+          breakpoints= {{
+           
+            // when window width is >= 576px
+            576: {
+              slidesPerView: 1.5 ,
+              spaceBetween: 0
+            },
+
+            // when window width is >= 768px
+            768: {
+              slidesPerView: 1.5 ,  
+              spaceBetween: 25
+            },
+
+            // when window width is >= 992px
+            992:{
+              slidesPerView: 3 ,
+            },
+
+            // when window width is >= 1200px
+            1200 :{
+              slidesPerView: 3.5 ,
+            },
+
+            // when window width is >= 1400px
+            1400 : {
+              slidesPerView: 4 ,
+            }
+          }}
         >
         
 
@@ -154,7 +181,7 @@ const SamiPublisherSlides =()=>{
             return(
                 // == return swiper slides ==
 
-                <SwiperSlide className='book-slide' key={item.id}>
+                <SwiperSlide className='book-slide-two' key={item.id}>
                     <BookSimpleCard />
                 </SwiperSlide>
                 // == return swiper slides end ==

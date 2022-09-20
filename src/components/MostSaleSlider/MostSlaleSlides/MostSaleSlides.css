@@ -1,10 +1,5 @@
 .type-two-book-slider .swiper-wrapper .swiper-slide {
-    width: 240px !important;
     transition: .4s;
-}
-
-.type-two-book-slider .swiper-wrapper .swiper-slide:first-child {
-    width: 400px !important;
 }
 
 .type-two-book-slider {
@@ -28,13 +23,4 @@
     .type-two-book-slider-container {
         padding-left: 3rem;
     }
-}
-
-@media screen and (max-width:500px) {
-
-    .type-two-book-slider .swiper-wrapper .swiper-slide:first-child,
-    .type-two-book-slider .swiper-wrapper .swiper-slide {
-        width: auto !important;
-    }
-
 }

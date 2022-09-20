@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import BestShopsSlides from './bestshopsSlides/BestshopsSlides';
-import './Bestshops.css'
+
 // === first book slider layout ===
 const BestShops = ()=>{
     return(

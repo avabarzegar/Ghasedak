@@ -115,7 +115,7 @@
       bottom: 30%;
    }
 
-   .slider_parent_section {
+   .offer-container {
       height: 125%;
    }
 
@@ -124,7 +124,8 @@
    .slider-parent-section-offer-book .carousel-control-next {
       left: 17.5%;
    }
-   .slider-parent-section-offer-book .carousel-control-prev{
+
+   .slider-parent-section-offer-book .carousel-control-prev {
       left: 2%;
    }
 
@@ -147,10 +148,10 @@
       padding: .01rem .25rem;
       right: unset;
    }
-   
-.offer-container {
-   height: 20rem;
-}
+
+   .offer-container {
+      height: 20rem;
+   }
 }
 
 @media screen and (max-width:992px) {
@@ -187,11 +188,11 @@
    .slider-parent-section-offer-book .carousel-control-next {
       width: 2rem;
       height: 2rem;
-      bottom:32%;
+      bottom: 32%;
       padding: 1px;
    }
 
-   .slider_parent_section {
+   .offer-container .slider_parent_section {
       height: 125%;
    }
 
@@ -239,7 +240,7 @@
       bottom: 31%;
    }
 
-   .slider_parent_section {
+   .offer-container .slider_parent_section {
       height: 125%;
    }
 
@@ -392,7 +393,7 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom:1%;
+      bottom: 1%;
       left: 15% !important;
       padding: .1rem .5rem;
    }

@@ -1,6 +1,5 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import './nearestshops.css';
 import NearestshopsSlides from "./nearestshopsslides";
 
 // === first book slider layout ===

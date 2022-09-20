@@ -126,10 +126,8 @@ const BestShopsSlides =()=>{
           className='nearshop-swiper'
           onSwiper={setSwiperRef}
           modules={[Navigation , Autoplay]}
-          dir={'rtl'}
           autoplay={{delay: 2000}}
-          spaceBetween={20}
-          slidesPerView ={'auto'}
+          slidesPerView ={1}
           initialSlide={0}
           slidesPerGroup={1}
           loop={false}
@@ -146,14 +144,44 @@ const BestShopsSlides =()=>{
             el: '.swiper-scrollbar',
             draggable: true,
           }}
+          breakpoints= {{
+            0:{
+              slidesPerView: 1 ,
+              spaceBetween: 0
+            },
+            576: {
+              slidesPerView: 1.5 ,
+              spaceBetween: 25
+            },
 
+            
+            768: {
+              slidesPerView: 1.5 ,  
+              spaceBetween: 25
+            },
+
+           
+            992:{
+              slidesPerView: 3 ,
+            },
+
+            
+            1200 :{
+              slidesPerView: 3.5 ,
+            },
+
+            
+            1400 : {
+              slidesPerView: 4 ,
+            }
+          }}
         >
           
           {slide.map((item) => {
             return(
                 // == return swiper slides ==
 
-                <SwiperSlide className='nearshop-slide width-slides' key={item.id}>
+                <SwiperSlide className='book-slide-two nearshop-slide width-slides' key={item.id}>
                   <BestShopssingleslide />
                 </SwiperSlide>
                 // == return swiper slides end ==

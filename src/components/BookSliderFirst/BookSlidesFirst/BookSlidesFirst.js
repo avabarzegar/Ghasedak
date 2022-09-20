@@ -6,7 +6,6 @@ import axios from 'axios';
 import SliderTopLine from '../../SliderTopLine/SliderTopLine';
 import SliderNavigation from '../../SliderNavigation/SliderNavigation';
 import BookSimpleCard from '../../BookCard/BookSimpleCard/BookSimpleCard';
-import BookDetailedCard from '../../BookCard/BookDetailedCard/BookDetailedCard';
 import './BookSlidesFirst.css';
 
 
@@ -98,7 +97,7 @@ const BookSlidesFirst =()=>{
         {/* first section of slider  */}
         <SliderTopLine 
          text='تخفیف های ویژه'
-         textBorder='off-bottom'
+         textBorder='orange-bottom'
          containerBorder='off-bottom'
          >
          <div className='first-slider-left-container'>
@@ -122,13 +121,11 @@ const BookSlidesFirst =()=>{
         {/* // slider  */}
         <Swiper
           className='book-swiper'
-          slidesPerGroup={1}
-          slidesPerView={'auto'}
-          modules={[Navigation , Autoplay]}
+          modules={[Navigation , Autoplay ]}
           onSwiper={setSwiperRef}
           autoplay={{delay: 2000}}
-          spaceBetween={20}
-          initialSlide={0}
+          loop={true}
+          slidesPerGroup={1}
           navigation={{
             prevEl: navigationPrevRef.current,
             nextEl: navigationNextRef.current,
@@ -141,25 +138,47 @@ const BookSlidesFirst =()=>{
             el: '.swiper-scrollbar',
             draggable: true,
           }}
+
+          breakpoints= {{
+            0:{
+              slidesPerView: 1 ,
+              spaceBetween: 0
+            },
+            576: {
+              slidesPerView: 1.5 ,
+              spaceBetween: 25
+            },
+
+            
+            768: {
+              slidesPerView: 1.5 ,  
+              spaceBetween: 25
+            },
+
+           
+            992:{
+              slidesPerView: 3 ,
+            },
+
+            
+            1200 :{
+              slidesPerView: 3.5 ,
+            },
+
+            
+            1400 : {
+              slidesPerView: 4 ,
+            }
+          }}
         >
         
 
-          {slide.map((item,index) => {
+          {slide.map((item) => {
             return(
                 // == return swiper slides ==
 
                 <SwiperSlide className='book-slide' key={item.id}>
-                  {()=>{
-                    if(index == 0){
-                      return <BookDetailedCard />
-                    }
-                    else{
-                      return <BookSimpleCard />
-                    }
-                  }
-
-                  }
-                   
+                  <BookSimpleCard />
                 </SwiperSlide>
                 // == return swiper slides end ==
             )           

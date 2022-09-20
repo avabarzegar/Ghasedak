@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from 'react-bootstrap';
 import ButtonLayout from '../../UI/Button/ButtonLayout/ButtonLayout';
 import Toman from '../../../assets/Images/icon/toman.svg';
-import Plague from '../../../assets/Images/Books/Rectangle 13.png';
+// import Plague from '../../../assets/Images/Books/Rectangle 13.png';
 import CartImage from '../../../assets/Images/icon/vuesax-add-to-card.svg'
 import './BookDetailedCard.css';
 
@@ -44,7 +44,7 @@ const BookDetailedCard = (props) =>{
                   </Col>
                   <Col xs={6}>
                      <div className="book_pic_suggest">
-                        <img src={Plague} width='100%' height='100%' alt='book image' />
+                        <img src={props.image} width='100%' height='100%' alt={props.alt} />
                      </div>
                   </Col>
                </Row>

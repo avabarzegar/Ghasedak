@@ -65,11 +65,12 @@
 
 .slider_parent_section .carousel-item img {
    height: 100%;
+   width: 100%;
 }
 
 .slider_parent_section .carousel-inner {
    border-radius: 15px;
-   height: 100%;
+   height: 23.75rem;
 }
 .container_section_heroslider{
    height: 100%;
@@ -145,9 +146,9 @@
    }
 
    .slider_parent_section .carousel-indicators {
-      bottom: 0px;
-      right: 10%;
-      padding: .25rem .25rem;
+      bottom: 0;
+      right:13%;
+      padding: .25rem .5rem;
    }
 
    .slider_parent_section .carousel-indicators [data-bs-target] {
@@ -162,6 +163,9 @@
       width: 2rem;
       height: 2rem;
       padding: 1px;
+   }
+   .slider_parent_section .carousel-inner{
+      height: 17rem;
    }
 
 }
@@ -183,9 +187,9 @@
    }
 
    .slider_parent_section .carousel-indicators {
-      bottom: 0px;
-      right: 10%;
-      padding: .25rem .25rem;
+      bottom: 0;
+      right: 13%;
+      padding: .25rem .75rem;
    }
 
    .slider_parent_section .carousel-indicators [data-bs-target] {
@@ -217,9 +221,9 @@
    }
 
    .slider_parent_section .carousel-indicators {
-      bottom: -5px;
-      right: 14%;
-      padding: .01rem .25rem;
+      bottom: 0;
+      right: 20%;
+      padding: .15rem .75rem;
    }
 
    .slider_parent_section .carousel-indicators [data-bs-target] {
@@ -235,6 +239,9 @@
       height: 1.75rem;
       padding: 1px;
    }
+  .slider_parent_section .carousel-inner {
+   height: 15rem;
+  }
 }
 
 @media screen and (max-width:395px) {
@@ -250,9 +257,9 @@
    }
 
    .slider_parent_section .carousel-indicators {
-      bottom: -5px;
-      right: 16%;
-      padding: .01rem .25rem;
+      bottom: 0%;
+      right: 20%;
+      padding: .15rem .75rem;
    }
 
    .slider_parent_section .carousel-indicators [data-bs-target] {
@@ -270,9 +277,7 @@
    }
 
 
-   .slider_parent_section .carousel-indicators {
-      bottom: -2px;
-   }
+  
 }
 
 @media screen and (max-width:365px) {
@@ -288,9 +293,9 @@
    }
 
    .slider_parent_section .carousel-indicators {
-      bottom: -4px;
-      right: 16.5%;
-      padding: .1rem .25rem;
+      bottom: 0;
+      right: 19.5%;
+      padding: 0.2rem 0.75rem;
    }
 
    .slider_parent_section .carousel-indicators [data-bs-target] {
@@ -320,8 +325,8 @@
    }
 
    .slider_parent_section .carousel-indicators {
-      bottom: -5px;
-      right: 19%;
+      bottom: 0%;
+      right: 24%;
       padding: .1rem .5rem;
    }
 
@@ -352,9 +357,9 @@
    }
 
    .slider_parent_section .carousel-indicators {
-      bottom: -6px;
-      right: 17%;
-      padding: .05rem .1rem;
+      bottom: 0;
+      right: 22%;
+      padding: .25rem .5rem;
    }
 
    .slider_parent_section .carousel-indicators [data-bs-target] {

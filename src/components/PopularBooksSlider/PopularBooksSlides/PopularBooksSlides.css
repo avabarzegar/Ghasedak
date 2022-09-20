@@ -1,9 +1,13 @@
+.popular-books-first {
+    margin-top: 0 !important;
+}
+
 .popular-books {
     margin: 6rem auto;
 }
 
 .book-slide-two {
-    padding: 10px 0 !important;
+  
     margin: 12px !important;
     background-color: #ffffff;
     box-shadow: var(--web-main-shadow);

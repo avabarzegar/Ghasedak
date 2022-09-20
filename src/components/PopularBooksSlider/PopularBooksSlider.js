@@ -6,7 +6,7 @@ import PopularBooksSlides from "./PopularBooksSlides/PopularBooksSlides";
 // === most sale slider layout ===
 const PopularBooksSlider = ()=>{
     return(
-        <BookSliderLayout className='book-slider-layout'>
+        <BookSliderLayout className='popular-books book-slider-layout'>
             <PopularBooksSlides />
         </BookSliderLayout>
     )

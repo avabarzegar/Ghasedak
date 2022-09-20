@@ -5,7 +5,7 @@ import BookSliderFirst from "../../components/BookSliderFirst/BookSliderFirst";
 import MostSaleSlider from '../../components/MostSaleSlider/MostSaleSlider';
 // Home page section components end
 import { Container } from "react-bootstrap";
-import NearestShops from '../../components/nearestshops/nearestshops';
+// import NearestShops from '../../components/nearestshops/nearestshops';
 import BestShops from '../../components/bestshops/Bestshops';
 import OfferSliderBook from "../../components/OfferSliderBook/OfferSliderBook";
 import PopularBooksSlider from "../../components/PopularBooksSlider/PopularBooksSlider";
@@ -13,7 +13,7 @@ import ThirdPublisherSlider from "../../components/ThirdPublisherSlider/ThirdPub
 import SamiPublisherSlider from "../../components/SamiPublisherSlider/SamiPublisherSlider";
 import MostSaleMonthSlider from "../../components/MostSaleMonthSlider/MostSaleMonthSlider";
 import MostSaleYearSlider from "../../components/MostSaleYearSlider/MostSaleYearSlider";
-
+// Home page section components end
 
 const Home =()=>{
     return(
@@ -24,7 +24,7 @@ const Home =()=>{
         <MostSaleSlider />
         <MostSaleMonthSlider />
         <MostSaleYearSlider />
-        <NearestShops />
+        {/* <NearestShops /> */}
         <OfferSliderBook />
         <PopularBooksSlider />
         <BestShops />

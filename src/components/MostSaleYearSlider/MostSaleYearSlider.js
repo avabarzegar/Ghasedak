@@ -1,13 +1,13 @@
 import React from "react";
 import BookSliderLayout from "../BookSliderLayout/BookSliderLayout";
-import MostSaleSlides from "./MostSlaleSlides/MostSaleSlides";
+import MostSaleYearSlides from "./MostSaleYearSlides/MostSaleYearSlides";
 
 
 // === most sale slider  ===
 const MostSaleYearSlider = ()=>{
     return(
         <BookSliderLayout className='book-slider-layout'>
-            <MostSaleSlides />
+            <MostSaleYearSlides />
         </BookSliderLayout>
     )
 }

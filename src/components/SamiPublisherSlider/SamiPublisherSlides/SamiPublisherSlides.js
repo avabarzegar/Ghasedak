@@ -58,9 +58,7 @@ const SamiPublisherSlides =()=>{
               slideData.push({
                   id:item.id ,
                   name:item.name,
-                  author: item.author,
-                  publisher:item.publisher,
-                  image:item.images.data.image_url,
+                  image:item.images.data[0].image_url,
 
                 })  
                  
@@ -130,7 +128,7 @@ const SamiPublisherSlides =()=>{
           modules={[Navigation , Autoplay ]}
           onSwiper={setSwiperRef}
           autoplay={{delay: 2000}}
-          loop={true}
+          
           slidesPerGroup={1}
           navigation={{
             prevEl: navigationPrevRef.current,
@@ -182,7 +180,10 @@ const SamiPublisherSlides =()=>{
                 // == return swiper slides ==
 
                 <SwiperSlide className='book-slide-two' key={item.id}>
-                    <BookSimpleCard />
+                    <BookSimpleCard
+                    name={item.name}
+                    img={item.image}
+                    />
                 </SwiperSlide>
                 // == return swiper slides end ==
             )           

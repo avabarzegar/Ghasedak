@@ -1,6 +1,5 @@
 import React from "react";
 import './BookSimpleCard.css';
-import book from '../../../assets/Images/Books/Rectangle 12.png';
 import Toman from '../../../assets/Images/icon/black-toman.svg';
 
 // === define simple book card without details ===
@@ -10,9 +9,9 @@ const BookSimpleCard = (props)=>{
             <div className='simple-book-card'>
                 <div className='simple-card-first-section'>
                     <div className='simple-book-img'>
-                        <img src={book} width='100%' height='100%' alt='book' />
+                        <img src={props.img} width='100%' height='100%' alt='book' />
                     </div>
-                    <span className='simple-book-title'>تهوع</span>
+                    <span className='simple-book-title'>{props.name}</span>
                 </div>
                 <div className='simple-card-second-section'>
                     <div className='simple-card-prices'>

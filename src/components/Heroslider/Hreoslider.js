@@ -53,7 +53,7 @@ const Hreoslider = (props) => {
    }, [])
    return (
       <Container className="container_section_heroslider">
-         <Carousel className='slider_parent_section'>
+         <Carousel className='slider-banner-hero slider_parent_section'>
             {banner.map((item) => {
                return (
                   <Carousel.Item interval={1200} key={item.id}>

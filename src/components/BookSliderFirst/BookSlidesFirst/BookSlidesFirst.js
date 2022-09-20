@@ -32,7 +32,7 @@ const BookSlidesFirst =()=>{
   // state hook end
 
   useEffect(()=>{
-    const token ='iLDhAayZTRWLPLpWvYDK1yhAVfHl46GAfzxKb8aO';
+    const token ='ln9cmSRAFLIDY6X9MOjoomOzEzghPZqE0skQQc8X';
    
     const config = {
       headers: { Authorization: `Bearer ${token}` }
@@ -53,13 +53,11 @@ const BookSlidesFirst =()=>{
             const slideData=[];
             response.data.data.map((item)=>{
               slideData.push({
-                  id:item.id.id ,
+                  id:item.id ,
                   name:item.name,
-                  author: item.author,
-                  publisher:item.publisher,
-                  image:item.images.data.image_url,
+                  image:item.images.data[0].image_url,
 
-                })  
+                })    
                  
             })
            setSlide(slideData)
@@ -124,7 +122,7 @@ const BookSlidesFirst =()=>{
           modules={[Navigation , Autoplay ]}
           onSwiper={setSwiperRef}
           autoplay={{delay: 2000}}
-          loop={true}
+          
           slidesPerGroup={1}
           navigation={{
             prevEl: navigationPrevRef.current,
@@ -178,7 +176,10 @@ const BookSlidesFirst =()=>{
                 // == return swiper slides ==
 
                 <SwiperSlide className='book-slide' key={item.id}>
-                  <BookSimpleCard />
+                  <BookSimpleCard
+                  name={item.name}
+                  img={item.image}
+                  />
                 </SwiperSlide>
                 // == return swiper slides end ==
             )           

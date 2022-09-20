@@ -48,7 +48,7 @@ const PopularBooksSlides =()=>{
    
     //    === get slides data from api ===
     axios.post( 
-      '/books/list/all',
+      '/user/favorite/books/list/all',
       bodyParameters,
       config
     ).then((response)=>{
@@ -58,9 +58,7 @@ const PopularBooksSlides =()=>{
               slideData.push({
                   id:item.id ,
                   name:item.name,
-                  author: item.author,
-                  publisher:item.publisher,
-                  image:item.images.data.image_url,
+                  image:item.images.data[0].image_url,
 
                 })  
                  
@@ -97,7 +95,7 @@ const PopularBooksSlides =()=>{
 
     return(
 
-      <section className='popular-books'>
+      <section className='popular-books-first popular-books'>
         {/* first section of slider  */}
 
         <SliderTopLine 
@@ -130,7 +128,7 @@ const PopularBooksSlides =()=>{
           modules={[Navigation , Autoplay ]}
           onSwiper={setSwiperRef}
           autoplay={{delay: 2000}}
-          loop={true}
+          
           slidesPerGroup={1}
           navigation={{
             prevEl: navigationPrevRef.current,
@@ -187,7 +185,10 @@ const PopularBooksSlides =()=>{
                 // == return swiper slides ==
 
                 <SwiperSlide className='book-slide-two' key={item.id}>
-                  <BookSimpleCard />
+                  <BookSimpleCard 
+                  name={item.name}
+                  img={item.image}
+                  />
                 </SwiperSlide>
                 // == return swiper slides end ==
             )           

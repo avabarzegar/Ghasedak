@@ -21,7 +21,7 @@
    background-color: white;
    opacity: 1 !important;
    padding: 10;
-   bottom: 26%;
+   bottom: 14%;
 }
 
 .slider-parent-section-offer-book .carousel-control-next {
@@ -36,7 +36,7 @@
 
 .slider-parent-section-offer-book .carousel-indicators {
    left: .5%;
-   bottom: 23%;
+   bottom: 10%;
    right: unset;
    margin-left: 5% !important;
    background-color: var(--white-color);
@@ -74,7 +74,7 @@
 }
 
 .offer-container {
-   height: 35rem;
+   height: 30rem;
 }
 
 @media screen and (max-width: 1399px) and (min-width: 1200px) {
@@ -94,7 +94,7 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom: 28%;
+      bottom: 11%;
       left: 1%;
       padding: .01rem .25rem;
       right: unset;
@@ -112,11 +112,11 @@
       width: 2rem;
       height: 2rem;
       padding: 1px;
-      bottom: 30%;
+      bottom: 14%;
    }
 
    .offer-container {
-      height: 125%;
+      height: 35rem;
    }
 
 
@@ -171,7 +171,6 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom: 29%;
       left: 6%;
       padding: .01rem .25rem;
       right: unset;
@@ -188,7 +187,7 @@
    .slider-parent-section-offer-book .carousel-control-next {
       width: 2rem;
       height: 2rem;
-      bottom: 32%;
+      bottom: 10%;
       padding: 1px;
    }
 
@@ -198,6 +197,10 @@
 
    .slider-parent-section-offer-book .carousel-control-next {
       left: 30%;
+   }
+
+   .offer-container {
+      height: 15rem;
    }
 
 }
@@ -219,8 +222,8 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom: 28%;
-      left: 5%;
+      bottom: 17%;
+      left: 7%;
       padding: .01rem .25rem;
       right: unset;
    }
@@ -237,19 +240,20 @@
       width: 2rem;
       height: 2rem;
       padding: 1px;
-      bottom: 31%;
+      bottom: 20%;
    }
 
    .slider-parent-section-offer-book {
       height: 125%;
    }
 
-
-
    .slider-parent-section-offer-book .carousel-control-next {
-      left: 28%;
+      left: 36%;
    }
 
+   .offer-container {
+      height: 23rem;
+   }
 }
 
 @media screen and (max-width:436px) {
@@ -265,7 +269,7 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom: 3%;
+      bottom: 16%;
       left: 10%;
       padding: .01rem .25rem;
       right: unset;
@@ -283,7 +287,7 @@
       width: 2rem;
       height: 2rem;
       padding: 1px;
-      bottom: 6%;
+      bottom: 19%;
    }
 
    .slider-parent-section-offer-book {
@@ -310,7 +314,7 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom: 2.5%;
+      bottom: 16.5%;
       left: 10%;
       padding: .01rem .25rem;
       right: unset;
@@ -328,7 +332,7 @@
       width: 2rem;
       height: 2rem;
       padding: 1px;
-      bottom: 6%;
+      bottom: 20%;
    }
 
    .slider-parent-section-offer-book {
@@ -359,7 +363,7 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom: 2%;
+      bottom: 16%;
       left: 10%;
       right: unset;
       padding: .1rem .25rem;
@@ -376,7 +380,7 @@
    .slider-parent-section-offer-book .carousel-control-next {
       width: 2rem;
       height: 2rem;
-      bottom: 5%;
+      bottom: 19%;
    }
 }
 
@@ -393,7 +397,6 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom: 1%;
       left: 15% !important;
       padding: .1rem .5rem;
    }
@@ -430,7 +433,6 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom: 1%;
       left: 15% !important;
       padding: .1rem .5rem;
    }

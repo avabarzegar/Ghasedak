@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './BestShopsSingleSlide.css';
 
 const BestShopssingleslide = () => {
    return (

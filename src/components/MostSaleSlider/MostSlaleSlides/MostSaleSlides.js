@@ -48,19 +48,17 @@ const MostSaleSlides =()=>{
    
     //    === get slides data from api ===
     axios.post( 
-      '/books/list/all',
+      '/application/home',
       bodyParameters,
       config
     ).then((response)=>{
            
             const slideData=[];
-            response.data.data.map((item)=>{
+            response.data.book_lists[2].books.data.map((item)=>{
               slideData.push({
                   id:item.id ,
                   name:item.name,
-                  author: item.author,
-                  publisher:item.publisher,
-                  image:item.images.data.image_url,
+                  image:item.images.data[0].image_url,
 
                 })  
                  
@@ -101,7 +99,7 @@ const MostSaleSlides =()=>{
         {/* first section of slider  */}
 
         <SliderTopLine 
-         text='پرفروش ترین ها'
+         text='پرفروش ترین های جهان'
          textBorder='purple-bottom'
          containerBorder='gray-bottom'
          >
@@ -130,7 +128,6 @@ const MostSaleSlides =()=>{
           modules={[Navigation , Autoplay ]}
           onSwiper={setSwiperRef}
           autoplay={{delay: 2000}}
-          loop={true}
           slidesPerGroup={1}
           navigation={{
             prevEl: navigationPrevRef.current,
@@ -186,7 +183,11 @@ const MostSaleSlides =()=>{
                 // == return swiper slides ==
 
                 <SwiperSlide className='book-slide-two' key={item.id}>
-                  <BookSimpleCard />
+                  <BookSimpleCard
+                  name={item.name}
+                  img={item.image} 
+                  
+                  />
                 </SwiperSlide>
                 // == return swiper slides end ==
             )           

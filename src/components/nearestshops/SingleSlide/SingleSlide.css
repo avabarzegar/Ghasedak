@@ -1,4 +1,4 @@
-.bg-color-shops{
+.bg-color-shops {
    width: 5rem;
    height: 5rem;
    background-color: red;
@@ -7,7 +7,8 @@
    position: absolute;
    top: -2.75rem;
 }
-.slides-near-shops{
+
+.slides-near-shops {
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -15,8 +16,8 @@
    position: relative;
 }
 
-.slides-near-shops{
-   padding: 0 0 .25rem ;
+.slides-near-shops {
+   padding: 0 0 .25rem;
    margin-top: 1rem;
    border-radius: 20px;
 
@@ -28,4 +29,3 @@
    font-size: .9rem;
    font-weight: 500;
 }
-

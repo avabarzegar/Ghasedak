@@ -4,10 +4,10 @@ import NavItems from "./NavItems/NavItems";
 import './Navbar.css';
 
 // == define navbar section ==
-const Navbar = () =>{
+const Navbar = (props) =>{
 
     return(
-        <div className='nav-container'>
+        <div className={`${props.navbar} nav-container`}>
           <div className="top-menu">
             <TopNavbar />
           </div>  

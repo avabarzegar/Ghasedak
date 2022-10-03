@@ -7,7 +7,7 @@ import Footer from '../../components/Footer/Footer';
 const Layout = (props) => {
   return (
     <>
-      <Navbar />
+      <Navbar navbar={props.navbarColor} />
         <main>{props.children}</main>
       <Footer />
     </>

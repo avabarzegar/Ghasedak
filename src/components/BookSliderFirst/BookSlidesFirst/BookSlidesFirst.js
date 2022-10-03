@@ -61,7 +61,6 @@ const BookSlidesFirst =()=>{
                  
             })
            setSlide(slideData)
-           console.log(slideData)
         })
         .catch((err)=>{
             console.log(err.message)

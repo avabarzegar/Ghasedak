@@ -13,12 +13,13 @@ import ThirdPublisherSlider from "../../components/ThirdPublisherSlider/ThirdPub
 import SamiPublisherSlider from "../../components/SamiPublisherSlider/SamiPublisherSlider";
 import MostSaleMonthSlider from "../../components/MostSaleMonthSlider/MostSaleMonthSlider";
 import MostSaleYearSlider from "../../components/MostSaleYearSlider/MostSaleYearSlider";
+import Layout from "../../components/Layout/Layout";
 // Home page section components end
 
 const Home =()=>{
     return(
     // === the first type of slider used in home page ===
-    <Container>
+    <Layout>
         <Header />
         <BookSliderFirst />
         <MostSaleSlider />
@@ -30,7 +31,7 @@ const Home =()=>{
         <BestShops />
         <ThirdPublisherSlider />
         <SamiPublisherSlider />
-    </Container>
+    </Layout>
     // === the first type of slider used in home page end ===
 
     )

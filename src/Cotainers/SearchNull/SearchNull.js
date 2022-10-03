@@ -1,8 +1,14 @@
 import React from "react";
+// search null section components 
+import Layout from "../../components/Layout/Layout";
+// search null section components end
+
 
 const SearchNull =()=>{
     return(
-    <h2>pages</h2>
+        <Layout>
+            <h2>pages</h2>
+        </Layout>
     )
 }
 

@@ -9,12 +9,13 @@ import ShopBasket from '../../../../assets/Images/icon/vuesax-shoping-bag.svg';
 import Search from '../../../../assets/Images/icon/search-normal.svg';
 import './TopNavbar.css';
 import StyledOffcanvas from '../../../UI/Offcanvas/Offcanvas';
+import { Link } from 'react-router-dom';
 
 // == define top navbar section ==
 const TopNavbar = () => {
 
   const searchInputResponsive=(
-    <SearchInput placeholder='نام کتاب، نویسنده، ناشر و ... را جستجو کنید' />
+    <SearchInput  placeholder='نام کتاب، نویسنده، ناشر و ... را جستجو کنید' />
   )
 
     return (
@@ -23,14 +24,14 @@ const TopNavbar = () => {
               <Col xl={8} lg={7} sm={6} xs={8}>
                 <Row className='top-navbar-right' >
                   <Col xl={3} lg={4} md={5} xs={7} className='logo-container'>
-                    <div className='nav-logo'>
+                    <Link to='/' className='nav-logo'>
                      <img src={Logo} width='100%' height='100%' alt='logo' />
-                    </div>
+                    </Link>
                     <div className='nav-logo-text'>
                      <img src={LogoText} width='100%' height='100%' alt='logo text' />
                     </div>
                   </Col>
-                  <Col style={{paddingRight:'0'}} xl={9} lg={8} md={7} xs={5} >
+                  <Col style={{paddingRight:'0'}} xl={9} lg={8} md={7} xs={5}>
                     <div className='search-box-nav'>
                       {searchInputResponsive}
                     </div>

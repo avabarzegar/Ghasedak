@@ -1,0 +1,8 @@
+.applied-filters{
+    border-radius: 20px;
+    box-shadow: var(--web-main-shadow);
+    margin-top: 1.5rem;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+}

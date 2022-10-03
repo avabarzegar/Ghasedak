@@ -1,14 +1,9 @@
-.header{
-   margin-top: 12rem;
-}
 
 @media screen and (max-width:1200px) {
  .herosuggest_book{
       display: none;
    }  
-   .header{
-      margin-top: 8rem;
-   }
+  
 }
 
 

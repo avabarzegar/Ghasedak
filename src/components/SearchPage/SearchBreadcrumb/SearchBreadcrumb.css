@@ -1,0 +1,28 @@
+.search-result{
+    font-size: 14px;
+    font-weight: 700;
+}
+.breadcrumb-layout{
+    width: 100%;
+    padding: .5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--input-bg);
+    border-radius: 15px;
+    text-align: center;
+}
+.search-result-container{
+    text-align: start;
+}
+@media screen and (min-width:768px) and (max-width:992px) {
+    .search-result{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width:400px) {
+    .search-result{
+        font-size: 12px;
+    }
+    
+}

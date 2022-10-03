@@ -11,16 +11,16 @@ import SingleBlog from "./Cotainers/SingleBlog/SingleBlog";
 const App =()=>{
     return(
         <Router>
-          <Layout>
+         
             <Routes>
               <Route path="/" exact element={<Home />} />
               <Route path="/" element={<Product />} />
               <Route path="/blog" element={<Blog />} />
-              <Route path="/" element={<Search />} />
-              <Route path="/" element={<SearchNull />} />
+              <Route path="/search" element={<Search />} />
+              <Route path="/searchNull" element={<SearchNull />} />
               <Route path="/" element={<SingleBlog />} />
             </Routes>  
-          </Layout>
+          
         </Router>
     )
 }

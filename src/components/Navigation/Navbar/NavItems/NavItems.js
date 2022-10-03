@@ -11,7 +11,7 @@ import Download from '../../../../assets/Images/icon/receive-square.svg';
 const NavItems = () => {
   return (
     <Container className='navbar-parent'>
-      <Navbar expand='md'>
+      <Navbar className='nav' expand='md'>
         <div className='responsive-btn-container center'>
           <Navbar.Toggle />
           <ButtonLayout

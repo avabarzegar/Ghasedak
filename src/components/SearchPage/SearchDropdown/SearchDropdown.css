@@ -5,6 +5,7 @@
     align-items: start;
     background-color: #FFFFFF;
     padding: 0 .8rem;
+    border-radius:15px;
 }
 
 .search-dropdown .dropdown-menu {

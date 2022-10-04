@@ -15,7 +15,7 @@ const SearchInput =(props)=>{
     const [search , setSearch] = useState(false);
     const inputRef = useRef(null);
     const navigate = useNavigate();
-    const {searchValue , setSearchValue , bookData } = useAppContext();
+    const {searchValue , setSearchValue , bookData ,newData , setNewData } = useAppContext();
    
     // define variables, states and refs end
 
@@ -27,54 +27,49 @@ const SearchInput =(props)=>{
    
    
    //    show search result page by clicking enter key 
+
+//    let NewData
     const handleKeyDown = (event) => {
         // e.preventDefault()
-        if (event.key === "Enter"){
-            
-            setSearchValue(inputRef.current.value);
-            
-            bookData.map((item) => {
-                
-                if( inputChange.toString() === item.name.toString() ){
-                    console.log(typeof(item.name)+item.name.toString());
-                    console.log(typeof(inputChange)+inputChange)
-                    console.log(item.name.toString())
-                    console.log(item.name.toString() === inputChange.toString())
-                    navigate("/search");
-                   
-                    
-                }
-                else{
-                    navigate("/searchNull")
-
-                }
-            })  
+        if (event.key === "Enter"){  
+          setSearchValue(inputRef.current.value);
+          let NewData = bookData;
+		  if (inputChange) {
+			NewData = bookData.filter((items) =>
+				items.name.toLowerCase().includes(inputChange, 0)
+			);
+            navigate('/search')
+            setNewData(NewData)
+		  }
+          if(newData === [] || newData === undefined || newData.length === 0 || newData === null) {
+			navigate('*')
+		  }
          
         }
     }
-
-    //    show search result page by clicking enter key - end
     
+    //    show search result page by clicking enter key - end
+    //  useEffect(() => {
+    //     setNewData(NewData)
+    // }, [inputChange])
+
    //    show search result page by clicking on search button 
     const handleClick =()=>{
        
-        setSearchValue(inputRef.current.value);
-
-        bookData.map((item) => {
-            if(item.name.toString() === inputChange.toString()){
-                navigate("/search");
-            }
-            else{
-                navigate("/searchNull");
-
-            }
-            // inputChange == item.name ? navigate("/search") : navigate("/searchNull")
-           
-        })  
+        // setSearchValue(inputRef.current.value);
+        // NewData = bookData;
+        // if (inputChange) {
+        //   NewData = bookData.filter((items) =>
+        //       items.name.toLowerCase().includes(inputChange, 0)
+        //   );
+        //   navigate('/search')
+        // }
+        // if(NewData === [] || NewData === undefined || NewData.length === 0 || NewData === null) {
+        //   navigate('*')
+        // }
        
     }
    //    show search result page by clicking on search button - end
-    
    
   
     return(

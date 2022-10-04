@@ -39,7 +39,7 @@ const Herosuggest = () => {
         
 
          setDetail(detailData)
-         console.log(detailData)
+        
       })
          .catch((err) => {
             console.log(err.message)

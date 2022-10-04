@@ -6,12 +6,13 @@ const CoinsContext = createContext({});
 
 const SearchContext = ({ children }) => {
 
-//   define states 
+  //   define states and variables
   const [searchValue, setSearchValue] = useState(' ');
   const [bookData , setBookData ] = useState([]);
-//   define states end
+  const [newData , setNewData] = useState([]);
+  //   define states and variables end
 
-useEffect(()=>{
+  useEffect(()=>{
     // getting book data and push them in a variable
     const token ='iLDhAayZTRWLPLpWvYDK1yhAVfHl46GAfzxKb8aO';
    
@@ -24,24 +25,29 @@ useEffect(()=>{
     };
 
     axios
-    .post('/books/list/all' ,
+    .post('/application/home' ,
       bodyParameters,
       config
     ).then((response)=>{
         const bookApi = [];
-        response.data.data.map((item)=>{
-            bookApi.push({
-                id:item.id,
-                name:item.name,
-
+        response.data.book_lists[0].books.data.map((item)=>{
+          bookApi.push({
+              id:item.id,
+              name:item.name,
+              img:item.images.data[0].image_url,
             })
+          
         })
         setBookData(bookApi)
+       
     })
-},[])
+   
+    // getting book data and push them in a variable end
+
+  },[])
 
   return (
-    <CoinsContext.Provider value={{ searchValue, setSearchValue ,bookData ,setBookData }}>
+    <CoinsContext.Provider value={{ newData , setNewData, searchValue, setSearchValue ,bookData ,setBookData }}>
       {children}
     </CoinsContext.Provider>
   );

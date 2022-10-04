@@ -1,4 +1,4 @@
-.nav {
+.nav-main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -24,7 +24,7 @@
     box-shadow: none;
 }
 
-.nav-link {
+.nav-link-main {
     margin-inline-end: 1rem;
     color: #000000;
     font-size: 15px;
@@ -62,7 +62,7 @@
         justify-content: center;
     }
 
-    .nav-link {
+    .nav-link-main {
         font-size: 14px;
     }
 

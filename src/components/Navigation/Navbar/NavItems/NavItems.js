@@ -11,7 +11,7 @@ import Download from '../../../../assets/Images/icon/receive-square.svg';
 const NavItems = () => {
   return (
     <Container className='navbar-parent'>
-      <Navbar className='nav' expand='md'>
+      <Navbar className='nav-main' expand='md'>
         <div className='responsive-btn-container center'>
           <Navbar.Toggle />
           <ButtonLayout
@@ -25,13 +25,13 @@ const NavItems = () => {
           <Nav
             className="my-2 my-md-0"
           >
-              <Link className='nav-link' to="/">صفحه اصلی</Link>
-              <Link className='nav-link' to="/product">فروشگاه ها</Link>
-              <Link className='nav-link' to="/blog">بلاگ</Link>
-              <Link className='nav-link' to="/">تماس با پشتیبانی</Link>
-              <Link className='nav-link' to="/">قوانین</Link>
-              <Link className='nav-link' to="/">درباره ما</Link>
-              <Link className='nav-link' to="/">سوالات متداول</Link>
+              <Link className='nav-link nav-link-main' to="/">صفحه اصلی</Link>
+              <Link className='nav-link nav-link-main' to="/product">فروشگاه ها</Link>
+              <Link className='nav-link nav-link-main' to="/blog">بلاگ</Link>
+              <Link className='nav-link nav-link-main' to="/">تماس با پشتیبانی</Link>
+              <Link className='nav-link nav-link-main' to="/">قوانین</Link>
+              <Link className='nav-link nav-link-main' to="/">درباره ما</Link>
+              <Link className='nav-link nav-link-main' to="/">سوالات متداول</Link>
           </Nav>
           <ButtonLayout
             button='purple'

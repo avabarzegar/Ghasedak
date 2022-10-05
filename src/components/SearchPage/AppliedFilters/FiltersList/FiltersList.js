@@ -27,7 +27,7 @@ const FiltersList =()=>{
           <AppliedSingleFilter 
             Filter= {`جستجوی عبارت : ${searchValue}`}
           />
-         {sorting.map((item,index)=>{
+         {sorting?.map((item,index)=>{
             return(
               <SingleFilterLayout 
                key={index}

@@ -41,7 +41,7 @@
 
 .shop-basket-btn span {
     font-size: 14px;
-    color: #000000;
+   color:var(--main-text);
 }
 
 .shop-logo {

@@ -20,7 +20,7 @@ function SearchTabs() {
     >
         <Tab eventKey="disabled" title="مرتب سازی بر اساس :" disabled />
         {
-          ["جدید ترین","قدیمی ترین","دورترین","نزدیک ترین","گرانترین","ارزانترین"]
+          ["گرانترین","ارزانترین"]
           .map((items,index)=>{
             return(
                 <Tab eventKey={index} key={index} title={items}>
@@ -31,7 +31,7 @@ function SearchTabs() {
                        <Navigate to="*" />
                        : newData.map((item,index)=>{
                         return(
-                            <Col xl={3} lg={4} sm={6}>
+                            <Col className="search-page-books" xl={3} lg={4} sm={6}>
                                 <BookSimpleCard
                                 key={index}
                                 img={item.img} 

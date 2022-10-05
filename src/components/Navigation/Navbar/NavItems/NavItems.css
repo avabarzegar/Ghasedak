@@ -26,9 +26,9 @@
 
 .nav-link-main {
     margin-inline-end: 1rem;
-    color: #000000;
+   color:var(--main-text);
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .navbar-collapse {

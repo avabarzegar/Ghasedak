@@ -37,6 +37,15 @@
 
 .breadcrumb-text {
     font-size: .7rem;
+    max-width: 70%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-inline-end: .5rem;
+    overflow: hidden;
+}
+
+.breadcrumb-result-container {
+    overflow: hidden;
 }
 
 .breadcrumb-container .breadcrumb-item {
@@ -52,6 +61,7 @@
 
 .breadcrumb-container .breadcrumb-item+.breadcrumb-item {
     padding-left: 0;
+    display: contents;
 }
 
 @media screen and (min-width:768px) and (max-width:992px) {
@@ -76,9 +86,11 @@
         height: 12px;
 
     }
-    .breadcrumb-text{
+
+    .breadcrumb-text {
         font-size: .5rem;
     }
+
     .breadcrumb-container .breadcrumb-item+.breadcrumb-item::before {
         width: 12px;
         height: 12px;

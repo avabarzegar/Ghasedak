@@ -1,29 +1,43 @@
 import {React } from "react";
-import SearchIcon from '../../../assets/Images/icon/bread-search.svg';
-import CustomBreadcrumb from '../../UI/Breadcrumb/Breadcrumb';
+import SearchIcon from "../../../assets/Images/icon/bread-search.svg";
+import CustomBreadcrumb from "../../UI/Breadcrumb/Breadcrumb";
 import  {useAppContext}  from "../../../Context/SearchContext/SearchContext";
-import  './SearchBreadcrumb.css';
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
+import  "./SearchBreadcrumb.css";
 
-
+   
 
 // search bread crumb 
 const SearchBreadcrumb=(props)=>{
 
     const {searchValue} = useAppContext();
 
+    const renderTooltip = (props) => (
+      <Tooltip id="button-tooltip" {...props}>
+        {`نتیجه جستجوی عبارت: ${searchValue}`}
+      </Tooltip>
+    );
 
     return(
      
-        <section className='breadcrumb-layout'>
-            <CustomBreadcrumb 
-                activeImage={SearchIcon}
-                activeText={`نتیجه جستجوی عبارت: ${searchValue}`}
-            />
-            <div className='search-result-container'>
-                <span className='search-result'>
-                  {`جستجوی عبارت: ${searchValue} (4 محصول)`}
-                </span>
-            </div>
+        <section className="breadcrumb-layout">
+          <CustomBreadcrumb 
+          activeImage={SearchIcon}
+          activeText={`نتیجه جستجوی عبارت: ${searchValue}`}
+          />
+          <div className=" search-result-container">
+            <OverlayTrigger
+            placement="bottom"
+            delay={{ show: 250, hide: 400 }}
+            overlay={renderTooltip}
+            >
+              <span className="search-result-value search-result">
+                {`جستجوی عبارت: ${searchValue}`}
+              </span>
+            </OverlayTrigger>
+            <span className="search-result">{`(4محصول)`}</span>
+          </div>
         </section>    
 
     )

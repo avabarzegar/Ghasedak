@@ -4,9 +4,7 @@ import Layout from "../../components/Layout/Layout";
 import SearchAFilter from "../../Context/FilterContext/FilterContext";
 import "./Search.css";
 // search page components of sections 
-import SearchBreadcrumb from "../../components/SearchPage/SearchBreadcrumb/SearchBreadcrumb";
-import AppliedFilters from "../../components/SearchPage/AppliedFilters/AppliedFilters";
-import SearchFilters from "../../components/SearchPage/SearchFilters/SearchFilters";
+import SearchSidebar from "../../components/SearchPage/SearchSidebar/SearchSidebar";
 import SearchTabs from "../../components/SearchPage/SearchTabs/SearchTabs";
 // search page components of sections end
 
@@ -20,9 +18,7 @@ const Search =()=>{
                 <Container>
                     <Row>
                       <Col xl={3} lg={4} md={5} >
-                        <SearchBreadcrumb />
-                        <AppliedFilters />
-                        <SearchFilters />
+                        <SearchSidebar />
                       </Col>
                       <Col xl={9} lg={8} md={7}>
                         <SearchTabs />

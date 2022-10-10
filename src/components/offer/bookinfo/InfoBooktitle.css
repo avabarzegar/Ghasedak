@@ -1,0 +1,6 @@
+.color {
+   color: var(--white-color)
+}
+.color-dard{
+   color: var(--main-text) !important; 
+}

@@ -1,0 +1,36 @@
+.swiper .swiper-wrapper .nearshop-swiper .swiper-slide {
+   width: 200px !important;
+   height: 120px !important;
+   transition: .4s;
+}
+
+
+.nearshop-swiper {
+   padding: 40px;
+   border-radius: 20px;
+   margin-top: 3rem;
+}
+
+
+.purple-bottom {
+   border-bottom: 4px solid var(--main-purple);
+}
+
+.padding-bottom {
+   padding-bottom: .5rem;
+}
+
+@media screen and (min-width:576px) {
+
+   .width-slides {
+      max-width: 150px !important;
+      max-height: 130px !important;
+   }
+}
+
+@media screen and (max-width:576px) {
+   .nearshop-swiper .book-slide-two {
+      margin: auto 5px !important;
+   }
+
+}

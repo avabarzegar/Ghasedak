@@ -1,0 +1,37 @@
+.btn-img {
+    width: 28px;
+    height: 28px;
+    margin-inline-end: 10px;
+
+}
+
+.black {
+   color:var(--main-text);
+}
+
+.btn-title {
+    font-size: 14px;
+    color: #ffffff !important;
+}
+
+.btn-download-info-book {
+    background-color: var(--main-orange) !important;
+    box-shadow: var(--main-shadow);
+    color: var(--main-text);
+    font-weight: 600;
+    font-size: 13px;
+}
+.btn-download-info-book:hover{
+    background-color: var(--main-orange) !important;
+    color: var(--main-text);
+}
+@media screen and (max-width:1200px) {
+    .btn-title {
+        font-size: 12px;
+    }
+
+    .btn-img {
+        width: 25px;
+        height: 25px;
+    }
+}

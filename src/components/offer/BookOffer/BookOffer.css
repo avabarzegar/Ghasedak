@@ -1,0 +1,46 @@
+.parent-section-bookoffer img {
+   width: 100%;
+}
+
+.parent-section-bookoffer {
+   width: 304px;
+   height: 440px;
+   position: absolute;
+   bottom: -21%;
+   right: 4%;
+}
+@media screen and (max-width:1200px) {
+   .parent-section-bookoffer {
+      width: 220px;
+      height: 220px;
+      bottom: 10%;
+      right: 4%;
+   }
+}
+@media screen and (max-width:992px) {
+   .parent-section-bookoffer {
+      width: 130px;
+      height: 175px;
+      bottom: 5%;
+      right: 4%;
+   }
+}
+
+@media screen and (min-width:768px) {
+   .parent-section-bookoffer {
+      display: block;
+   }
+}
+
+@media screen and (max-width:767px) {
+   .parent-section-bookoffer {
+      display: none;
+   }
+}
+
+
+@media screen and (max-width:350px) {
+   .parent-section-bookoffer {
+      display: none;
+   }
+}

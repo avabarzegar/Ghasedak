@@ -1,0 +1,20 @@
+.swiper .swiper-wrapper .nearshop-swiper .swiper-slide {
+   width: 200px !important;
+   height: 120px !important;
+   transition: .4s;
+}
+
+.nearshop-swiper {
+   padding: 24px;
+   border-radius: 20px;
+   margin-top: 3rem;
+}
+
+.purple-bottom {
+   border-bottom: 4px solid var(--main-purple);
+}
+
+.padding-bottom {
+   padding-bottom: .5rem;
+}
+

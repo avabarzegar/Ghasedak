@@ -1,0 +1,18 @@
+.nav-container{
+    background-color: var(--main-orange);
+    position:sticky;
+    top: 0;
+    z-index:2000;
+    height:80px;
+    margin-bottom: 12rem;
+}
+
+.navbar-purple{
+    background-color: #7B61FF;
+}
+
+@media screen and (max-width:1200px) {
+    .nav-container{
+        margin-bottom: 10rem;
+    }
+}

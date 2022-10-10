@@ -1,0 +1,166 @@
+.book-card-parent {
+    border-bottom: 1px solid hsl(210, 8%, 81%);
+    padding-bottom: 1rem;
+    margin-top: .75rem;
+    margin-bottom: 1.5rem;
+}
+
+
+.font-bold {
+    color: var(--main-text) !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+}
+
+.price_suggest_book {
+    display: flex;
+    align-items: center;
+}
+
+.price_suggest_book div {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: .25rem;
+    width: 1.45rem;
+}
+
+.book-card-txt {
+    color: var(--placeholder-text);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.price_suggest_book div img {
+    width: 100%;
+}
+
+.price_green {
+    color: var(--green-color) !important;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.book-card-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.outest_section_book-cart {
+    background-color: var(--white-color);
+    box-shadow: var(--web-main-shadow);
+    width: 100%;
+    height: 370px;
+    padding: 1.5rem;
+    border-radius: 20px;
+}
+
+.SuggestHerotitle {
+    color: var(--placeholder-text);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.book_pic_suggest {
+    width: 167px;
+    height: 228px;
+}
+
+@media screen and (min-width:1200px) {
+
+    .outest_section_book-cart {
+        height: 380px
+    }
+}
+
+@media screen and (max-width:1200px) {
+
+    .price_green {
+        color: var(--green-color) !important;
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+    .SuggestHerotitle {
+        font-size: 14px;
+    }
+
+    .price_suggest_book div {
+        width: 1.5rem;
+    }
+
+    .book_pic_suggest {
+        display: flex;
+        justify-content: center;
+    }
+
+    .container_suggest_book_hero {
+        display: flex;
+        justify-content: center;
+    }
+
+
+}
+
+
+@media screen and (max-width:768px) {
+
+
+    .price_green {
+        color: var(--green-color) !important;
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+
+    .SuggestHerotitle {
+        font-size: 14px;
+    }
+
+    .price_suggest_book div {
+        width: 1.5rem;
+    }
+
+    .book_pic_suggest {
+        display: flex;
+        justify-content: center;
+    }
+
+
+}
+
+@media screen and (max-width:500px) {
+
+    .book_pic_suggest {
+        width: auto;
+        height:auto
+    }
+    .book-card-container div:first-child {
+        padding-left: 0 !important;
+    }
+}
+
+@media screen and (max-width:365px) {
+
+
+    .price_green {
+        color: var(--green-color) !important;
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+    .SuggestHerotitle {
+        font-size: 14px;
+    }
+
+    .price_suggest_book div {
+        width: 1.5rem;
+    }
+
+    .book_pic_suggest {
+        display: flex;
+        justify-content: center;
+    }
+
+
+}

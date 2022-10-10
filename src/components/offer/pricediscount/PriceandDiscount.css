@@ -1,0 +1,136 @@
+.green-price-parent {
+   display: flex;
+   align-items: center;
+}
+
+.green-price-parent img {
+   width: 66px;
+   height: 66px;
+}
+
+.green-color-txt {
+   color: var(--green-color);
+   font-weight: 700;
+   font-size: 46px;
+}
+
+.red-color {
+   font-weight: 400;
+   font-size: 42px;
+   color: var(--off-color) !important;
+}
+
+.parnet-section-price {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   padding: 1.5rem .75rem;
+   background-color: var(--white-color);
+   height: min-content;
+   padding: 20px 20px;
+   border-radius: 20px;
+   margin-top: 6.1rem;
+}
+
+@media screen and (max-width:1200px) {
+   .green-color-txt {
+      color: var(--green-color);
+      font-weight: 700;
+      font-size: 20px;
+   }
+
+   .red-color {
+      font-weight: 400;
+      font-size: 20px;
+      color: var(--off-color) !important;
+   }
+
+   .green-price-parent img {
+      width: 35px;
+      height: 35px;
+   }
+
+   .parnet-section-price {
+      margin-top: 6.1rem;
+      padding: 20px 30px;
+   }
+}
+
+
+@media screen and (max-width:992px) {
+   .green-color-txt {
+      color: var(--green-color);
+      font-weight: 700;
+      font-size: 20px;
+   }
+
+   .red-color {
+      font-weight: 400;
+      font-size: 20px;
+      color: var(--off-color) !important;
+   }
+
+   .green-price-parent img {
+      width: 35px;
+      height: 35px;
+   }
+
+   .parnet-section-price {
+      margin-top: 5rem;
+      padding: 20px 30px;
+   }
+}
+
+@media screen and (max-width:768px){
+   .parnet-section-price {
+      margin-top: 0rem;
+   }
+}
+
+@media screen and (max-width:420px) {
+   .green-color-txt {
+      color: var(--green-color);
+      font-weight: 700;
+      font-size: 20px;
+   }
+
+   .red-color {
+      font-weight: 400;
+      font-size: 20px;
+      color: var(--off-color) !important;
+   }
+
+   .green-price-parent img {
+      width: 35px;
+      height: 35px;
+   }
+
+   .parnet-section-price {
+      margin-top: 0;
+      padding: 20px 30px;
+   }
+}
+
+@media screen and (max-width:350px) {
+   .green-color-txt {
+      color: var(--green-color);
+      font-weight: 700;
+      font-size: 20px;
+   }
+
+   .red-color {
+      font-weight: 400;
+      font-size: 20px;
+      color: var(--off-color) !important;
+   }
+
+   .green-price-parent img {
+      width: 35px;
+      height: 35px;
+   }
+
+   .parnet-section-price {
+      margin-top: 0;
+      padding: 20px 30px;
+   }
+}

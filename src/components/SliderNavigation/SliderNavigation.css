@@ -1,0 +1,41 @@
+.navigation-container {
+    position: relative;
+    top: -12%;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: .3rem;
+}
+
+.swiper-control-next-icon,
+.swiper-control-prev-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.swiper-control-next{
+    margin-inline-start: .8rem;
+}
+.swiper-control-prev,
+.swiper-control-next {
+    width: 2rem;
+    height: 2rem;
+    top: unset;
+    border-radius: 8px;
+    background-color: white;
+    padding: 1.5px;
+    bottom: 7%;
+    border:none;
+    outline: none;
+    box-shadow: none;
+}
+
+.swiper-control-next {
+    right: 1rem;
+}
+
+.swiper-control-prev {
+    right: 25%;
+}

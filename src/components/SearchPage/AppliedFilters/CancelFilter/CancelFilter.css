@@ -1,0 +1,6 @@
+.cancel-filter span{
+   font-size: 12px;
+   font-weight: 500;
+   color: var(--placeholder-text);
+   cursor: pointer;
+}

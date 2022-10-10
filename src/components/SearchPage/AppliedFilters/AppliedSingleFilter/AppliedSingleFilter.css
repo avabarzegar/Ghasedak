@@ -1,0 +1,11 @@
+.single-filter {
+    background-color: var(--input-bg);
+    padding: 0 .5rem;
+    width: fit-content;
+    text-align: start;
+}
+
+.single-filter span {
+    font-size: 12px;
+    color: var(--placeholder-text);
+}

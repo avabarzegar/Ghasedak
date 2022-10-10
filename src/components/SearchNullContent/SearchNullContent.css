@@ -1,0 +1,14 @@
+.not-found-img{
+    width:480px;
+    height:300px;
+}
+.not-found-container{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+.search-null-txt{
+    font-weight: 700;
+    
+}

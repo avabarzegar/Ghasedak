@@ -1,0 +1,32 @@
+
+@media screen and (max-width:1200px) {
+ .herosuggest_book{
+      display: none;
+   }  
+  
+}
+
+
+@media screen and (max-width:768px) {
+   .heroslider_grid{
+      padding: 0 .25rem;
+   }
+ .herosuggest_book{
+      margin-top: 4rem;
+   }  
+   
+   
+}
+@media screen and (max-width:295px) {
+   .header{
+      margin-top: 10rem;
+   }
+   .slider_parent_section{
+      height: 100%;
+   }
+   .herosuggest_book {
+      margin-top: 4.5rem;
+   }
+}
+
+ 

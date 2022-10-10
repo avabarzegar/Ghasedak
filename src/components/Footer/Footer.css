@@ -1,0 +1,104 @@
+.section_title_links_footer {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.parent_section_footer {
+   background: #F4F6F9;
+   padding: 3rem 0;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   margin-top: 5rem;
+}
+
+.offer_to_download_app {
+   color: #A2A6AB;
+   font-weight: 500;
+   font-size: 12px;
+   margin: 1.5rem 0;
+}
+
+.outer_section_footer_btn {
+   display: flex;
+   justify-content: space-between;
+}
+
+.btn_footer_inner_text {
+   margin-left: 1rem;
+}
+
+
+.support_team {
+   background-color: var(--main-purple);
+   padding: 9px 13px 9px 0;
+   color: var(--white-color);
+   border-radius: 12px;
+   margin-top: 1.5rem;
+   font-weight: 500;
+   font-size: 18px;
+}
+
+.support_team_social_media {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.support_team_number span {
+   margin-left: .5rem;
+   font-weight: 700;
+   font-size: 14px;
+}
+
+.social_media_footer_parent img {
+   background-color: var(--white-color);
+   border-radius: 12px;
+   box-shadow: var(--web-main-shadow);
+   padding: .65rem;
+   margin-left: .65rem;
+   width: 2.5rem;
+   height: 2.5rem;
+}
+
+.support_team_number img {
+   width: 1.35rem;
+   height: 1.35rem;
+   padding-left: .2rem;
+}
+
+
+@media screen and (max-width:1390px){
+   .btn_footer_inner_text {
+      margin-left: .35rem;
+   }
+   
+}
+@media screen and (max-width:1200px){
+   .btn_footer_inner_text {
+      margin-left: .35rem;
+   }
+   
+}
+
+@media screen and (max-width:768px) {
+   .support_team {
+      text-align: center;
+      padding: 9px;
+      font-size: .9rem ;
+   }
+   .offer_to_download_app {
+      margin: .85rem 0 0rem;
+   }
+}
+
+@media screen and (max-width:295px) {
+
+   .support_team_social_media {
+      flex-direction: column;
+   }
+   .support_team_number {
+      margin-top: 1rem;
+   }
+}

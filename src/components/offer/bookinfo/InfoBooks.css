@@ -1,0 +1,120 @@
+.date-publish {
+   display: flex;
+   align-items: baseline;
+}
+
+.publisher-info {
+   display: flex;
+   justify-content: space-between;
+}
+
+.infobooks-parent {
+   display: flex;
+   flex-direction: column;
+}
+
+.head-title-info-book {
+   font-weight: 500;
+   font-size: 55px;
+   color: var(--white-color);
+}
+
+.sub-head-info-book {
+   font-weight: 500;
+   font-size: 32px;
+}
+
+.date-publish {
+   font-weight:500;
+   font-size: 25px;
+}
+.publisher-name{
+   font-weight: 500;
+   font-size: 25px;
+}@media screen and (max-width:1200px){
+   .head-title-info-book {
+      font-weight: 500;
+      font-size: 35px;
+      color: var(--white-color);
+   }
+   
+   .sub-head-info-book {
+      font-weight: 500;
+      font-size: 23px;
+   }
+   
+   .date-publish {
+      font-weight:500;
+      font-size: 15px;
+   }
+   .publisher-name{
+      font-weight: 500;
+      font-size: 15px;
+   }
+}
+@media screen and (max-width:992px){
+   .head-title-info-book {
+      font-weight: 500;
+      font-size: 30px;
+      color: var(--white-color);
+   }
+   
+   .sub-head-info-book {
+      font-weight: 500;
+      font-size: 17px;
+   }
+   
+   .date-publish {
+      font-weight:500;
+      font-size: 10px;
+   }
+   .publisher-name{
+      font-weight: 500;
+      font-size: 10px;
+   }
+}
+
+
+@media screen and (max-width:420px){
+   .head-title-info-book {
+      font-weight: 500;
+      font-size: 30px;
+      color: var(--white-color);
+   }
+   
+   .sub-head-info-book {
+      font-weight: 500;
+      font-size: 17px;
+   }
+   
+   .date-publish {
+      font-weight:500;
+      font-size: 10px;
+   }
+   .publisher-name{
+      font-weight: 500;
+      font-size: 10px;
+   }
+}
+
+@media screen and (max-width:350px) {
+   .head-title-info-book {
+      font-weight: 500;
+      font-size: 30px;
+      color: var(--white-color);
+   }
+   
+   .sub-head-info-book {
+      font-weight: 500;
+      font-size: 17px;
+   }
+   
+   .date-publish {
+      font-weight:500;
+      font-size: 10px;
+   }
+   .publisher-name{
+      font-weight: 500;
+      font-size: 10px;
+   }
+}

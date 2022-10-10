@@ -1,0 +1,14 @@
+.offcanvas-btn {
+    background-color: transparent;
+    padding:0;
+    border: 0;
+}
+
+.offcanvas-btn:hover {
+    background-color: transparent !important;
+}
+.search-offcanvas{
+    position:fixed;
+    top:0;
+    z-index:9000;
+}

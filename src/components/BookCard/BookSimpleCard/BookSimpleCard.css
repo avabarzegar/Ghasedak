@@ -1,0 +1,71 @@
+.simple-card-container {
+    background-color: var(--white-color);
+    width: 100%;
+    padding: 1rem;
+    border-radius: 20px;
+    position: relative;
+}
+
+.simple-book-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.simple-card-first-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid var(--input-bg);
+    padding-bottom: .5rem;
+    margin-top: .75rem;
+    margin-bottom: .5rem;
+    width:100%;
+}
+
+.simple-book-img {
+    width: 145px;
+    height: 210px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.simple-book-title {
+    font-weight: 600;
+    font-size: 11px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5;
+    width: 95%;
+    white-space: nowrap;
+}
+
+.simple-card-second-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding:.5rem 0;
+    width: 100%;
+}
+.simple-prev-price{
+    font-size: 13px;
+    color:var(--second-text);
+    text-decoration: through;
+}
+.simple-now-price{
+    font-size: 20px;
+    font-weight: bold;
+   color:var(--main-text);
+}
+.simple-toman-container{
+    width:25px;
+    height:27px;
+}
+.simple-card-prices{
+    display: flex;
+    flex-direction: column;
+}

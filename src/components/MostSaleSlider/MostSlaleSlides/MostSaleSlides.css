@@ -1,0 +1,26 @@
+.type-two-book-slider .swiper-wrapper .swiper-slide {
+    transition: .4s;
+}
+
+.type-two-book-slider {
+    background-color: #ffffff;
+    border-radius: 20px;
+}
+
+.type-two-book-slider .swiper-wrapper {
+    padding: 24px !important;
+}
+
+
+.see-all-column {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+@media screen and (min-width:1200px) {
+
+    .type-two-book-slider-container {
+        padding-left: 3rem;
+    }
+}

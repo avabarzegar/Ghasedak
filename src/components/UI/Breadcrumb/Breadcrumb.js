@@ -1,5 +1,5 @@
 import Breadcrumb from "react-bootstrap/Breadcrumb";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import Home from "../../../assets/Images/icon/Home.svg";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
@@ -25,9 +25,9 @@ const CustomBreadcrumb=(props)=> {
     <div className="breadcrumb-container">
     <Breadcrumb className="breadcrumb-main">
       <Breadcrumb.Item>
-        <Link to="/" className="breadcrumb-icon">
+        {/* <Navigate to="/" className="breadcrumb-icon"> */}
           <img src={Home} alt="home" width="100%" height="100%" />
-        </Link>
+        {/* </Navigate> */}
       </Breadcrumb.Item>
       {props.children}
       <Breadcrumb.Item className="breadcrumb-result-container" active>

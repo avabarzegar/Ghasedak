@@ -33,7 +33,7 @@ function SearchTabs() {
                         return(
                             <Col className="search-page-books" xl={3} lg={4} sm={6}>
                                 <BookSimpleCard
-                                key={index}
+                                key={item.id}
                                 img={item.img} 
                                 name={item.name} 
                                 />

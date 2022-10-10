@@ -28,49 +28,54 @@ const SearchInput =(props)=>{
    
    //    show search result page by clicking enter key 
 
-//    let NewData
+    let DataBook
     const handleKeyDown = (event) => {
         // e.preventDefault()
         if (event.key === "Enter"){  
           setSearchValue(inputRef.current.value);
-          let NewData = bookData;
+          DataBook = bookData;
 		  if (inputChange) {
-			NewData = bookData.filter((items) =>
+			DataBook = bookData.filter((items) =>
 				items.name.toLowerCase().includes(inputChange, 0)
 			);
             navigate('/search')
-            setNewData(NewData)
+            setNewData(DataBook)
+            
 		  }
-          if(newData === [] || newData === undefined || newData.length === 0 || newData === null) {
-			navigate('*')
-		  }
+          if(DataBook === [] || DataBook === undefined || DataBook.length === 0 || DataBook === null) {
+            navigate('*')
+          }
          
         }
     }
     
     //    show search result page by clicking enter key - end
-    //  useEffect(() => {
-    //     setNewData(NewData)
-    // }, [inputChange])
-
+    
    //    show search result page by clicking on search button 
-    const handleClick =()=>{
+
+    const handleClick =(event)=>{
        
-        // setSearchValue(inputRef.current.value);
-        // NewData = bookData;
-        // if (inputChange) {
-        //   NewData = bookData.filter((items) =>
-        //       items.name.toLowerCase().includes(inputChange, 0)
-        //   );
-        //   navigate('/search')
-        // }
-        // if(NewData === [] || NewData === undefined || NewData.length === 0 || NewData === null) {
-        //   navigate('*')
-        // }
+        setSearchValue(inputRef.current.value);
+        DataBook = bookData;
+        if (inputChange) {
+          DataBook = bookData.filter((items) =>
+            items.name.toLowerCase().includes(inputChange, 0)
+          );
+          navigate('/search')
+          setNewData(DataBook)
+          
+        }
+        if(DataBook === [] || DataBook === undefined || DataBook.length === 0 || DataBook === null) {
+          navigate('*')
+        }
+       
        
     }
    //    show search result page by clicking on search button - end
-   
+    // useEffect(() => {
+    //     setNewData(newData)
+    // }, [inputChange])
+
   
     return(
         <div className="search-input-container">

@@ -68,9 +68,11 @@
 
 .add-to-cart-detailpage{
     background-color: var(--main-purple);
-    padding: .75rem 1rem;
+    padding: 0.5rem 0.5rem;
     color: var(--white-color);
     width: 17rem;
+    margin-right: 1.5rem;
+    font-size: 12px;
 }
 
 .add-to-cart-detail-page-text{

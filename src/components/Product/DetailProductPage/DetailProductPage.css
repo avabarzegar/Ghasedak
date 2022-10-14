@@ -38,3 +38,9 @@
 .detail_icons_head_section img {
    margin: 0 .5rem;
 }
+
+.stores-product-page-in-detail-component{
+   display: flex;
+   justify-content: center;
+ 
+}

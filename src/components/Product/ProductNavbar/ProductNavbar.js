@@ -14,8 +14,8 @@ const ProductNavbar = () => {
          <Navbar />
          <Container className="Product_nav_parent">
             <Row  >
-               <Col  xs={12} lg={2}><CustomBreadcrumb breadcrumbcontainercustomstyle="breadcrumb-container_custom_style" CustomBreadcrumbStyle="BreadCrumpStyle" activeImage={BookIconProduct} activeText="محصولات" /></Col>
-               <Col  xs={12} lg={6} ><BookNameProduct /></Col>
+               <Col  xs={12} lg={3}><CustomBreadcrumb breadcrumbcontainercustomstyle="breadcrumb-container_custom_style" CustomBreadcrumbStyle="BreadCrumpStyle" activeImage={BookIconProduct} activeText="محصولات" /></Col>
+               <Col  xs={12} lg={5} ><BookNameProduct /></Col>
                <Col  xs={12} lg={4}><AlertProductPage /></Col>
             </Row>
          </Container>

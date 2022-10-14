@@ -4,6 +4,7 @@ import { Container, Col, Row } from "react-bootstrap";
 import Layout from "../../components/Layout/Layout";
 import BlogSide from "../../components/BlogPage/BlogSide/BlogSide";
 import BlogMainCard from "../../components/BlogPage/BlogMainCard/BlogMainCard";
+import OtherBlogs from "../../components/BlogPage/OtherBlogs/OtherBlogs";
 // blog section components
 // import SearchTabs from "../../components/SearchPage/SearchTabs/SearchTabs";
 
@@ -20,6 +21,7 @@ const Blog = () => {
               <BlogMainCard />
             </Col>
           </Row>
+          <OtherBlogs />
         </Container>
       </Container>
     </Layout>

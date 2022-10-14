@@ -1,0 +1,25 @@
+.small-blog-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.small-blog-btn-text {
+    color: var(--placeholder-text);
+    font-size: 12px;
+    margin-bottom: .5rem;
+    display: inline-block;
+}
+
+@media screen and (min-width:992px) {
+    .small-blog-btn-text {
+        display: inline-block;
+    }
+}
+@media screen and (max-width:992px) {
+    .small-blog-btn-text {
+        display: block;
+        font-size: 10px;
+    }
+}

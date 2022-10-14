@@ -11,17 +11,19 @@
 }
 
 .star-img {
-    width: 18px;
-    height: 18px;
     margin-left: 2px;
+}
+
+.rating-details {
+    font-weight: 700;
+    font-size: 14px;
+    display: block;
 }
 
 .comment-icon,
 .view-icon {
-    width: 20px;
-    height: 20px;
     display: flex;
-    margin-left: .2rem;
+    margin-left: 5px;
 }
 
 .comment-number,
@@ -30,4 +32,13 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+}
+
+@media screen and (max-width:992px) {
+
+    .comment-icon,
+    .view-icon {
+        width: 20px;
+        height: 20px;
+    }
 }

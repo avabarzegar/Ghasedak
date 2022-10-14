@@ -1,10 +1,10 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 import "./BlogSideCard.css";
-// import "bootstrap/dist/css/bootstrap.min.css";
+
 import BlogTitle from "../../../BlogTitle/BlogTitle";
 import BlogRating from "../../../BlogRating/BlogRating";
-import SmallBlogBtn from "../../../SmallBlogBtn/SmallBlogBtn";
+import BlogBtnSection from "../../../BlogBtnSection/BlogBtnSection";
 
 // define sidebar card in blog page
 const BlogSideCard = (props) => {
@@ -32,7 +32,11 @@ const BlogSideCard = (props) => {
         <BlogRating message={props.message} view={props.view} />
       </div>
       <div className="padding-1">
-        <SmallBlogBtn author={props.author} date={props.date} />
+        <BlogBtnSection
+          flex="flex--column"
+          author={props.author}
+          date={props.date}
+        />
       </div>
     </div>
   );

@@ -79,6 +79,18 @@
     margin-right: 1rem;
 }
 
+.send-comment-btn{
+    background-color: var(--main-purple);
+    padding: 0.5rem 0.5rem;
+    color: var(--white-color);
+    width: 100%;
+    font-size: 12px;
+}
+
+.send-comment-btn span {
+    color: var(--white-color);
+}
+
 @media screen and (max-width:1390px) {
 
     .ghasedak_download-app,
@@ -125,5 +137,16 @@
         width: 100%;
         justify-content: center;
         margin-top: 1.25rem;
+    }
+
+    .add-to-cart-detailpage{
+        margin-right: 0;
+        margin-top: 1.25rem;
+    }
+}
+
+@media screen and (max-width:325px) {
+    .add-to-cart-detailpage{
+        width: 15rem;
     }
 }

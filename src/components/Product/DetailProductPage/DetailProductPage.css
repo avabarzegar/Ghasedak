@@ -44,3 +44,21 @@
    justify-content: center;
  
 }
+
+@media screen and (max-width:768px) {
+   .Parent-section-detail-product-page {
+      width: 100%;
+   }
+   .row-Parent-section-detail-product-page{
+      width: 100%;
+   }
+   .Parent-section-detail-product-page {
+      padding: .75rem;
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+   }
+   .stores-product-page-in-detail-component {
+      margin-top: 1.5rem;
+   }
+}

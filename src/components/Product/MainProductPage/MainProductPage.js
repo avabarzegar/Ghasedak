@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Row , Container} from "react-bootstrap";
 import DetailProductPage from "../DetailProductPage/DetailProductPage";
 import ImageProductBook from "../ImageOfproductBook/ImageOfproductBook";
+import RelatedBooks from "../IntroductionBook/RelatedBooks/RelatedBooks";
 import "./MainProductPage.css";
 
 

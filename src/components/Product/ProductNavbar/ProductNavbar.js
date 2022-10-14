@@ -10,16 +10,19 @@ import BookIconProduct from '../../../assets/Images/icon/book-icon-product.svg';
 
 const ProductNavbar = () => {
    return (
-      <Container fluid>
+      <>
          <Navbar />
-         <Container className="Product_nav_parent">
-            <Row  >
-               <Col  xs={12} lg={3}><CustomBreadcrumb breadcrumbcontainercustomstyle="breadcrumb-container_custom_style" CustomBreadcrumbStyle="BreadCrumpStyle" activeImage={BookIconProduct} activeText="محصولات" /></Col>
-               <Col  xs={12} lg={5} ><BookNameProduct /></Col>
-               <Col  xs={12} lg={4}><AlertProductPage /></Col>
-            </Row>
+
+         <Container fluid className="container-fluid-product-navbar">
+            <Container  className="Product_nav_parent">
+               <Row  >
+                  <Col xs={12} lg={3}><CustomBreadcrumb breadcrumbcontainercustomstyle="breadcrumb-container_custom_style" CustomBreadcrumbStyle="BreadCrumpStyle" activeImage={BookIconProduct} activeText="محصولات" /></Col>
+                  <Col xs={12} lg={5} ><BookNameProduct /></Col>
+                  <Col xs={12} lg={4}><AlertProductPage /></Col>
+               </Row>
+            </Container>
          </Container>
-      </Container>
+      </>
    )
 
 

@@ -47,3 +47,31 @@
    align-items: center;
    justify-content: space-between;
 }
+
+@media screen and (max-width:768px) {
+   .parent-section-counter-btn-add-to-cart{
+      flex-direction: column;
+   }
+  
+   .parent-section-counter-btn-add-to-cart{
+      align-items: flex-start;
+   }
+}
+
+@media screen and (max-width:400px) {
+   .more_info_parent_section img {
+      margin-left: .75rem;
+   }
+  
+}
+
+@media screen and (max-width:325px) {
+   .more_info_parent_section span {
+      font-weight: 700;
+      font-size: 11px;
+      color: var(--main-purple);
+   }
+   .more_info_parent_section img {
+      margin-left: .25rem;
+   }
+}

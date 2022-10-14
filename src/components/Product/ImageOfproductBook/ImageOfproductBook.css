@@ -53,3 +53,19 @@
    height: 68px;
    margin: 0 .25rem;
 }
+
+
+@media screen and (max-width:765px) {
+   .parent-section-rating-book {
+      right: 21%;
+   }
+
+   .img-book-info {
+      width: 207.16px;
+      height: 273px;
+   }
+   .small-images-of-books img {
+      width: 40px;
+      height: 60px;
+   }
+}

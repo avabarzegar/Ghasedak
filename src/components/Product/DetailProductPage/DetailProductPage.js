@@ -11,7 +11,7 @@ import StoresProductPage from "../StoresProductPage/StoresProductPage";
 const DetailProductPage = () => {
    return (
       <Container className="Parent-section-detail-product-page">
-         <Row>
+         <Row className="row-Parent-section-detail-product-page">
             <Col md={12} lg={7} >
                <div>
                   <div className="detail_head_section">

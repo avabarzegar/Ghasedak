@@ -16,6 +16,22 @@
 .breadcrumb-container_custom_style {
    width: 70%;
 }
+
+@media screen and (max-width:768px) {
+   .container-fluid-product-navbar{
+     
+      margin-bottom: 2.5rem;
+   }
+   .BreadCrumpStyle{
+      width: auto;
+   }
+   .breadcrumb-container_custom_style{
+      width: 100%;
+   
+   }
+
+}
+
 @media screen and (max-width:576px){
    .breadcrumb-container_custom_style {
       width: 100%;

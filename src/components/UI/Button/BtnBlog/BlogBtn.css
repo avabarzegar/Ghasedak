@@ -1,0 +1,15 @@
+.blog-btn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+}
+.blog-btn-icon{
+    width:8px;
+    height: 18px;
+}
+.blog-btn-txt{
+    font-size: 12px;
+    color: #fff;
+    margin-inline-end: .5rem;
+}

@@ -1,0 +1,26 @@
+.blog-rating-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.star-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.star-img {
+    width: 24px;
+    height: 24px;
+}
+.comment-icon,.view-icon{
+    width: 20px;
+    height:20px;
+}
+.comment-number,.view-container{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: center;
+}

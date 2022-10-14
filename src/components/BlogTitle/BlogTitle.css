@@ -1,0 +1,14 @@
+.blog-title-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+}
+.blog-title-icon{
+    width:25px;
+    height:25px;
+}
+.blog-title{
+    font-weight: 700;
+    font-size:12px
+}

@@ -11,7 +11,7 @@ const SearchSidebar=()=>{
     return(
         <>
           <SearchBreadcrumb />
-          <AppliedFilters />
+            <AppliedFilters />
           <SearchFilters />
         </>
     )

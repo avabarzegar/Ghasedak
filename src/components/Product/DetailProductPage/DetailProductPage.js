@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import DetailImage from "../../../assets/Images/icon/detailimageproduct.svg";
 import ShareImageProduct from "../../../assets/Images/icon/share.svg";
 import DetailImageLike from "../../../assets/Images/icon/like-product.svg";
@@ -11,20 +11,26 @@ import StoresProductPage from "../StoresProductPage/StoresProductPage";
 const DetailProductPage = () => {
    return (
       <Container className="Parent-section-detail-product-page">
-         <div>
-            <div className="detail_head_section">
-               <div className="detail_title_section">
-                  <img src={DetailImage} />
-                  <span>مشخصات :</span>
+         <Row>
+            <Col md={12} lg={6} >
+               <div>
+                  <div className="detail_head_section">
+                     <div className="detail_title_section">
+                        <img src={DetailImage} />
+                        <span>مشخصات :</span>
+                     </div>
+                     <div className="detail_icons_head_section">
+                        <img src={ShareImageProduct} />
+                        <img src={DetailImageLike} />
+                     </div>
+                  </div>
+                  <InfoBooksDetail />
                </div>
-               <div className="detail_icons_head_section">
-                  <img src={ShareImageProduct} />
-                  <img src={DetailImageLike} />
-               </div>
-            </div>
-            <InfoBooksDetail />
-         </div>
-         <StoresProductPage />
+            </Col>
+            <Col md={12} lg={6}>
+               <StoresProductPage />
+            </Col>
+         </Row>
       </Container>
    )
 }

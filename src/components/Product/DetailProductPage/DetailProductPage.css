@@ -7,7 +7,7 @@
 }
 
 .Parent-section-detail-product-page {
-   width: 100%;
+   width: fit-content;
    display: flex;
    align-items: center;
    background: #FFFFFF;

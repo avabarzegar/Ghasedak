@@ -8,10 +8,10 @@ import { useRef } from "react";
 
 
 // define Breadcrumb bootstrap 
-const CustomBreadcrumb=(props)=> {
+const CustomBreadcrumb = (props) => {
 
   // define state and ref 
-  const searchRef=useRef(null);
+  const searchRef = useRef(null);
   // define state and ref 
 
 
@@ -22,27 +22,27 @@ const CustomBreadcrumb=(props)=> {
   );
 
   return (
-    <div className="breadcrumb-container">
-    <Breadcrumb className="breadcrumb-main">
-      <Breadcrumb.Item>
-        {/* <Navigate to="/" className="breadcrumb-icon"> */}
+    <div className={`breadcrumb-container ${props.breadcrumbcontainercustomstyle}`}>
+      <Breadcrumb className={`breadcrumb-main ${props.CustomBreadcrumbStyle}`}>
+        <Breadcrumb.Item>
+          {/* <Navigate to="/" className="breadcrumb-icon"> */}
           <img src={Home} alt="home" width="100%" height="100%" />
-        {/* </Navigate> */}
-      </Breadcrumb.Item>
-      {props.children}
-      <Breadcrumb.Item className="breadcrumb-result-container" active>
-        <div className="breadcrumb-icon breadcrumb-padding">
-          <img src={props.activeImage} alt="active-icon" width="100%" height="100%"/>
-        </div>
-        <OverlayTrigger
+          {/* </Navigate> */}
+        </Breadcrumb.Item>
+        {props.children}
+        <Breadcrumb.Item className="breadcrumb-result-container" active>
+          <div className="breadcrumb-icon breadcrumb-padding">
+            <img src={props.activeImage} alt="active-icon" width="100%" height="100%" />
+          </div>
+          <OverlayTrigger
             placement="bottom"
             delay={{ show: 250, hide: 400 }}
             overlay={renderTooltip}
-        >
-          <span ref={searchRef} className="breadcrumb-text breadcrumb-padding">{props.activeText}</span>
-        </OverlayTrigger>
-      </Breadcrumb.Item>
-    </Breadcrumb>
+          >
+            <span ref={searchRef} className="breadcrumb-text breadcrumb-padding">{props.activeText}</span>
+          </OverlayTrigger>
+        </Breadcrumb.Item>
+      </Breadcrumb>
     </div>
   );
 }

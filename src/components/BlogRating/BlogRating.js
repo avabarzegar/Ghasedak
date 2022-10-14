@@ -22,13 +22,13 @@ const BlogRating = (props) => {
         <div className="comment-icon">
           <img src={Message} width="100%" height="100%" alt="icon" />
         </div>
-        <span>{props.message}</span>
+        <span className="rating-details">{props.message}</span>
       </div>
       <div className="view-container">
         <div className="view-icon">
           <img src={Eye} width="100%" height="100%" alt="eye" />
         </div>
-        <span>{props.view}</span>
+        <span className="rating-details">{props.view}</span>
       </div>
     </div>
   );

@@ -1,6 +1,5 @@
 import React from "react";
 import { Row , Col } from "react-bootstrap";
-import Img from "../../../../assets/Images/Asset 2@320x-8 1 (1).png";
 import "./BlogSideCard.css";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import BlogTitle from "../../../BlogTitle/BlogTitle";
@@ -19,7 +18,7 @@ const BlogSideCard =(props)=>{
                     </div>
                 </Col>
                 <Col sm={8} xs={9}>
-                  <div className="d-flex flex-column">
+                  <div className="column">
                     <BlogTitle 
                     title={props.title}
                     />

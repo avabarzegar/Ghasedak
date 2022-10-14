@@ -8,3 +8,7 @@
     font-size: .8rem;
     color: var(--placeholder-text);
 }
+.column{
+    display: flex;
+    flex-direction: column;
+}

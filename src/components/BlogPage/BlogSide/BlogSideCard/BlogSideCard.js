@@ -28,7 +28,7 @@ const BlogSideCard = (props) => {
           </div>
         </Col>
       </Row>
-      <div className="blog-rating-parent padding-1">
+      <div className="blog-rating-parent">
         <BlogRating message={props.message} view={props.view} />
       </div>
       <div className="padding-1">

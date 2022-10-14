@@ -23,7 +23,7 @@ const CustomBreadcrumb = (props) => {
 
   return (
     <div className={`breadcrumb-container ${props.breadcrumbcontainercustomstyle}`}>
-      <Breadcrumb className={`breadcrumb-main ${props.CustomBreadcrumbStyle}`}>
+      <Breadcrumb className={`${props.CustomBreadcrumbStyle} breadcrumb-main `}>
         <Breadcrumb.Item>
           {/* <Navigate to="/" className="breadcrumb-icon"> */}
           <img src={Home} alt="home" width="100%" height="100%" />

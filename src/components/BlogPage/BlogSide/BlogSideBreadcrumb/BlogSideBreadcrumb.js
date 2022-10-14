@@ -7,7 +7,8 @@ import "./BlogSideBreadcrumb.css";
 const BlogSideBreadcrumb =()=>{
     return(
         <div className="breadcrumb-blog">
-          <CustomBreadcrumb 
+          <CustomBreadcrumb
+          CustomBreadcrumbStyle="blog-breadcrumb-border-custom" 
           activeImage={Icon}
           activeText="بلاگ"
           />

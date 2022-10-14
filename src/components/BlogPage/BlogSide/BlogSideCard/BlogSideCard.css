@@ -13,6 +13,6 @@
 }
 
 .blog-rating-parent {
-    padding-bottom: 1rem;
+    padding: 0 1rem 1rem 1rem;
     border-bottom: 1px dashed var(--second-text);
 }

@@ -1,0 +1,25 @@
+.BookNameProduct_img {
+   filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.24));
+   border-radius: 2px;
+   width: 35px;
+   height: 45px;
+}
+
+.BookNameProduct_parent_section{
+   display: flex;
+   align-items: center;
+}
+
+.BookNameProduct_parent_section div{
+   margin-right: .5rem;
+}
+
+.BookNameProduct_parent_section div span {
+   margin-right: .25rem;
+}
+
+@media screen and (max-width:576px){
+   .BookNameProduct_parent_section{
+      margin-top: 1.5rem;
+   }
+}

@@ -1,0 +1,25 @@
+.alertproductpage_parent_section {
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+}
+
+.alertproductpage_parent_section span {
+   color: var(--wrong-color);
+   margin-right: 1rem;
+   font-weight: 700;
+   font-size: 20px;
+}
+
+
+
+@media screen and (max-width:576px) {
+   .alertproductpage_parent_section{
+      justify-content: flex-start;
+      margin-top: 1.5rem;
+   }
+   .alertproductpage_parent_section span{
+      font-weight: 500;
+   font-size: 13px;
+   }
+}

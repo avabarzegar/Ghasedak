@@ -11,16 +11,23 @@
 }
 
 .star-img {
-    width: 24px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
+    margin-left: 2px;
 }
-.comment-icon,.view-icon{
+
+.comment-icon,
+.view-icon {
     width: 20px;
-    height:20px;
+    height: 20px;
+    display: flex;
+    margin-left: .2rem;
 }
-.comment-number,.view-container{
+
+.comment-number,
+.view-container {
     display: flex;
     flex-direction: row;
-    align-items:center;
+    align-items: center;
     justify-content: center;
 }

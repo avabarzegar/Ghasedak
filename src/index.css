@@ -1,16 +1,16 @@
 /* === define variables === */
 :root {
-  --main-purple: #6B2AD3;
-  --main-orange: #FFAA00;
-  --main-text: #292D32;
-  --second-text: #CBCFD3;
-  --placeholder-text: #A2A6AB;
-  --input-bg: #EEF0F3;
-  --wrong-color: #D95262;
-  --white-color: #FFFFFF;
-  --green-color: #41BF74;
-  --off-color: #EB364C;
-  --menu-section: #EFF3F8;
+  --main-purple: #6b2ad3;
+  --main-orange: #ffaa00;
+  --main-text: #292d32;
+  --second-text: #cbcfd3;
+  --placeholder-text: #a2a6ab;
+  --input-bg: #eef0f3;
+  --wrong-color: #d95262;
+  --white-color: #ffffff;
+  --green-color: #41bf74;
+  --off-color: #eb364c;
+  --menu-section: #eff3f8;
   --main-shadow: 0px 1px 8px rgba(0, 0, 0, 0.16);
   --book-shadow: 0px 4px 8px rgba(0, 0, 0, 0.24);
   --nav-shadow: 0px 1px 32px rgb(0 0 0 / 16%);
@@ -21,7 +21,6 @@
 }
 
 /* === define variables end === */
-
 
 /* === adding fonts ===  */
 @font-face {
@@ -103,7 +102,6 @@ ul {
   padding: 0;
 }
 
-
 li {
   list-style-type: none;
 }
@@ -113,6 +111,10 @@ li {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.padding-1 {
+  padding: 1rem;
 }
 
 .swiper {

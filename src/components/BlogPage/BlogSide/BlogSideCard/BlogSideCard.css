@@ -1,14 +1,22 @@
-.blog-side-card{
+.blog-side-card {
     display: flex;
     flex-direction: column;
-    padding:.5rem;
-    border-radius: 15px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--web-main-shadow);
+    margin-bottom: 1rem;
 }
-.blog-card-text{
+
+.blog-card-text {
     font-size: .8rem;
     color: var(--placeholder-text);
 }
-.column{
+
+.column {
     display: flex;
     flex-direction: column;
+}
+
+.blog-rating-parent {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--second-text);
 }

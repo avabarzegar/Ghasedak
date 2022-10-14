@@ -11,8 +11,8 @@ import StoresProductPage from "../StoresProductPage/StoresProductPage";
 const DetailProductPage = () => {
    return (
       <Container className="Parent-section-detail-product-page">
-         <Row>
-            <Col md={12} lg={6} >
+         <Row className="row-Parent-section-detail-product-page">
+            <Col md={12} lg={7} >
                <div>
                   <div className="detail_head_section">
                      <div className="detail_title_section">
@@ -27,7 +27,7 @@ const DetailProductPage = () => {
                   <InfoBooksDetail />
                </div>
             </Col>
-            <Col md={12} lg={6}>
+            <Col md={12} lg={5} className="stores-product-page-in-detail-component">
                <StoresProductPage />
             </Col>
          </Row>

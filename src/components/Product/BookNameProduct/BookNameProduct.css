@@ -18,7 +18,7 @@
    margin-right: .25rem;
 }
 
-@media screen and (max-width:576px){
+@media screen and (max-width:768px){
    .BookNameProduct_parent_section{
       margin-top: 1.5rem;
    }

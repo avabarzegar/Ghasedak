@@ -35,7 +35,6 @@
   align-items: center;
 }
 .other-blogs-slider .swiper-wrapper {
-  /* transform: translate3d(100%, 0px, 0px) !important; */
   display: flex;
   justify-content: center;
 }
@@ -44,8 +43,8 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  bottom:-25px;
-  direction:ltr;
+  bottom: -25px;
+  direction: ltr;
 }
 .other-blogs-slider .swiper-pagination-clickable .swiper-pagination-bullet {
   display: flex;
@@ -53,4 +52,12 @@
   align-items: center;
   font-weight: 700;
   font-size: 14px;
+}
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: -20px;
+}
+.blog-navigation{
+  width:20px;
+  height:20px;
 }

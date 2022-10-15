@@ -72,7 +72,7 @@ const BookSlidesFirst = () => {
     swiperRef.slideNext();
   }, [swiperRef]);
 
-  //  let SwiperSlide;
+  
 
   return (
     <section className="special-discount">

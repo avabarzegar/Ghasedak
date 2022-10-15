@@ -1,7 +1,9 @@
-import React from "react";
+import { React, useCallback, useState, useRef } from "react";
 import { Row, Col } from "react-bootstrap";
 import Img from "../../../../assets/Images/Asset 2@320x-8 1.png";
 import OtherBlogsCard from "../OtherBlogsCard/OtherBlogsCard";
+import Right from "../../../../assets/Images/icon/arrow-circle-right.svg";
+import Left from "../../../../assets/Images/icon/arrow-circle-left.svg";
 import "./OtherBlogsCards.css";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,12 +12,29 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 
-
 // import required modules
-import { Grid, Pagination } from "swiper";
+import { Grid, Pagination, Navigation } from "swiper";
 
 // define other blogs cards slides
 const OtherBlogsCards = () => {
+  // refer hook
+  const navigationPrevRef = useRef(null);
+  const navigationNextRef = useRef(null);
+
+  // refer hook end
+
+  // state hook
+  const [swiperRef, setSwiperRef] = useState();
+  const handleLeftClick = useCallback(() => {
+    if (!swiperRef) return;
+    swiperRef.slidePrev();
+  }, [swiperRef]);
+
+  const handleRightClick = useCallback(() => {
+    if (!swiperRef) return;
+    swiperRef.slideNext();
+  }, [swiperRef]);
+
   const pagination = {
     clickable: true,
     renderBullet: function (index, className) {
@@ -25,12 +44,19 @@ const OtherBlogsCards = () => {
   return (
     <Swiper
       slidesPerView={3}
-      //   slidesPerColumn={2}
+      onSwiper={setSwiperRef}
+      navigation={{
+        prevEl: navigationPrevRef.current,
+        nextEl: navigationNextRef.current,
+      }}
+      onBeforeInit={(swiper) => {
+        swiper.params.navigation.prevEl = navigationPrevRef.current;
+        swiper.params.navigation.nextEl = navigationNextRef.current;
+      }}
       slidesPerGroup={2}
       spaceBetween={20}
-    //   slidesPerColumnFill="row"
       pagination={pagination}
-      modules={[Grid, Pagination]}
+      modules={[Grid, Pagination, Navigation]}
       className="other-blogs-slider"
       scrollbar={{
         el: ".swiper-scrollbar",
@@ -41,31 +67,20 @@ const OtherBlogsCards = () => {
           slidesPerView: 1,
           spaceBetween: 0,
         },
-        // 576: {
-        //   slidesPerView: 1.5,
-        //   spaceBetween: 25,
-        // },
-
-        // 768: {
-        //   slidesPerView: 1.5,
-        //   spaceBetween: 25,
-        // },
-
         992: {
           slidesPerView: 2,
         },
 
-        1200: { 
-            slidesPerView: 3,
+        1200: {
+          slidesPerView: 3,
         },
-
       }}
     >
       {[...Array(13)].map((item) => {
         return (
           <SwiperSlide>
             <Row className="blog-slide-row">
-              {[...Array(12)].map((item,index) => {
+              {[...Array(12)].map((item, index) => {
                 return (
                   <Col xl={4} md={6}>
                     <OtherBlogsCard
@@ -84,6 +99,18 @@ const OtherBlogsCards = () => {
           </SwiperSlide>
         );
       })}
+      <div>
+        <button onClick={handleRightClick} ref={navigationNextRef}>
+          <div className="blog-navigation">
+            <img src={Right} width="100%" height="100%" alt="prev button" />
+          </div>
+        </button>
+        <button onClick={handleLeftClick} ref={navigationPrevRef}>
+          <div className="blog-navigation">
+            <img src={Left} width="100%" height="100%" alt="next button" />
+          </div>
+        </button>
+      </div>
     </Swiper>
   );
 };

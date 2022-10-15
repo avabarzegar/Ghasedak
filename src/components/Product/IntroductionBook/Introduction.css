@@ -1,0 +1,5 @@
+@media screen and (max-width:992px) {
+   .row-introduction-section {
+      flex-direction: column-reverse;
+   }
+}

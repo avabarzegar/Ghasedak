@@ -1,0 +1,18 @@
+.parent-section-related-books {
+   background-color: #F4F8F9;
+   border-radius: 15px;
+   padding:.75rem 1.5rem 1.5rem 1.5rem;
+}
+
+.parent-section-related-books h2 {
+   font-weight: 700;
+   font-size: 15px;
+   color: #292D32;
+   margin-bottom: 4rem;
+}
+
+@media screen and (max-width:992px) {
+   .parent-section-related-books {
+      margin-top: 1.5rem;
+   }
+}

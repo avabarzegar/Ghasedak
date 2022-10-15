@@ -68,13 +68,27 @@
 
 .add-to-cart-detailpage{
     background-color: var(--main-purple);
-    padding: .75rem 1rem;
+    padding: 0.5rem 0.5rem;
     color: var(--white-color);
     width: 17rem;
+    margin-right: 1.5rem;
+    font-size: 12px;
 }
 
 .add-to-cart-detail-page-text{
     margin-right: 1rem;
+}
+
+.send-comment-btn{
+    background-color: var(--main-purple);
+    padding: 0.5rem 0.5rem;
+    color: var(--white-color);
+    width: 100%;
+    font-size: 12px;
+}
+
+.send-comment-btn span {
+    color: var(--white-color);
 }
 
 @media screen and (max-width:1390px) {
@@ -123,5 +137,16 @@
         width: 100%;
         justify-content: center;
         margin-top: 1.25rem;
+    }
+
+    .add-to-cart-detailpage{
+        margin-right: 0;
+        margin-top: 1.25rem;
+    }
+}
+
+@media screen and (max-width:325px) {
+    .add-to-cart-detailpage{
+        width: 15rem;
     }
 }

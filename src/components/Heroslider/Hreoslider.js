@@ -12,7 +12,7 @@ const Hreoslider = (props) => {
    const [banner, setBanner] = useState([]);
 
    useEffect(() => {
-      const token = 'P8o22ywHiArtk7055H4e6b5gLQbGc7gtuWJhKkJJ';
+      const token = '23WkcBwlNrIWRoIVii9wAJqlnGg6wnSu7jLatyJw';
 
       const config = {
          headers: { Authorization: `Bearer ${token}` }
@@ -25,11 +25,10 @@ const Hreoslider = (props) => {
 
       //    === get slides data from api ===
       axios.post(
-         'application/home',
+         '/user/pwa/home',
          bodyParameters,
          config
       ).then((response) => {
-        
          const bannerData = [];
          response.data.banners.data[0].items.data.map((item) => {
             bannerData.push({

@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useState , useEffect} from "react";
 import "./IntroBooks.css";
 import { useRef } from "react";
 import TitleDetail from "../../DetailProductPage/TitleDetail/TitleDetail";
@@ -8,8 +8,72 @@ import StyledButton from "../../../UI/Button/Button";
 import CommentIcon from "../../../../assets/Images/icon/comment-btn-img.svg";
 import CommentIconInComments from "../../../../assets/Images/icon/send-comment-icon-in-comments.svg";
 import StarRating from "../../../../assets/Images/icon/start-rating.svg";
+import axios from "axios";
 
 const IntroBooks = () => {
+
+
+   useEffect(()=>{
+      const token ='DzOWeWbxkSIDgEy8PliDBIMAns9yrOqf7jTDnBpi';
+     
+      const config = {
+        headers: { Authorization: `Bearer ${token}` }
+    };
+    
+    const bodyParameters = {
+       key: "value"
+    };
+    
+     
+      //    === get slides data from api ===
+      axios.post( 
+        '/books/list/all',
+        bodyParameters,
+        config
+      ).then((response)=>{
+
+         console.log(response.data[1].name)
+             
+            //   const slideData=[];
+            //   response.data.book_lists[1].books.data.map((item)=>{
+            //     slideData.push({
+            //         id:item.id ,
+            //         name:item.name,
+            //         image:item.images.data[0].image_url,
+  
+            //       })  
+                   
+            //   })
+            //  setSlide(slideData)
+          })
+          .catch((err)=>{
+              console.log(err.message)
+          })
+  
+        
+       
+      //    === get slides data from api ===
+  
+      } , [])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    const div1 = React.useRef(null)
    const div2 = React.useRef(null)
    const div3 = React.useRef(null)
@@ -28,6 +92,10 @@ const IntroBooks = () => {
       });
 
    }
+
+
+
+   
    return (
 
       <div>

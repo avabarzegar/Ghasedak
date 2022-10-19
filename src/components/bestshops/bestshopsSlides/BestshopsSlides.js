@@ -30,8 +30,94 @@ const BestShopsSlides = () => {
   const [slide, setSlide] = useState([]);
   // state hook end
 
+<<<<<<< HEAD
   useEffect(() => {
     const token = "ln9cmSRAFLIDY6X9MOjoomOzEzghPZqE0skQQc8X";
+=======
+  
+  useEffect(()=>{
+    const token ='23WkcBwlNrIWRoIVii9wAJqlnGg6wnSu7jLatyJw';
+   
+    const config = {
+      headers: { Authorization: `Bearer ${token}` }
+  };
+  
+  const bodyParameters = {
+     key: "value"
+  };
+  
+   
+    //    === get slides data from api ===
+    axios.post( 
+      '/user/pwa/home',
+      bodyParameters,
+      config   
+    ).then((response)=>{
+           console.log(response.data.top_stores.data[0])
+            const slideData=[];
+            response.data.top_stores.data[0].map((item)=>{
+              slideData.push({
+                  id:item.id ,
+                  name:item.name,
+                  // author: item.author,
+                  // publisher:item.publisher,
+                  // image:item.images.data.image_url,
+
+                })  
+                 
+            })
+           setSlide(slideData)
+           console.log(setSlide)
+        })
+        .catch((err)=>{
+            console.log(err.message)
+        })
+
+      
+     
+    //    === get slides data from api ===
+
+    } , [])
+    
+    // == use swiper autoplay & navigation ==
+    SwiperCore.use([Navigation , Autoplay])
+    // == use swiper autoplay end ==
+   
+   
+    const handleLeftClick = useCallback(() => {
+      if (!swiperRef) return;
+      swiperRef.slidePrev();
+    }, [swiperRef]);
+ 
+    const handleRightClick = useCallback(() => {
+      if (!swiperRef) return;
+      swiperRef.slideNext();
+    }, [swiperRef]);
+ 
+
+
+    return(
+       <section>
+        {/* first section of slider  */}
+        <SliderTopLine 
+         text='فروشگاه های برتر'
+         textBorder='purple-bottom'
+         containerBorder='gray-bottom'
+         >
+         <div className='first-slider-left-container'>
+            
+        {/* navigation  */}
+          <SliderNavigation
+          handleLeftClick={handleLeftClick}
+          handleRightClick={handleRightClick}
+          navigationPrevRef={navigationPrevRef}
+          navigationNextRef={navigationNextRef}
+          />   
+        {/* navigation end */}
+         </div>
+         </SliderTopLine>
+        {/* first section of slider end  */}
+>>>>>>> fix-api-home
 
     const config = {
       headers: { Authorization: `Bearer ${token}` },
@@ -157,11 +243,16 @@ const BestShopsSlides = () => {
               return (
                 // == return swiper slides ==
 
+<<<<<<< HEAD
                 <SwiperSlide
                   className="book-slide-two nearshop-slide width-slides"
                   key={item.id}
                 >
                   <BestShopssingleslide />
+=======
+                <SwiperSlide className='book-slide-two nearshop-slide width-slides' key={item.id}>
+                  <BestShopssingleslide acticeText={item.name}  />
+>>>>>>> fix-api-home
                 </SwiperSlide>
                 // == return swiper slides end ==
               );

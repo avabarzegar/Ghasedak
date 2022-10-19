@@ -20,7 +20,7 @@ const FiltersList =()=>{
         updatedSorting.splice(index , 1);
         setSorting(updatedSorting);
     }
-    // delete specific filter by clicking on its delete button end
+    // delete specific filter by clicking on its delete button -end
 
     return(
         <div className="filter-list">
@@ -41,6 +41,6 @@ const FiltersList =()=>{
     )
 }
 
-// define all applied filters list 
+// define all applied filters list -end
 
 export default FiltersList;

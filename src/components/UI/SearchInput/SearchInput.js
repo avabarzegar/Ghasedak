@@ -76,7 +76,7 @@ const SearchInput =(props)=>{
     //     setNewData(newData)
     // }, [inputChange])
 
-  
+  console.log(bookData)
     return(
         <div className="search-input-container">
             <input className="search-input" ref={inputRef} onChange={inputChangeHandler}

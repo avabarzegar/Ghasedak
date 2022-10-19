@@ -19,7 +19,7 @@ const BookSimpleCard = (props)=>{
     // define tooltip for book name showing by hovering end
 
     return(
-        <div className="simple-card-container">
+        <div className={`${props.className} simple-card-container`}>
             <div className="simple-book-card">
                 <div className="simple-card-first-section">
                     <div className="simple-book-img">

@@ -35,7 +35,7 @@ const MostSaleMonthSlides =()=>{
 
 
   useEffect(()=>{
-    const token ='iLDhAayZTRWLPLpWvYDK1yhAVfHl46GAfzxKb8aO';
+    const token ='ln9cmSRAFLIDY6X9MOjoomOzEzghPZqE0skQQc8X';
    
     const config = {
       headers: { Authorization: `Bearer ${token}` }

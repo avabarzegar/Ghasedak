@@ -6,7 +6,7 @@ import axios from "axios";
 const Herosuggest = () => {
    const [detail, setDetail] = useState([]);
    useEffect(() => {
-      const token = '8h0Kn5ZjfOQOCUF3KiV6kMk9l20voy5INUt9zH3d';
+      const token = '23WkcBwlNrIWRoIVii9wAJqlnGg6wnSu7jLatyJw';
 
       const config = {
          headers: { Authorization: `Bearer ${token}` }

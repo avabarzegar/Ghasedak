@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
 import SearchContext from "./Context/SearchContext/SearchContext";
 
-axios.defaults.baseURL = "https://ghsdk.iran.liara.run/api/v1";
+axios.defaults.baseURL = "https://nextghsdk.iran.liara.run/api/v1";
 
 const container = document.getElementById("root");
 

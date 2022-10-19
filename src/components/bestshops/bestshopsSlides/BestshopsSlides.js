@@ -33,7 +33,7 @@ const BestShopsSlides =()=>{
 
   
   useEffect(()=>{
-    const token ='iLDhAayZTRWLPLpWvYDK1yhAVfHl46GAfzxKb8aO';
+    const token ='23WkcBwlNrIWRoIVii9wAJqlnGg6wnSu7jLatyJw';
    
     const config = {
       headers: { Authorization: `Bearer ${token}` }
@@ -46,24 +46,25 @@ const BestShopsSlides =()=>{
    
     //    === get slides data from api ===
     axios.post( 
-      '/books/list/all',
+      '/user/pwa/home',
       bodyParameters,
-      config
+      config   
     ).then((response)=>{
-           
+           console.log(response.data.top_stores.data[0])
             const slideData=[];
-            response.data.data.map((item)=>{
+            response.data.top_stores.data[0].map((item)=>{
               slideData.push({
                   id:item.id ,
                   name:item.name,
-                  author: item.author,
-                  publisher:item.publisher,
-                  image:item.images.data.image_url,
+                  // author: item.author,
+                  // publisher:item.publisher,
+                  // image:item.images.data.image_url,
 
                 })  
                  
             })
            setSlide(slideData)
+           console.log(setSlide)
         })
         .catch((err)=>{
             console.log(err.message)
@@ -181,7 +182,7 @@ const BestShopsSlides =()=>{
                 // == return swiper slides ==
 
                 <SwiperSlide className='book-slide-two nearshop-slide width-slides' key={item.id}>
-                  <BestShopssingleslide />
+                  <BestShopssingleslide acticeText={item.name}  />
                 </SwiperSlide>
                 // == return swiper slides end ==
             )           

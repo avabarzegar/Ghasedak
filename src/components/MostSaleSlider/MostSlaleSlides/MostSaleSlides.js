@@ -35,7 +35,7 @@ const MostSaleSlides =()=>{
 
 
   useEffect(()=>{
-    const token ='iLDhAayZTRWLPLpWvYDK1yhAVfHl46GAfzxKb8aO';
+    const token ='23WkcBwlNrIWRoIVii9wAJqlnGg6wnSu7jLatyJw';
    
     const config = {
       headers: { Authorization: `Bearer ${token}` }
@@ -48,13 +48,13 @@ const MostSaleSlides =()=>{
    
     //    === get slides data from api ===
     axios.post( 
-      '/application/home',
+      '/user/pwa/home',
       bodyParameters,
       config
     ).then((response)=>{
            
             const slideData=[];
-            response.data.book_lists[2].books.data.map((item)=>{
+            response.data.book_lists[0].books.data.map((item)=>{
               slideData.push({
                   id:item.id ,
                   name:item.name,

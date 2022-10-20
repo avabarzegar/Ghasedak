@@ -35,7 +35,7 @@ const PopularBooksSlides =()=>{
 
 
   useEffect(()=>{
-    const token ='ln9cmSRAFLIDY6X9MOjoomOzEzghPZqE0skQQc8X';
+    const token ='23WkcBwlNrIWRoIVii9wAJqlnGg6wnSu7jLatyJw';
    
     const config = {
       headers: { Authorization: `Bearer ${token}` }
@@ -48,13 +48,13 @@ const PopularBooksSlides =()=>{
    
     //    === get slides data from api ===
     axios.post( 
-      '/user/favorite/books/list/all',
+      '/user/pwa/home',
       bodyParameters,
       config
     ).then((response)=>{
            
             const slideData=[];
-            response.data.data.map((item)=>{
+            response.data.book_lists[0].books.data.map((item)=>{
               slideData.push({
                   id:item.id ,
                   name:item.name,

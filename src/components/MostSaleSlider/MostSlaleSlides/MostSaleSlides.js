@@ -54,7 +54,7 @@ const MostSaleSlides =()=>{
     ).then((response)=>{
            
             const slideData=[];
-            response.data.book_lists[0].books.data.map((item)=>{
+            response.data.book_lists[2].books.data.map((item)=>{
               slideData.push({
                   id:item.id ,
                   name:item.name,
@@ -98,7 +98,7 @@ const MostSaleSlides =()=>{
         {/* first section of slider  */}
 
         <SliderTopLine 
-         text='پرفروش ترین های جهان'
+         text='کتابهای جایزه دار   '
          textBorder='purple-bottom'
          containerBorder='gray-bottom'
          >

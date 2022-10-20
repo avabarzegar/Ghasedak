@@ -53,11 +53,11 @@ const MostSaleYearSlides =()=>{
       config
     ).then((response)=>{
             const slideData=[];
-            response.data.book_lists[0].books.data.map((item)=>{
+            response.data.book_lists[1].books.data.map((item)=>{
               slideData.push({
                   id:item.id ,
                   name:item.name,
-                  image:item.images.data[0].image_url,
+                  image:item.images.data[1].image_url,
 
                 })  
                  
@@ -97,7 +97,7 @@ const MostSaleYearSlides =()=>{
         {/* first section of slider  */}
 
         <SliderTopLine 
-         text='پرفروش ترین ها سال'
+         text='کتاب های کمک درسی'
          textBorder='purple-bottom'
          containerBorder='gray-bottom'
          >

@@ -1,82 +1,108 @@
-import { React, useRef, useState, useEffect } from "react";
+import { React, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import { useAppContext } from "../../../Context/SearchContext/SearchContext";
-import axios from "axios";
 import "./SearchDropdown.css";
 
 function CustomDropdown() {
   // states and ref
-  const { sorting, setSorting } = useAppContext();
-  const [Data, setData] = useState([]);
+  const {
+    searchFilter,
+    categories,
+    setSorting,
+    sorting,
+    authors,
+    translators,
+    hashtags,
+    newData,
+    setNewData,
+    bookData
+  } = useAppContext();
+  const navigate = useNavigate();
   const dropdown = useRef(null);
   // states and ref end
-  useEffect(() => {
-    // getting book data and push them in a variable
-    const token = "viBOjqV3gV68hsEmyz8IloLxZejsacji4BdSnF6O";
 
-    const config = {
-      headers: { Authorization: `Bearer ${token}` },
-    };
+  // filter title list array
+  const filterList = [categories, authors, translators, hashtags];
+  // filter title list array -end
+  // const bookFilter = [
+  //   newData.category,
+  //   newData.author,
+  //   newData.translator,
+  //   newData.hashtag,
+  // ];
 
-    const bodyParameters = {
-      key: "value",
-    };
-    // axios.post("/books/list/all", bodyParameters, config).then((response) => {
-    //   const categories = [];
-    //   response.data.data.map((item) => {
-    //     categories.push({
-    //       id: item.id,
-    //       name: item.name,
-    //       img: item.images.data[0].image_url,
-    //     });
-    //   });
-    //   setSorting(categories);
-    // });
-    axios
-      .post("/categories/list/all", bodyParameters, config)
-      .then((response) => {
-        const categories = [];
-        response.data.data.map((item) => {
-          return categories.push({
-            id: item.id,
-            title: item.title,
-          });
-        });
-        console.log(categories)
-        setData(categories);
-      });
+  let filter = newData;
 
-    // getting book data and push them in a variable end
-  }, []);
-  console.log(Data);
-  console.log(typeof Data);
-  const dropDownHandler = (event, variant) => {
+  const dropDownHandler = (event, items) => {
+    // add a filter to list
     setSorting((prevState) => [
       ...prevState,
-      `${variant} : ${event.target.innerText}`,
+      `${items} : ${event.target.innerText}`,
     ]);
-  };
+    // add a filter to list -end
 
+    // apply selected filter to the search result
+
+    if (event.target.innerText) {
+      filter = bookData
+      .filter((items) =>
+          items.name.toLowerCase().includes(searchFilter, 0)
+        )
+        .filter((item) =>
+          item.author[0].includes(event.target.innerText, 0)
+        )
+        .filter((item) =>
+          item.hashtag.includes(event.target.innerText, 0)
+        );
+      // .filter((item) =>
+      //   item.toLowerCase().includes(event.target.innerText, 0)
+      // )
+      // .filter((item) =>
+      //   item.toLowerCase().includes(event.target.innerText, 0)
+      // );
+     
+      navigate("/search");
+       console.log(filter);
+    }
+    if (
+      filter === [] ||
+      filter === undefined ||
+      filter.length === 0 ||
+      filter === null
+    ) {
+      navigate("*");
+    }
+   
+    // apply selected filter to the search result -end
+  };
+  useEffect(() => {
+    setNewData(filter);
+  }, []);
+  console.log(newData);
+  console.log(sorting);
   return (
     <div className="search-dropdown">
-      
-      {sorting?.map((variant, index) => (
+      {filterList.map((items, index) => (
         <DropdownButton
           as={ButtonGroup}
-          key={variant.id}
-          id={`dropdown-variants-${variant.title}`}
-          variant={variant.title.toLowerCase()}
-          title={variant.title}
+          key={index}
+          id={`dropdown-variants-${items}`}
+          variant={items[0].title}
+          title={items[0].title}
         >
-          <Dropdown.Item
-            ref={dropdown}
-            onClick={(event) => dropDownHandler(event, variant.title)}
-            eventKey={variant.id}
-          >
-            Action
-          </Dropdown.Item>
+          {items.map((item, index) => (
+            <Dropdown.Item
+              ref={dropdown}
+              onClick={(event) => dropDownHandler(event, item.title)}
+              // eventKey={item.id + items}
+              key={item.id + items}
+            >
+              {item.name}
+            </Dropdown.Item>
+          ))}
         </DropdownButton>
       ))}
     </div>

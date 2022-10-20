@@ -6,7 +6,7 @@ import App from "./App";
 import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
 import SearchContext from "./Context/SearchContext/SearchContext";
-import SearchAFilter from "./Context/FilterContext/FilterContext";
+
 
 axios.defaults.baseURL = "https://nextghsdk.iran.liara.run/api/v1";
 

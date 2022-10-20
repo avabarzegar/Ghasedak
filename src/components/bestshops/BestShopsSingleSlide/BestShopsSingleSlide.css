@@ -1,11 +1,16 @@
 .bg-color-shops {
-    width: 5rem;
-    height: 5rem;
+    width: 5.5rem;
+    height: 5.5rem;
     background-color: red;
     border-radius: 50%;
     margin-top: -1rem;
     position: absolute;
     top: -2.75rem;
+    padding: 8px;
+ }
+
+ .bg-color-shops img {
+   border-radius: 50%;
  }
  
  .slides-near-shops {

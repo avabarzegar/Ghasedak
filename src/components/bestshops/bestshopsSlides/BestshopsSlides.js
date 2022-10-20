@@ -49,15 +49,15 @@ const BestShopsSlides = () => {
       bodyParameters,
       config
     ).then((response) => {
-      console.log(response.data.top_stores.data[0])
+      console.log(response.data.top_stores.data)
       const slideData = [];
-      response.data.top_stores.data[0].map((item) => {
+      response.data.top_stores.data.map((item) => {
         slideData.push({
           id: item.id,
           name: item.name,
           // author: item.author,
           // publisher:item.publisher,
-          // image:item.images.data.image_url,
+          image:item.logo_url,
 
         })
 
@@ -169,7 +169,7 @@ const BestShopsSlides = () => {
                   // == return swiper slides ==
 
                   <SwiperSlide className='book-slide-two nearshop-slide width-slides' key={item.id}>
-                    <BestShopssingleslide acticeText={item.name} />
+                    <BestShopssingleslide acticeText={item.name} activeImage={item.image} />
                   </SwiperSlide>
                   // == return swiper slides end ==
                 );

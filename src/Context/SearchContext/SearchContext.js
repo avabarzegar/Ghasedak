@@ -8,6 +8,7 @@ const SearchContext = ({ children }) => {
   const [searchValue, setSearchValue] = useState(" ");
   const [searchFilter , setSearchFilter] =useState(" ");
   const [bookData, setBookData] = useState([]);
+  const [selectedData, setSelectedData] = useState([]);
   const [sorting, setSorting] = useState([]);
   const [categories, setCategories] = useState([]);
   const [authors, setAuthors] = useState([]);
@@ -43,6 +44,7 @@ const SearchContext = ({ children }) => {
             author: item.authors,
             translator: item.translators,
             hashtag: item.hashtags,
+            price: item.best_price
           });
         });
         setBookData(bookApi);
@@ -51,7 +53,7 @@ const SearchContext = ({ children }) => {
         console.log(err.message);
       });
     // book list data -end
-console.log(bookData)
+
     // book  category list
     axios
       .post("/categories/list/all", bodyParameters, config)
@@ -121,7 +123,6 @@ console.log(bookData)
             name: item.keyword,
           });
         });
-        console.log(hashtagsData);
         setHashtags(hashtagsData);
       })
       .catch((err) => {
@@ -129,11 +130,12 @@ console.log(bookData)
       });
     // book hashtags list -end
   }, []);
-  console.log(sorting);
   return (
     <CoinsContext.Provider
       value={{
         newData,
+        selectedData,
+        setSelectedData,
         searchFilter,
         setSearchFilter,
         setNewData,

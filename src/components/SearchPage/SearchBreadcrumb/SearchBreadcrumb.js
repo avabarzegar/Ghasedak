@@ -8,7 +8,7 @@ import "./SearchBreadcrumb.css";
 
 // search bread crumb
 const SearchBreadcrumb = (props) => {
-  const { searchValue , setSearchFilter } = useAppContext();
+  const { searchValue , setSearchFilter,newData } = useAppContext();
 
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
@@ -34,7 +34,7 @@ const SearchBreadcrumb = (props) => {
             {`جستجوی عبارت: ${searchValue}`}
           </span>
         </OverlayTrigger>
-        <span className="search-result">{`(4محصول)`}</span>
+        <span className="search-result">{`(${newData.length} محصول)`}</span>
       </div>
     </section>
   );

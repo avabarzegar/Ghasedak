@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./FiltersList.css";
 import SingleFilterLayout from "../SingleFilterLayout/SingleFilterLayout";
 import AppliedSingleFilter from "../AppliedSingleFilter/AppliedSingleFilter";
@@ -7,8 +7,14 @@ import { useAppContext } from "../../../../Context/SearchContext/SearchContext";
 // define all applied filters list
 const FiltersList = () => {
   // state
-  const { sorting, setSorting } = useAppContext();
-  const { searchValue } = useAppContext();
+  const {
+    sorting,
+    setSorting,
+    searchValue,
+    selectedData,
+    setNewData,
+    newData,
+  } = useAppContext();
   // state end
 
   // delete specific filter by clicking on its delete button
@@ -18,6 +24,21 @@ const FiltersList = () => {
     setSorting(updatedSorting);
   };
   // delete specific filter by clicking on its delete button -end
+  // useEffect(() => {
+  //   console.log(newData);
+  //   let filter = newData
+  //     .filter((items) => {
+  //       items.name.toLowerCase().includes(searchValue, 0);
+  //     })
+  //     .filter((item) => {
+  //       item.author[0].includes(selectedData, 0);
+
+  //       console.log(item.author[0]);
+  //     });
+
+  //   setNewData(filter);
+  //   console.log(newData);
+  // }, [selectedData]);
 
   return (
     <div className="filter-list">

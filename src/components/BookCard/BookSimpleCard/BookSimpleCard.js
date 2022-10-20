@@ -36,8 +36,8 @@ const BookSimpleCard = (props)=>{
                 </div>
                 <div className="simple-card-second-section">
                     <div className="simple-card-prices">
-                        <span className="simple-prev-price">4.00.000</span>
-                        <span className="simple-now-price">2.00.000</span>
+                        {/* <span className="simple-prev-price">4.00.000</span> */}
+                        <span className="simple-now-price">{props.price}</span>
                     </div>
                     <div className="simple-toman-container">
                         <img src={Toman} width="100%" height="100%" alt="toman" />

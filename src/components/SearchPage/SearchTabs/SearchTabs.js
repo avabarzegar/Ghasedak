@@ -35,6 +35,7 @@ function SearchTabs() {
                             key={item.id}
                             img={item.img}
                             name={item.name}
+                            price={item.price}
                           />
                         </Col>
                       );

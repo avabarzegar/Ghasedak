@@ -21,7 +21,7 @@
    background-color: white;
    opacity: 1 !important;
    padding: 10;
-   bottom: 14%;
+   bottom: -4%;
 }
 
 .slider-parent-section-offer-book .carousel-control-next {
@@ -36,7 +36,7 @@
 
 .slider-parent-section-offer-book .carousel-indicators {
    left: .5%;
-   bottom: 10%;
+   bottom: -8%;
    right: unset;
    margin-left: 5% !important;
    background-color: var(--white-color);
@@ -74,7 +74,7 @@
 }
 
 .offer-container {
-   height: 30rem;
+   height: 25rem;
 }
 
 @media screen and (max-width: 1399px) and (min-width: 1200px) {
@@ -94,7 +94,7 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom: 11%;
+      bottom: -8%;
       left: 1%;
       padding: .01rem .25rem;
       right: unset;
@@ -112,11 +112,15 @@
       width: 2rem;
       height: 2rem;
       padding: 1px;
-      bottom: 14%;
+      bottom: -5%;
    }
 
    .offer-container {
-      height: 35rem;
+      height: auto;
+   }
+   .slider-parent-section-offer-book .carousel-inner {
+     
+      height: 23.75rem;
    }
 
 
@@ -135,7 +139,7 @@
 
    .slider-parent-section-offer-book .carousel-control-prev,
    .slider-parent-section-offer-book .carousel-control-next {
-      bottom: 8%;
+      bottom: -4%;
    }
 
    .slider-parent-section-offer-book .carousel-control-next {
@@ -143,14 +147,18 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom: 4%;
+      bottom: -8%;
       left: 2%;
       padding: .01rem .25rem;
       right: unset;
    }
 
    .offer-container {
-      height: 20rem;
+      height: unset;
+   }
+   .slider-parent-section-offer-book .carousel-inner {
+     
+      height: 24rem;
    }
 }
 
@@ -159,7 +167,10 @@
       padding-left: 0;
       padding-right: 0;
    }
-
+   .slider-parent-section-offer-book .carousel-indicators {
+      bottom: -5%;
+      
+   }
    .slider-parent-section-offer-book .carousel-control-prev-icon,
    .slider-parent-section-offer-book .carousel-control-next-icon {
       width: 2rem;
@@ -187,12 +198,12 @@
    .slider-parent-section-offer-book .carousel-control-next {
       width: 2rem;
       height: 2rem;
-      bottom: 10%;
+      bottom: -3%;
       padding: 1px;
    }
 
    .slider-parent-section-offer-book {
-      height: 125%;
+      height: unset;
    }
 
    .slider-parent-section-offer-book .carousel-control-next {
@@ -200,7 +211,7 @@
    }
 
    .offer-container {
-      height: 15rem;
+      height: auto;
    }
 
 }
@@ -222,7 +233,7 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom: 17%;
+      bottom: -5%;
       left: 7%;
       padding: .01rem .25rem;
       right: unset;
@@ -240,7 +251,7 @@
       width: 2rem;
       height: 2rem;
       padding: 1px;
-      bottom: 20%;
+      bottom: -3%;
    }
 
    .slider-parent-section-offer-book {
@@ -252,7 +263,7 @@
    }
 
    .offer-container {
-      height: 23rem;
+      height: unset;
    }
 }
 
@@ -269,7 +280,7 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom: 16%;
+      bottom: -9%;
       left: 10%;
       padding: .01rem .25rem;
       right: unset;
@@ -287,11 +298,11 @@
       width: 2rem;
       height: 2rem;
       padding: 1px;
-      bottom: 19%;
+      bottom: -5%;
    }
 
    .slider-parent-section-offer-book {
-      height: 125%;
+      height: auto;
    }
 
 
@@ -314,7 +325,7 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom: 16.5%;
+      bottom: -10%;
       left: 10%;
       padding: .01rem .25rem;
       right: unset;
@@ -332,11 +343,11 @@
       width: 2rem;
       height: 2rem;
       padding: 1px;
-      bottom: 20%;
+      bottom: -5%;
    }
 
    .slider-parent-section-offer-book {
-      height: 125%;
+      height: auto;
    }
 
 
@@ -363,7 +374,7 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom: 16%;
+      bottom: -11%;
       left: 10%;
       right: unset;
       padding: .1rem .25rem;
@@ -380,7 +391,7 @@
    .slider-parent-section-offer-book .carousel-control-next {
       width: 2rem;
       height: 2rem;
-      bottom: 19%;
+      bottom: -6%;
    }
 }
 

@@ -1,24 +1,61 @@
-import React from "react";
-import InfoBookstitle from "./InfoBooktitle";
+import React, { useState, useEffect } from "react";
 import './InfoBooks.css';
-import ButtonLayout from "../../UI/Button/ButtonLayout/ButtonLayout";
-import CartImage from '../../../assets/Images/icon/vuesax-add-to-cart-black.svg';
-
+import axios from "axios";
 
 
 const InfoBooks = () => {
+
+   const [banner, setBanner] = useState([]);
+
+   useEffect(() => {
+      const token = '23WkcBwlNrIWRoIVii9wAJqlnGg6wnSu7jLatyJw';
+
+      const config = {
+         headers: { Authorization: `Bearer ${token}` }
+      };
+
+      const bodyParameters = {
+         key: "value"
+      };
+
+
+      //    === get slides data from api ===
+      axios.post(
+         '/user/pwa/home',
+         bodyParameters,
+         config
+      ).then((response) => {
+         console.log(response.data.banners.data[0].items.data)
+         const bannerData = [];
+         response.data.banners.data[0].items.data.map((item) => {
+            bannerData.push({
+               id: item.id,
+               title: item.title,
+               image: item.image_url,
+            })
+
+         })
+
+         setBanner(bannerData)
+      })
+         .catch((err) => {
+            console.log(err.message)
+         })
+
+
+
+      //    === get slides data from api ===
+
+   }, [])
    return (
-      <div className="infobooks-parent">
-         <InfoBookstitle customstyle="head-title-info-book">از فرانکلین تا لاله زار</InfoBookstitle>
-         <InfoBookstitle customstyle="sub-head-info-book">اثر فاخر همایون صنعت زاده</InfoBookstitle>
-         <div className="publisher-info">
-            <InfoBookstitle customstyle="publisher-name">انتشارات سمت</InfoBookstitle>
-            <div className="date-publish">
-               <InfoBookstitle>سال انتشار: </InfoBookstitle>
-               <InfoBookstitle>1399</InfoBookstitle>
-            </div>
-         </div>
-         <ButtonLayout button='btn-download-info-book' spancolordark="color-dard" src={CartImage} alt={'cartimg'} title={'افزودن به سبد خرید'} />
+      <div>
+         {banner.map((item) => {
+            return (
+               <div key={item.id}>
+                  <img image={item.image} alt="banner image" />
+               </div>
+            )
+         })}
       </div>
    )
 }

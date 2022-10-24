@@ -58,7 +58,7 @@ const MostSaleYearSlides =()=>{
                   id:item.id ,
                   name:item.name,
                   image:item.images.data[1].image_url,
-
+                  price:item.best_price,
                 })  
                  
             })
@@ -185,7 +185,7 @@ const MostSaleYearSlides =()=>{
                   <BookSimpleCard
                   name={item.name}
                   img={item.image} 
-                  
+                  price={item.price}
                   />
                 </SwiperSlide>
                 // == return swiper slides end ==

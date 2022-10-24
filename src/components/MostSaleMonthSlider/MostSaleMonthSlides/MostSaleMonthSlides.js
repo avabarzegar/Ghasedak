@@ -16,6 +16,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 import SliderLayout from '../../SliderLayout/SliderLayout';
+import { propTypes } from 'react-bootstrap/esm/Image';
 
 
 
@@ -52,25 +53,25 @@ const MostSaleMonthSlides =()=>{
       bodyParameters,
       config
     ).then((response)=>{
+            
             const slideData=[];
             response.data.book_lists[0].books.data.map((item)=>{
               slideData.push({
                   id:item.id ,
                   name:item.name,
                   image:item.images.data[0].image_url,
-                 
+                 price:item.best_price,
                 })  
-                  
             })
            setSlide(slideData)
            
         })
+
         .catch((err)=>{
             console.log(err.message)
         })
 
-      
-     
+
     //    === get slides data from api ===
 
     } , [])
@@ -98,7 +99,7 @@ const MostSaleMonthSlides =()=>{
         {/* first section of slider  */}
 
         <SliderTopLine 
-         text='پرفروش ترین های ماه'
+         text="کتاب های پرفروش ماه"
          textBorder='purple-bottom'
          containerBorder='gray-bottom'
          >
@@ -186,7 +187,7 @@ const MostSaleMonthSlides =()=>{
                   <BookSimpleCard
                   name={item.name}
                   img={item.image} 
-                  
+                  price={item.price}
                   />
                 </SwiperSlide>
                 // == return swiper slides end ==

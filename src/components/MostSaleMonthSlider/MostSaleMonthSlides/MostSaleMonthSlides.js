@@ -67,9 +67,7 @@ const MostSaleMonthSlides = () => {
       })
       setSlide(slideData)
 
-      if (price == 0) {
-        setIsShown(current => !current);
-      }
+  
 
     })
 

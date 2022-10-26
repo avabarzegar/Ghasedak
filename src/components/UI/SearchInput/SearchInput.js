@@ -4,15 +4,13 @@ import { useNavigate } from "react-router-dom";
 import { React, useRef, useState } from "react";
 import { useAppContext } from "../../../Context/SearchContext/SearchContext";
 
-
 // define search input
 const SearchInput = (props) => {
   // define variables, states and refs
   const [inputChange, setInputChanage] = useState("");
   const inputRef = useRef(null);
   const navigate = useNavigate();
-  const { searchValue, setSearchValue, bookData, newData, setNewData } =
-    useAppContext();
+  const { setSearchValue, bookData, setNewData, setSorting } = useAppContext();
 
   // define variables, states and refs end
 
@@ -29,6 +27,11 @@ const SearchInput = (props) => {
     // e.preventDefault()
     if (event.key === "Enter") {
       setSearchValue(inputRef.current.value);
+
+      // set appied filters to null
+      setSorting([]);
+      // set appied filters to null -end
+
       DataBook = bookData;
       if (inputChange) {
         DataBook = bookData.filter((items) =>
@@ -47,13 +50,21 @@ const SearchInput = (props) => {
       }
     }
   };
-
+  // useEffect(() => {
+  //   setNewData(DataBook);
+  //   navigate("/search");
+  // },[inputChange]);
   //    show search result page by clicking enter key - end
 
   //    show search result page by clicking on search button
 
   const handleClick = () => {
     setSearchValue(inputRef.current.value);
+
+    // set appied filters to null
+    setSorting([]);
+    // set appied filters to null -end
+
     DataBook = bookData;
     if (inputChange) {
       DataBook = bookData.filter((items) =>

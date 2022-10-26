@@ -6,12 +6,13 @@ const CoinsContext = createContext({});
 const SearchContext = ({ children }) => {
   //   define states and variables
   const [searchValue, setSearchValue] = useState(" ");
-  const [searchFilter , setSearchFilter] =useState(" ");
+  const [searchFilter, setSearchFilter] = useState(" ");
   const [bookData, setBookData] = useState([]);
   const [selectedData, setSelectedData] = useState([]);
   const [sorting, setSorting] = useState([]);
   const [categories, setCategories] = useState([]);
   const [authors, setAuthors] = useState([]);
+  const [publishers, setPublishers] = useState([]);
   const [newData, setNewData] = useState([]);
   const [translators, setTranslators] = useState([]);
   const [hashtags, setHashtags] = useState([]);
@@ -44,7 +45,9 @@ const SearchContext = ({ children }) => {
             author: item.authors,
             translator: item.translators,
             hashtag: item.hashtags,
-            price: item.best_price
+            price: item.best_price,
+            available: item.is_available,
+            publisher: item.publisher,
           });
         });
         setBookData(bookApi);
@@ -59,13 +62,14 @@ const SearchContext = ({ children }) => {
       .post("/categories/list/all", bodyParameters, config)
       .then((response) => {
         const categoriesData = [];
+        categoriesData.push("دسته بندی");
         response.data.data.map((item) => {
           return categoriesData.push({
-            title: "دسته بندی",
             id: item.id,
             name: item.title,
           });
         });
+
         setCategories(categoriesData);
       })
       .catch((err) => {
@@ -78,9 +82,9 @@ const SearchContext = ({ children }) => {
       .post("/authors/list/all", bodyParameters, config)
       .then((response) => {
         const authorsData = [];
+        authorsData.push("نویسندگان");
         response.data.data.map((item, index) => {
           return authorsData.push({
-            title: "نویسندگان",
             id: index,
             name: item.name,
           });
@@ -97,9 +101,9 @@ const SearchContext = ({ children }) => {
       .post("/translators/list/all", bodyParameters, config)
       .then((response) => {
         const translatorsData = [];
+        translatorsData.push("مترجمان");
         response.data.data.map((item, index) => {
           return translatorsData.push({
-            title: "مترجمان",
             id: index,
             name: item.name,
           });
@@ -116,9 +120,9 @@ const SearchContext = ({ children }) => {
       .post("/hashtags/list/all", bodyParameters, config)
       .then((response) => {
         const hashtagsData = [];
+        hashtagsData.push("برچسب ها");
         response.data.data.map((item, index) => {
           return hashtagsData.push({
-            title: "برچسب ها",
             id: index,
             name: item.keyword,
           });
@@ -129,6 +133,24 @@ const SearchContext = ({ children }) => {
         console.log(err.message);
       });
     // book hashtags list -end
+    // book author list
+    axios
+      .post("/publishers/list/all", bodyParameters, config)
+      .then((response) => {
+        const publishersData = [];
+        publishersData.push("ناشران");
+        response.data.data.map((item, index) => {
+          return publishersData.push({
+            id: index,
+            name: item.name,
+          });
+        });
+        setPublishers(publishersData);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+    // book author list -end
   }, []);
   return (
     <CoinsContext.Provider
@@ -149,6 +171,7 @@ const SearchContext = ({ children }) => {
         authors,
         translators,
         hashtags,
+        publishers
       }}
     >
       {children}

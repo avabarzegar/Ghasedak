@@ -1,8 +1,11 @@
-.search-filters-container{
-    display: flex;
-    flex-direction: column;
-    border-radius: 15px;
-    box-shadow: var(--web-main-shadow);
-    background-color: #FFFFFF;
-    margin-top: 1.5rem;
+.search-filters-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  box-shadow: var(--web-main-shadow);
+  background-color: #ffffff;
+  margin-top: 1.5rem;
+}
+.search-filters-container .dropdown-item {
+  white-space: break-spaces;
 }

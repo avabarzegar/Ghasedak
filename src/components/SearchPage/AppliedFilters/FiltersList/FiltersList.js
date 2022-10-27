@@ -82,7 +82,6 @@ const FiltersList = () => {
   console.log(sorting);
   return (
     <div className="filter-list">
-      <AppliedSingleFilter Filter={`جستجوی عبارت ${searchValue}`} />
       {sorting?.map((item, index) => {
         return (
           <SingleFilterLayout

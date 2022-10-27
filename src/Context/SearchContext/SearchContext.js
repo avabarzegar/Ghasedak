@@ -9,11 +9,13 @@ const SearchContext = ({ children }) => {
   const [searchFilter, setSearchFilter] = useState(" ");
   const [bookData, setBookData] = useState([]);
   const [selectedData, setSelectedData] = useState([]);
+  const [selectedTitle, setSelectedTitle] = useState([]);
   const [sorting, setSorting] = useState([]);
   const [categories, setCategories] = useState([]);
   const [authors, setAuthors] = useState([]);
   const [publishers, setPublishers] = useState([]);
   const [newData, setNewData] = useState([]);
+  const [allFilter, setAllFilter] = useState([]);
   const [translators, setTranslators] = useState([]);
   const [hashtags, setHashtags] = useState([]);
   //   define states and variables end
@@ -158,9 +160,13 @@ const SearchContext = ({ children }) => {
         newData,
         selectedData,
         setSelectedData,
+        setSelectedTitle,
+        selectedTitle,
         searchFilter,
         setSearchFilter,
         setNewData,
+        allFilter,
+        setAllFilter,
         searchValue,
         setSearchValue,
         bookData,
@@ -171,7 +177,7 @@ const SearchContext = ({ children }) => {
         authors,
         translators,
         hashtags,
-        publishers
+        publishers,
       }}
     >
       {children}

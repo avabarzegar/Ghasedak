@@ -6,7 +6,7 @@ const AppliedSingleFilter=(props)=>{
     return(
         <div className="single-filter">
             <span>
-                {props.Filter}
+                {props.title} : {props.Filter}
             </span>
         </div>
     )

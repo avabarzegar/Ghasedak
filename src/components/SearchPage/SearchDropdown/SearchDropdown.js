@@ -9,21 +9,21 @@ import "./SearchDropdown.css";
 function CustomDropdown() {
   // states and ref
   const {
-    setSelectedData,
-    categories,
     setSorting,
-    sorting,
+    categories,
     authors,
     translators,
     hashtags,
     publishers,
-    newData,
+    allFilter,
+    setAllFilter,
     setNewData,
     bookData,
   } = useAppContext();
   const navigate = useNavigate();
   const dropdown = useRef(null);
-  const [allFilter, setAllFilter] = useState([]);
+  const saveSelectedFilter = [];
+
   // states and ref end
 
   const categoriesHandler = (event, title) => {
@@ -31,15 +31,27 @@ function CustomDropdown() {
     const eventData = event.target.innerText;
     // selected filter name -end
 
-    // all selected filter names
-    setSelectedData((prevState) => [...prevState, eventData]);
-    // all selected filter names -end
+    // save selected filter in a varible
 
-    // add a filter to list
-    setSorting((prevState) => [
-      ...new Set([...prevState, `${title} : ${eventData}`]),
-    ]);
-    // add a filter to list -end
+    saveSelectedFilter.push({
+      title: title,
+      eventFilter: eventData,
+    });
+    // save selected filter in a varible
+
+    setSorting((prevState) => {
+      const savingData = [];
+      saveSelectedFilter.map((item) => {
+        savingData.push(item);
+      });
+      [...prevState].map((item) => {
+        savingData.push(item);
+      });
+      // make data unique
+      const returnData = [...new Set(savingData.map((item) => item))];
+      // make data unique -end
+      return returnData;
+    });
 
     // return book data with selected category
     let filter = [];
@@ -70,11 +82,14 @@ function CustomDropdown() {
         [...prevState].map((items) => {
           updatedData.push(items);
         });
-
-        return [...new Set(updatedData.map((item) => item))];
+        // make data unique
+        const returnData = [...new Set(updatedData.map((item) => item))];
+        // make data unique -end
+        setAllFilter(returnData);
+        return returnData;
       });
       console.log(allFilter);
-      
+
       // store filter data in variable
     } else {
       navigate("*");
@@ -86,15 +101,27 @@ function CustomDropdown() {
     const eventData = event.target.innerText;
     // selected filter name -end
 
-    // all selected filter names
-    setSelectedData((prevState) => [...prevState, eventData]);
-    // all selected filter names -end
+    // save selected filter in a varible
 
-    // add a filter to list
-    setSorting((prevState) => [
-      ...new Set([...prevState, `${title} : ${eventData}`]),
-    ]);
-    // add a filter to list -end
+    saveSelectedFilter.push({
+      title: title,
+      eventFilter: eventData,
+    });
+    // save selected filter in a varible
+
+    setSorting((prevState) => {
+      const savingData = [];
+      saveSelectedFilter.map((item) => {
+        savingData.push(item);
+      });
+      [...prevState].map((item) => {
+        savingData.push(item);
+      });
+      // make data unique
+      const returnData = [...new Set(savingData.map((item) => item))];
+      // make data unique -end
+      return returnData;
+    });
 
     // return book data with selected author
     let filter = [];
@@ -125,10 +152,13 @@ function CustomDropdown() {
         [...prevState].map((items) => {
           updatedData.push(items);
         });
-
-        return [...new Set(updatedData.map((item) => item))];
+        // make data unique
+        const returnData = [...new Set(updatedData.map((item) => item))];
+        // make data unique -end
+        setAllFilter(returnData);
+        return returnData;
       });
-      
+
       // store filter data in variable
     } else {
       navigate("*");
@@ -140,15 +170,27 @@ function CustomDropdown() {
     const eventData = event.target.innerText;
     // selected filter name -end
 
-    // all selected filter names
-    setSelectedData((prevState) => [...prevState, eventData]);
-    // all selected filter names -end
+    // save selected filter in a varible
 
-    // add a filter to list
-    setSorting((prevState) => [
-      ...new Set([...prevState, `${title} : ${eventData}`]),
-    ]);
-    // add a filter to list -end
+    saveSelectedFilter.push({
+      title: title,
+      eventFilter: eventData,
+    });
+    // save selected filter in a varible
+
+    setSorting((prevState) => {
+      const savingData = [];
+      saveSelectedFilter.map((item) => {
+        savingData.push(item);
+      });
+      [...prevState].map((item) => {
+        savingData.push(item);
+      });
+      // make data unique
+      const returnData = [...new Set(savingData.map((item) => item))];
+      // make data unique -end
+      return returnData;
+    });
 
     // return book data with selected translator
     let filter = [];
@@ -179,10 +221,13 @@ function CustomDropdown() {
         [...prevState].map((items) => {
           updatedData.push(items);
         });
-
-        return [...new Set(updatedData.map((item) => item))];
+        // make data unique
+        const returnData = [...new Set(updatedData.map((item) => item))];
+        // make data unique -end
+        setAllFilter(returnData);
+        return returnData;
       });
-      
+
       // store filter data in variable
     } else {
       navigate("*");
@@ -194,15 +239,27 @@ function CustomDropdown() {
     const eventData = event.target.innerText;
     // selected filter name -end
 
-    // all selected filter names
-    setSelectedData((prevState) => [...prevState, eventData]);
-    // all selected filter names -end
+    // save selected filter in a varible
 
-    // add a filter to list
-    setSorting((prevState) => [
-      ...new Set([...prevState, `${title} : ${eventData}`]),
-    ]);
-    // add a filter to list -end
+    saveSelectedFilter.push({
+      title: title,
+      eventFilter: eventData,
+    });
+    // save selected filter in a varible
+
+    setSorting((prevState) => {
+      const savingData = [];
+      saveSelectedFilter.map((item) => {
+        savingData.push(item);
+      });
+      [...prevState].map((item) => {
+        savingData.push(item);
+      });
+      // make data unique
+      const returnData = [...new Set(savingData.map((item) => item))];
+      // make data unique -end
+      return returnData;
+    });
 
     // return book data with selected hashtag
     let filter = [];
@@ -233,10 +290,13 @@ function CustomDropdown() {
         [...prevState].map((items) => {
           updatedData.push(items);
         });
-
-        return [...new Set(updatedData.map((item) => item))];
+        // make data unique
+        const returnData = [...new Set(updatedData.map((item) => item))];
+        // make data unique -end
+        setAllFilter(returnData);
+        return returnData;
       });
-      
+
       // store filter data in variable
     } else {
       navigate("*");
@@ -247,15 +307,27 @@ function CustomDropdown() {
     const eventData = event.target.innerText;
     // selected filter name -end
 
-    // all selected filter names
-    setSelectedData((prevState) => [...prevState, eventData]);
-    // all selected filter names -end
+    // save selected filter in a varible
 
-    // add a filter to list
-    setSorting((prevState) => [
-      ...new Set([...prevState, `${title} : ${eventData}`]),
-    ]);
-    // add a filter to list -end
+    saveSelectedFilter.push({
+      title: title,
+      eventFilter: eventData,
+    });
+    // save selected filter in a varible
+
+    setSorting((prevState) => {
+      const savingData = [];
+      saveSelectedFilter.map((item) => {
+        savingData.push(item);
+      });
+      [...prevState].map((item) => {
+        savingData.push(item);
+      });
+      // make data unique
+      const returnData = [...new Set(savingData.map((item) => item))];
+      // make data unique -end
+      return returnData;
+    });
 
     // return book data with selected publisher
     let filter = [];
@@ -284,10 +356,13 @@ function CustomDropdown() {
         [...prevState].map((items) => {
           updatedData.push(items);
         });
-
-        return [...new Set(updatedData.map((item) => item))];
+        // make data unique
+        const returnData = [...new Set(updatedData.map((item) => item))];
+        // make data unique -end
+        setAllFilter(returnData);
+        return returnData;
       });
-      
+
       // store filter data in variable
     } else {
       navigate("*");

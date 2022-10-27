@@ -10,7 +10,7 @@ const SearchInput = (props) => {
   const [inputChange, setInputChanage] = useState("");
   const inputRef = useRef(null);
   const navigate = useNavigate();
-  const { setSearchValue, bookData, setNewData, setSorting } = useAppContext();
+  const { setSearchValue, bookData, setNewData, setSorting, setSelectedData, setSelectedTitle } = useAppContext();
 
   // define variables, states and refs end
 
@@ -30,6 +30,8 @@ const SearchInput = (props) => {
 
       // set appied filters to null
       setSorting([]);
+      setSelectedData([]);
+      setSelectedTitle([]);
       // set appied filters to null -end
 
       DataBook = bookData;
@@ -63,6 +65,8 @@ const SearchInput = (props) => {
 
     // set appied filters to null
     setSorting([]);
+    setSelectedData([]);
+    setSelectedTitle([]);
     // set appied filters to null -end
 
     DataBook = bookData;

@@ -25,7 +25,7 @@ const AvailableProducts = () => {
       // return available book by clicking on button
       let filter = [];
       bookData.map((item) => {
-        if (item.available === true) {
+        if (item.available === false) {
           filter.push(item);
         }
       });

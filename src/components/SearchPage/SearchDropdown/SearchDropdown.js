@@ -1,4 +1,4 @@
-import { React, useRef, useEffect, useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Dropdown from "react-bootstrap/Dropdown";
@@ -15,15 +15,13 @@ function CustomDropdown() {
     translators,
     hashtags,
     publishers,
-    allFilter,
-    setAllFilter,
     setNewData,
     bookData,
+    searchValue,
+    setSearchValue,
   } = useAppContext();
   const navigate = useNavigate();
-  const dropdown = useRef(null);
   const saveSelectedFilter = [];
-
   // states and ref end
 
   const categoriesHandler = (event, title) => {
@@ -37,8 +35,8 @@ function CustomDropdown() {
       title: title,
       eventFilter: eventData,
     });
-    // save selected filter in a varible
-
+    // save selected filter in a varible -end
+    // update applied filter list in sorting state
     setSorting((prevState) => {
       const savingData = [];
       saveSelectedFilter.map((item) => {
@@ -47,11 +45,13 @@ function CustomDropdown() {
       [...prevState].map((item) => {
         savingData.push(item);
       });
+
       // make data unique
       const returnData = [...new Set(savingData.map((item) => item))];
       // make data unique -end
       return returnData;
     });
+    // update applied filter list in sorting state -end
 
     // return book data with selected category
     let filter = [];
@@ -64,6 +64,14 @@ function CustomDropdown() {
     });
     // return book data with selected category -end
 
+    // set previous result books to null
+    console.log(searchValue);
+    if (searchValue !== null) {
+      setSearchValue("");
+      setNewData([]);
+    }
+    // set previous result books to null -end
+
     // store filter data in variable
     if (
       filter !== [] ||
@@ -72,7 +80,7 @@ function CustomDropdown() {
       filter !== null
     ) {
       navigate("/search");
-      // store filter data in variable
+      // store filter data in variable -end
       setNewData((prevState) => {
         const updatedData = [];
         filter.map((items) => {
@@ -82,13 +90,13 @@ function CustomDropdown() {
         [...prevState].map((items) => {
           updatedData.push(items);
         });
+
         // make data unique
         const returnData = [...new Set(updatedData.map((item) => item))];
         // make data unique -end
-        setAllFilter(returnData);
+
         return returnData;
       });
-      console.log(allFilter);
 
       // store filter data in variable
     } else {
@@ -102,13 +110,13 @@ function CustomDropdown() {
     // selected filter name -end
 
     // save selected filter in a varible
-
     saveSelectedFilter.push({
       title: title,
       eventFilter: eventData,
     });
-    // save selected filter in a varible
+    // save selected filter in a varible -end
 
+    // update applied filter list in sorting state
     setSorting((prevState) => {
       const savingData = [];
       saveSelectedFilter.map((item) => {
@@ -117,11 +125,14 @@ function CustomDropdown() {
       [...prevState].map((item) => {
         savingData.push(item);
       });
+
       // make data unique
       const returnData = [...new Set(savingData.map((item) => item))];
       // make data unique -end
+
       return returnData;
     });
+    // update applied filter list in sorting state -end
 
     // return book data with selected author
     let filter = [];
@@ -134,6 +145,14 @@ function CustomDropdown() {
     });
     // return book data with selected author -end
 
+    // set previous result books to null
+    console.log(searchValue);
+    if (searchValue !== null) {
+      setSearchValue("");
+      setNewData([]);
+    }
+    // set previous result books to null -end
+
     // store filter data in variable
     if (
       filter !== [] ||
@@ -142,7 +161,8 @@ function CustomDropdown() {
       filter !== null
     ) {
       navigate("/search");
-      // store filter data in variable
+
+      // update all books list which will be shown
       setNewData((prevState) => {
         const updatedData = [];
         filter.map((items) => {
@@ -155,11 +175,9 @@ function CustomDropdown() {
         // make data unique
         const returnData = [...new Set(updatedData.map((item) => item))];
         // make data unique -end
-        setAllFilter(returnData);
         return returnData;
       });
-
-      // store filter data in variable
+      // update all books list which will be shown -end
     } else {
       navigate("*");
     }
@@ -171,13 +189,12 @@ function CustomDropdown() {
     // selected filter name -end
 
     // save selected filter in a varible
-
     saveSelectedFilter.push({
       title: title,
       eventFilter: eventData,
     });
-    // save selected filter in a varible
-
+    // save selected filter in a varible -end
+    // update applied filter list in sorting state
     setSorting((prevState) => {
       const savingData = [];
       saveSelectedFilter.map((item) => {
@@ -186,11 +203,13 @@ function CustomDropdown() {
       [...prevState].map((item) => {
         savingData.push(item);
       });
+
       // make data unique
       const returnData = [...new Set(savingData.map((item) => item))];
       // make data unique -end
       return returnData;
     });
+    // update applied filter list in sorting state -end
 
     // return book data with selected translator
     let filter = [];
@@ -203,6 +222,14 @@ function CustomDropdown() {
     });
     // return book data with selected translator -end
 
+    // set previous result books to null
+    console.log(searchValue);
+    if (searchValue !== null) {
+      setSearchValue("");
+      setNewData([]);
+    }
+    // set previous result books to null -end
+
     // store filter data in variable
     if (
       filter !== [] ||
@@ -211,7 +238,8 @@ function CustomDropdown() {
       filter !== null
     ) {
       navigate("/search");
-      // store filter data in variable
+
+      // update all books list which will be shown
       setNewData((prevState) => {
         const updatedData = [];
         filter.map((items) => {
@@ -224,9 +252,9 @@ function CustomDropdown() {
         // make data unique
         const returnData = [...new Set(updatedData.map((item) => item))];
         // make data unique -end
-        setAllFilter(returnData);
         return returnData;
       });
+      // update all books list which will be shown -end
 
       // store filter data in variable
     } else {
@@ -245,8 +273,9 @@ function CustomDropdown() {
       title: title,
       eventFilter: eventData,
     });
-    // save selected filter in a varible
+    // save selected filter in a varible -end
 
+    // update applied filter list in sorting state
     setSorting((prevState) => {
       const savingData = [];
       saveSelectedFilter.map((item) => {
@@ -255,11 +284,13 @@ function CustomDropdown() {
       [...prevState].map((item) => {
         savingData.push(item);
       });
+
       // make data unique
       const returnData = [...new Set(savingData.map((item) => item))];
       // make data unique -end
       return returnData;
     });
+    // update applied filter list in sorting state -end
 
     // return book data with selected hashtag
     let filter = [];
@@ -272,6 +303,14 @@ function CustomDropdown() {
     });
     // return book data with selected hashtag -end
 
+    // set previous result books to null
+    console.log(searchValue);
+    if (searchValue !== null) {
+      setSearchValue("");
+      setNewData([]);
+    }
+    // set previous result books to null -end
+
     // store filter data in variable
     if (
       filter !== [] ||
@@ -280,7 +319,8 @@ function CustomDropdown() {
       filter !== null
     ) {
       navigate("/search");
-      // store filter data in variable
+
+      // update all books list which will be shown
       setNewData((prevState) => {
         const updatedData = [];
         filter.map((items) => {
@@ -293,28 +333,29 @@ function CustomDropdown() {
         // make data unique
         const returnData = [...new Set(updatedData.map((item) => item))];
         // make data unique -end
-        setAllFilter(returnData);
         return returnData;
       });
+      // update all books list which will be shown -end
 
       // store filter data in variable
     } else {
       navigate("*");
     }
   };
+
   const publishersHandler = (event, title) => {
     // selected filter name
     const eventData = event.target.innerText;
     // selected filter name -end
 
     // save selected filter in a varible
-
     saveSelectedFilter.push({
       title: title,
       eventFilter: eventData,
     });
-    // save selected filter in a varible
+    // save selected filter in a varible -end
 
+    // update applied filter list in sorting state
     setSorting((prevState) => {
       const savingData = [];
       saveSelectedFilter.map((item) => {
@@ -323,11 +364,13 @@ function CustomDropdown() {
       [...prevState].map((item) => {
         savingData.push(item);
       });
+
       // make data unique
       const returnData = [...new Set(savingData.map((item) => item))];
       // make data unique -end
       return returnData;
     });
+    // update applied filter list in sorting state -end
 
     // return book data with selected publisher
     let filter = [];
@@ -338,6 +381,14 @@ function CustomDropdown() {
     });
     // return book data with selected publisher -end
 
+    // set previous result books to null
+    console.log(searchValue);
+    if (searchValue !== null) {
+      setSearchValue("");
+      setNewData([]);
+    }
+    // set previous result books to null -end
+
     // store filter data in variable
     if (
       filter !== [] ||
@@ -346,7 +397,8 @@ function CustomDropdown() {
       filter !== null
     ) {
       navigate("/search");
-      // store filter data in variable
+
+      // update all books list which will be shown
       setNewData((prevState) => {
         const updatedData = [];
         filter.map((items) => {
@@ -359,43 +411,15 @@ function CustomDropdown() {
         // make data unique
         const returnData = [...new Set(updatedData.map((item) => item))];
         // make data unique -end
-        setAllFilter(returnData);
         return returnData;
       });
+      // update all books list which will be shown -end
 
       // store filter data in variable
     } else {
       navigate("*");
     }
   };
-
-  // useEffect(() => {
-  //   console.log(allFilter);
-  //   // if (
-  //   //   allFilter !== [] ||
-  //   //   allFilter !== undefined ||
-  //   //   allFilter.length !== 0 ||
-  //   //   allFilter !== null
-  //   // ) {
-  //   setNewData((prevState) => {
-  //     const updatedData = [];
-  //     allFilter.map((items) => {
-  //       console.log(items);
-  //       updatedData.push(items);
-  //     });
-
-  //     [...prevState].map((items) => {
-  //       console.log(items);
-  //       updatedData.push(items);
-  //     });
-
-  //     console.log(updatedData);
-  //     return [...new Set(updatedData.map((item) => item))];
-  //   });
-
-  //   // }
-  //   console.log(newData);
-  // }, [allFilter]);
 
   return (
     <div className="search-dropdown">
@@ -406,7 +430,6 @@ function CustomDropdown() {
       >
         {categories.map((item) => (
           <Dropdown.Item
-            ref={dropdown}
             onClick={(event) => categoriesHandler(event, categories[0])}
             key={item.id}
           >
@@ -417,7 +440,6 @@ function CustomDropdown() {
       <DropdownButton as={ButtonGroup} variant={authors[0]} title={authors[0]}>
         {authors.map((item) => (
           <Dropdown.Item
-            ref={dropdown}
             onClick={(event) => authorsHandler(event, authors[0])}
             key={item.id}
           >
@@ -432,7 +454,6 @@ function CustomDropdown() {
       >
         {translators.map((item) => (
           <Dropdown.Item
-            ref={dropdown}
             onClick={(event) => translatorsHandler(event, translators[0])}
             key={item.id}
           >
@@ -447,7 +468,6 @@ function CustomDropdown() {
       >
         {hashtags.map((item) => (
           <Dropdown.Item
-            ref={dropdown}
             onClick={(event) => hashtagsHandler(event, hashtags[0])}
             key={item.id}
           >
@@ -462,7 +482,6 @@ function CustomDropdown() {
       >
         {publishers.map((item) => (
           <Dropdown.Item
-            ref={dropdown}
             onClick={(event) => publishersHandler(event, publishers[0])}
             key={item.id}
           >

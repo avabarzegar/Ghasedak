@@ -10,7 +10,7 @@ const SearchInput = (props) => {
   const [inputChange, setInputChanage] = useState("");
   const inputRef = useRef(null);
   const navigate = useNavigate();
-  const { setSearchValue, bookData, setNewData, setSorting, setSelectedData, setSelectedTitle } = useAppContext();
+  const { setSearchValue, bookData, setNewData, setSorting} = useAppContext();
 
   // define variables, states and refs end
 
@@ -30,8 +30,7 @@ const SearchInput = (props) => {
 
       // set appied filters to null
       setSorting([]);
-      setSelectedData([]);
-      setSelectedTitle([]);
+      
       // set appied filters to null -end
 
       DataBook = bookData;
@@ -52,21 +51,15 @@ const SearchInput = (props) => {
       }
     }
   };
-  // useEffect(() => {
-  //   setNewData(DataBook);
-  //   navigate("/search");
-  // },[inputChange]);
   //    show search result page by clicking enter key - end
 
   //    show search result page by clicking on search button
-
   const handleClick = () => {
     setSearchValue(inputRef.current.value);
 
     // set appied filters to null
     setSorting([]);
-    setSelectedData([]);
-    setSelectedTitle([]);
+   
     // set appied filters to null -end
 
     DataBook = bookData;

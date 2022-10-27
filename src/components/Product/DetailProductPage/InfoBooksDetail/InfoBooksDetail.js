@@ -8,18 +8,20 @@ import CounterBooks from "../CounterBooks/CounterBooks";
 import StyledButton from "../../../UI/Button/Button";
 import AddToCart from "../../../../assets/Images/icon/vuesax-add-to-card.svg";
 
-const InfoBooksDetail = () => {
+const InfoBooksDetail = (props) => {
+   const {name, color} = props.product;
+
    return (
       <>
          <div className="publisher_name">
             <TitleDetail TitleText="ناشر:" />
             <img src={LogoPublisher} alt="logo publisher" />
-            <TitleDetail titleDetailCustomStyle="publisher_name_custom_style" TitleText=" نشر ایران" />
+            <TitleDetail titleDetailCustomStyle="publisher_name_custom_style" TitleText={name} />
          </div>
          <div className="parent_section_info_books parent_section_info_books-more_info ">
             <div>
                <TitleDetail TitleText="نویسنده:" />
-               <TitleDetail titleDetailCustomStyle="publisher_name_custom_style" TitleText=" آلبرکامو" />
+               <TitleDetail titleDetailCustomStyle="publisher_name_custom_style" TitleText={color} />
             </div>
             <Link className="more_info_parent_section">
                <img src={MoreInfo} alt="more info logo" />

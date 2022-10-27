@@ -8,7 +8,7 @@ import SliderTopLine from '../../SliderTopLine/SliderTopLine';
 import SliderNavigation from '../../SliderNavigation/SliderNavigation';
 import BookSimpleCard from '../../BookCard/BookSimpleCard/BookSimpleCard';
 import SeeAllShops from '../../seeallshops/Seeallshops';
-
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 
 // Import Swiper styles
@@ -16,13 +16,14 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 import SliderLayout from '../../SliderLayout/SliderLayout';
-import { propTypes } from 'react-bootstrap/esm/Image';
+import InfoBooksDetail from '../../Product/DetailProductPage/InfoBooksDetail/InfoBooksDetail';
+
 
 
 
 
 // === mapping swiper slides ===
-const MostSaleMonthSlides = () => {
+const MostSaleMonthSlides = (props) => {
 
   // refer hook
   const navigationPrevRef = useRef(null)
@@ -67,7 +68,7 @@ const MostSaleMonthSlides = () => {
       })
       setSlide(slideData)
 
-  
+      console.log(setSlide)
 
     })
 
@@ -187,13 +188,20 @@ const MostSaleMonthSlides = () => {
               return (
                 // == return swiper slides ==
 
-                <SwiperSlide className='book-slide-two' key={item.id}>
-                  <BookSimpleCard
-                    name={item.name}
-                    img={item.image}
-                    price={item.price}
-                  />
-                </SwiperSlide>
+                <Router>
+                  <Link to="/InfoBookDetail">
+                    <SwiperSlide className='book-slide-two' key={item.id}>
+                      <BookSimpleCard
+                        name={item.name}
+                        img={item.image}
+                        price={item.price}
+                      />
+                    </SwiperSlide>
+                  </Link>
+                    <Route path="/InfoBookDetail">
+                      <InfoBooksDetail product={item} />
+                    </Route>
+                </Router>
                 // == return swiper slides end ==
               )
             })}

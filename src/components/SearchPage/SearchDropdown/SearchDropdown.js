@@ -16,6 +16,7 @@ function CustomDropdown() {
     hashtags,
     publishers,
     setNewData,
+    newData,
     bookData,
     searchValue,
     setSearchValue,
@@ -75,10 +76,10 @@ function CustomDropdown() {
 
     // set previous result books to null
     console.log(searchValue);
-    // if (searchValue !== null) {
-    //   setSearchValue("");
-    //   setNewData([]);
-    // }
+    if (searchValue !== "") {
+      setSearchValue("");
+      setNewData([]);
+    }
     // set previous result books to null -end
 
     // store filter data in variable
@@ -162,10 +163,10 @@ function CustomDropdown() {
 
     // set previous result books to null
     console.log(searchValue);
-    // if (searchValue !== null) {
-    //   setSearchValue("");
-    //   setNewData([]);
-    // }
+    if (searchValue !== "") {
+      setSearchValue("");
+      setNewData([]);
+    }
     // set previous result books to null -end
 
     // store filter data in variable
@@ -245,10 +246,10 @@ function CustomDropdown() {
 
     // set previous result books to null
     console.log(searchValue);
-    // if (searchValue !== null) {
-    //   setSearchValue("");
-    //   setNewData([]);
-    // }
+    if (searchValue !== "") {
+      setSearchValue("");
+      setNewData([]);
+    }
     // set previous result books to null -end
 
     // store filter data in variable
@@ -332,10 +333,10 @@ function CustomDropdown() {
 
     // set previous result books to null
     console.log(searchValue);
-    // if (searchValue !== null) {
-    //   setSearchValue("");
-    //   setNewData([]);
-    // }
+    if (searchValue !== "") {
+      setSearchValue("");
+      setNewData([]);
+    }
     // set previous result books to null -end
 
     // store filter data in variable
@@ -416,10 +417,10 @@ function CustomDropdown() {
 
     // set previous result books to null
     console.log(searchValue);
-    // if (searchValue !== null) {
-    //   setSearchValue("");
-    //   setNewData([]);
-    // }
+    if (searchValue !== "") {
+      setSearchValue("");
+      setNewData([]);
+    }
     // set previous result books to null -end
 
     // store filter data in variable
@@ -453,7 +454,8 @@ function CustomDropdown() {
       navigate("*");
     }
   };
-
+console.log(searchValue)
+console.log(newData)
   return (
     <div className="search-dropdown">
       <DropdownButton

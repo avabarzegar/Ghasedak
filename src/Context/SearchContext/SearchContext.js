@@ -22,6 +22,7 @@ const SearchContext = ({ children }) => {
   //   define states and variables end
 
   useEffect(() => {
+    console.log('search context');
     // api config
     const token = "DzTwF4yts6KjdR8NLdQdUtN0Y4YbcT35pVTy1Kek";
 

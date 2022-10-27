@@ -41,17 +41,15 @@ const AvailableProducts = () => {
       ) {
         navigate("/search");
         // update search data state
-
-        setNewData((prevState) => {
-          setPrevBooks(prevState);
-          console.log(prevState);
-          return filter;
-        });
+        console.log("available book");
+        setNewData(filter);
         // update search data state -end
       } else {
+        console.log("available book");
         navigate("*");
       }
     } else {
+      console.log("available book");
       console.log(prevBooks);
       setNewData(prevBooks);
     }

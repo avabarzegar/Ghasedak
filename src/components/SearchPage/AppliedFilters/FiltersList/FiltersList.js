@@ -79,15 +79,13 @@ const FiltersList = () => {
       }
     });
     console.log(sorting[index].title);
-
-    
   };
-useEffect(()=>{
-  if (sorting == []) {
+  useEffect(() => {
+    if (sorting == [] || (sorting.length === 0 && searchValue === "")) {
       setNewData([]);
       navigate("*");
     }
-},[sorting])
+  }, [sorting]);
   console.log(sorting);
   return (
     <div className="filter-list">

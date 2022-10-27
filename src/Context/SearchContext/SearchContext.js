@@ -18,11 +18,12 @@ const SearchContext = ({ children }) => {
   const [allFilter, setAllFilter] = useState([]);
   const [translators, setTranslators] = useState([]);
   const [hashtags, setHashtags] = useState([]);
+  const [available, setAvailable] = useState(true);
   //   define states and variables end
 
   useEffect(() => {
     // api config
-    const token = "viBOjqV3gV68hsEmyz8IloLxZejsacji4BdSnF6O";
+    const token = "DzTwF4yts6KjdR8NLdQdUtN0Y4YbcT35pVTy1Kek";
 
     const config = {
       headers: { Authorization: `Bearer ${token}` },
@@ -178,6 +179,8 @@ const SearchContext = ({ children }) => {
         translators,
         hashtags,
         publishers,
+        available,
+        setAvailable,
       }}
     >
       {children}

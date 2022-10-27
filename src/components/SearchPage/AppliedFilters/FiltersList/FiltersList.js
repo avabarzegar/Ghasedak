@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./FiltersList.css";
 import SingleFilterLayout from "../SingleFilterLayout/SingleFilterLayout";
-import AppliedSingleFilter from "../AppliedSingleFilter/AppliedSingleFilter";
+// import AppliedSingleFilter from "../AppliedSingleFilter/AppliedSingleFilter";
 import { useAppContext } from "../../../../Context/SearchContext/SearchContext";
+import { useNavigate } from "react-router-dom";
 
 // define all applied filters list
 const FiltersList = () => {
   // define state and variables
   const { sorting, setSorting, searchValue, setNewData, newData } =
     useAppContext();
+  const navigate = useNavigate();
   // define state and variables -end
 
   // delete specific filter by clicking on its delete button
@@ -77,8 +79,15 @@ const FiltersList = () => {
       }
     });
     console.log(sorting[index].title);
-  };
 
+    
+  };
+useEffect(()=>{
+  if (sorting == []) {
+      setNewData([]);
+      navigate("*");
+    }
+},[sorting])
   console.log(sorting);
   return (
     <div className="filter-list">

@@ -37,7 +37,7 @@ const MostSaleMonthSlides = () => {
   const [isShown, setIsShown] = useState(true);
 
   useEffect(() => {
-    const token = '23WkcBwlNrIWRoIVii9wAJqlnGg6wnSu7jLatyJw';
+    const token = 'DzTwF4yts6KjdR8NLdQdUtN0Y4YbcT35pVTy1Kek';
 
     const config = {
       headers: { Authorization: `Bearer ${token}` }

@@ -35,7 +35,7 @@ const ThirdPublisherSlider =()=>{
 
 
   useEffect(()=>{
-    const token ='ln9cmSRAFLIDY6X9MOjoomOzEzghPZqE0skQQc8X';
+    const token ='DzTwF4yts6KjdR8NLdQdUtN0Y4YbcT35pVTy1Kek';
    
     const config = {
       headers: { Authorization: `Bearer ${token}` }

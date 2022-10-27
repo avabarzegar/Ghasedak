@@ -7,8 +7,8 @@ import "./AvailableProducts.css";
 // define available products section
 const AvailableProducts = () => {
   // variables and states
-  const { bookData, setNewData } = useAppContext();
-  const [available, setAvailable] = useState(true);
+  const { bookData, setNewData, available, setAvailable } = useAppContext();
+
   const [prevBooks, setPrevBooks] = useState([]);
   const navigate = useNavigate();
   // variables and states -end

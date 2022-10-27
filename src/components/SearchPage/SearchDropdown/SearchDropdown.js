@@ -19,12 +19,21 @@ function CustomDropdown() {
     bookData,
     searchValue,
     setSearchValue,
+    available,
+    setAvailable,
   } = useAppContext();
   const navigate = useNavigate();
   const saveSelectedFilter = [];
   // states and ref end
 
   const categoriesHandler = (event, title) => {
+    // set available toggeler to false
+    if (available === true) {
+      setAvailable(false);
+      setNewData([]);
+    }
+    // set available toggeler to false -end
+
     // selected filter name
     const eventData = event.target.innerText;
     // selected filter name -end
@@ -66,10 +75,10 @@ function CustomDropdown() {
 
     // set previous result books to null
     console.log(searchValue);
-    if (searchValue !== null) {
-      setSearchValue("");
-      setNewData([]);
-    }
+    // if (searchValue !== null) {
+    //   setSearchValue("");
+    //   setNewData([]);
+    // }
     // set previous result books to null -end
 
     // store filter data in variable
@@ -105,6 +114,12 @@ function CustomDropdown() {
   };
 
   const authorsHandler = (event, title) => {
+    // set available toggeler to false
+    if (available === true) {
+      setAvailable(false);
+      setNewData([]);
+    }
+    // set available toggeler to false -end
     // selected filter name
     const eventData = event.target.innerText;
     // selected filter name -end
@@ -147,10 +162,10 @@ function CustomDropdown() {
 
     // set previous result books to null
     console.log(searchValue);
-    if (searchValue !== null) {
-      setSearchValue("");
-      setNewData([]);
-    }
+    // if (searchValue !== null) {
+    //   setSearchValue("");
+    //   setNewData([]);
+    // }
     // set previous result books to null -end
 
     // store filter data in variable
@@ -184,6 +199,12 @@ function CustomDropdown() {
   };
 
   const translatorsHandler = (event, title) => {
+    // set available toggeler to false
+    if (available === true) {
+      setAvailable(false);
+      setNewData([]);
+    }
+    // set available toggeler to false -end
     // selected filter name
     const eventData = event.target.innerText;
     // selected filter name -end
@@ -224,10 +245,10 @@ function CustomDropdown() {
 
     // set previous result books to null
     console.log(searchValue);
-    if (searchValue !== null) {
-      setSearchValue("");
-      setNewData([]);
-    }
+    // if (searchValue !== null) {
+    //   setSearchValue("");
+    //   setNewData([]);
+    // }
     // set previous result books to null -end
 
     // store filter data in variable
@@ -263,6 +284,12 @@ function CustomDropdown() {
   };
 
   const hashtagsHandler = (event, title) => {
+    // set available toggeler to false
+    if (available === true) {
+      setAvailable(false);
+      setNewData([]);
+    }
+    // set available toggeler to false -end
     // selected filter name
     const eventData = event.target.innerText;
     // selected filter name -end
@@ -305,10 +332,10 @@ function CustomDropdown() {
 
     // set previous result books to null
     console.log(searchValue);
-    if (searchValue !== null) {
-      setSearchValue("");
-      setNewData([]);
-    }
+    // if (searchValue !== null) {
+    //   setSearchValue("");
+    //   setNewData([]);
+    // }
     // set previous result books to null -end
 
     // store filter data in variable
@@ -344,6 +371,12 @@ function CustomDropdown() {
   };
 
   const publishersHandler = (event, title) => {
+    // set available toggeler to false
+    if (available === true) {
+      setAvailable(false);
+      setNewData([]);
+    }
+    // set available toggeler to false -end
     // selected filter name
     const eventData = event.target.innerText;
     // selected filter name -end
@@ -383,10 +416,10 @@ function CustomDropdown() {
 
     // set previous result books to null
     console.log(searchValue);
-    if (searchValue !== null) {
-      setSearchValue("");
-      setNewData([]);
-    }
+    // if (searchValue !== null) {
+    //   setSearchValue("");
+    //   setNewData([]);
+    // }
     // set previous result books to null -end
 
     // store filter data in variable

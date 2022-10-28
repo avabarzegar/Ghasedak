@@ -188,8 +188,7 @@ const MostSaleMonthSlides = (props) => {
               return (
                 // == return swiper slides ==
 
-                <Router>
-                  <Link to="/InfoBookDetail">
+                
                     <SwiperSlide className='book-slide-two' key={item.id}>
                       <BookSimpleCard
                         name={item.name}
@@ -197,11 +196,9 @@ const MostSaleMonthSlides = (props) => {
                         price={item.price}
                       />
                     </SwiperSlide>
-                  </Link>
-                    <Route path="/InfoBookDetail">
-                      <InfoBooksDetail product={item} />
-                    </Route>
-                </Router>
+       
+                    
+             
                 // == return swiper slides end ==
               )
             })}

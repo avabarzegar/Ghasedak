@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import Toman from "../../../../assets/Images/icon/toman.svg";
 import Car from "../../../../assets/Images/icon/big-car-product.svg";
 import BgGray from "../../../../assets/Images/icon/bg-gray-product.svg";
-import "./InfoStores.css"
+import "./InfoStores.css";
 
 const InfoStores = () => {
    return (

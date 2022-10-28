@@ -50,7 +50,7 @@ const InfoBooksDetail = (props) => {
       <div className="parent_section_info_books parent_section_info_books-more_info ">
         <div>
           <TitleDetail TitleText="نویسندگان:" />
-          {product.author.map((item, index) => {
+          {product.author?.map((item, index) => {
             <TitleDetail
               key={index}
               titleDetailCustomStyle="publisher_name_custom_style"
@@ -66,7 +66,7 @@ const InfoBooksDetail = (props) => {
       <div className="parent_section_info_books">
         <TitleDetail TitleText="مترجم:" />
 
-        {product.translator.map((item, index) => {
+        {product.translator?.map((item, index) => {
           <TitleDetail
             key={index}
             titleDetailCustomStyle="publisher_name_custom_style"

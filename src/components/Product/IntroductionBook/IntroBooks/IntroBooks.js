@@ -1,4 +1,4 @@
-import React , {useState , useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./IntroBooks.css";
 import { useRef } from "react";
 import TitleDetail from "../../DetailProductPage/TitleDetail/TitleDetail";
@@ -9,68 +9,42 @@ import CommentIcon from "../../../../assets/Images/icon/comment-btn-img.svg";
 import CommentIconInComments from "../../../../assets/Images/icon/send-comment-icon-in-comments.svg";
 import StarRating from "../../../../assets/Images/icon/start-rating.svg";
 import axios from "axios";
+import { useProductsContext } from "../../../../Context/ProductContext/ProductContext";
 
-const IntroBooks = () => {
-
-
-   useEffect(()=>{
-      const token ='DzTwF4yts6KjdR8NLdQdUtN0Y4YbcT35pVTy1Kek';
-     
-      const config = {
-        headers: { Authorization: `Bearer ${token}` }
-    };
-    
-    const bodyParameters = {
-       key: "value"
-    };
-    
-     
-      //    === get slides data from api ===
-      axios.post( 
-        '/books/list/all',
-        bodyParameters,
-        config
-      ).then((response)=>{
-
-         console.log(response.data[1].name)
-             
-            //   const slideData=[];
-            //   response.data.book_lists[1].books.data.map((item)=>{
-            //     slideData.push({
-            //         id:item.id ,
-            //         name:item.name,
-            //         image:item.images.data[0].image_url,
-  
-            //       })  
-                   
-            //   })
-            //  setSlide(slideData)
-          })
-          .catch((err)=>{
-              console.log(err.message)
-          })
-  
-        
-       
-      //    === get slides data from api ===
-  
-      } , [])
+const IntroBooks = (props) => {
 
 
+   const { products, bookName, product, setProduct } = useProductsContext();
 
+   useEffect(() => {
+      products.map((item) => {
+         if (item.name === bookName) {
+            setProduct({
+               id: item.id,
+               name: item.name,
+               img: item.img,
+               category: item.category,
+               author: item.author,
+               translator: item.translator,
+               hashtag: item.hashtag,
+               price: item.price,
+               available: item.available,
+               publisher: item.publisher,
+               publishyear:item.publishyear,
+               pagescount:item.pagescount,
+               weight:item.weight,
+               isbn:item.isbn,
+               typename:item.typename,
+               hashtags:item.hashtags,
+               description:item.description,
+               size:item.size,
+               edition:item.edition,
+               booktype:item.book_type,
+            });
+         }
 
-
-
-
-
-
-
-
-
-
-
-
-
+      });
+   }, [bookName]);
 
 
 
@@ -95,7 +69,6 @@ const IntroBooks = () => {
 
 
 
-   
    return (
 
       <div>
@@ -113,21 +86,11 @@ const IntroBooks = () => {
                <span>دیدگاه ها</span>
             </li>
          </ul>
-
-
-
-
-
-
-
-
-
-
          <div className="parent-section-all-info-product">
             <div ref={div1} className="outer-section-information-description">
                <span>توضیح کلی :</span>
                <p>
-                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                  {product.description}
                </p>
             </div>
 
@@ -135,66 +98,67 @@ const IntroBooks = () => {
                <span className="title-info-product">  مشخصات محصول :</span>
                <div className="parent-section-info-product">
                   <TitleDetail titleDetailCustomStyle="styles-class" TitleText="عنوان کتاب:" />
-                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText="طاعون" />
+                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText={product.name} />
                </div>
                <div className="parent-section-info-product">
                   <TitleDetail titleDetailCustomStyle="styles-class" TitleText=" نویسنده:" />
-                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText="آلبرکامو" />
+                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText={product.author} />
                </div>
+
                <div className="parent-section-info-product">
                   <TitleDetail titleDetailCustomStyle="styles-class" TitleText="مترجم:" />
-                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText="علیرضا رستمی" />
+                  {product.translator?.map((item, index) => {
+                     <TitleDetail titleDetailCustomStyle="styles-class" TitleText={index} key={index}/>
+                  })}
                </div>
                <div className="parent-section-info-product">
                   <TitleDetail titleDetailCustomStyle="styles-class" TitleText="انتشارات:" />
-                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText="نشر ایران" />
+                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText={product.publisher} />
                </div>
                <div className="parent-section-info-product">
                   <TitleDetail titleDetailCustomStyle="styles-class" TitleText=" سال انتشار:" />
-                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText="1380" />
+                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText={product.publishyear} />
                </div>
                <div className="parent-section-info-product">
                   <TitleDetail titleDetailCustomStyle="styles-class" TitleText="تعداد صفحات:" />
-                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText="256" />
+                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText={product.pagescount} />
                </div>
                <div className="parent-section-info-product">
                   <TitleDetail titleDetailCustomStyle="styles-class" TitleText="شابک:" />
-                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText="1234567890" />
+                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText={product.isbn} />
                </div>
                <div className="parent-section-info-product">
                   <TitleDetail titleDetailCustomStyle="styles-class" TitleText="قطع:" />
-                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText="-----" />
+                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText={product.size} />
                </div>
                <div className="parent-section-info-product">
                   <TitleDetail titleDetailCustomStyle="styles-class" TitleText="نوع جلد:" />
-                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText="کالینگو" />
-               </div>
-               <div className="parent-section-info-product">
-                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText="گروه سنی:" />
-                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText="بزرگسال" />
-               </div>
-               <div className="parent-section-info-product">
-                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText="نوع کتاب:" />
-                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText="کتاب متنی" />
-               </div>
-               <div className="parent-section-info-product">
-                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText="نسخه:" />
                   <TitleDetail titleDetailCustomStyle="styles-class" TitleText="----" />
                </div>
                <div className="parent-section-info-product">
+                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText="گروه سنی:" />
+                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText="----" />
+               </div>
+               <div className="parent-section-info-product">
+                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText="نوع کتاب:" />
+                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText={product.booktype} />
+               </div>
+               <div className="parent-section-info-product">
+                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText="نسخه:" />
+                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText={product.edition} />
+               </div>
+               <div className="parent-section-info-product">
                   <TitleDetail titleDetailCustomStyle="styles-class" TitleText="وزن" />
-                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText="450 گرم" />
+                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText={product.weight} />
                </div>
             </div>
 
             <div ref={div3}>
                <span className="title-sticky">برچسب ها</span>
                <div className="parent-section-stickies">
-                  <span>#کتاب</span>
-                  <span>#فلسفه</span>
-                  <span>#آلبر</span>
-                  <span>#اگزیستانسیالیسم</span>
-                  <span>#کامو</span>
+               {product.hashtags.map((item, index) => {
+                 <TitleDetail titleDetailCustomStyle="styles-class" TitleText={item} key={index}/>
+               })}
                </div>
             </div>
 

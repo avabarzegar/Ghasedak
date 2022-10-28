@@ -38,6 +38,16 @@ const ProductContextProvider = ({ children }) => {
             price: item.best_price,
             available: item.is_available,
             publisher: item.publisher,
+            publishyear: item.publish_year,
+            pagescount: item.pages_count,
+            weight: item.weight,
+            isbn: item.isbn,
+            typename: item.typename,
+            hashtags:item.hashtags,
+            description:item.description,
+            size:item.size,
+            edition:item.edition,
+            booktype:item.book_type,
           });
         });
         setProducts(productsData);

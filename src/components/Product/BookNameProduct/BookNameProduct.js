@@ -4,15 +4,15 @@ import axios from "axios";
 import BookPlague from "../../../assets/Images/Books/Rectangle 13.png";
 import './BookNameProduct.css';
 
-import { useAppContext } from "../../../Context/SearchContext/SearchContext";
+import { useProductsContext } from "../../../Context/ProductContext/ProductContext";
 
 const BookNameProduct = (porps) => {
-   const { bookData, bookName } = useAppContext();
-   const [product, setProduct] = useState({});
+   const { products, bookName, product, setProduct } = useProductsContext();
+   // const [product, setProduct] = useState({});
 
 
    useEffect(() => {
-      bookData.map((item) => {
+      products.map((item) => {
         if (item.name === bookName) {
            setProduct({
             id: item.id,

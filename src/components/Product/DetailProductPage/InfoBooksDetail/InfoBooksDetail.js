@@ -14,8 +14,7 @@ import { useEffect, useState } from "react";
 const InfoBooksDetail = (props) => {
   // state and variables
   const { products, bookName, product, setProduct } = useProductsContext();
-  console.log(bookName);
-  console.log(products);
+
   useEffect(() => {
     products.map((item) => {
       if (item.name === bookName) {
@@ -30,13 +29,15 @@ const InfoBooksDetail = (props) => {
           price: item.price,
           available: item.available,
           publisher: item.publisher,
+          pagescount:item.pages_count,
+          weight:item.weight,
+         
         });
       }
     });
   }, [bookName]);
 
   // state and variables -end
-  console.log(product.author);
   return (
     <>
       <div className="publisher_name">
@@ -79,7 +80,7 @@ const InfoBooksDetail = (props) => {
 
         <TitleDetail
           titleDetailCustomStyle="publisher_name_custom_style"
-          TitleText="256 "
+          TitleText={product.pagescount}
         />
       </div>
       <div className="parent_section_info_books">
@@ -103,7 +104,7 @@ const InfoBooksDetail = (props) => {
 
         <TitleDetail
           titleDetailCustomStyle="publisher_name_custom_style"
-          TitleText="210گرم "
+          TitleText={product.weight}
         />
       </div>
       <div className="parent-section-counter-btn-add-to-cart">

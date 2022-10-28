@@ -30,7 +30,7 @@ const OfferSliderBook = () => {
       config
     ).then((response) => {
       const bannerData = [];
-      response.data.banners.data[0].items.data.map((item) => {
+      response.data.banners.data[1].items.data.map((item) => {
         bannerData.push({
           id: item.id,
           title: item.title,

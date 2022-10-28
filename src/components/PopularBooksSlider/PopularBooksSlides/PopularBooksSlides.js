@@ -9,6 +9,7 @@ import SliderNavigation from '../../SliderNavigation/SliderNavigation';
 import BookSimpleCard from '../../BookCard/BookSimpleCard/BookSimpleCard';
 import SeeAllShops from '../../seeallshops/Seeallshops';
 import './PopularBooksSlides.css';
+import LinkedCard from '../../LinkedCard/LinkedCard';
 
 
 // Import Swiper styles
@@ -17,11 +18,12 @@ import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 import SliderLayout from '../../SliderLayout/SliderLayout';
 
+import { useProductsContext } from "../../../Context/ProductContext/ProductContext";
 
 
 
 // === mapping swiper slides ===
-const PopularBooksSlides =()=>{
+const PopularBooksSlides =(props)=>{
     
   // refer hook
   const navigationPrevRef = useRef(null)
@@ -31,6 +33,8 @@ const PopularBooksSlides =()=>{
   // state hook 
   const [swiperRef, setSwiperRef] = useState();
   const [slide , setSlide] =useState([]);
+  const { setBookName, bookName } = useProductsContext();
+
   // state hook end
 
 
@@ -183,11 +187,13 @@ const PopularBooksSlides =()=>{
             return(
                 // == return swiper slides ==
 
-                <SwiperSlide className='book-slide-two' key={item.id}>
-                  <BookSimpleCard 
-                  name={item.name}
-                  img={item.image}
-                  price={item.price}
+                <SwiperSlide className="book-slide-two" key={item.id}>
+                  <LinkedCard
+                    click={() => setBookName(item.name)}
+                    Link={`/products/${item.id}`}
+                    name={item.name}
+                    img={item.image}
+                    price={item.price}
                   />
                 </SwiperSlide>
                 // == return swiper slides end ==

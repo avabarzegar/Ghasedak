@@ -8,8 +8,8 @@ import SliderTopLine from '../../SliderTopLine/SliderTopLine';
 import SliderNavigation from '../../SliderNavigation/SliderNavigation';
 import BookSimpleCard from '../../BookCard/BookSimpleCard/BookSimpleCard';
 import SeeAllShops from '../../seeallshops/Seeallshops';
+import LinkedCard from '../../LinkedCard/LinkedCard';
 import './SamiPublisherSlides.css';
-
 
 // Import Swiper styles
 import 'swiper/css';
@@ -17,11 +17,12 @@ import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 import SliderLayout from '../../SliderLayout/SliderLayout';
 
+import { useProductsContext } from "../../../Context/ProductContext/ProductContext";
 
 
 
 // === mapping swiper slides ===
-const SamiPublisherSlides =()=>{
+const PopularBooksSlides =(props)=>{
     
   // refer hook
   const navigationPrevRef = useRef(null)
@@ -31,6 +32,8 @@ const SamiPublisherSlides =()=>{
   // state hook 
   const [swiperRef, setSwiperRef] = useState();
   const [slide , setSlide] =useState([]);
+  const { setBookName, bookName } = useProductsContext();
+
   // state hook end
 
 
@@ -48,13 +51,12 @@ const SamiPublisherSlides =()=>{
    
     //    === get slides data from api ===
     axios.post( 
-      '/books/list/all',
+      '/user/pwa/home',
       bodyParameters,
       config
     ).then((response)=>{
-           
             const slideData=[];
-            response.data.data.map((item)=>{
+            response.data.book_lists[0].books.data.map((item)=>{
               slideData.push({
                   id:item.id ,
                   name:item.name,
@@ -94,7 +96,7 @@ const SamiPublisherSlides =()=>{
 
     return(
 
-      <section>
+      <section className='popular-books-first popular-books'>
         {/* first section of slider  */}
 
         <SliderTopLine 
@@ -123,7 +125,7 @@ const SamiPublisherSlides =()=>{
           {/* // slider  */}
           <Col xl={11} xs={10} className='type-two-book-slider-container'>
         <Swiper
-          className='slider-last-one type-two-book-slider'
+          className='type-two-book-slider'
           modules={[Navigation , Autoplay ]}
           onSwiper={setSwiperRef}
           autoplay={{delay: 2000}}
@@ -144,29 +146,34 @@ const SamiPublisherSlides =()=>{
 
           breakpoints= {{
            
-            // when window width is >= 576px
-            576: {
-              slidesPerView: 1.5 ,
+           
+
+            0:{
+              slidesPerView: 1 ,
               spaceBetween: 0
             },
+            576: {
+              slidesPerView: 1.5 ,
+              spaceBetween: 25
+            },
 
-            // when window width is >= 768px
+            
             768: {
               slidesPerView: 1.5 ,  
               spaceBetween: 25
             },
 
-            // when window width is >= 992px
+           
             992:{
               slidesPerView: 3 ,
             },
 
-            // when window width is >= 1200px
+            
             1200 :{
               slidesPerView: 3.5 ,
             },
 
-            // when window width is >= 1400px
+            
             1400 : {
               slidesPerView: 4 ,
             }
@@ -174,20 +181,23 @@ const SamiPublisherSlides =()=>{
         >
         
 
-          {slide.map((item) => {
+        {slide.map((item) => {
             return(
                 // == return swiper slides ==
 
-                <SwiperSlide className='book-slide-two' key={item.id}>
-                    <BookSimpleCard
+                <SwiperSlide className="book-slide-two" key={item.id}>
+                  <LinkedCard
+                    click={() => setBookName(item.name)}
+                    Link={`/products/${item.id}`}
                     name={item.name}
                     img={item.image}
                     price={item.price}
-                    />
+                  />
                 </SwiperSlide>
                 // == return swiper slides end ==
             )           
           })}
+          
         </Swiper>  
           </Col>
         {/* // slider end */}
@@ -210,4 +220,4 @@ const SamiPublisherSlides =()=>{
 }
 
 
-export default SamiPublisherSlides;
+export default PopularBooksSlides;

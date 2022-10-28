@@ -8,7 +8,8 @@ import SliderTopLine from '../../SliderTopLine/SliderTopLine';
 import SliderNavigation from '../../SliderNavigation/SliderNavigation';
 import BookSimpleCard from '../../BookCard/BookSimpleCard/BookSimpleCard';
 import SeeAllShops from '../../seeallshops/Seeallshops';
-import './MostSaleSlides.css';
+import { useProductsContext } from "../../../Context/ProductContext/ProductContext";
+import LinkedCard from '../../LinkedCard/LinkedCard';
 
 
 // Import Swiper styles
@@ -21,7 +22,7 @@ import SliderLayout from '../../SliderLayout/SliderLayout';
 
 
 // === mapping swiper slides ===
-const MostSaleSlides =()=>{
+const MostSaleYearSlides =()=>{
     
   // refer hook
   const navigationPrevRef = useRef(null)
@@ -31,6 +32,8 @@ const MostSaleSlides =()=>{
   // state hook 
   const [swiperRef, setSwiperRef] = useState();
   const [slide , setSlide] =useState([]);
+  const { setBookName, bookName } = useProductsContext();
+
   // state hook end
 
 
@@ -52,13 +55,12 @@ const MostSaleSlides =()=>{
       bodyParameters,
       config
     ).then((response)=>{
-           
             const slideData=[];
-            response.data.book_lists[2].books.data.map((item)=>{
+            response.data.book_lists[0].books.data.map((item)=>{
               slideData.push({
                   id:item.id ,
                   name:item.name,
-                  image:item.images.data[0].image_url,
+                  image:item.images.data[1].image_url,
                   price:item.best_price,
                 })  
                  
@@ -98,7 +100,7 @@ const MostSaleSlides =()=>{
         {/* first section of slider  */}
 
         <SliderTopLine 
-         text='کتابهای جایزه دار   '
+         text='کتاب های کمک درسی'
          textBorder='purple-bottom'
          containerBorder='gray-bottom'
          >
@@ -127,6 +129,7 @@ const MostSaleSlides =()=>{
           modules={[Navigation , Autoplay ]}
           onSwiper={setSwiperRef}
           autoplay={{delay: 2000}}
+          
           slidesPerGroup={1}
           navigation={{
             prevEl: navigationPrevRef.current,
@@ -181,11 +184,13 @@ const MostSaleSlides =()=>{
             return(
                 // == return swiper slides ==
 
-                <SwiperSlide className='book-slide-two' key={item.id}>
-                  <BookSimpleCard
-                  name={item.name}
-                  img={item.image} 
-                  price={item.price}
+                <SwiperSlide className="book-slide-two" key={item.id}>
+                  <LinkedCard
+                    click={() => setBookName(item.name)}
+                    Link={`/products/${item.id}`}
+                    name={item.name}
+                    img={item.image}
+                    price={item.price}
                   />
                 </SwiperSlide>
                 // == return swiper slides end ==
@@ -214,4 +219,4 @@ const MostSaleSlides =()=>{
 }
 
 
-export default MostSaleSlides;
+export default MostSaleYearSlides;

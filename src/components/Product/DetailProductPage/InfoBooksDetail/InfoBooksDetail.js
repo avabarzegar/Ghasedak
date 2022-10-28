@@ -44,10 +44,10 @@ const InfoBooksDetail = (props) => {
             />
           ))}
         </div>
-        <Link className="more_info_parent_section">
+        {/* <Link className="more_info_parent_section">
           <img src={MoreInfo} alt="more info logo" />
           <span>توضیحات بیشتر</span>
-        </Link>
+        </Link> */}
       </div>
       <div className="parent_section_info_books">
         <TitleDetail TitleText="مترجم:" />

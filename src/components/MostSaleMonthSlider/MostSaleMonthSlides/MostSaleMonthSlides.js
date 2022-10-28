@@ -17,6 +17,10 @@ import "swiper/css/scrollbar";
 import SliderLayout from "../../SliderLayout/SliderLayout";
 import InfoBooksDetail from "../../Product/DetailProductPage/InfoBooksDetail/InfoBooksDetail";
 
+
+import { useProductsContext } from "../../../Context/ProductContext/ProductContext";
+
+
 // === mapping swiper slides ===
 const MostSaleMonthSlides = (props) => {
   // refer hook
@@ -27,9 +31,10 @@ const MostSaleMonthSlides = (props) => {
   // state hook
   const [swiperRef, setSwiperRef] = useState();
   const [slide, setSlide] = useState([]);
+  const { setBookName, bookName } = useProductsContext();
+
   // state hook end
 
-  const [isShown, setIsShown] = useState(true);
 
   useEffect(() => {
     const token = "DzTwF4yts6KjdR8NLdQdUtN0Y4YbcT35pVTy1Kek";
@@ -158,20 +163,15 @@ const MostSaleMonthSlides = (props) => {
               return (
                 // == return swiper slides ==
 
-                <Router>
-                  <Link to="/InfoBookDetail">
-                    <SwiperSlide className="book-slide-two" key={item.id}>
-                      <LinkedCard
-                        name={item.name}
-                        img={item.image}
-                        price={item.price}
-                      />
-                    </SwiperSlide>
-                  </Link>
-                  <Route path="/InfoBookDetail">
-                    <InfoBooksDetail product={item} />
-                  </Route>
-                </Router>
+                <SwiperSlide className="book-slide-two" key={item.id}>
+                  <LinkedCard
+                    click={() => setBookName(item.name)}
+                    Link={`/products/${item.id}`}
+                    name={item.name}
+                    img={item.image}
+                    price={item.price}
+                  />
+                </SwiperSlide>
                 // == return swiper slides end ==
               );
             })}

@@ -36,9 +36,6 @@ const InfoStores = () => {
           list.push({
             pric: item.price,
           });
-          console.log(dataList);
-          console.log(item);
-          console.log(item.book.id);
 
           if (item.book.id === product.id) {
             setStore(item);
@@ -47,8 +44,6 @@ const InfoStores = () => {
       });
     // shop list data -end
   }, []);
-  console.log(store);
-  console.log(product.id);
   return (
     <div className="parent-section-info-stores">
       <h1 className="shops-title">فروشندگان</h1>
@@ -94,6 +89,7 @@ const InfoStores = () => {
           </div>
         </div>
       </Container>
+      
     </div>
   );
 };

@@ -1,6 +1,5 @@
 import React from "react";
 import "./SearchFilters.css";
-import { useFiltersContext } from "../../../Context/FilterContext/FilterContext";
 import CustomDropdown from "../SearchDropdown/SearchDropdown";
 import SearchFilterHeadLayout from "../SearchFilterHeadLayout/SearchFilterHeadLayout";
 import Icon from "../../../assets/Images/icon/setting-5.svg";

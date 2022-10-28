@@ -8,17 +8,18 @@ import CounterBooks from "../CounterBooks/CounterBooks";
 import StyledButton from "../../../UI/Button/Button";
 import AddToCart from "../../../../assets/Images/icon/vuesax-add-to-card.svg";
 // context
-import { useAppContext } from "../../../../Context/SearchContext/SearchContext";
+import { useProductsContext } from "../../../../Context/ProductContext/ProductContext";
 import { useEffect, useState } from "react";
 
 const InfoBooksDetail = (props) => {
   // state and variables
-  const { bookData, bookName } = useAppContext();
-  const [product, setProduct] = useState({});
+  const { products, bookName, product, setProduct } = useProductsContext();
+  console.log(bookName);
+  console.log(products);
   useEffect(() => {
-    bookData.map((item) => {
+    products.map((item) => {
       if (item.name === bookName) {
-         setProduct({
+        setProduct({
           id: item.id,
           name: item.name,
           img: item.img,
@@ -32,11 +33,10 @@ const InfoBooksDetail = (props) => {
         });
       }
     });
-    
-  
   }, [bookName]);
 
   // state and variables -end
+  console.log(product.author);
   return (
     <>
       <div className="publisher_name">
@@ -49,13 +49,14 @@ const InfoBooksDetail = (props) => {
       </div>
       <div className="parent_section_info_books parent_section_info_books-more_info ">
         <div>
-          <TitleDetail TitleText="نویسنده:" />
-         
+          <TitleDetail TitleText="نویسندگان:" />
+          {product.author?.map((item, index) => {
             <TitleDetail
+              key={index}
               titleDetailCustomStyle="publisher_name_custom_style"
               TitleText={product.author}
             />;
-       
+          })}
         </div>
         <Link className="more_info_parent_section">
           <img src={MoreInfo} alt="more info logo" />
@@ -65,10 +66,13 @@ const InfoBooksDetail = (props) => {
       <div className="parent_section_info_books">
         <TitleDetail TitleText="مترجم:" />
 
-        <TitleDetail
-          titleDetailCustomStyle="publisher_name_custom_style"
-           TitleText={product.translator}
-        />
+        {product.translator?.map((item, index) => {
+          <TitleDetail
+            key={index}
+            titleDetailCustomStyle="publisher_name_custom_style"
+            TitleText={item}
+          />;
+        })}
       </div>
       <div className="parent_section_info_books">
         <TitleDetail TitleText="تعداد صفحات:" />

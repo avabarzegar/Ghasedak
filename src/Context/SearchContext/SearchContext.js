@@ -9,18 +9,22 @@ const SearchContext = ({ children }) => {
   const [searchFilter, setSearchFilter] = useState(" ");
   const [bookData, setBookData] = useState([]);
   const [selectedData, setSelectedData] = useState([]);
+  const [selectedTitle, setSelectedTitle] = useState([]);
   const [sorting, setSorting] = useState([]);
   const [categories, setCategories] = useState([]);
   const [authors, setAuthors] = useState([]);
   const [publishers, setPublishers] = useState([]);
   const [newData, setNewData] = useState([]);
+  const [allFilter, setAllFilter] = useState([]);
   const [translators, setTranslators] = useState([]);
   const [hashtags, setHashtags] = useState([]);
+  const [available, setAvailable] = useState(true);
   //   define states and variables end
 
   useEffect(() => {
+    console.log('search context');
     // api config
-    const token = "viBOjqV3gV68hsEmyz8IloLxZejsacji4BdSnF6O";
+    const token = "DzTwF4yts6KjdR8NLdQdUtN0Y4YbcT35pVTy1Kek";
 
     const config = {
       headers: { Authorization: `Bearer ${token}` },
@@ -158,9 +162,13 @@ const SearchContext = ({ children }) => {
         newData,
         selectedData,
         setSelectedData,
+        setSelectedTitle,
+        selectedTitle,
         searchFilter,
         setSearchFilter,
         setNewData,
+        allFilter,
+        setAllFilter,
         searchValue,
         setSearchValue,
         bookData,
@@ -171,7 +179,9 @@ const SearchContext = ({ children }) => {
         authors,
         translators,
         hashtags,
-        publishers
+        publishers,
+        available,
+        setAvailable,
       }}
     >
       {children}

@@ -1,53 +1,100 @@
 import React, { useEffect } from "react";
 import "./FiltersList.css";
 import SingleFilterLayout from "../SingleFilterLayout/SingleFilterLayout";
-import AppliedSingleFilter from "../AppliedSingleFilter/AppliedSingleFilter";
+// import AppliedSingleFilter from "../AppliedSingleFilter/AppliedSingleFilter";
 import { useAppContext } from "../../../../Context/SearchContext/SearchContext";
+import { useNavigate } from "react-router-dom";
 
 // define all applied filters list
 const FiltersList = () => {
-  // state
-  const {
-    sorting,
-    setSorting,
-    searchValue,
-    selectedData,
-    setNewData,
-    newData,
-  } = useAppContext();
-  // state end
+  // define state and variables
+  const { sorting, setSorting, searchValue, setNewData, newData } =
+    useAppContext();
+  const navigate = useNavigate();
+  // define state and variables -end
 
   // delete specific filter by clicking on its delete button
   const deleteFilterHandler = (index) => {
     const updatedSorting = [...sorting];
     updatedSorting.splice(index, 1);
     setSorting(updatedSorting);
+
+    const sortingTitle = sorting[index].title;
+    const sortingFilter = sorting[index].eventFilter;
+
+    let filters = newData;
+
+    sorting.map(() => {
+      if (sortingTitle === "دسته بندی") {
+        newData.map((items) => {
+          items.category.map((item) => {
+            if (item === sortingFilter) {
+              filters.splice(items, 1);
+            }
+          });
+        });
+        setNewData(filters);
+      }
+
+      if (sortingTitle === "نویسندگان") {
+        newData.map((items) => {
+          items.author.map((item) => {
+            if (item === sortingFilter) {
+              filters.splice(items, 1);
+            }
+          });
+        });
+        setNewData(filters);
+      }
+
+      if (sortingTitle === "مترجمان") {
+        newData.map((items) => {
+          items.translator.map((item) => {
+            if (item === sortingFilter) {
+              filters.splice(items, 1);
+            }
+          });
+        });
+        setNewData(filters);
+      }
+
+      if (sortingTitle === "برچسب ها") {
+        newData.map((items) => {
+          items.hashtag.map((item) => {
+            if (item === sortingFilter) {
+              filters.splice(items, 1);
+            }
+          });
+        });
+        setNewData(filters);
+      }
+
+      if (sortingTitle === "ناشران") {
+        newData.map((items) => {
+          if (items.publisher === sortingFilter) {
+            filters.splice(items, 1);
+          }
+        });
+        setNewData(filters);
+      }
+    });
+    console.log(sorting[index].title);
   };
-  // delete specific filter by clicking on its delete button -end
-  // useEffect(() => {
-  //   console.log(newData);
-  //   let filter = newData
-  //     .filter((items) => {
-  //       items.name.toLowerCase().includes(searchValue, 0);
-  //     })
-  //     .filter((item) => {
-  //       item.author[0].includes(selectedData, 0);
-
-  //       console.log(item.author[0]);
-  //     });
-
-  //   setNewData(filter);
-  //   console.log(newData);
-  // }, [selectedData]);
-
+  useEffect(() => {
+    if (sorting == [] || (sorting.length === 0 && searchValue === "")) {
+      setNewData([]);
+      navigate("*");
+    }
+  }, [sorting]);
+  console.log(sorting);
   return (
     <div className="filter-list">
-      <AppliedSingleFilter Filter={`جستجوی عبارت : ${searchValue}`} />
       {sorting?.map((item, index) => {
         return (
           <SingleFilterLayout
             key={index}
-            Filter={item}
+            title={item.title}
+            Filter={item.eventFilter}
             click={() => deleteFilterHandler(index)}
           />
         );

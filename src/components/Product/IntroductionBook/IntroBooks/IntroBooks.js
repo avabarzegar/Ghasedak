@@ -14,7 +14,7 @@ const IntroBooks = () => {
 
 
    useEffect(()=>{
-      const token ='DzOWeWbxkSIDgEy8PliDBIMAns9yrOqf7jTDnBpi';
+      const token ='DzTwF4yts6KjdR8NLdQdUtN0Y4YbcT35pVTy1Kek';
      
       const config = {
         headers: { Authorization: `Bearer ${token}` }

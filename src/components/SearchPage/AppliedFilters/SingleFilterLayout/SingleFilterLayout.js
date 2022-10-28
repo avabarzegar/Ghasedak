@@ -9,6 +9,7 @@ const SingleFilterLayout =(props)=>{
         <div className="applied-filters-content">
             <AppliedSingleFilter
               Filter={props.Filter}
+              title={props.title}
             />
             <CancelFilter click={props.click}/>
         </div>

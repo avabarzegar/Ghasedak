@@ -12,7 +12,7 @@ const SearchAFilter = (props) => {
   // define states end
   useEffect(() => {
     // getting book data and push them in a variable
-    const token = "viBOjqV3gV68hsEmyz8IloLxZejsacji4BdSnF6O";
+    const token = "DzTwF4yts6KjdR8NLdQdUtN0Y4YbcT35pVTy1Kek";
 
     const config = {
       headers: { Authorization: `Bearer ${token}` },

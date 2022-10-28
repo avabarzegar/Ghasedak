@@ -7,8 +7,8 @@ import "./AvailableProducts.css";
 // define available products section
 const AvailableProducts = () => {
   // variables and states
-  const { bookData, setNewData } = useAppContext();
-  const [available, setAvailable] = useState(true);
+  const { bookData, setNewData, available, setAvailable } = useAppContext();
+
   const [prevBooks, setPrevBooks] = useState([]);
   const navigate = useNavigate();
   // variables and states -end
@@ -25,7 +25,7 @@ const AvailableProducts = () => {
       // return available book by clicking on button
       let filter = [];
       bookData.map((item) => {
-        if (item.available === true) {
+        if (item.available === false) {
           filter.push(item);
         }
       });
@@ -41,17 +41,15 @@ const AvailableProducts = () => {
       ) {
         navigate("/search");
         // update search data state
-
-        setNewData((prevState) => {
-          setPrevBooks(prevState);
-          console.log(prevState);
-          return filter;
-        });
+        console.log("available book");
+        setNewData(filter);
         // update search data state -end
       } else {
+        console.log("available book");
         navigate("*");
       }
     } else {
+      console.log("available book");
       console.log(prevBooks);
       setNewData(prevBooks);
     }

@@ -5,7 +5,8 @@ const ProductsContext = createContext({});
 
 const ProductContextProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
-  const [bookId, setBookId] = useState(null);
+  const [bookName, setBookName] = useState("");
+  const [product, setProduct] = useState({});
 
   //   get data from api
   useEffect(() => {
@@ -50,7 +51,14 @@ const ProductContextProvider = ({ children }) => {
 
   return (
     <ProductsContext.Provider
-      value={{ products, setProducts, bookId, setBookId }}
+      value={{
+        products,
+        setProducts,
+        bookName,
+        setBookName,
+        product,
+        setProduct,
+      }}
     >
       {children}
     </ProductsContext.Provider>

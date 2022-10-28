@@ -16,7 +16,7 @@ import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 import SliderLayout from "../../SliderLayout/SliderLayout";
 // context
-import { useAppContext } from "../../../Context/SearchContext/SearchContext";
+import { useProductsContext } from "../../../Context/ProductContext/ProductContext";
 
 // === mapping swiper slides ===
 const ThirdPublisherSlider = (props) => {
@@ -28,7 +28,7 @@ const ThirdPublisherSlider = (props) => {
   // state hook
   const [swiperRef, setSwiperRef] = useState();
   const [slide, setSlide] = useState([]);
-  const { setBookName, bookName } = useAppContext();
+  const { setBookName, bookName } = useProductsContext();
   // state hook end
 
   useEffect(() => {

@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 import axios from "axios";
 import SliderTopLine from "../../SliderTopLine/SliderTopLine";
 import SliderNavigation from "../../SliderNavigation/SliderNavigation";
-import BookSimpleCard from "../../BookCard/BookSimpleCard/BookSimpleCard";
+import LinkedCard from "../../LinkedCard/LinkedCard";
 import SeeAllShops from "../../seeallshops/Seeallshops";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
@@ -161,7 +161,7 @@ const MostSaleMonthSlides = (props) => {
                 <Router>
                   <Link to="/InfoBookDetail">
                     <SwiperSlide className="book-slide-two" key={item.id}>
-                      <BookSimpleCard
+                      <LinkedCard
                         name={item.name}
                         img={item.image}
                         price={item.price}

@@ -8,19 +8,20 @@ import Search from "./Cotainers/Search/Search"
 import SearchNull from "./Cotainers/SearchNull/SearchNull";
 import SingleBlog from "./Cotainers/SingleBlog/SingleBlog";
 
+
 const App =()=>{
     return(
         <Router>
-         
+        
             <Routes>
               <Route path="/" exact element={<Home />} />
-              <Route path="/product" element={<Product />} />
+              <Route path="/products/:id" element={<Product />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/search" element={<Search />} />
               <Route path="/" element={<SingleBlog />} />
               <Route path="*" element={<SearchNull />} />
             </Routes>  
-          
+        
         </Router>
     )
 }

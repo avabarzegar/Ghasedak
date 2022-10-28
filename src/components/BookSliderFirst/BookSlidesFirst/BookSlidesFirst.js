@@ -5,7 +5,7 @@ import { React, useState, useEffect, useRef, useCallback } from "react";
 import axios from "axios";
 import SliderTopLine from "../../SliderTopLine/SliderTopLine";
 import SliderNavigation from "../../SliderNavigation/SliderNavigation";
-import BookSimpleCard from "../../BookCard/BookSimpleCard/BookSimpleCard";
+import LinkedCard from "../../LinkedCard/LinkedCard";
 import "./BookSlidesFirst.css";
 
 // Import Swiper styles
@@ -150,7 +150,7 @@ const BookSlidesFirst = () => {
                 // == return swiper slides ==
 
                 <SwiperSlide className="book-slide" key={item.id}>
-                  <BookSimpleCard name={item.name} img={item.image} />
+                  <LinkedCard name={item.name} img={item.image} />
                 </SwiperSlide>
                 // == return swiper slides end ==
               );

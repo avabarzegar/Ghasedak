@@ -19,6 +19,7 @@ const SearchContext = ({ children }) => {
   const [translators, setTranslators] = useState([]);
   const [hashtags, setHashtags] = useState([]);
   const [available, setAvailable] = useState(true);
+  const [bookName, setBookName] = useState("");
   //   define states and variables end
 
   useEffect(() => {
@@ -181,6 +182,8 @@ const SearchContext = ({ children }) => {
         publishers,
         available,
         setAvailable,
+        bookName,
+        setBookName
       }}
     >
       {children}

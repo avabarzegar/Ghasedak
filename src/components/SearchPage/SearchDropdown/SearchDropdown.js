@@ -75,7 +75,6 @@ function CustomDropdown() {
     // return book data with selected category -end
 
     // set previous result books to null
-    console.log(searchValue);
     if (searchValue !== "") {
       setSearchValue("");
       setNewData([]);
@@ -110,7 +109,9 @@ function CustomDropdown() {
 
       // store filter data in variable
     } else {
+      // if we do not have any filter
       navigate("*");
+      // if we do not have any filter -end
     }
   };
 
@@ -162,7 +163,6 @@ function CustomDropdown() {
     // return book data with selected author -end
 
     // set previous result books to null
-    console.log(searchValue);
     if (searchValue !== "") {
       setSearchValue("");
       setNewData([]);
@@ -195,7 +195,9 @@ function CustomDropdown() {
       });
       // update all books list which will be shown -end
     } else {
+      // if we do not have any filter
       navigate("*");
+      // if we do not have any filter -end
     }
   };
 
@@ -245,7 +247,6 @@ function CustomDropdown() {
     // return book data with selected translator -end
 
     // set previous result books to null
-    console.log(searchValue);
     if (searchValue !== "") {
       setSearchValue("");
       setNewData([]);
@@ -280,7 +281,9 @@ function CustomDropdown() {
 
       // store filter data in variable
     } else {
+      // if we do not have any filter
       navigate("*");
+      // if we do not have any filter -end
     }
   };
 
@@ -332,7 +335,6 @@ function CustomDropdown() {
     // return book data with selected hashtag -end
 
     // set previous result books to null
-    console.log(searchValue);
     if (searchValue !== "") {
       setSearchValue("");
       setNewData([]);
@@ -367,7 +369,9 @@ function CustomDropdown() {
 
       // store filter data in variable
     } else {
+      // if we do not have any filter
       navigate("*");
+      // if we do not have any filter -end
     }
   };
 
@@ -416,7 +420,6 @@ function CustomDropdown() {
     // return book data with selected publisher -end
 
     // set previous result books to null
-    console.log(searchValue);
     if (searchValue !== "") {
       setSearchValue("");
       setNewData([]);
@@ -448,14 +451,13 @@ function CustomDropdown() {
         return returnData;
       });
       // update all books list which will be shown -end
-
-      // store filter data in variable
     } else {
+      // if we do not have any filter
       navigate("*");
+      // if we do not have any filter -end
     }
   };
-console.log(searchValue)
-console.log(newData)
+
   return (
     <div className="search-dropdown">
       <DropdownButton

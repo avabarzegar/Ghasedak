@@ -29,7 +29,6 @@ const OfferSliderBook = () => {
       bodyParameters,
       config
     ).then((response) => {
-      console.log(response.data.banners.data[0].items.data)
       const bannerData = [];
       response.data.banners.data[0].items.data.map((item) => {
         bannerData.push({

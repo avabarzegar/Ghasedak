@@ -42,14 +42,12 @@ const SearchAFilter = (props) => {
             title: item.title,
           });
         });
-        console.log(categories)
         setSorting(categories);
       });
 
     // getting book data and push them in a variable end
   }, []);
-  console.log(sorting);
-  console.log(typeof(sorting))
+
   return (
     <FiltersContext.Provider value={{ sorting, setSorting, setProducer }}>
       {props.children}

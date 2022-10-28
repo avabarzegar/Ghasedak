@@ -1,36 +1,30 @@
 // Import Swiper React components
-import { SwiperSlide, Swiper } from 'swiper/react';
-import SwiperCore, { Navigation, Autoplay } from 'swiper';
-import { React, useState, useEffect, useRef, useCallback } from 'react';
-import Col from 'react-bootstrap/Col';
-import axios from 'axios';
-import SliderTopLine from '../../SliderTopLine/SliderTopLine';
-import SliderNavigation from '../../SliderNavigation/SliderNavigation';
-import BookSimpleCard from '../../BookCard/BookSimpleCard/BookSimpleCard';
-import SeeAllShops from '../../seeallshops/Seeallshops';
+import { SwiperSlide, Swiper } from "swiper/react";
+import SwiperCore, { Navigation, Autoplay } from "swiper";
+import { React, useState, useEffect, useRef, useCallback } from "react";
+import Col from "react-bootstrap/Col";
+import axios from "axios";
+import SliderTopLine from "../../SliderTopLine/SliderTopLine";
+import SliderNavigation from "../../SliderNavigation/SliderNavigation";
+import BookSimpleCard from "../../BookCard/BookSimpleCard/BookSimpleCard";
+import SeeAllShops from "../../seeallshops/Seeallshops";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
-
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/scrollbar';
-import SliderLayout from '../../SliderLayout/SliderLayout';
-import InfoBooksDetail from '../../Product/DetailProductPage/InfoBooksDetail/InfoBooksDetail';
-
-
-
-
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/scrollbar";
+import SliderLayout from "../../SliderLayout/SliderLayout";
+import InfoBooksDetail from "../../Product/DetailProductPage/InfoBooksDetail/InfoBooksDetail";
 
 // === mapping swiper slides ===
 const MostSaleMonthSlides = (props) => {
-
   // refer hook
-  const navigationPrevRef = useRef(null)
-  const navigationNextRef = useRef(null)
+  const navigationPrevRef = useRef(null);
+  const navigationNextRef = useRef(null);
   // refer hook end
 
-  // state hook 
+  // state hook
   const [swiperRef, setSwiperRef] = useState();
   const [slide, setSlide] = useState([]);
   // state hook end
@@ -38,53 +32,42 @@ const MostSaleMonthSlides = (props) => {
   const [isShown, setIsShown] = useState(true);
 
   useEffect(() => {
-    const token = 'DzTwF4yts6KjdR8NLdQdUtN0Y4YbcT35pVTy1Kek';
+    const token = "DzTwF4yts6KjdR8NLdQdUtN0Y4YbcT35pVTy1Kek";
 
     const config = {
-      headers: { Authorization: `Bearer ${token}` }
+      headers: { Authorization: `Bearer ${token}` },
     };
 
     const bodyParameters = {
-      key: "value"
+      key: "value",
     };
 
-
     //    === get slides data from api ===
-    axios.post(
-      '/user/pwa/home',
-      bodyParameters,
-      config
-    ).then((response) => {
-
-      const slideData = [];
-      response.data.book_lists[0].books.data.map((item) => {
-        slideData.push({
-          id: item.id,
-          name: item.name,
-          image: item.images.data[0].image_url,
-          price: item.best_price,
-
-        })
+    axios
+      .post("/user/pwa/home", bodyParameters, config)
+      .then((response) => {
+        const slideData = [];
+        response.data.book_lists[0].books.data.map((item) => {
+          slideData.push({
+            id: item.id,
+            name: item.name,
+            image: item.images.data[0].image_url,
+            price: item.best_price,
+          });
+        });
+        setSlide(slideData);
       })
-      setSlide(slideData)
-
-      console.log(setSlide)
-
-    })
 
       .catch((err) => {
-        console.log(err.message)
-      })
-
+        console.log(err.message);
+      });
 
     //    === get slides data from api ===
-
-  }, [])
+  }, []);
 
   // == use swiper core autoplay / navigation ==
-  SwiperCore.use([Autoplay, Navigation])
+  SwiperCore.use([Autoplay, Navigation]);
   // == use swiper autoplay core autoplay / navigation end ==
-
 
   const handleLeftClick = useCallback(() => {
     if (!swiperRef) return;
@@ -99,16 +82,15 @@ const MostSaleMonthSlides = (props) => {
   //  let SwiperSlide;
 
   return (
-
     <section>
       {/* first section of slider  */}
 
       <SliderTopLine
         text="کتاب های پرفروش ماه"
-        textBorder='purple-bottom'
-        containerBorder='gray-bottom'
+        textBorder="purple-bottom"
+        containerBorder="gray-bottom"
       >
-        <div className='first-slider-left-container'>
+        <div className="first-slider-left-container">
           {/* navigation  */}
           <SliderNavigation
             handleLeftClick={handleLeftClick}
@@ -122,18 +104,15 @@ const MostSaleMonthSlides = (props) => {
 
       {/* first section of slider end  */}
 
-
       {/* slider container section  */}
       <SliderLayout>
-
         {/* // slider  */}
-        <Col xl={11} xs={10} className='type-two-book-slider-container'>
+        <Col xl={11} xs={10} className="type-two-book-slider-container">
           <Swiper
-            className='type-two-book-slider'
+            className="type-two-book-slider"
             modules={[Navigation, Autoplay]}
             onSwiper={setSwiperRef}
             autoplay={{ delay: 2000 }}
-
             slidesPerGroup={1}
             navigation={{
               prevEl: navigationPrevRef.current,
@@ -144,53 +123,44 @@ const MostSaleMonthSlides = (props) => {
               swiper.params.navigation.nextEl = navigationNextRef.current;
             }}
             scrollbar={{
-              el: '.swiper-scrollbar',
+              el: ".swiper-scrollbar",
               draggable: true,
             }}
-
             breakpoints={{
-
-
-
               0: {
                 slidesPerView: 1,
-                spaceBetween: 0
+                spaceBetween: 0,
               },
               576: {
                 slidesPerView: 1.5,
-                spaceBetween: 25
+                spaceBetween: 25,
               },
-
 
               768: {
                 slidesPerView: 1.5,
-                spaceBetween: 25
+                spaceBetween: 25,
               },
-
 
               992: {
                 slidesPerView: 3,
               },
 
-
               1200: {
                 slidesPerView: 3.5,
               },
 
-
               1400: {
                 slidesPerView: 4,
-              }
+              },
             }}
           >
-
             {slide.map((item) => {
               return (
                 // == return swiper slides ==
 
                 <Router>
                   <Link to="/InfoBookDetail">
-                    <SwiperSlide className='book-slide-two' key={item.id}>
+                    <SwiperSlide className="book-slide-two" key={item.id}>
                       <BookSimpleCard
                         name={item.name}
                         img={item.image}
@@ -198,34 +168,29 @@ const MostSaleMonthSlides = (props) => {
                       />
                     </SwiperSlide>
                   </Link>
-                    <Route path="/InfoBookDetail">
-                      <InfoBooksDetail product={item} />
-                    </Route>
+                  <Route path="/InfoBookDetail">
+                    <InfoBooksDetail product={item} />
+                  </Route>
                 </Router>
                 // == return swiper slides end ==
-              )
+              );
             })}
-
           </Swiper>
         </Col>
         {/* // slider end */}
 
-        <Col xl={1} xs={2} className='see-all-column'>
+        <Col xl={1} xs={2} className="see-all-column">
           {/* see all products  */}
           <SeeAllShops
-            height='height-book-slider'
-            title='مشـــــاهده  همـــــــــــــه  محصــولات '
+            height="height-book-slider"
+            title="مشـــــاهده  همـــــــــــــه  محصــولات "
           />
           {/* see all products end */}
         </Col>
-
-
       </SliderLayout>
       {/* slider container section end */}
-
     </section>
-  )
-}
-
+  );
+};
 
 export default MostSaleMonthSlides;

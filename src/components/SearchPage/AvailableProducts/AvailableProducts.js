@@ -1,15 +1,15 @@
 import { React, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";
+// context
 import { useAppContext } from "../../../Context/SearchContext/SearchContext";
+// context -end
 import "./AvailableProducts.css";
 
 // define available products section
 const AvailableProducts = () => {
   // variables and states
   const { bookData, setNewData, available, setAvailable } = useAppContext();
-
-  const [prevBooks, setPrevBooks] = useState([]);
   const navigate = useNavigate();
   // variables and states -end
 
@@ -25,7 +25,7 @@ const AvailableProducts = () => {
       // return available book by clicking on button
       let filter = [];
       bookData.map((item) => {
-        if (item.available === false) {
+        if (item.available === true) {
           filter.push(item);
         }
       });
@@ -41,19 +41,20 @@ const AvailableProducts = () => {
       ) {
         navigate("/search");
         // update search data state
-        console.log("available book");
+
         setNewData(filter);
         // update search data state -end
       } else {
-        console.log("available book");
+        //  if we do not have any filter list
         navigate("*");
+        //  if we do not have any filter list
       }
     } else {
-      console.log("available book");
-      console.log(prevBooks);
-      setNewData(prevBooks);
+      //  if the toggler button be off
+      setNewData([]);
+      navigate("*");
+      //  if the toggler button be off -end
     }
-    console.log(available);
   };
   // filter the available books -end
 
@@ -63,7 +64,7 @@ const AvailableProducts = () => {
         <Form.Check
           type="switch"
           id="custom-switch"
-          label="نمایش کالاهای موجود"
+          label="نمایش کتاب های موجود"
           onClick={availableHandler}
         />
       </Form>

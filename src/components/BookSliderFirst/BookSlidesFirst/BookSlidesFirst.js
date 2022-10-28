@@ -40,7 +40,7 @@ const BookSlidesFirst = () => {
     axios.post("/user/pwa/home", bodyParameters, config).then((response) => {
       let slideData = [];
       const responseData = response.data.daily_discounts.data;
-      console.log(responseData);
+
       if (responseData === [] || responseData.length === 0) {
         slideData = [];
       } else {
@@ -55,7 +55,7 @@ const BookSlidesFirst = () => {
       }
 
       setSlide(slideData);
-      
+
       //    === get slides data from api ===
     });
 
@@ -75,7 +75,7 @@ const BookSlidesFirst = () => {
     if (!swiperRef) return;
     swiperRef.slideNext();
   }, [swiperRef]);
-  console.log(slide);
+
   return (
     <section>
       {slide === [] || slide.length === 0 ? null : (

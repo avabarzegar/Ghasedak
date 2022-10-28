@@ -8,9 +8,8 @@ import SliderTopLine from '../../SliderTopLine/SliderTopLine';
 import SliderNavigation from '../../SliderNavigation/SliderNavigation';
 import BookSimpleCard from '../../BookCard/BookSimpleCard/BookSimpleCard';
 import SeeAllShops from '../../seeallshops/Seeallshops';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './ThirdPublisherSlider.css';
-import InfoBooksDetail from '../../Product/DetailProductPage/InfoBooksDetail/InfoBooksDetail';
 
 
 // Import Swiper styles

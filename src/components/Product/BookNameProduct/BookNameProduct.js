@@ -2,67 +2,44 @@ import {React , useState , useEffect} from "react";
 import { Container } from "react-bootstrap";
 import axios from "axios";
 import BookPlague from "../../../assets/Images/Books/Rectangle 13.png";
-import './BookNameProduct.css'
+import './BookNameProduct.css';
 
-const BookNameProduct = () => {
-   const [Book , setBook] = useState([]);
-   // useEffect(() => {
-   //    const token = 'ln9cmSRAFLIDY6X9MOjoomOzEzghPZqE0skQQc8X';
+import { useAppContext } from "../../../Context/SearchContext/SearchContext";
 
-   //    const config = {
-   //       headers: { Authorization: `Bearer ${token}` }
-   //    };
-
-   //    const bodyParameters = {
-   //       key: "value"
-   //    };
+const BookNameProduct = (porps) => {
+   const { bookData, bookName } = useAppContext();
+   const [product, setProduct] = useState({});
 
 
-   //    //    === get slides data from api ===
-   //    axios.post(
-   //       '/books/list/all',
-   //       bodyParameters,
-   //       config
-   //    ).then((response) => {
-
-   //       const infoBook = [];
-   //       response.data.data.map((item) => {
-   //          infoBook.push({
-   //             id: item.id,
-   //             name: item.name,
-   //             image: item.images.data[0].image_url,
-
-   //          })
-
-   //       })
-   //       setBook(infoBook)
-   //       console.log(infoBook)
-   //    })
-   //       .catch((err) => {
-   //          console.log(err.message)
-   //       })
-
-
-
-   //    //    === get slides data from api ===
-
-   // }, [])
-
-
-  
-      // {
-      //    Book.map((item) => {
+   useEffect(() => {
+      bookData.map((item) => {
+        if (item.name === bookName) {
+           setProduct({
+            id: item.id,
+            name: item.name,
+            img: item.img,
+            category: item.category,
+            author: item.author,
+            translator: item.translator,
+            hashtag: item.hashtag,
+            price: item.price,
+            available: item.available,
+            publisher: item.publisher,
+          });
+        }
+      });
+      
+    
+    }, [bookName]);
             return (
                <Container className="BookNameProduct_parent_section">
-                  <img src={BookPlague}  className="BookNameProduct_img"  />
+                  <img src={product.img}  className="BookNameProduct_img"  />
                   <div>
                      <span>کتاب :</span>
-                     <span>طاعون</span>
+                     <span>{product.name}</span>
                   </div>
                </Container>
             )
-      //    })
-      // }
 
 }
 

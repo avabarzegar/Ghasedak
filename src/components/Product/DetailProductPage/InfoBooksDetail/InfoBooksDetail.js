@@ -15,8 +15,6 @@ const InfoBooksDetail = (props) => {
   // state and variables
   const { bookData, bookName } = useAppContext();
   const [product, setProduct] = useState({});
-  console.log(bookName);
-  console.log(bookData);
   useEffect(() => {
     bookData.map((item) => {
       if (item.name === bookName) {
@@ -39,12 +37,11 @@ const InfoBooksDetail = (props) => {
   }, [bookName]);
 
   // state and variables -end
-console.log(product);
   return (
     <>
       <div className="publisher_name">
         <TitleDetail TitleText="ناشر:" />
-        <img src={product.img} alt="logo publisher" />
+        {/* <img src={product.img} alt="logo publisher" /> */}
         <TitleDetail
           titleDetailCustomStyle="publisher_name_custom_style"
           TitleText={product.publisher}
@@ -53,13 +50,12 @@ console.log(product);
       <div className="parent_section_info_books parent_section_info_books-more_info ">
         <div>
           <TitleDetail TitleText="نویسنده:" />
-          {/* {product.author.map((item) => {
+         
             <TitleDetail
-              key={item.id}
               titleDetailCustomStyle="publisher_name_custom_style"
-              TitleText={item}
+              TitleText={product.author}
             />;
-          })} */}
+       
         </div>
         <Link className="more_info_parent_section">
           <img src={MoreInfo} alt="more info logo" />
@@ -71,7 +67,7 @@ console.log(product);
 
         <TitleDetail
           titleDetailCustomStyle="publisher_name_custom_style"
-          //  TitleText={product.translator}
+           TitleText={product.translator}
         />
       </div>
       <div className="parent_section_info_books">

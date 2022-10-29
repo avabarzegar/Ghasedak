@@ -22,10 +22,6 @@ const InfoBooksDetail = (props) => {
       }
     });
   }, [bookId]);
-<<<<<<< HEAD
-  console.log(bookId);
-=======
->>>>>>> 579f6293657b4c065ea0490cf81bb25811997a73
   // state and variables -end
   return (
     <>
@@ -39,7 +35,7 @@ const InfoBooksDetail = (props) => {
       <div className="parent_section_info_books parent_section_info_books-more_info ">
         <div>
           <TitleDetail TitleText="نویسندگان:" />
-          {/* {product.author.length > 0 ? (
+          {product.author.length > 0 ? (
             product.author.map((item, index) => (
               <TitleDetail
                 key={index}
@@ -52,7 +48,7 @@ const InfoBooksDetail = (props) => {
               titleDetailCustomStyle="publisher_name_custom_style"
               TitleText="----"
             />
-          )} */}
+          )}
         </div>
         {/* <Link className="more_info_parent_section">
           <img src={MoreInfo} alt="more info logo" />
@@ -62,7 +58,7 @@ const InfoBooksDetail = (props) => {
       <div className="parent_section_info_books">
         <TitleDetail TitleText="مترجم:" />
 
-        {/* {product.translator.length > 0 ? (
+        {product.translator.length > 0 ? (
           product.translator.map((item, index) => (
             <TitleDetail
               key={index}
@@ -75,7 +71,7 @@ const InfoBooksDetail = (props) => {
             titleDetailCustomStyle="publisher_name_custom_style"
             TitleText="----"
           />
-        )} */}
+        )}
       </div>
       <div className="parent_section_info_books">
         <TitleDetail TitleText="تعداد صفحات:" />

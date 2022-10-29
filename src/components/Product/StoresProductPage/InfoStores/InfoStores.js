@@ -47,7 +47,7 @@ const InfoStores = () => {
 
   return (
     <>
-      {store && store.length > 0 ? (
+      {/* {store && store.length > 0 ? ( */}
         <div className="parent-section-info-stores">
           <h1 className="shops-title">فروشندگان</h1>
           <Container className="Container-section-infostores">
@@ -93,7 +93,7 @@ const InfoStores = () => {
             </div>
           </Container>
         </div>
-      ) : null}
+      {/* ) : null} */}
     </>
   );
 };

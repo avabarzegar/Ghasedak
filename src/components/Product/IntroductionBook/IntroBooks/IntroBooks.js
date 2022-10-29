@@ -16,14 +16,14 @@ const IntroBooks = (props) => {
 
    const { products, bookName, product, setProduct } = useProductsContext();
 
-   // useEffect(() => {
-   //    products.map((item) => {
-   //       if (item.name === bookName) {
-   //          setProduct(item);
-   //       }
+   useEffect(() => {
+      products.map((item) => {
+         if (item.name === bookName) {
+            setProduct(item);
+         }
 
-   //    });
-   // }, [bookName]);
+      });
+   }, [bookName]);
 
 
 
@@ -47,7 +47,7 @@ const IntroBooks = (props) => {
    }
 
 
-console.log(product.hashtags);
+
    return (
 
       <div>
@@ -87,7 +87,7 @@ console.log(product.hashtags);
                <div className="parent-section-info-product">
                   <TitleDetail titleDetailCustomStyle="styles-class" TitleText="مترجم:" />
                   {product.translator?.map((item, index) => {
-                     <TitleDetail titleDetailCustomStyle="styles-class" TitleText={index} key={index}/>
+                     <TitleDetail titleDetailCustomStyle="styles-class" TitleText={index} key={index} />
                   })}
                </div>
                <div className="parent-section-info-product">
@@ -135,9 +135,9 @@ console.log(product.hashtags);
             <div ref={div3}>
                <span className="title-sticky">برچسب ها</span>
                <div className="parent-section-stickies">
-               {product.hashtags?.map((item, index) => (
-                 <TitleDetail titleDetailCustomStyle="styles-class" TitleText={item} key={index}/>
-               ))}
+                  {product.hashtags?.map((item, index) => (
+                     <TitleDetail titleDetailCustomStyle="styles-class" TitleText={item} key={index} />
+                  ))}
                </div>
             </div>
 

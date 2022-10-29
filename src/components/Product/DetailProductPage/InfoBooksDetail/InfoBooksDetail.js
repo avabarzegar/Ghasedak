@@ -28,7 +28,6 @@ const InfoBooksDetail = (props) => {
     <>
       <div className="publisher_name">
         <TitleDetail TitleText="ناشر:" />
-        {/* <img src={product.img} alt="logo publisher" /> */}
         <TitleDetail
           titleDetailCustomStyle="publisher_name_custom_style"
           TitleText={product.publisher}
@@ -74,7 +73,7 @@ const InfoBooksDetail = (props) => {
 
         <TitleDetail
           titleDetailCustomStyle="publisher_name_custom_style"
-          TitleText="بزرگسال "
+          TitleText="---- "
         />
       </div>
       <div className="parent_section_info_books">
@@ -82,7 +81,7 @@ const InfoBooksDetail = (props) => {
 
         <TitleDetail
           titleDetailCustomStyle="publisher_name_custom_style"
-          TitleText=" کالینگو"
+          TitleText={product.size}
         />
       </div>
       <div className="parent_section_info_books">

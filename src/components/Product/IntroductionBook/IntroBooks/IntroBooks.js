@@ -14,16 +14,16 @@ import { useProductsContext } from "../../../../Context/ProductContext/ProductCo
 const IntroBooks = (props) => {
 
 
-   const { products, bookName, product, setProduct } = useProductsContext();
+   const { products, BookId, product, setProduct } = useProductsContext();
 
    useEffect(() => {
       products.map((item) => {
-         if (item.name === bookName) {
+         if (item.name === BookId) {
             setProduct(item);
          }
 
       });
-   }, [bookName]);
+   }, [BookId]);
 
 
 

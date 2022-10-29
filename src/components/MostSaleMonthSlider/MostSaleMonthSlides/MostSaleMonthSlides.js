@@ -17,9 +17,7 @@ import "swiper/css/scrollbar";
 import SliderLayout from "../../SliderLayout/SliderLayout";
 import InfoBooksDetail from "../../Product/DetailProductPage/InfoBooksDetail/InfoBooksDetail";
 
-
 import { useProductsContext } from "../../../Context/ProductContext/ProductContext";
-
 
 // === mapping swiper slides ===
 const MostSaleMonthSlides = (props) => {
@@ -31,11 +29,10 @@ const MostSaleMonthSlides = (props) => {
   // state hook
   const [swiperRef, setSwiperRef] = useState();
   const [slide, setSlide] = useState([]);
-  const { setBookName, bookName } = useProductsContext();
+  const { setBookId, BookId } = useProductsContext();
   const [title, setTitle] = useState("");
 
   // state hook end
-
 
   useEffect(() => {
     const token = "DzTwF4yts6KjdR8NLdQdUtN0Y4YbcT35pVTy1Kek";
@@ -53,17 +50,22 @@ const MostSaleMonthSlides = (props) => {
       .post("/user/pwa/home", bodyParameters, config)
       .then((response) => {
         const slideData = [];
-        response.data.book_lists[1].books.data.map((item) => {
-          slideData.push({
-            id: item.id,
-            name: item.name,
-            image: item.images.data[0].image_url,
-            price: item.best_price,
-          });
-        });
+        const responseData = response.data.book_lists[1].books.data;
 
-        setTitle(response.data.book_lists[1].title);
-        
+        if (responseData === [] || responseData.length === 0) {
+          slideData = [];
+        } else {
+          responseData.map((item) => {
+            slideData.push({
+              id: item.id,
+              name: item.name,
+              image: item.images.data[0].image_url,
+              price: item.best_price,
+            });
+          });
+
+          setTitle(response.data.book_lists[1].title);
+        }
 
         setSlide(slideData);
       })
@@ -170,7 +172,7 @@ const MostSaleMonthSlides = (props) => {
 
                 <SwiperSlide className="book-slide-two" key={item.id}>
                   <LinkedCard
-                    click={() => setBookName(item.id)}
+                    click={() => setBookId(item.id)}
                     Link={`/products/${item.id}`}
                     name={item.name}
                     img={item.image}

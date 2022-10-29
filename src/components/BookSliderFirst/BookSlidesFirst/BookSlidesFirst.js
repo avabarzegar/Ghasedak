@@ -41,9 +41,9 @@ const BookSlidesFirst = () => {
       let slideData = [];
       const responseData = response.data.daily_discounts.data;
 
-      // if (responseData === [] || responseData.length === 0) {
-      //   slideData = [];
-      // } else {
+      if (responseData === [] || responseData.length === 0) {
+        slideData = [];
+      } else {
         responseData.map((item) => {
           slideData.push({
             id: item.id,
@@ -52,7 +52,7 @@ const BookSlidesFirst = () => {
           });
         });
         setTitle(response.data.daily_discount.title);
-      // }
+      }
 
       setSlide(slideData);
 

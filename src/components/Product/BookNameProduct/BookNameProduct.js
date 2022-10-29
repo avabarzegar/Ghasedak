@@ -7,13 +7,13 @@ import './BookNameProduct.css';
 import { useProductsContext } from "../../../Context/ProductContext/ProductContext";
 
 const BookNameProduct = (porps) => {
-   const { products, bookName, product, setProduct } = useProductsContext();
+   const { products, BookId, product, setProduct } = useProductsContext();
    // const [product, setProduct] = useState({});
 
 
    useEffect(() => {
       products.map((item) => {
-        if (item.name === bookName) {
+        if (item.name === BookId) {
            setProduct({
             id: item.id,
             name: item.name,
@@ -30,7 +30,7 @@ const BookNameProduct = (porps) => {
       });
       
     
-    }, [bookName]);
+    }, [BookId]);
             return (
                <Container className="BookNameProduct_parent_section">
                   <img src={product.img}  className="BookNameProduct_img"  />

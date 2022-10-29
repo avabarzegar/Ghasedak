@@ -18,7 +18,7 @@ import { useProductsContext } from "../../../../Context/ProductContext/ProductCo
 const ThirdPublisherSlider = (props) => {
 
    const [slide, setSlide] = useState([]);
-   const { setBookName, bookName } = useProductsContext();
+   const { setBookId, BookId } = useProductsContext();
 
    useEffect(() => {
       const token = "DzTwF4yts6KjdR8NLdQdUtN0Y4YbcT35pVTy1Kek";
@@ -49,7 +49,7 @@ const ThirdPublisherSlider = (props) => {
          .catch((err) => {
             console.log(err.message);
          });
-      // setBookName('title')
+      // setBookId('title')
 
       //    === get slides data from api ===
    }, []);
@@ -67,7 +67,7 @@ const ThirdPublisherSlider = (props) => {
 
                      <div className="book-slide-two" key={item.id}>
                         <LinkedCard
-                           click={() => setBookName(item.id)}
+                           click={() => setBookId(item.id)}
                            Link={`/products/${item.id}`}
                            name={item.name}
                            img={item.image}

@@ -22,7 +22,7 @@ const InfoBooksDetail = (props) => {
       }
     });
   }, [bookId]);
-
+console.log(bookId)
   // state and variables -end
   return (
     <>

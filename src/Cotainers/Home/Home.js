@@ -25,7 +25,6 @@ const Home =()=>{
         <MostSaleSlider />
         <MostSaleMonthSlider />
         <MostSaleYearSlider />
-        {/* <NearestShops /> */}
         <OfferSliderBook />
         <PopularBooksSlider />
         <BestShops />

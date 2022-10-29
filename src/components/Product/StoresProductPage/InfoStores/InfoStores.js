@@ -9,7 +9,7 @@ import { useProductsContext } from "../../../../Context/ProductContext/ProductCo
 
 const InfoStores = () => {
   // state and variables
-  const { products, product, bookName } = useProductsContext();
+  const { products, product, BookId } = useProductsContext();
   const [store, setStore] = useState(null);
   // state and variables
 

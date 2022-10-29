@@ -7,15 +7,15 @@ import { useProductsContext } from "../../../Context/ProductContext/ProductConte
 import { useEffect } from "react";
 
 const ImageProductBook = () => {
-   const { products, bookName, product, setProduct } = useProductsContext();
+   const { products, BookId, product, setProduct } = useProductsContext();
 
    useEffect(() => {
      products.map((item) => {
-       if (item.name === bookName) {
+       if (item.name === BookId) {
          setProduct(item);
        }
      });
-   }, [bookName]);
+   }, [BookId]);
    return (
       <div className="parent-section-img-product-book">
          <div className="outer-section-img-and-rating">

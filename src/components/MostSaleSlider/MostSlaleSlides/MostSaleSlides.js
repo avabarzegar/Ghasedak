@@ -190,7 +190,7 @@ const MostSaleYearSlides = () => {
 
                 <SwiperSlide className="book-slide-two" key={item.id}>
                   <LinkedCard
-                    click={() => setBookName(item.name)}
+                    click={() => setBookName(item.id)}
                     Link={`/products/${item.id}`}
                     name={item.name}
                     img={item.image}

@@ -81,7 +81,7 @@ const BookSlidesFirst = () => {
       {slide === [] || slide.length === 0 ? null : (
         <div className="special-discount">
           <SliderTopLine
-            text={title}
+            text={title?title:null}
             textBorder="orange-bottom"
             containerBorder="off-bottom"
           >

@@ -13,15 +13,15 @@ import { useEffect } from "react";
 
 const InfoBooksDetail = (props) => {
   // state and variables
-  const { products, bookName, product, setProduct } = useProductsContext();
+  const { products, bookId, product, setProduct } = useProductsContext();
 
   useEffect(() => {
     products.map((item) => {
-      if (item.name === bookName) {
+      if (item.id === bookId) {
         setProduct(item);
       }
     });
-  }, [bookName]);
+  }, [bookId]);
 
   // state and variables -end
   return (

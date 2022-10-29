@@ -14,7 +14,7 @@ const ProductContextProvider = ({ children }) => {
     const token = "DzTwF4yts6KjdR8NLdQdUtN0Y4YbcT35pVTy1Kek";
 
     const config = {
-      headers: { Authorization: `Bearer ${token}` },
+      headers: { Authorization: `Bearer ${token}`, Accept: "application/json" },
     };
 
     const bodyParameters = {
@@ -42,11 +42,11 @@ const ProductContextProvider = ({ children }) => {
             weight: item.weight,
             isbn: item.isbn,
             typename: item.typename,
-            hashtags:item.hashtags,
-            description:item.description,
-            size:item.size,
-            edition:item.edition,
-            booktype:item.book_type,
+            hashtags: item.hashtags,
+            description: item.description,
+            size: item.size,
+            edition: item.edition,
+            booktype: item.book_type,
           });
         });
         setProducts(productsData);

@@ -22,7 +22,7 @@ const InfoBooksDetail = (props) => {
       }
     });
   }, [bookId]);
-console.log(bookId)
+  console.log(bookId);
   // state and variables -end
   return (
     <>
@@ -36,13 +36,20 @@ console.log(bookId)
       <div className="parent_section_info_books parent_section_info_books-more_info ">
         <div>
           <TitleDetail TitleText="نویسندگان:" />
-          {product.author?.map((item, index) => (
+          {/* {product.author.length > 0 ? (
+            product.author.map((item, index) => (
+              <TitleDetail
+                key={index}
+                titleDetailCustomStyle="publisher_name_custom_style"
+                TitleText={item}
+              />
+            ))
+          ) : (
             <TitleDetail
-              key={index}
               titleDetailCustomStyle="publisher_name_custom_style"
-              TitleText={item}
+              TitleText="----"
             />
-          ))}
+          )} */}
         </div>
         {/* <Link className="more_info_parent_section">
           <img src={MoreInfo} alt="more info logo" />
@@ -52,13 +59,20 @@ console.log(bookId)
       <div className="parent_section_info_books">
         <TitleDetail TitleText="مترجم:" />
 
-        {product.translator?.map((item, index) => (
+        {/* {product.translator.length > 0 ? (
+          product.translator.map((item, index) => (
+            <TitleDetail
+              key={index}
+              titleDetailCustomStyle="publisher_name_custom_style"
+              TitleText={item}
+            />
+          ))
+        ) : (
           <TitleDetail
-            key={index}
             titleDetailCustomStyle="publisher_name_custom_style"
-            TitleText={item}
+            TitleText="----"
           />
-        ))}
+        )} */}
       </div>
       <div className="parent_section_info_books">
         <TitleDetail TitleText="تعداد صفحات:" />

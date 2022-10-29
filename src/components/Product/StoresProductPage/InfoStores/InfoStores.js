@@ -9,7 +9,7 @@ import { useProductsContext } from "../../../../Context/ProductContext/ProductCo
 
 const InfoStores = () => {
   // state and variables
-  const { products, product, BookId } = useProductsContext();
+  const { products, product, bookId } = useProductsContext();
   const [store, setStore] = useState(null);
   // state and variables
 
@@ -18,7 +18,7 @@ const InfoStores = () => {
     const token = "DzTwF4yts6KjdR8NLdQdUtN0Y4YbcT35pVTy1Kek";
 
     const config = {
-      headers: { Authorization: `Bearer ${token}` },
+      headers: { Authorization: `Bearer ${token}`, Accept: "application / json" },
     };
 
     const bodyParameters = {
@@ -30,67 +30,71 @@ const InfoStores = () => {
       .post("/user/books/stores/list/all", bodyParameters, config)
       .then((response) => {
         const list = [];
-        const dataList = response.data.data;
-
+        const dataList = response.data;
+        console.log(dataList);
         dataList.map((item) => {
           list.push({
-            pric: item.price,
+            price: item.price,
           });
-
-          if (item.book.id === product.id) {
+          console.log(list);
+          if (item.book.id === bookId) {
             setStore(item);
           }
         });
       });
     // shop list data -end
-  }, []);
+  }, [bookId]);
+
   return (
-    <div className="parent-section-info-stores">
-      <h1 className="shops-title">فروشندگان</h1>
-      <Container className="Container-section-infostores">
-        <div className="parent-section-name-of-bookstore">
-          <img src={BgGray} alt="img of bookstore" />
-          <span>فروشگاه:</span>
-          <span>{store && store.store.name ? store.store.name : "---"}</span>
+    <>
+      {store && store.length > 0 ? (
+        <div className="parent-section-info-stores">
+          <h1 className="shops-title">فروشندگان</h1>
+          <Container className="Container-section-infostores">
+            <div className="parent-section-name-of-bookstore">
+              <img src={BgGray} alt="img of bookstore" />
+              <span>فروشگاه:</span>
+              <span>{store.store.name ? store.store.name : "---"}</span>
+            </div>
+            <div className="title-address-bookstore">
+              <span>استان فارس - شیراز</span>
+            </div>
+            <div className="parent-section-price-and-situation">
+              <div>
+                <img src={Car} alt="img of car" />
+                <span>
+                  {store && store.store.price ? store.store.price : "---"}
+                </span>
+              </div>
+              <div>
+                <span>200.000</span>
+                <img src={Toman} alt="toman price" />
+              </div>
+            </div>
+          </Container>
+          <Container className="Container-section-infostores">
+            <div className="parent-section-name-of-bookstore">
+              <img src={BgGray} alt="img of bookstore" />
+              <span>فروشگاه:</span>
+              <span>شهر کتاب</span>
+            </div>
+            <div className="title-address-bookstore">
+              <span>استان فارس - شیراز</span>
+            </div>
+            <div className="parent-section-price-and-situation">
+              <div>
+                <img src={Car} alt="img of car" />
+                <span>آماده ارسال</span>
+              </div>
+              <div>
+                <span>200.000</span>
+                <img src={Toman} alt="toman price" />
+              </div>
+            </div>
+          </Container>
         </div>
-        <div className="title-address-bookstore">
-          <span>استان فارس - شیراز</span>
-        </div>
-        <div className="parent-section-price-and-situation">
-          <div>
-            <img src={Car} alt="img of car" />
-            <span>
-              {store && store.store.price ? store.store.price : "---"}
-            </span>
-          </div>
-          <div>
-            <span>200.000</span>
-            <img src={Toman} alt="toman price" />
-          </div>
-        </div>
-      </Container>
-      <Container className="Container-section-infostores">
-        <div className="parent-section-name-of-bookstore">
-          <img src={BgGray} alt="img of bookstore" />
-          <span>فروشگاه:</span>
-          <span>شهر کتاب</span>
-        </div>
-        <div className="title-address-bookstore">
-          <span>استان فارس - شیراز</span>
-        </div>
-        <div className="parent-section-price-and-situation">
-          <div>
-            <img src={Car} alt="img of car" />
-            <span>آماده ارسال</span>
-          </div>
-          <div>
-            <span>200.000</span>
-            <img src={Toman} alt="toman price" />
-          </div>
-        </div>
-      </Container>
-      
-    </div>
+      ) : null}
+    </>
   );
 };
 

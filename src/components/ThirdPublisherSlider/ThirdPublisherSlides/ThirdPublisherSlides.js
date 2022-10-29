@@ -29,6 +29,7 @@ const ThirdPublisherSlider = (props) => {
   const [swiperRef, setSwiperRef] = useState();
   const [slide, setSlide] = useState([]);
   const { setBookName, bookName } = useProductsContext();
+  const [title, setTitle] = useState("");
   // state hook end
 
   useEffect(() => {
@@ -44,10 +45,10 @@ const ThirdPublisherSlider = (props) => {
 
     //    === get slides data from api ===
     axios
-      .post("/books/list/all", bodyParameters, config)
+      .post("/user/pwa/home", bodyParameters, config)
       .then((response) => {
         const slideData = [];
-        response.data.data.map((item) => {
+        response.data.book_lists[4].books.data.map((item) => {
           slideData.push({
             id: item.id,
             name: item.name,
@@ -55,6 +56,9 @@ const ThirdPublisherSlider = (props) => {
             price: item.best_price,
           });
         });
+
+        setTitle(response.data.book_lists[4].title);
+
         setSlide(slideData);
       })
       .catch((err) => {
@@ -85,7 +89,7 @@ const ThirdPublisherSlider = (props) => {
       {/* first section of slider  */}
 
       <SliderTopLine
-        text="انتشارات ثالث"
+        text={title}
         textBorder="purple-bottom"
         containerBorder="gray-bottom"
       >

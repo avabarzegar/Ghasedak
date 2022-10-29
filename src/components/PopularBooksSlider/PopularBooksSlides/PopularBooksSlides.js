@@ -34,7 +34,7 @@ const PopularBooksSlides =(props)=>{
   const [swiperRef, setSwiperRef] = useState();
   const [slide , setSlide] =useState([]);
   const { setBookName, bookName } = useProductsContext();
-
+  const [title, setTitle] = useState("");
   // state hook end
 
 
@@ -58,15 +58,18 @@ const PopularBooksSlides =(props)=>{
     ).then((response)=>{
            
             const slideData=[];
-            response.data.book_lists[0].books.data.map((item)=>{
+            response.data.book_lists[3].books.data.map((item)=>{
               slideData.push({
                   id:item.id ,
                   name:item.name,
                   image:item.images.data[0].image_url,
                   price:item.best_price,
-                })  
+                });
                  
-            })
+            });
+
+            setTitle(response.data.book_lists[3].title);
+
            setSlide(slideData)
         })
         .catch((err)=>{
@@ -102,7 +105,7 @@ const PopularBooksSlides =(props)=>{
         {/* first section of slider  */}
 
         <SliderTopLine 
-         text='محبوب ترین کتاب ها'
+         text={title}
          textBorder='purple-bottom'
          containerBorder='gray-bottom'
          >

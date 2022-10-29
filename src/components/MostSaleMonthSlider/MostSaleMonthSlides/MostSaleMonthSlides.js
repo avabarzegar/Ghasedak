@@ -32,6 +32,7 @@ const MostSaleMonthSlides = (props) => {
   const [swiperRef, setSwiperRef] = useState();
   const [slide, setSlide] = useState([]);
   const { setBookName, bookName } = useProductsContext();
+  const [title, setTitle] = useState("");
 
   // state hook end
 
@@ -52,7 +53,7 @@ const MostSaleMonthSlides = (props) => {
       .post("/user/pwa/home", bodyParameters, config)
       .then((response) => {
         const slideData = [];
-        response.data.book_lists[0].books.data.map((item) => {
+        response.data.book_lists[1].books.data.map((item) => {
           slideData.push({
             id: item.id,
             name: item.name,
@@ -60,6 +61,10 @@ const MostSaleMonthSlides = (props) => {
             price: item.best_price,
           });
         });
+
+        setTitle(response.data.book_lists[1].title);
+        
+
         setSlide(slideData);
       })
 
@@ -91,7 +96,7 @@ const MostSaleMonthSlides = (props) => {
       {/* first section of slider  */}
 
       <SliderTopLine
-        text="کتاب های پرفروش ماه"
+        text={title}
         textBorder="purple-bottom"
         containerBorder="gray-bottom"
       >

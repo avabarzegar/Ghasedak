@@ -33,7 +33,7 @@ const MostSaleYearSlides =()=>{
   const [swiperRef, setSwiperRef] = useState();
   const [slide , setSlide] =useState([]);
   const { setBookName, bookName } = useProductsContext();
-
+  const [title, setTitle] = useState("");
   // state hook end
 
 
@@ -56,15 +56,18 @@ const MostSaleYearSlides =()=>{
       config
     ).then((response)=>{
             const slideData=[];
-            response.data.book_lists[0].books.data.map((item)=>{
+            response.data.book_lists[2].books.data.map((item)=>{
               slideData.push({
                   id:item.id ,
                   name:item.name,
-                  image:item.images.data[1].image_url,
+                  image:item.images.data[0].image_url,
                   price:item.best_price,
-                })  
+                });
                  
-            })
+            });
+
+            setTitle(response.data.book_lists[2].title);
+
            setSlide(slideData)
         })
         .catch((err)=>{
@@ -100,7 +103,7 @@ const MostSaleYearSlides =()=>{
         {/* first section of slider  */}
 
         <SliderTopLine 
-         text='کتاب های کمک درسی'
+         text={title}
          textBorder='purple-bottom'
          containerBorder='gray-bottom'
          >

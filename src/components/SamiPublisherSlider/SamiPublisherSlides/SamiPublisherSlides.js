@@ -33,6 +33,7 @@ const PopularBooksSlides =(props)=>{
   const [swiperRef, setSwiperRef] = useState();
   const [slide , setSlide] =useState([]);
   const { setBookName, bookName } = useProductsContext();
+  const [title, setTitle] = useState("");
 
   // state hook end
 
@@ -56,16 +57,19 @@ const PopularBooksSlides =(props)=>{
       config
     ).then((response)=>{
             const slideData=[];
-            response.data.book_lists[0].books.data.map((item)=>{
+            response.data.book_lists[5].books.data.map((item)=>{
               slideData.push({
                   id:item.id ,
                   name:item.name,
                   image:item.images.data[0].image_url,
                   price:item.best_price,
-                })  
+                });
                  
-            })
-           setSlide(slideData)
+            });
+
+            setTitle(response.data.book_lists[5].title);
+
+            setSlide(slideData)
         })
         .catch((err)=>{
             console.log(err.message)
@@ -100,7 +104,7 @@ const PopularBooksSlides =(props)=>{
         {/* first section of slider  */}
 
         <SliderTopLine 
-         text='انتشارات سمیع'
+         text={title}
          textBorder='purple-bottom'
          containerBorder='gray-bottom'
          >

@@ -9,7 +9,7 @@ import StyledButton from "../../../UI/Button/Button";
 import AddToCart from "../../../../assets/Images/icon/vuesax-add-to-card.svg";
 // context
 import { useProductsContext } from "../../../../Context/ProductContext/ProductContext";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const InfoBooksDetail = (props) => {
   // state and variables
@@ -18,21 +18,7 @@ const InfoBooksDetail = (props) => {
   useEffect(() => {
     products.map((item) => {
       if (item.name === bookName) {
-        setProduct({
-          id: item.id,
-          name: item.name,
-          img: item.img,
-          category: item.category,
-          author: item.author,
-          translator: item.translator,
-          hashtag: item.hashtag,
-          price: item.price,
-          available: item.available,
-          publisher: item.publisher,
-          pagescount:item.pages_count,
-          weight:item.weight,
-         
-        });
+        setProduct(item);
       }
     });
   }, [bookName]);
@@ -51,13 +37,13 @@ const InfoBooksDetail = (props) => {
       <div className="parent_section_info_books parent_section_info_books-more_info ">
         <div>
           <TitleDetail TitleText="نویسندگان:" />
-          {product.author?.map((item, index) => {
+          {product.author?.map((item, index) => (
             <TitleDetail
               key={index}
               titleDetailCustomStyle="publisher_name_custom_style"
-              TitleText={product.author}
-            />;
-          })}
+              TitleText={item}
+            />
+          ))}
         </div>
         <Link className="more_info_parent_section">
           <img src={MoreInfo} alt="more info logo" />
@@ -67,13 +53,13 @@ const InfoBooksDetail = (props) => {
       <div className="parent_section_info_books">
         <TitleDetail TitleText="مترجم:" />
 
-        {product.translator?.map((item, index) => {
+        {product.translator?.map((item, index) => (
           <TitleDetail
             key={index}
             titleDetailCustomStyle="publisher_name_custom_style"
             TitleText={item}
-          />;
-        })}
+          />
+        ))}
       </div>
       <div className="parent_section_info_books">
         <TitleDetail TitleText="تعداد صفحات:" />
@@ -117,7 +103,6 @@ const InfoBooksDetail = (props) => {
           </span>
         </StyledButton>
       </div>
-      ;
     </>
   );
 };

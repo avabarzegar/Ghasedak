@@ -34,7 +34,6 @@ const ProductContextProvider = ({ children }) => {
             category: item.categories,
             author: item.authors,
             translator: item.translators,
-            hashtag: item.hashtags,
             price: item.best_price,
             available: item.is_available,
             publisher: item.publisher,

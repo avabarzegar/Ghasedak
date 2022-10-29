@@ -16,35 +16,14 @@ const IntroBooks = (props) => {
 
    const { products, bookName, product, setProduct } = useProductsContext();
 
-   useEffect(() => {
-      products.map((item) => {
-         if (item.name === bookName) {
-            setProduct({
-               id: item.id,
-               name: item.name,
-               img: item.img,
-               category: item.category,
-               author: item.author,
-               translator: item.translator,
-               hashtag: item.hashtag,
-               price: item.price,
-               available: item.available,
-               publisher: item.publisher,
-               publishyear:item.publishyear,
-               pagescount:item.pagescount,
-               weight:item.weight,
-               isbn:item.isbn,
-               typename:item.typename,
-               hashtags:item.hashtags,
-               description:item.description,
-               size:item.size,
-               edition:item.edition,
-               booktype:item.book_type,
-            });
-         }
+   // useEffect(() => {
+   //    products.map((item) => {
+   //       if (item.name === bookName) {
+   //          setProduct(item);
+   //       }
 
-      });
-   }, [bookName]);
+   //    });
+   // }, [bookName]);
 
 
 
@@ -68,7 +47,7 @@ const IntroBooks = (props) => {
    }
 
 
-
+console.log(product.hashtags);
    return (
 
       <div>
@@ -156,9 +135,9 @@ const IntroBooks = (props) => {
             <div ref={div3}>
                <span className="title-sticky">برچسب ها</span>
                <div className="parent-section-stickies">
-               {product.hashtags.map((item, index) => {
+               {product.hashtags?.map((item, index) => (
                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText={item} key={index}/>
-               })}
+               ))}
                </div>
             </div>
 

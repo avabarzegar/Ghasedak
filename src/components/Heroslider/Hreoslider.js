@@ -52,6 +52,7 @@ const Hreoslider = (props) => {
    }, [])
    return (
       <Container className="container_section_heroslider">
+         {slide === [] || slide.length === 0 ? null : (
          <Carousel className='slider-banner-hero slider_parent_section'>
             {banner.map((item) => {
                return (
@@ -62,6 +63,7 @@ const Hreoslider = (props) => {
                )
             })}
          </Carousel>
+         )}
       </Container>
    );
 }

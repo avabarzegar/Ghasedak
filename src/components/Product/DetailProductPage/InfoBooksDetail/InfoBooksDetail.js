@@ -35,20 +35,13 @@ const InfoBooksDetail = (props) => {
       <div className="parent_section_info_books parent_section_info_books-more_info ">
         <div>
           <TitleDetail TitleText="نویسندگان:" />
-          {product.author.length > 0 ? (
-            product.author.map((item, index) => (
-              <TitleDetail
-                key={index}
-                titleDetailCustomStyle="publisher_name_custom_style"
-                TitleText={item}
-              />
-            ))
-          ) : (
+          {product.author?.map((item, index) => (
             <TitleDetail
+              key={index}
               titleDetailCustomStyle="publisher_name_custom_style"
-              TitleText="----"
+              TitleText={item}
             />
-          )}
+          ))}
         </div>
         {/* <Link className="more_info_parent_section">
           <img src={MoreInfo} alt="more info logo" />
@@ -58,20 +51,13 @@ const InfoBooksDetail = (props) => {
       <div className="parent_section_info_books">
         <TitleDetail TitleText="مترجم:" />
 
-        {product.translator.length > 0 ? (
-          product.translator.map((item, index) => (
-            <TitleDetail
-              key={index}
-              titleDetailCustomStyle="publisher_name_custom_style"
-              TitleText={item}
-            />
-          ))
-        ) : (
+        {product.translator?.map((item, index) => (
           <TitleDetail
+            key={index}
             titleDetailCustomStyle="publisher_name_custom_style"
-            TitleText="----"
+            TitleText={item}
           />
-        )}
+        ))}
       </div>
       <div className="parent_section_info_books">
         <TitleDetail TitleText="تعداد صفحات:" />

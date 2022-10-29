@@ -36,6 +36,10 @@
    font-weight: 700;
    margin-bottom: 0;
    margin-right: .45rem;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   width: 95%;
+   white-space: nowrap;
 }
 
 .font-bold {
@@ -49,7 +53,9 @@
    margin-bottom: 0;
 }
 
-
+.swiperslide-suggest{
+   width: 100% !important;
+}
 
 
 .price_green {

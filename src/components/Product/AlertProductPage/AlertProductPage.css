@@ -10,7 +10,12 @@
    font-weight: 700;
    font-size: 20px;
 }
-
+@media screen and (max-width:992px) {
+   .alertproductpage_parent_section{
+      justify-content: flex-start;
+      margin-top: 1.5rem;
+   }
+}
 
 
 @media screen and (max-width:768px) {

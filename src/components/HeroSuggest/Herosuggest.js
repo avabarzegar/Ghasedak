@@ -116,6 +116,7 @@ const Herosuggest = () => {
                if (index === 1) {
                   return (
                      // <SwiperSlide  key={item.id}>
+                     
                         <BookDetailedCard author={item.author} key={item.id} name={item.name} edition={item.edition} price={item.price} publisher={item.publisher} image={item.image} alt={"book img"} />
                      // </SwiperSlide>
                   )

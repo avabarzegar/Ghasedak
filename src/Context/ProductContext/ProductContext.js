@@ -47,9 +47,11 @@ const ProductContextProvider = ({ children }) => {
             size: item.size,
             edition: item.edition,
             booktype: item.book_type,
+            agecategory:item.age_category,
           });
+          
         });
-        setProducts(productsData);
+      
       })
       .catch((err) => {
         console.log(err.message);

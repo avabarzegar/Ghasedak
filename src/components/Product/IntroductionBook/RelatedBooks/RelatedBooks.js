@@ -33,10 +33,10 @@ const ThirdPublisherSlider = (props) => {
 
       //    === get slides data from api ===
       axios
-         .post("/books/list/all", bodyParameters, config)
+         .post("/user/pwa/home", bodyParameters, config)
          .then((response) => {
             const slideData = [];
-            response.data.data.slice(0, 5).map((item) => {
+            response.data.suggestions.data.slice(0, 5).map((item) => {
                slideData.push({
                   id: item.id,
                   name: item.name,
@@ -60,7 +60,7 @@ const ThirdPublisherSlider = (props) => {
    return (
       <section>
          <div className="type-two-book-slider-container">
-               <span className="span-section-related-books">محصولات مرتبط</span>
+               <span className="span-section-related-books">پیشنهادات قاصدک </span>
                {slide.map((item) => {
                   return (
                      // == return swiper slides ==

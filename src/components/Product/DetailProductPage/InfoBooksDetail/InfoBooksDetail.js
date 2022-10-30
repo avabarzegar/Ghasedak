@@ -72,11 +72,11 @@ const InfoBooksDetail = (props) => {
 
         <TitleDetail
           titleDetailCustomStyle="publisher_name_custom_style"
-          TitleText="---- "
+          TitleText={product.agecategory}
         />
       </div>
       <div className="parent_section_info_books">
-        <TitleDetail TitleText="نوع جلد:" />
+        <TitleDetail TitleText="قطع :" />
 
         <TitleDetail
           titleDetailCustomStyle="publisher_name_custom_style"
@@ -84,11 +84,11 @@ const InfoBooksDetail = (props) => {
         />
       </div>
       <div className="parent_section_info_books">
-        <TitleDetail TitleText="وزن:" />
+        <TitleDetail TitleText="سال انتشار:" />
 
         <TitleDetail
           titleDetailCustomStyle="publisher_name_custom_style"
-          TitleText={product.weight}
+          TitleText={product.publishyear}
         />
       </div>
       <div className="parent-section-counter-btn-add-to-cart">

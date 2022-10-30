@@ -102,7 +102,7 @@
    width: 100%;
    padding: 1rem 1rem 5rem;
    border-radius: 10px;
-   margin: 1.5rem 0;
+   margin: 1.5rem 0rem;
 
 }
 
@@ -170,12 +170,24 @@
    margin: 1.5rem 0;
 }
 
+.parent-comment-product-section{
+
+   filter: blur(4px);
+  -webkit-filter: blur(4px);
+
+}
+
 @media screen and (max-width:768px) {
    .list-of-about-product li {
       font-size: 10px;
    }
    .parent-section-all-info-product {
       margin-top: 1rem;
+   }
+}
+@media screen and (max-width:576px) {
+   .list-of-about-product {
+      margin-top: 2rem;
    }
 }
 @media screen and (max-width:400px) {

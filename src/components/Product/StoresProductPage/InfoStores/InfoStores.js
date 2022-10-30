@@ -9,7 +9,7 @@ import { useProductsContext } from "../../../../Context/ProductContext/ProductCo
 
 const InfoStores = () => {
   // state and variables
-  const { products, product, BookId } = useProductsContext();
+  const { products, product, bookId } = useProductsContext();
   const [store, setStore] = useState(null);
   // state and variables
 
@@ -22,28 +22,24 @@ const InfoStores = () => {
     };
 
     const bodyParameters = {
-      key: "value",
+      bookId: bookId,
     };
     // api config -end
     // shop list data
     axios
       .post("/user/books/stores/list/all", bodyParameters, config)
       .then((response) => {
-        const list = [];
         const dataList = response.data.data;
 
         dataList.map((item) => {
-          list.push({
-            pric: item.price,
-          });
-
           if (item.book.id === product.id) {
             setStore(item);
           }
         });
       });
     // shop list data -end
-  }, []);
+  }, [bookId]);
+  console.log(store)
   return (
     <div className="parent-section-info-stores">
       <h1 className="shops-title">فروشندگان</h1>
@@ -60,7 +56,7 @@ const InfoStores = () => {
           <div>
             <img src={Car} alt="img of car" />
             <span>
-              {store && store.store.price ? store.store.price : "---"}
+              {store && store.price ? store.price : "---"}
             </span>
           </div>
           <div>
@@ -89,7 +85,6 @@ const InfoStores = () => {
           </div>
         </div>
       </Container>
-      
     </div>
   );
 };

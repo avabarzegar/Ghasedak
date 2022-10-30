@@ -59,8 +59,9 @@ const ThirdPublisherSlider = (props) => {
 
    return (
       <section>
-         <div className="type-two-book-slider-container">
-               <span className="span-section-related-books">پیشنهادات قاصدک </span>
+         <div className="type-two-book-slider-container-outer">
+            <span className="span-section-related-books">پیشنهادات قاصدک </span>
+            <div className="type-two-book-slider-container">
                {slide.map((item) => {
                   return (
                      // == return swiper slides ==
@@ -78,7 +79,8 @@ const ThirdPublisherSlider = (props) => {
                      // == return swiper slides end ==
                   );
                })}
-          
+            </div>
+
          </div>
       </section>
    );

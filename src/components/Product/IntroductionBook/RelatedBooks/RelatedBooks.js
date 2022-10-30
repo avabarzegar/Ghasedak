@@ -59,14 +59,9 @@ const ThirdPublisherSlider = (props) => {
 
    return (
       <section>
-<<<<<<< HEAD
-         <div className="type-two-book-slider-container">
-               <span className="span-section-related-books">پیشنهادات قاصدک </span>
-=======
          <div className="type-two-book-slider-container-outer">
             <span className="span-section-related-books">پیشنهادات قاصدک </span>
             <div className="type-two-book-slider-container">
->>>>>>> 1cca246284830c5b965781e4b24d42132eb82752
                {slide.map((item) => {
                   return (
                      // == return swiper slides ==

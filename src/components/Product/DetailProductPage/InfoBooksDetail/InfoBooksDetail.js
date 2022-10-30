@@ -21,10 +21,7 @@ const InfoBooksDetail = (props) => {
         setProduct(item);
       }
     });
-<<<<<<< HEAD
-=======
    
->>>>>>> 1cca246284830c5b965781e4b24d42132eb82752
   }, [bookId]);
   // state and variables -end
   

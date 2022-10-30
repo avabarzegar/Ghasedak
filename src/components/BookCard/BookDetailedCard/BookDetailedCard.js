@@ -7,10 +7,7 @@ import CartImage from '../../../assets/Images/icon/vuesax-add-to-card.svg'
 import './BookDetailedCard.css';
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
-<<<<<<< HEAD
-=======
 import { Link } from "react-router-dom";
->>>>>>> 1cca246284830c5b965781e4b24d42132eb82752
 
 // === define book card with details ===
 
@@ -39,21 +36,6 @@ const BookDetailedCard = (props) => {
 
    return (
       <div className='outest_section_book-cart'>
-<<<<<<< HEAD
-         <div className='book-card-parent'>
-            <Row className='book-card-container'>
-               <Col xs={6}>
-                  <div className="parent_info_book">
-                     <div>
-                        <span className="font-bold">کتاب:</span>
-                        <OverlayTrigger
-                           placement="bottom"
-                           delay={{ show: 250, hide: 400 }}
-                           overlay={renderTooltip}
-                        >
-                           <h5 ref={nameRef}>{props.name}</h5>
-                        </OverlayTrigger>
-=======
          <Link to={props.Link}>
             <div className='book-card-parent'>
                <Row className='book-card-container'>
@@ -103,7 +85,6 @@ const BookDetailedCard = (props) => {
                               </div>
                            </h5>
                         </div>
->>>>>>> 1cca246284830c5b965781e4b24d42132eb82752
                      </div>
                      <div>
                         <span className='book-card-txt font-bold'>نویسنده:</span>
@@ -116,45 +97,10 @@ const BookDetailedCard = (props) => {
                         </OverlayTrigger>
 
                      </div>
-<<<<<<< HEAD
-                     <div>
-                        <span className='book-card-txt font-bold'>انتشارات:   </span>
-                        <OverlayTrigger
-                           placement="bottom"
-                           delay={{ show: 250, hide: 400 }}
-                           overlay={renderTooltip3}
-                        >
-                           <h5 ref={publisherRef}>{props.publisher}</h5>
-                        </OverlayTrigger>
-                     </div>
-                     <div>
-                        <span className='book-card-txt font-bold'>نسخه: </span>
-                        <h5>{props.edition}</h5>
-                     </div>
-                     <div>
-                        <span className="font-bold">قیمت:</span>
-                        <h5 className="price_suggest_book">
-                           <span className="price_green">{props.price}</span>
-                           <div>
-                              <img src={Toman} width='100%' height='100%' alt='img toman' />
-                           </div>
-                        </h5>
-                     </div>
-                  </div>
-               </Col>
-               <Col xs={6}>
-                  <div className="book_pic_suggest">
-                     <img src={props.image} width='100%' height='100%' alt={props.alt} />
-                  </div>
-               </Col>
-            </Row>
-         </div>
-=======
                   </Col>
                </Row>
             </div>
          </Link>
->>>>>>> 1cca246284830c5b965781e4b24d42132eb82752
          <ButtonLayout
             button='purple'
             src={CartImage}

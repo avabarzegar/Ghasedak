@@ -14,16 +14,16 @@ import { useProductsContext } from "../../../../Context/ProductContext/ProductCo
 const IntroBooks = (props) => {
 
 
-   const { products, bookName, product, setProduct } = useProductsContext();
+   const { products, BookId, product, setProduct } = useProductsContext();
 
    useEffect(() => {
       products.map((item) => {
-         if (item.name === bookName) {
+         if (item.name === BookId) {
             setProduct(item);
          }
 
       });
-   }, [bookName]);
+   }, [BookId]);
 
 
 
@@ -110,13 +110,10 @@ const IntroBooks = (props) => {
                   <TitleDetail titleDetailCustomStyle="styles-class" TitleText="قطع:" />
                   <TitleDetail titleDetailCustomStyle="styles-class" TitleText={product.size} />
                </div>
-               <div className="parent-section-info-product">
-                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText="نوع جلد:" />
-                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText="----" />
-               </div>
+               
                <div className="parent-section-info-product">
                   <TitleDetail titleDetailCustomStyle="styles-class" TitleText="گروه سنی:" />
-                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText="----" />
+                  <TitleDetail titleDetailCustomStyle="styles-class" TitleText={product.agecategory} />
                </div>
                <div className="parent-section-info-product">
                   <TitleDetail titleDetailCustomStyle="styles-class" TitleText="نوع کتاب:" />

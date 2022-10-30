@@ -31,6 +31,7 @@
 @media screen and (max-width:576px) {
    .nearshop-swiper .book-slide-two {
       margin: auto 5px !important;
+      border-radius:20px;
    }
 
 }

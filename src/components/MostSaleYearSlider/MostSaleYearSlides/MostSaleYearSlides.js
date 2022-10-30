@@ -1,22 +1,21 @@
 // Import Swiper React components
-import {  SwiperSlide ,Swiper } from 'swiper/react';
-import SwiperCore,{  Navigation , Autoplay } from 'swiper';
-import { React , useState ,useEffect , useRef , useCallback}  from 'react';
-import Col from 'react-bootstrap/Col';
-import axios from 'axios';
-import SliderTopLine from '../../SliderTopLine/SliderTopLine';
-import SliderNavigation from '../../SliderNavigation/SliderNavigation';
-import BookSimpleCard from '../../BookCard/BookSimpleCard/BookSimpleCard';
-import SeeAllShops from '../../seeallshops/Seeallshops';
+import {  SwiperSlide ,Swiper } from "swiper/react";
+import SwiperCore,{  Navigation , Autoplay } from "swiper";
+import { React , useState ,useEffect , useRef , useCallback}  from "react";
+import Col from "react-bootstrap/Col";
+import axios from "axios";
+import SliderTopLine from "../../SliderTopLine/SliderTopLine";
+import SliderNavigation from "../../SliderNavigation/SliderNavigation";
+import SeeAllShops from "../../seeallshops/Seeallshops";
 import { useProductsContext } from "../../../Context/ProductContext/ProductContext";
-import LinkedCard from '../../LinkedCard/LinkedCard';
+import LinkedCard from "../../LinkedCard/LinkedCard";
 
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/scrollbar';
-import SliderLayout from '../../SliderLayout/SliderLayout';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/scrollbar";
+import SliderLayout from "../../SliderLayout/SliderLayout";
 
 
 
@@ -32,13 +31,13 @@ const MostSaleYearSlides =()=>{
   // state hook 
   const [swiperRef, setSwiperRef] = useState();
   const [slide , setSlide] =useState([]);
-  const { setBookName, bookName } = useProductsContext();
+  const { setBookId } = useProductsContext();
   const [title, setTitle] = useState("");
   // state hook end
 
 
   useEffect(()=>{
-    const token ='DzTwF4yts6KjdR8NLdQdUtN0Y4YbcT35pVTy1Kek';
+    const token ="DzTwF4yts6KjdR8NLdQdUtN0Y4YbcT35pVTy1Kek";
    
     const config = {
       headers: { Authorization: `Bearer ${token}` }
@@ -51,7 +50,7 @@ const MostSaleYearSlides =()=>{
    
     //    === get slides data from api ===
     axios.post( 
-      '/user/pwa/home',
+      "/user/pwa/home",
       bodyParameters,
       config
     ).then((response)=>{
@@ -104,10 +103,10 @@ const MostSaleYearSlides =()=>{
 
         <SliderTopLine 
          text={title}
-         textBorder='purple-bottom'
-         containerBorder='gray-bottom'
+         textBorder="purple-bottom"
+         containerBorder="gray-bottom"
          >
-         <div className='first-slider-left-container'>
+         <div className="first-slider-left-container">
         {/* navigation  */}
           <SliderNavigation
           handleLeftClick={handleLeftClick}
@@ -126,9 +125,9 @@ const MostSaleYearSlides =()=>{
         <SliderLayout>
 
           {/* // slider  */}
-          <Col xl={11} xs={10} className='type-two-book-slider-container'>
+          <Col xl={11} xs={10} className="type-two-book-slider-container">
         <Swiper
-          className='type-two-book-slider'
+          className="type-two-book-slider"
           modules={[Navigation , Autoplay ]}
           onSwiper={setSwiperRef}
           autoplay={{delay: 2000}}
@@ -143,7 +142,7 @@ const MostSaleYearSlides =()=>{
             swiper.params.navigation.nextEl = navigationNextRef.current;
           }}
           scrollbar={{
-            el: '.swiper-scrollbar',
+            el: ".swiper-scrollbar",
             draggable: true,
           }}
 
@@ -189,7 +188,7 @@ const MostSaleYearSlides =()=>{
 
                 <SwiperSlide className="book-slide-two" key={item.id}>
                   <LinkedCard
-                    click={() => setBookName(item.name)}
+                    click={() => setBookId(item.id)}
                     Link={`/products/${item.id}`}
                     name={item.name}
                     img={item.image}
@@ -204,11 +203,11 @@ const MostSaleYearSlides =()=>{
           </Col>
         {/* // slider end */}
 
-         <Col xl={1} xs={2} className='see-all-column'>
+         <Col xl={1} xs={2} className="see-all-column">
          {/* see all products  */}
            <SeeAllShops
-           height='height-book-slider'
-           title='مشـــــاهده  همـــــــــــــه  محصــولات '
+           height="height-book-slider"
+           title="مشـــــاهده  همـــــــــــــه  محصــولات "
            />
           {/* see all products end */}
          </Col>

@@ -5,7 +5,7 @@ const ProductsContext = createContext({});
 
 const ProductContextProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
-  const [bookName, setBookName] = useState("");
+  const [bookId, setBookId] = useState(null);
   const [product, setProduct] = useState({});
 
   //   get data from api
@@ -14,7 +14,7 @@ const ProductContextProvider = ({ children }) => {
     const token = "DzTwF4yts6KjdR8NLdQdUtN0Y4YbcT35pVTy1Kek";
 
     const config = {
-      headers: { Authorization: `Bearer ${token}` },
+      headers: { Authorization: `Bearer ${token}`, Accept: "application/json" },
     };
 
     const bodyParameters = {
@@ -42,14 +42,16 @@ const ProductContextProvider = ({ children }) => {
             weight: item.weight,
             isbn: item.isbn,
             typename: item.typename,
-            hashtags:item.hashtags,
-            description:item.description,
-            size:item.size,
-            edition:item.edition,
-            booktype:item.book_type,
+            hashtags: item.hashtags,
+            description: item.description,
+            size: item.size,
+            edition: item.edition,
+            booktype: item.book_type,
+            agecategory:item.age_category,
           });
+          
         });
-        setProducts(productsData);
+      
       })
       .catch((err) => {
         console.log(err.message);
@@ -63,8 +65,8 @@ const ProductContextProvider = ({ children }) => {
       value={{
         products,
         setProducts,
-        bookName,
-        setBookName,
+        bookId,
+        setBookId,
         product,
         setProduct,
       }}

@@ -32,7 +32,7 @@ const MostSaleYearSlides = () => {
   // state hook 
   const [swiperRef, setSwiperRef] = useState();
   const [slide, setSlide] = useState([]);
-  const { setBookName, bookName } = useProductsContext();
+  const { setBookId, BookId } = useProductsContext();
   const [title, setTitle] = useState("");
 
   // state hook end
@@ -190,7 +190,7 @@ const MostSaleYearSlides = () => {
 
                 <SwiperSlide className="book-slide-two" key={item.id}>
                   <LinkedCard
-                    click={() => setBookName(item.name)}
+                    click={() => setBookId(item.id)}
                     Link={`/products/${item.id}`}
                     name={item.name}
                     img={item.image}

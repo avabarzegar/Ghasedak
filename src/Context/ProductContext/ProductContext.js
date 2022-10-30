@@ -49,7 +49,7 @@ const ProductContextProvider = ({ children }) => {
             booktype: item.book_type,
             agecategory:item.age_category,
           });
-          
+          setProducts(productsData)
         });
       
       })

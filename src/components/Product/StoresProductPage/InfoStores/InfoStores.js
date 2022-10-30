@@ -29,11 +29,16 @@ const InfoStores = () => {
     axios
       .post("/user/books/stores/list/all", bodyParameters, config)
       .then((response) => {
+<<<<<<< HEAD
+        const dataList = response.data.data;
+
+=======
 
         const dataList = response.data.data;
 
         
 
+>>>>>>> 1cca246284830c5b965781e4b24d42132eb82752
         dataList.map((item) => {
           if (item.book.id === product.id) {
             setStore(item);
@@ -60,7 +65,11 @@ const InfoStores = () => {
           <div>
             <img src={Car} alt="img of car" />
             <span>
+<<<<<<< HEAD
+              {store && store.price ? store.price : "---"}
+=======
               آماده ارسال
+>>>>>>> 1cca246284830c5b965781e4b24d42132eb82752
             </span>
           </div>
           <div>

@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 // define all applied filters list
 const FiltersList = () => {
   // define state and variables
-  const { sorting, setSorting, searchValue, setNewData, newData } =
+  const { sorting, setSorting, searchValue, setNewData, newData, searchData } =
     useAppContext();
   const navigate = useNavigate();
   // define state and variables -end
@@ -31,11 +31,14 @@ const FiltersList = () => {
         newData.map((items) => {
           items.category.map((item) => {
             if (item === sortingFilter) {
-              filters.splice(items, 1);
+              // filters.splice(items, 1);
+              setNewData((current) =>
+                current.filter((data) => data.id !== items.id)
+              );
             }
           });
         });
-        setNewData(filters);
+        console.log(newData);
       }
       // delete category filters -end
 
@@ -44,11 +47,14 @@ const FiltersList = () => {
         newData.map((items) => {
           items.author.map((item) => {
             if (item === sortingFilter) {
-              filters.splice(items, 1);
+              // filters.splice(items, 1);
+              setNewData((current) =>
+                current.filter((data) => data.id !== items.id)
+              );
             }
           });
         });
-        setNewData(filters);
+        console.log(newData);
       }
       // delete author filters -end
 
@@ -57,11 +63,14 @@ const FiltersList = () => {
         newData.map((items) => {
           items.translator.map((item) => {
             if (item === sortingFilter) {
-              filters.splice(items, 1);
+              // filters.splice(items, 1);
+              setNewData((current) =>
+                current.filter((data) => data.id !== items.id)
+              );
             }
           });
         });
-        setNewData(filters);
+        console.log(newData);
       }
       // delete translator filters -end
 
@@ -70,11 +79,14 @@ const FiltersList = () => {
         newData.map((items) => {
           items.hashtag.map((item) => {
             if (item === sortingFilter) {
-              filters.splice(items, 1);
+              // filters.splice(items, 1);
+              setNewData((current) =>
+                current.filter((data) => data.id !== items.id)
+              );
             }
           });
         });
-        setNewData(filters);
+        console.log(newData);
       }
       // delete hashtag filters -end
 
@@ -82,10 +94,13 @@ const FiltersList = () => {
       if (sortingTitle === "ناشران") {
         newData.map((items) => {
           if (items.publisher === sortingFilter) {
-            filters.splice(items, 1);
+            // filters.splice(items, 1);
+            setNewData((current) =>
+              current.filter((data) => data.id !== items.id)
+            );
           }
         });
-        setNewData(filters);
+        console.log(newData);
       }
       // delete publisher filters -end
     });
@@ -93,10 +108,11 @@ const FiltersList = () => {
 
   useEffect(() => {
     // set book data to null if we do not have any applied filter or search input
-    if (sorting == [] || (sorting.length === 0 && searchValue === "")) {
-      setNewData([]);
-      navigate("*");
-    }
+    // if (sorting.length === 0) {
+    //   setNewData(searchData);
+    //   console.log(searchData);
+    //   navigate("/search");
+    // }
     // set book data to null if we do not have any applied filter or search input -end
   }, [sorting]);
 

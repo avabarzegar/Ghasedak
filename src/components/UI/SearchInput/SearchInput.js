@@ -10,7 +10,15 @@ const SearchInput = (props) => {
   const [inputChange, setInputChanage] = useState("");
   const inputRef = useRef(null);
   const navigate = useNavigate();
-  const { setSearchValue, bookData, setNewData, setSorting} = useAppContext();
+  const {
+    setSearchValue,
+    bookData,
+    setNewData,
+    newData,
+    setSorting,
+    searchData,
+    setSearchData,
+  } = useAppContext();
 
   // define variables, states and refs end
 
@@ -30,7 +38,7 @@ const SearchInput = (props) => {
 
       // set appied filters to null
       setSorting([]);
-      
+
       // set appied filters to null -end
 
       DataBook = bookData;
@@ -39,7 +47,14 @@ const SearchInput = (props) => {
           items.name.toLowerCase().includes(inputChange, 0)
         );
         navigate("/search");
+
+        // set book list shown in search page
         setNewData(DataBook);
+        // set book list shown in search page -end
+
+        // save the Data of search in variable
+        setSearchData(DataBook);
+        // save the Data of search in variable
       }
       if (
         DataBook === [] ||
@@ -51,6 +66,9 @@ const SearchInput = (props) => {
       }
     }
   };
+  console.log(newData)
+
+  // console.log(searchData);
   //    show search result page by clicking enter key - end
 
   //    show search result page by clicking on search button
@@ -59,7 +77,7 @@ const SearchInput = (props) => {
 
     // set appied filters to null
     setSorting([]);
-   
+
     // set appied filters to null -end
 
     DataBook = bookData;
@@ -68,7 +86,13 @@ const SearchInput = (props) => {
         items.name.toLowerCase().includes(inputChange, 0)
       );
       navigate("/search");
+      // set book list shown in search page
       setNewData(DataBook);
+      // set book list shown in search page -end
+
+      // save the Data of search in variable
+      setSearchData(DataBook);
+      // save the Data of search in variable
     }
     if (
       DataBook === [] ||
@@ -80,6 +104,7 @@ const SearchInput = (props) => {
     }
   };
   //    show search result page by clicking on search button - end
+  console.log(newData)
 
   return (
     <div className="search-input-container">

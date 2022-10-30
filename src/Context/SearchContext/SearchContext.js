@@ -6,6 +6,7 @@ const CoinsContext = createContext({});
 const SearchContext = ({ children }) => {
   //   define states and variables
   const [searchValue, setSearchValue] = useState(" ");
+  const [searchData, setSearchData] = useState([]);
   const [searchFilter, setSearchFilter] = useState(" ");
   const [bookData, setBookData] = useState([]);
   const [selectedData, setSelectedData] = useState([]);
@@ -159,13 +160,15 @@ const SearchContext = ({ children }) => {
     <CoinsContext.Provider
       value={{
         newData,
+        setNewData,
+        searchData,
+        setSearchData,
         selectedData,
         setSelectedData,
         setSelectedTitle,
         selectedTitle,
         searchFilter,
         setSearchFilter,
-        setNewData,
         allFilter,
         setAllFilter,
         searchValue,

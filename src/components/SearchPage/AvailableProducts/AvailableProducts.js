@@ -42,7 +42,7 @@ const AvailableProducts = () => {
         navigate("/search");
         // update search data state
 
-        setNewData(filter);
+        // setNewData(filter);
         // update search data state -end
       } else {
         //  if we do not have any filter list
@@ -51,7 +51,7 @@ const AvailableProducts = () => {
       }
     } else {
       //  if the toggler button be off
-      setNewData([]);
+      // setNewData([]);
       navigate("*");
       //  if the toggler button be off -end
     }

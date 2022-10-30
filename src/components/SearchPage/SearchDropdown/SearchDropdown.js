@@ -29,10 +29,10 @@ function CustomDropdown() {
 
   const categoriesHandler = (event, title) => {
     // set available toggeler to false
-    if (available === true) {
-      setAvailable(false);
-      setNewData([]);
-    }
+    // if (available === true) {
+    //   setAvailable(false);
+    //   setNewData([]);
+    // }
     // set available toggeler to false -end
 
     // selected filter name
@@ -75,10 +75,10 @@ function CustomDropdown() {
     // return book data with selected category -end
 
     // set previous result books to null
-    if (searchValue !== "") {
-      setSearchValue("");
-      setNewData([]);
-    }
+    // if (searchValue !== "") {
+    //   setSearchValue("");
+    //   setNewData([]);
+    // }
     // set previous result books to null -end
 
     // store filter data in variable
@@ -117,10 +117,10 @@ function CustomDropdown() {
 
   const authorsHandler = (event, title) => {
     // set available toggeler to false
-    if (available === true) {
-      setAvailable(false);
-      setNewData([]);
-    }
+    // if (available === true) {
+    //   setAvailable(false);
+    //   setNewData([]);
+    // }
     // set available toggeler to false -end
     // selected filter name
     const eventData = event.target.innerText;
@@ -163,10 +163,10 @@ function CustomDropdown() {
     // return book data with selected author -end
 
     // set previous result books to null
-    if (searchValue !== "") {
-      setSearchValue("");
-      setNewData([]);
-    }
+    // if (searchValue !== "") {
+    //   setSearchValue("");
+    //   setNewData([]);
+    // }
     // set previous result books to null -end
 
     // store filter data in variable
@@ -193,20 +193,22 @@ function CustomDropdown() {
         // make data unique -end
         return returnData;
       });
+      
       // update all books list which will be shown -end
     } else {
       // if we do not have any filter
       navigate("*");
       // if we do not have any filter -end
     }
+    console.log(newData)
   };
 
   const translatorsHandler = (event, title) => {
     // set available toggeler to false
-    if (available === true) {
-      setAvailable(false);
-      setNewData([]);
-    }
+    // if (available === true) {
+    //   setAvailable(false);
+    //   setNewData([]);
+    // }
     // set available toggeler to false -end
     // selected filter name
     const eventData = event.target.innerText;
@@ -247,10 +249,10 @@ function CustomDropdown() {
     // return book data with selected translator -end
 
     // set previous result books to null
-    if (searchValue !== "") {
-      setSearchValue("");
-      setNewData([]);
-    }
+    // if (searchValue !== "") {
+    //   setSearchValue("");
+    //   setNewData([]);
+    // }
     // set previous result books to null -end
 
     // store filter data in variable
@@ -277,6 +279,8 @@ function CustomDropdown() {
         // make data unique -end
         return returnData;
       });
+      
+
       // update all books list which will be shown -end
 
       // store filter data in variable
@@ -285,14 +289,15 @@ function CustomDropdown() {
       navigate("*");
       // if we do not have any filter -end
     }
+    console.log(newData)
   };
 
   const hashtagsHandler = (event, title) => {
     // set available toggeler to false
-    if (available === true) {
-      setAvailable(false);
-      setNewData([]);
-    }
+    // if (available === true) {
+    //   setAvailable(false);
+    //   setNewData([]);
+    // }
     // set available toggeler to false -end
     // selected filter name
     const eventData = event.target.innerText;
@@ -335,10 +340,10 @@ function CustomDropdown() {
     // return book data with selected hashtag -end
 
     // set previous result books to null
-    if (searchValue !== "") {
-      setSearchValue("");
-      setNewData([]);
-    }
+    // if (searchValue !== "") {
+    //   setSearchValue("");
+    //   setNewData([]);
+    // }
     // set previous result books to null -end
 
     // store filter data in variable
@@ -365,6 +370,8 @@ function CustomDropdown() {
         // make data unique -end
         return returnData;
       });
+      
+
       // update all books list which will be shown -end
 
       // store filter data in variable
@@ -373,14 +380,15 @@ function CustomDropdown() {
       navigate("*");
       // if we do not have any filter -end
     }
+    console.log(newData)
   };
 
   const publishersHandler = (event, title) => {
     // set available toggeler to false
-    if (available === true) {
-      setAvailable(false);
-      setNewData([]);
-    }
+    // if (available === true) {
+    //   setAvailable(false);
+    //   setNewData([]);
+    // }
     // set available toggeler to false -end
     // selected filter name
     const eventData = event.target.innerText;
@@ -420,10 +428,10 @@ function CustomDropdown() {
     // return book data with selected publisher -end
 
     // set previous result books to null
-    if (searchValue !== "") {
-      setSearchValue("");
-      setNewData([]);
-    }
+    // if (searchValue !== "") {
+    //   setSearchValue("");
+    //   setNewData([]);
+    // }
     // set previous result books to null -end
 
     // store filter data in variable
@@ -450,12 +458,15 @@ function CustomDropdown() {
         // make data unique -end
         return returnData;
       });
+      
+
       // update all books list which will be shown -end
     } else {
       // if we do not have any filter
       navigate("*");
       // if we do not have any filter -end
     }
+    console.log(newData)
   };
 
   return (

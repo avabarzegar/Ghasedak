@@ -9,6 +9,7 @@ const ButtonLayout =(props)=>{
     return(
         <StyledButton 
         button={props.button}
+        href={props.href}
         >
             <div className='btn-img'>
                 <img src={props.src} width='100%' height='100%' alt={props.alt} />

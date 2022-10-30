@@ -38,6 +38,7 @@ const NavItems = () => {
             src={Download}
             alt="download application"
             title="دانلود اپلیکیشن"
+            href="#footer_id"
             />
         </Navbar.Collapse>
       </Navbar>

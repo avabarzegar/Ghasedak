@@ -64,9 +64,9 @@
    height: 100%;
 }
 
-.slider-parent-section-offer-book .carousel-item img {
-   height: 100%;
-}
+/* .slider-parent-section-offer-book .carousel-item img {
+   height: auto;
+} */
 
 .slider-parent-section-offer-book .carousel-inner {
    border-radius: 15px;
@@ -185,6 +185,7 @@
       left: 6%;
       padding: .01rem .25rem;
       right: unset;
+      bottom: -7%;
    }
 
    .slider-parent-section-offer-book .carousel-indicators [data-bs-target] {
@@ -233,7 +234,7 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom: -5%;
+      bottom: -7%;
       left: 7%;
       padding: .01rem .25rem;
       right: unset;
@@ -280,7 +281,7 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom: -9%;
+      bottom: -12%;
       left: 10%;
       padding: .01rem .25rem;
       right: unset;
@@ -298,7 +299,7 @@
       width: 2rem;
       height: 2rem;
       padding: 1px;
-      bottom: -5%;
+      bottom: -7%;
    }
 
    .slider-parent-section-offer-book {
@@ -309,6 +310,9 @@
 
    .slider-parent-section-offer-book .carousel-control-next {
       left: 48%;
+   }
+   .slider-parent-section-offer-book .carousel-inner{
+      height: 100% ;
    }
 }
 
@@ -325,7 +329,7 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom: -10%;
+      bottom: -13.5%;
       left: 10%;
       padding: .01rem .25rem;
       right: unset;
@@ -343,7 +347,7 @@
       width: 2rem;
       height: 2rem;
       padding: 1px;
-      bottom: -5%;
+      bottom: -7%;
    }
 
    .slider-parent-section-offer-book {
@@ -354,6 +358,9 @@
 
    .slider-parent-section-offer-book .carousel-control-next {
       left: 50%;
+   }
+   .slider-parent-section-offer-book .carousel-inner{
+      height: 100% ;
    }
 }
 
@@ -374,15 +381,15 @@
    }
 
    .slider-parent-section-offer-book .carousel-indicators {
-      bottom: -11%;
+      bottom: -18;
       left: 10%;
       right: unset;
       padding: .1rem .25rem;
    }
 
    .slider-parent-section-offer-book .carousel-indicators [data-bs-target] {
-      width: 8px;
-      height: 8px;
+      width: 10px;
+      height: 10px;
       margin-left: 3px;
       margin-right: 3px;
    }
@@ -393,6 +400,7 @@
       height: 2rem;
       bottom: -6%;
    }
+  
 }
 
 @media screen and (max-width:325px) {
@@ -446,6 +454,7 @@
    .slider-parent-section-offer-book .carousel-indicators {
       left: 15% !important;
       padding: .1rem .5rem;
+      bottom: -21%;
    }
 
    .slider-parent-section-offer-book .carousel-indicators [data-bs-target] {
@@ -459,6 +468,7 @@
    .slider-parent-section-offer-book .carousel-control-next {
       width: 2rem;
       height: 2rem;
+      bottom: -11%;
    }
 
    .slider-parent-section-offer-book .carousel-control-next {

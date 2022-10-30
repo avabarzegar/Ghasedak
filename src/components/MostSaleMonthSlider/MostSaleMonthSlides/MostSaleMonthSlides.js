@@ -53,7 +53,6 @@ const MostSaleMonthSlides = (props) => {
     axios
       .post("/user/pwa/home", bodyParameters, config)
       .then((response) => {
-        setLoader(false)
         const slideData = [];
         const responseData = response.data.book_lists[1].books.data;
 

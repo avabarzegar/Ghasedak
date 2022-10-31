@@ -40,7 +40,7 @@ const BookDetailedCard = (props) => {
    return (
       <div className='outest_section_book-cart'>
          <Link to={props.Link}>
-            <div className='book-card-parent'>
+            <div className='book-card-parent' onClick={props.onClick}>
                <Row className='book-card-container'>
                   <Col xs={6}>
                      <div className="parent_info_book">

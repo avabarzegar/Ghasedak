@@ -26,7 +26,7 @@ const Herosuggest = () => {
             <Carousel.Item interval={4000} key={item.id}>
               <BookDetailedCard
                 author={item.author}
-                click={() => setBookId(item.id)}
+                onClick={() => setBookId(item.id)}
                 Link={`/books/${item.id}`}
                 name={item.name}
                 edition={item.edition}

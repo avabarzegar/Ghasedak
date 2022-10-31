@@ -86,7 +86,11 @@ const BookDetailedCard = (props) => {
                            </h5>
                         </div>
                      </div>
-                     
+                  </Col>
+                  <Col xs={6}>
+                     <div className="book_pic_suggest">
+                        <img src={props.image} width='100%' height='100%' alt={props.alt} />
+                     </div>
                   </Col>
                </Row>
             </div>

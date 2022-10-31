@@ -27,6 +27,11 @@
    display: flex;
    justify-content: center;
    flex-direction: column;
+   height: 100%;
+}
+
+.parent-section-img-product-book-section{
+   height: 100%;
 }
 
 .outer-section-img-and-rating {
@@ -66,7 +71,6 @@
  .parent-section-img-product-book .swiper-slide {
    text-align: center;
    font-size: 18px;
-   background: #fff;
  
    /* Center slide text vertically */
    display: -webkit-box;
@@ -86,7 +90,6 @@
  .parent-section-img-product-book .swiper-slide img {
    display: block;
    width: 100%;
-   height: 100%;
    object-fit: cover;
  }
  
@@ -113,6 +116,7 @@
    height: 20%;
    box-sizing: border-box;
    padding: 10px 0;
+   margin-top: 3rem;
  }
  
  .parent-section-img-product-book .mySwiper .swiper-slide {
@@ -128,10 +132,11 @@
  .parent-section-img-product-book .swiper-slide img {
    display: block;
    width: 100%;
-   height: 100%;
    object-fit: cover;
  }
  
+
+
 
 
 @media screen and (max-width:765px) {

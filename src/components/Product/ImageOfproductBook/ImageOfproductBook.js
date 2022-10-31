@@ -29,7 +29,7 @@ const ImageProductBook = () => {
   
    return (
 
-      <section>
+      <section className="parent-section-img-product-book-section">
          <div className="parent-section-img-product-book">
             <Swiper
                style={{

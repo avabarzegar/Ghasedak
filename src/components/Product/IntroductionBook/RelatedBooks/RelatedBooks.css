@@ -17,3 +17,19 @@
       margin-top: 1.5rem;
    }
 }
+
+@media screen and (max-width:576px) {
+    .type-two-book-slider-container{
+      display: flex;
+      overflow-x: scroll;
+   }
+  .span-section-related-books{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 15px;
+      margin-bottom: 2rem;
+      margin-top: 3rem;
+   }
+}
+

@@ -192,7 +192,7 @@ const PopularBooksSlides =(props)=>{
                 <SwiperSlide className="book-slide-two" key={item.id}>
                   <LinkedCard
                     click={() => setBookId(item.id)}
-                    Link={`/products/${item.id}`}
+                    Link={`/books/${item.id}`}
                     name={item.name}
                     img={item.image}
                     price={item.price}

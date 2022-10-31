@@ -24,7 +24,7 @@
 }
 
 .simple-book-img {
-  width: 145px;
+  width: auto;
   height: 210px;
   display: flex;
   justify-content: center;

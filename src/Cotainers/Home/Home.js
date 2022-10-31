@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect, useState, } from "react";
 // Home page section components 
 import Header from '../../components/Header/Header'
 import BookSliderFirst from "../../components/BookSliderFirst/BookSliderFirst";
 import MostSaleSlider from '../../components/MostSaleSlider/MostSaleSlider';
+import axios from "axios";
+import "./Home.css"
 // Home page section components end
 import { Container } from "react-bootstrap";
 // import NearestShops from '../../components/nearestshops/nearestshops';
@@ -14,24 +16,25 @@ import SamiPublisherSlider from "../../components/SamiPublisherSlider/SamiPublis
 import MostSaleMonthSlider from "../../components/MostSaleMonthSlider/MostSaleMonthSlider";
 import MostSaleYearSlider from "../../components/MostSaleYearSlider/MostSaleYearSlider";
 import Layout from "../../components/Layout/Layout";
+import Loader from "../../components/UI/Loader/Loader";
 // Home page section components end
 
-const Home =()=>{
-    return(
-    // === the first type of slider used in home page ===
-    <Layout>
-        <Header />
-        <BookSliderFirst />
-        <MostSaleSlider />
-        <MostSaleMonthSlider />
-        <MostSaleYearSlider />
-        <OfferSliderBook />
-        <PopularBooksSlider />
-        <BestShops />
-        <ThirdPublisherSlider />
-        <SamiPublisherSlider />
-    </Layout>
-    // === the first type of slider used in home page end ===
+const Home = () => {
+    return (
+        // === the first type of slider used in home page ===
+        <Layout>
+            <Header />
+            <BookSliderFirst />
+            <MostSaleSlider />
+            <MostSaleMonthSlider />
+            <MostSaleYearSlider />
+            <OfferSliderBook />
+            <PopularBooksSlider />
+            <BestShops />
+            <ThirdPublisherSlider />
+            <SamiPublisherSlider />
+        </Layout>
+        // === the first type of slider used in home page end ===
 
     )
 }

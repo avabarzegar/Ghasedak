@@ -86,17 +86,7 @@ const BookDetailedCard = (props) => {
                            </h5>
                         </div>
                      </div>
-                     <div>
-                        <span className='book-card-txt font-bold'>نویسنده:</span>
-                        <OverlayTrigger
-                           placement="bottom"
-                           delay={{ show: 250, hide: 400 }}
-                           overlay={renderTooltip2}
-                        >
-                           <h5 ref={authorRef}>{props.author}</h5>
-                        </OverlayTrigger>
-
-                     </div>
+                     
                   </Col>
                </Row>
             </div>

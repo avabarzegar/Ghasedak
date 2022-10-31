@@ -82,7 +82,7 @@ const Herosuggest = () => {
                   <BookDetailedCard
                      author={item.author}
                      click={() => setBookId(item.id)}
-                     Link={`/products/${item.id}`}
+                     Link={`/books/${item.id}`}
                      key={item.id} 
                      name={item.name}
                      edition={item.edition}

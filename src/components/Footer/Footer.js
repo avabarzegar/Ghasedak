@@ -59,19 +59,19 @@ const Footer = () => {
                               </StyledButton>
                            </Col>
                            <Col xl={3} lg={6} md={6} xs={12} sm={6}>
-                              <StyledButton href='#' button='cafe-bazar-button'>
-                                 <span className='btn_footer_inner_text'>Bazar</span>
+                              <StyledButton href='https://myket.ir/app/com.book_store' button='cafe-bazar-button'>
+                                 <span className='btn_footer_inner_text'>Myket</span>
                                  <img src={CafeBazar} alt='img' />
                               </StyledButton>
                            </Col>
                            <Col xl={3} lg={6} md={6} xs={12} sm={6}>
-                              <StyledButton href='#' button='App-store-button'>
-                                 <span className='btn_footer_inner_text'>App Store</span>
+                              <StyledButton href='http://www.sibche.com/applications/ghasedak' button='App-store-button'>
+                                 <span className='btn_footer_inner_text'>Sibche</span>
                                  <img src={AppStore} alt='img' />
                               </StyledButton>
                            </Col>
                            <Col xl={3} lg={6} md={6} xs={12} sm={6}>
-                              <StyledButton href='#' button='play-store-button'>
+                              <StyledButton href='https://play.google.com/store/apps/details?id=com.book_store' button='play-store-button'>
                                  <span className='btn_footer_inner_text'>Play Store</span>
                                  <img src={PlayStore} alt='img' />
                               </StyledButton>

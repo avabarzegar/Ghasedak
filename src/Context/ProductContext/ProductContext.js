@@ -33,7 +33,7 @@ const ProductContextProvider = ({ children }) => {
         setProduct({
           id: productsData.id,
           name: productsData.name,
-          img: productsData.images.data[0].image_url,
+          img: productsData.images.data,
           category: productsData.categories,
           author: productsData.authors,
           translator: productsData.translators,

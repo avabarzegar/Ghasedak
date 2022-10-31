@@ -39,7 +39,6 @@ const Herosuggest = () => {
           );
         })}
       </Carousel>
-      {/* </Swiper> */}
     </section>
   );
 };

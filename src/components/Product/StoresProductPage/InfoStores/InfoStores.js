@@ -41,7 +41,6 @@ const InfoStores = () => {
         });
        
       });
-      console.log(store)
     // shop list data -end
   }, [bookId]);
 

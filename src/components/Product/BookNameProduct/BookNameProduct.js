@@ -33,7 +33,11 @@ const BookNameProduct = (porps) => {
    }, [BookId]);
    return (
       <Container className="BookNameProduct_parent_section">
-         <img src={product.img} className="BookNameProduct_img" />
+         {product.img ? product.img.slice(0 , 1).map((item, index) => (
+            
+               <img src={item.image_url} key={index + 2} className="BookNameProduct_img" />
+            
+         )) : <p>عکسی برای این محصول وجود ندارد</p>}
          <div>
             <span>کتاب :</span>
             <span>{product.name}</span>

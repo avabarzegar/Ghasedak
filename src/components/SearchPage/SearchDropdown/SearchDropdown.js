@@ -94,11 +94,11 @@ function CustomDropdown() {
 
       // store filter data in variable
     }
-    // else {
-    //   // if we do not have any filter
-    //   navigate("*");
-    //   // if we do not have any filter -end
-    // }
+    else {
+      // if we do not have any filter
+      navigate("*");
+      // if we do not have any filter -end
+    }
   };
 
   const authorsHandler = (event, title) => {
@@ -165,11 +165,11 @@ function CustomDropdown() {
 
       // update all books list which will be shown -end
     }
-    // else {
-    //   // if we do not have any filter
-    //   navigate("*");
-    //   // if we do not have any filter -end
-    // }
+    else {
+      // if we do not have any filter
+      navigate("*");
+      // if we do not have any filter -end
+    }
     console.log(newData);
   };
 
@@ -237,11 +237,11 @@ function CustomDropdown() {
 
       // store filter data in variable
     }
-    // else {
-    //   // if we do not have any filter
-    //   navigate("*");
-    //   // if we do not have any filter -end
-    // }
+    else {
+      // if we do not have any filter
+      navigate("*");
+      // if we do not have any filter -end
+    }
     console.log(newData);
   };
 
@@ -311,11 +311,11 @@ function CustomDropdown() {
 
       // store filter data in variable
     }
-    // else {
-    //   // if we do not have any filter
-    //   navigate("*");
-    //   // if we do not have any filter -end
-    // }
+    else {
+      // if we do not have any filter
+      navigate("*");
+      // if we do not have any filter -end
+    }
     console.log(newData);
   };
 
@@ -380,18 +380,18 @@ function CustomDropdown() {
 
       // update all books list which will be shown -end
     }
-    // else {
-    //   // if we do not have any filter
-    //   navigate("*");
-    //   // if we do not have any filter -end
-    // }
+    else {
+      // if we do not have any filter
+      navigate("*");
+      // if we do not have any filter -end
+    }
     console.log(newData);
   };
-  useEffect(() => {
-    if (newData.length < 1 && searchData.length<1) {
-      navigate("*");
-    }
-  }, [newData]);
+  // useEffect(() => {
+  //   if (newData.length < 1 && searchData.length<1) {
+  //     navigate("*");
+  //   }
+  // }, [newData]);
   return (
     <div className="search-dropdown">
       <DropdownButton

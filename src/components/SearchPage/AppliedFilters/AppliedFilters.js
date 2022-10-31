@@ -12,17 +12,15 @@ const AppliedFilters = () => {
   // variables
 
   return (
-    <>
-      {/* {sorting == [] || sorting.length === 0 ? null : ( */}
-      <section
-        className={sorting.length === 0 ? "not-applied-filters" : "applied-filters"}
-      >
-        <SearchFilterHeadLayout icon={Icon} title="فیلترهای اعمال شده">
-          <FiltersList />
-        </SearchFilterHeadLayout>
-      </section>
-      {/* )} */}
-    </>
+    <section
+      className={
+        sorting.length === 0 ? "not-applied-filters" : "applied-filters"
+      }
+    >
+      <SearchFilterHeadLayout icon={Icon} title="فیلترهای اعمال شده">
+        <FiltersList />
+      </SearchFilterHeadLayout>
+    </section>
   );
 };
 // define applied filters section end

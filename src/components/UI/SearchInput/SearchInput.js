@@ -21,7 +21,7 @@ const SearchInput = (props) => {
   } = useAppContext();
 
   // define variables, states and refs end
-// console.log(searchData)
+
   // handle when the input value change
   const inputChangeHandler = (event) => {
     setInputChanage(event.target.value);
@@ -38,7 +38,6 @@ const SearchInput = (props) => {
 
       // set appied filters to null
       setSorting([]);
-
       // set appied filters to null -end
 
       DataBook = bookData;
@@ -46,28 +45,26 @@ const SearchInput = (props) => {
         DataBook = bookData.filter((items) =>
           items.name.toLowerCase().includes(inputChange, 0)
         );
-        navigate("/search");
+        if (
+          DataBook === [] ||
+          DataBook === undefined ||
+          DataBook.length === 0 ||
+          DataBook === null
+        ) {
+          navigate("*");
+        } else {
+          navigate("/search");
 
-        // set book list shown in search page
-        setNewData(DataBook);
-        // set book list shown in search page -end
+          // set book list shown in search page
+          setNewData(DataBook);
 
-        // save the Data of search in variable
-        setSearchData(DataBook);
-        // save the Data of search in variable
+          // save the Data of search in variable
+          setSearchData(DataBook);
+        }
       }
-      // if (
-      //   DataBook === [] ||
-      //   DataBook === undefined ||
-      //   DataBook.length === 0 ||
-      //   DataBook === null
-      // ) {
-      //   navigate("*");
-      // }
     }
   };
 
-  // console.log(searchData);
   //    show search result page by clicking enter key - end
 
   //    show search result page by clicking on search button
@@ -84,23 +81,23 @@ const SearchInput = (props) => {
       DataBook = bookData.filter((items) =>
         items.name.toLowerCase().includes(inputChange, 0)
       );
-      navigate("/search");
-      // set book list shown in search page
-      setNewData(DataBook);
-      // set book list shown in search page -end
+      if (
+        DataBook === [] ||
+        DataBook === undefined ||
+        DataBook.length === 0 ||
+        DataBook === null
+      ) {
+        navigate("*");
+      } else {
+        navigate("/search");
 
-      // save the Data of search in variable
-      setSearchData(DataBook);
-      // save the Data of search in variable
+        // set book list shown in search page
+        setNewData(DataBook);
+
+        // save the Data of search in variable
+        setSearchData(DataBook);
+      }
     }
-    // if (
-    //   DataBook === [] ||
-    //   DataBook === undefined ||
-    //   DataBook.length === 0 ||
-    //   DataBook === null
-    // ) {
-    //   navigate("*");
-    // }
   };
   //    show search result page by clicking on search button - end
 

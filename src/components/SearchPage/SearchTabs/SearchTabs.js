@@ -12,14 +12,15 @@ function SearchTabs() {
   const { setBookId } = useProductsContext();
   // states and variables -end
 
+  
   return (
     <section className="search-tabs-container">
       <Row>
         {
           //   define books in tabs
-          newData?.length === 0 ? (
-            <Navigate to="*" />
-          ) : (
+          // newData?.length === 0 ? (
+          //   <Navigate to="*" />
+          // ) : (
             newData.map((item) => {
               return (
                 <Col className="search-page-books" xl={3} lg={4} sm={6}>
@@ -35,7 +36,7 @@ function SearchTabs() {
                 </Col>
               );
             })
-          )
+          // )
           //   define books in tabs end
         }
       </Row>

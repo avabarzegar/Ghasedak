@@ -20,7 +20,7 @@ const Footer = () => {
    return (
 
       <>
-         <Container fluid className='parent_section_footer'>
+         <Container fluid id="footer_id" className='parent_section_footer'>
          <Container>
             <Row>
                <Col md={3}>
@@ -53,7 +53,7 @@ const Footer = () => {
                      <div className='outer_section_footer_btn'>
                         <Row>
                            <Col xl={3} lg={6} md={6} xs={12} sm={6}>
-                              <StyledButton href='#' button='ghasedak_download-app'>
+                              <StyledButton href='https://nextghsdk.iran.liara.run/downloads/t/ANDROID/latest' button='ghasedak_download-app'>
                                  <span className='btn_footer_inner_text'>Ghasedak</span>
                                  <img src={Ghasedak} alt='img' />
                               </StyledButton>

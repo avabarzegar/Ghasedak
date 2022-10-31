@@ -13,46 +13,48 @@ import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 
 import { useProductsContext } from "../../../../Context/ProductContext/ProductContext";
+import { useHomeContext } from "../../../../Context/HomeContext/HomeContext";
 
 // === mapping swiper slides ===
 const ThirdPublisherSlider = (props) => {
 
    const [slide, setSlide] = useState([]);
    const { setBookId, BookId } = useProductsContext();
+   const { suggestSlider } = useHomeContext();
 
-   useEffect(() => {
-      const token = "qtjAvo6VkoiFRlQ7lufYbRh3R4u6vEnKEN19JKSz";
+   // useEffect(() => {
+   //    const token = "qtjAvo6VkoiFRlQ7lufYbRh3R4u6vEnKEN19JKSz";
 
-      const config = {
-         headers: { Authorization: `Bearer ${token}` },
-      };
+   //    const config = {
+   //       headers: { Authorization: `Bearer ${token}` },
+   //    };
 
-      const bodyParameters = {
-         key: "value",
-      };
+   //    const bodyParameters = {
+   //       key: "value",
+   //    };
 
-      //    === get slides data from api ===
-      axios
-         .post("/user/pwa/home", bodyParameters, config)
-         .then((response) => {
-            const slideData = [];
-            response.data.suggestions.data.slice(0, 5).map((item) => {
-               slideData.push({
-                  id: item.id,
-                  name: item.name,
-                  image: item.images.data[0].image_url,
-                  price: item.best_price,
-               });
-            });
-            setSlide(slideData);
-         })
-         .catch((err) => {
-            console.log(err.message);
-         });
-      // setBookId('title')
+   //    //    === get slides data from api ===
+   //    axios
+   //       .post("/user/pwa/home", bodyParameters, config)
+   //       .then((response) => {
+   //          const slideData = [];
+   //          response.data.suggestions.data.slice(0, 5).map((item) => {
+   //             slideData.push({
+   //                id: item.id,
+   //                name: item.name,
+   //                image: item.images.data[0].image_url,
+   //                price: item.best_price,
+   //             });
+   //          });
+   //          setSlide(slideData);
+   //       })
+   //       .catch((err) => {
+   //          console.log(err.message);
+   //       });
+   //    // setBookId('title')
 
-      //    === get slides data from api ===
-   }, []);
+   //    //    === get slides data from api ===
+   // }, []);
 
 
 
@@ -62,21 +64,19 @@ const ThirdPublisherSlider = (props) => {
          <div className="type-two-book-slider-container-outer">
             <span className="span-section-related-books">پیشنهادات قاصدک </span>
             <div className="type-two-book-slider-container">
-               {slide.map((item) => {
+               {suggestSlider.slice(0 , 5).map((item) => {
                   return (
-                     // == return swiper slides ==
 
                      <div className="book-slide-two" key={item.id}>
                         <LinkedCard
                            click={() => setBookId(item.id)}
-                           Link={`/products/${item.id}`}
+                           Link={`/books/${item.id}`}
                            name={item.name}
                            img={item.image}
                            price={item.price}
                         />
                      </div>
 
-                     // == return swiper slides end ==
                   );
                })}
             </div>

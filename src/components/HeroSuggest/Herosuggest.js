@@ -3,11 +3,9 @@ import './Herosuggest.css';
 import '../../components/UI/Button/Button.css';
 import BookDetailedCard from "../../components/BookCard/BookDetailedCard/BookDetailedCard";
 import axios from "axios";
-import { SwiperSlide, Swiper } from "swiper/react";
-import SwiperCore, { Navigation, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/scrollbar";
-
+import { useProductsContext } from "../../Context/ProductContext/ProductContext";
 
 
 
@@ -19,8 +17,7 @@ const Herosuggest = () => {
 
 
    const [detail, setDetail] = useState([]);
-   const [swiperRef, setSwiperRef] = useState();
-
+   const { setBookId, BookId } = useProductsContext();
 
 
 
@@ -76,53 +73,28 @@ const Herosuggest = () => {
          <div className="ghasedak_suggestion">
             پیشنهادات قاصدک
          </div>
-         {/* <Swiper
-            className="book-swiper"
-            modules={[Navigation, Autoplay]}
-            onSwiper={setSwiperRef}
-            autoplay={{ delay: 2000 }}
-            slidesPerGroup={1}
 
-            scrollbar={{
-               el: ".swiper-scrollbar",
-               draggable: true,
-            }}
-            breakpoints={{
-               0: {
-                  slidesPerView: 1,
-               },
-               576: {
-                  slidesPerView: 1,
-               },
+         {detail.map((item, index) => {
+            if (index === 1) {
+               return (
+                  // <SwiperSlide  key={item.id}>
 
-               768: {
-                  slidesPerView: 1,
-               },
+                  <BookDetailedCard
+                     author={item.author}
+                     click={() => setBookId(item.id)}
+                     Link={`/products/${item.id}`}
+                     key={item.id} 
+                     name={item.name}
+                     edition={item.edition}
+                     price={item.price}
+                     publisher={item.publisher}
+                     image={item.image} 
+                     alt={"book img"} />
+                  // </SwiperSlide>
+               )
+            }
 
-               992: {
-                  slidesPerView: 1,
-               },
-
-               1200: {
-                  slidesPerView: 1,
-               },
-
-               1400: {
-                  slidesPerView: 1,
-               },
-            }}
-         > */}
-            {detail.map((item, index) => {
-               if (index === 1) {
-                  return (
-                     // <SwiperSlide  key={item.id}>
-                     
-                        <BookDetailedCard author={item.author} key={item.id} name={item.name} edition={item.edition} price={item.price} publisher={item.publisher} image={item.image} alt={"book img"} />
-                     // </SwiperSlide>
-                  )
-               }
-
-            })}
+         })}
          {/* </Swiper> */}
       </section>
    )

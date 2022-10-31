@@ -41,7 +41,11 @@ const ImageProductBook = () => {
 
       <section>
          <div className="parent-section-img-product-book">
+<<<<<<< HEAD
             <Swiper
+=======
+            {/* <Swiper
+>>>>>>> 1cca246284830c5b965781e4b24d42132eb82752
                style={{
                   "--swiper-navigation-color": "#fff",
                   "--swiper-pagination-color": "#fff",
@@ -59,7 +63,11 @@ const ImageProductBook = () => {
 
 
 
+<<<<<<< HEAD
             </Swiper>
+=======
+            </Swiper> */}
+>>>>>>> 1cca246284830c5b965781e4b24d42132eb82752
             {/* <Swiper
                onSwiper={setThumbsSwiper}
                spaceBetween={10}

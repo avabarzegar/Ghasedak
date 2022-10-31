@@ -23,7 +23,7 @@ const ProductContextProvider = ({ children }) => {
     // api config -end
     // book list data
     axios
-      .post("/books/list/all", bodyParameters, config)
+      .post("/books/show", bodyParameters, config)
       .then((response) => {
         const productsData = [];
         response.data.data.map((item) => {

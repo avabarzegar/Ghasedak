@@ -33,7 +33,10 @@ const BookDetailedCard = (props) => {
       </Tooltip>
    );
    // define tooltip for book name showing by hovering end
-
+  
+      const alertshow = () => {
+        alert("میتوانید برای خرید کتاب از طریق اپلیکیشن قاصدک اقدام کنید");
+      }
    return (
       <div className='outest_section_book-cart'>
          <Link to={props.Link}>
@@ -100,6 +103,7 @@ const BookDetailedCard = (props) => {
             src={CartImage}
             alt='cart img'
             title='افزودن به سبد خرید'
+            onClick={alertshow}
          />
       </div>
    )

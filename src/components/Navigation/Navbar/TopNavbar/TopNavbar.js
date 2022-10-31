@@ -17,7 +17,9 @@ const TopNavbar = () => {
   const searchInputResponsive=(
     <SearchInput  placeholder='نام کتاب، نویسنده، ناشر و ... را جستجو کنید' />
   )
-
+  const alertshow = () => {
+    alert("میتوانید برای ایجاد حساب کاربری از طریق اپلیکیشن قاصدک اقدام کنید.");
+  }
     return (
         <Container className='top-nav-container'>
             <Row className='top-navbar'>
@@ -49,6 +51,7 @@ const TopNavbar = () => {
                 src={Profile}
                 alt='profile'
                 title='ثبت نام/ورود'
+                onClick={alertshow}
                 />
                 <a className='shop-basket-btn'>
                   <div className='shop-logo'>

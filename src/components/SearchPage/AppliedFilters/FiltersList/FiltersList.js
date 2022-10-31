@@ -113,7 +113,7 @@ const FiltersList = () => {
             key={index}
             title={item.title}
             Filter={item.eventFilter}
-            click={() => deleteFilterHandler(index, item)}
+            click={() => deleteFilterHandler(item)}
           />
         );
       })}

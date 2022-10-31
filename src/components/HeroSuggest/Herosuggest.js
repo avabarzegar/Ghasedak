@@ -78,7 +78,7 @@ const Herosuggest = () => {
             {detail.map((item, index) => {
 
                return (
-                  <Carousel.Item interval={1200} key={item.id}>
+                  <Carousel.Item interval={4000} key={item.id}>
                      <BookDetailedCard
                         author={item.author}
                         click={() => setBookId(item.id)}

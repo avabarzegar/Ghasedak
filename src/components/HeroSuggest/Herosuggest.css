@@ -28,6 +28,7 @@
    font-weight: 400;
    font-size: 16px;
    color: var(--white-color);
+   z-index: 5;
 }
 
 .parent_info_book div h5 {
@@ -53,7 +54,7 @@
    margin-bottom: 0;
 }
 
-.swiperslide-suggest{
+.swiperslide-suggest {
    width: 100% !important;
 }
 
@@ -90,6 +91,12 @@
    color: var(--placeholder-text);
    font-size: 14px;
    font-weight: 700;
+}
+
+.outest_section_suggest_book_hero .carousel-control-prev,
+.outest_section_suggest_book_hero .carousel-control-next,
+.outest_section_suggest_book_hero .carousel-indicators {
+   display: none;
 }
 
 @media screen and (max-width:1200px) {
@@ -227,4 +234,3 @@
 
 
 }
-

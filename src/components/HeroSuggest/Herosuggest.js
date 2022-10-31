@@ -6,6 +6,7 @@ import axios from "axios";
 import "swiper/css";
 import "swiper/css/scrollbar";
 import { useProductsContext } from "../../Context/ProductContext/ProductContext";
+import Carousel from 'react-bootstrap/Carousel';
 
 
 
@@ -73,28 +74,28 @@ const Herosuggest = () => {
          <div className="ghasedak_suggestion">
             پیشنهادات قاصدک
          </div>
+         <Carousel className='slider-banner-hero slider_parent_section'>
+            {detail.map((item, index) => {
 
-         {detail.map((item, index) => {
-            if (index === 1) {
                return (
-                  // <SwiperSlide  key={item.id}>
+                  <Carousel.Item interval={1200} key={item.id}>
+                     <BookDetailedCard
+                        author={item.author}
+                        click={() => setBookId(item.id)}
+                        Link={`/books/${item.id}`}
 
-                  <BookDetailedCard
-                     author={item.author}
-                     click={() => setBookId(item.id)}
-                     Link={`/books/${item.id}`}
-                     key={item.id} 
-                     name={item.name}
-                     edition={item.edition}
-                     price={item.price}
-                     publisher={item.publisher}
-                     image={item.image} 
-                     alt={"book img"} />
-                  // </SwiperSlide>
+                        name={item.name}
+                        edition={item.edition}
+                        price={item.price}
+                        publisher={item.publisher}
+                        image={item.image}
+                        alt={"book img"} />
+                  </Carousel.Item>
                )
-            }
 
-         })}
+
+            })}
+         </Carousel>
          {/* </Swiper> */}
       </section>
    )

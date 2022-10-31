@@ -17,7 +17,6 @@ const InfoBooksDetail = (props) => {
   const { product } = useProductsContext();
 
 
-  console.log(product);
   return (
     <>
       <div className="publisher_name">

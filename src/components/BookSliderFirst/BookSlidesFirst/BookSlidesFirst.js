@@ -11,7 +11,7 @@ import "./BookSlidesFirst.css";
 import { useProductsContext } from "../../../Context/ProductContext/ProductContext";
 import { useHomeContext } from "../../../Context/HomeContext/HomeContext";
 // context
-
+ 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";

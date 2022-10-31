@@ -33,8 +33,8 @@ const HomeContextProvider = ({ children }) => {
   const [middleSlider, SetMiddleSlider] = useState([]);
   //   Stores Slider ---(bestshops)
   const [storeSlider, setStoreSlider] = useState([]);
-  const [storeSliderTitle, setStoreSliderTitle] = useState("");
   // suggestions ---(HeroSuggest)
+  const [suggestSlider, setSuggestSlider] = useState([]);
 
   // variables and states
 
@@ -61,7 +61,7 @@ const HomeContextProvider = ({ children }) => {
         const heroBannerData = response.data.banners.data[0].items.data;
 
         if (heroBannerData === [] || heroBannerData.length === 0) {
-          slideDataOne = [];
+          heroBanner = [];
         } else {
           heroBannerData.map((item) => {
             heroBanner.push({
@@ -81,19 +81,57 @@ const HomeContextProvider = ({ children }) => {
         const MiddleBannerData = response.data.banners.data[1].items.data;
 
         if (MiddleBannerData === [] || MiddleBannerData.length === 0) {
-          slideDataOne = [];
+          bannerData = [];
         } else {
           MiddleBannerData.map((item) => {
-          bannerData.push({
-            id: item.id,
-            title: item.title,
-            images: item.image_url,
+            bannerData.push({
+              id: item.id,
+              title: item.title,
+              images: item.image_url,
+            });
           });
-        });
-      };
+        }
         SetMiddleSlider(bannerData);
 
         // Middle Banner Slider -end
+
+        // Stores Slider
+        const storeData = [];
+        const storeSliderData = response.data.top_stores.data;
+        if (storeSliderData === [] || storeSliderData.length === 0) {
+          storeData = [];
+        } else {
+          storeSliderData.map((item) => {
+            storeData.push({
+              id: item.id,
+              name: item.name,
+              image: item.logo_url,
+            });
+          });
+        }
+        setStoreSlider(storeData);
+        // Stores Slider  -end
+
+        // Ghasedak Suggestion
+        const suggestionData = [];
+        const suggestionResponse = response.data.suggestions.data;
+        if (suggestionResponse === [] || suggestionResponse.length === 0) {
+          storeData = [];
+        } else {
+          suggestionResponse.map((item) => {
+            suggestionData.push({
+              id: item.id,
+              name: item.name,
+              author: item.authors,
+              publisher: item.publisher,
+              image: item.images.data[0].image_url,
+              price: item.best_price,
+              edition: item.edition,
+            });
+          });
+        }
+        setSuggestSlider(suggestionData);
+        // Ghasedak Suggestion -end
 
         // bookSlider One book list data
         let slideDataOne = [];
@@ -130,12 +168,10 @@ const HomeContextProvider = ({ children }) => {
             });
           });
         }
-
         setBookTwoTitle(response.data.book_lists[0].title);
-
         setBookSliderTwo(slideDataTwo);
-
         // bookSlider Two book list data -end
+
         // bookSlider Three book list data
         const slideDataThree = [];
         const responseDataThree = response.data.book_lists[1].books.data;
@@ -269,7 +305,7 @@ const HomeContextProvider = ({ children }) => {
         heroSlider,
         middleSlider,
         storeSlider,
-        storeSliderTitle,
+        suggestSlider,
       }}
     >
       {children}

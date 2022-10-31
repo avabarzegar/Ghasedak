@@ -1,14 +1,16 @@
 // Import Swiper React components
 import { SwiperSlide, Swiper } from "swiper/react";
 import SwiperCore, { Navigation, Autoplay } from "swiper";
-import { React, useState, useEffect, useRef, useCallback } from "react";
-import axios from "axios";
+import { React, useState, useRef, useCallback } from "react";
 import SliderTopLine from "../../SliderTopLine/SliderTopLine";
 import SliderNavigation from "../../SliderNavigation/SliderNavigation";
 import BestShopssingleslide from "../../bestshops/BestShopsSingleSlide/BestShopsSingleSlide";
 import SeeAllShops from "../../seeallshops/Seeallshops";
 import { Col } from "react-bootstrap";
 import SliderLayout from "../../SliderLayout/SliderLayout";
+// context
+import { useHomeContext } from "../../../Context/HomeContext/HomeContext";
+// context
 
 // Import Swiper styles
 import "swiper/css";
@@ -27,42 +29,8 @@ const BestShopsSlides = () => {
 
   // state hook
   const [swiperRef, setSwiperRef] = useState();
-  const [slide, setSlide] = useState([]);
+  const {storeSlider}=useHomeContext();
   // state hook end
-
-  useEffect(() => {
-    const token = "qtjAvo6VkoiFRlQ7lufYbRh3R4u6vEnKEN19JKSz";
-
-    const config = {
-      headers: { Authorization: `Bearer ${token}` },
-    };
-
-    const bodyParameters = {
-      key: "value",
-    };
-
-    //    === get slides data from api ===
-    axios
-      .post("/user/pwa/home", bodyParameters, config)
-      .then((response) => {
-        const slideData = [];
-        response.data.top_stores.data.map((item) => {
-          slideData.push({
-            id: item.id,
-            name: item.name,
-            // author: item.author,
-            // publisher:item.publisher,
-            image: item.logo_url,
-          });
-        });
-        setSlide(slideData);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-
-    //    === get slides data from api ===
-  }, []);
 
   // == use swiper autoplay & navigation ==
   SwiperCore.use([Navigation, Autoplay]);
@@ -152,7 +120,7 @@ const BestShopsSlides = () => {
               },
             }}
           >
-            {slide.map((item) => {
+            {storeSlider.map((item) => {
               return (
                 // == return swiper slides ==
 

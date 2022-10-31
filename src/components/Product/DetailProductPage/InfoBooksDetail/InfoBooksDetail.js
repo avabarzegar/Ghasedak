@@ -1,3 +1,4 @@
+
 import React from "react";
 import TitleDetail from "../TitleDetail/TitleDetail";
 import LogoPublisher from "../../../../assets/Images/icon/logo-publisher.svg";
@@ -9,21 +10,14 @@ import StyledButton from "../../../UI/Button/Button";
 import AddToCart from "../../../../assets/Images/icon/vuesax-add-to-card.svg";
 // context
 import { useProductsContext } from "../../../../Context/ProductContext/ProductContext";
-import { useEffect } from "react";
+
 
 const InfoBooksDetail = (props) => {
   // state and variables
-  const { products, bookId, product, setProduct } = useProductsContext();
+  const { product } = useProductsContext();
 
-  useEffect(() => {
-    products.map((item) => {
-      if (item.id === bookId) {
-        setProduct(item);
-      }
-    });
-  }, [bookId]);
-  // state and variables -end
-  
+
+  console.log(product);
   return (
     <>
       <div className="publisher_name">
@@ -52,6 +46,7 @@ const InfoBooksDetail = (props) => {
       <div className="parent_section_info_books">
         <TitleDetail TitleText="مترجم:" />
 
+
         {product.translator?.map((item, index) => (
           <TitleDetail
             key={index}
@@ -63,6 +58,7 @@ const InfoBooksDetail = (props) => {
       <div className="parent_section_info_books">
         <TitleDetail TitleText="تعداد صفحات:" />
 
+
         <TitleDetail
           titleDetailCustomStyle="publisher_name_custom_style"
           TitleText={product.pagescount}
@@ -70,6 +66,7 @@ const InfoBooksDetail = (props) => {
       </div>
       <div className="parent_section_info_books">
         <TitleDetail TitleText="گروه سنی:" />
+
 
         <TitleDetail
           titleDetailCustomStyle="publisher_name_custom_style"
@@ -79,6 +76,7 @@ const InfoBooksDetail = (props) => {
       <div className="parent_section_info_books">
         <TitleDetail TitleText="قطع :" />
 
+
         <TitleDetail
           titleDetailCustomStyle="publisher_name_custom_style"
           TitleText={product.size}
@@ -87,6 +85,7 @@ const InfoBooksDetail = (props) => {
       <div className="parent_section_info_books">
         <TitleDetail TitleText="سال انتشار:" />
 
+
         <TitleDetail
           titleDetailCustomStyle="publisher_name_custom_style"
           TitleText={product.publishyear}
@@ -94,6 +93,7 @@ const InfoBooksDetail = (props) => {
       </div>
       <div className="parent-section-counter-btn-add-to-cart">
         <CounterBooks />
+
 
         <StyledButton href="#" button="add-to-cart-detailpage">
           <img src={AddToCart} alt="img" />
@@ -105,5 +105,6 @@ const InfoBooksDetail = (props) => {
     </>
   );
 };
+
 
 export default InfoBooksDetail;

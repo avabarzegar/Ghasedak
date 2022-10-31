@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
 import SearchContext from "./Context/SearchContext/SearchContext";
 import ProductContextProvider from "./Context/ProductContext/ProductContext";
+import HomeContextProvider from "./Context/HomeContext/HomeContext";
 
 axios.defaults.baseURL = "https://nextghsdk.iran.liara.run/api/v1";
 
@@ -18,10 +19,12 @@ const root = ReactDOM.createRoot(container);
 // Initial render
 root.render(
   <StrictMode>
-    <SearchContext>
-      <ProductContextProvider>
-        <App />
-      </ProductContextProvider>
-    </SearchContext>
+    <HomeContextProvider>
+      <SearchContext>
+        <ProductContextProvider>
+          <App />
+        </ProductContextProvider>
+      </SearchContext>
+    </HomeContextProvider>
   </StrictMode>
 );

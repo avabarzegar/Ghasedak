@@ -6,15 +6,14 @@ const ProductsContext = createContext({});
 
 
 const ProductContextProvider = ({ children }) => {
-  const [products, setProducts] = useState([]);
-  const [bookId, setBookId] = useState(null);
+  const [bookId, setBookId] = useState(1);
   const [product, setProduct] = useState({});
 
 
   //   get data from api
   useEffect(() => {
     // api config
-    const token = "DzTwF4yts6KjdR8NLdQdUtN0Y4YbcT35pVTy1Kek";
+    const token = "qtjAvo6VkoiFRlQ7lufYbRh3R4u6vEnKEN19JKSz";
 
 
     const config = {
@@ -31,7 +30,6 @@ const ProductContextProvider = ({ children }) => {
       .post("/user/books/show", bodyParameters, config)
       .then((response) => {
         const productsData = response.data.data;
-        console.log(response.data.data);
         setProduct({
           id: productsData.id,
           name: productsData.name,
@@ -63,12 +61,9 @@ const ProductContextProvider = ({ children }) => {
   //   get data from api -end
 
 
-  console.log(products);
   return (
     <ProductsContext.Provider
       value={{
-        products,
-        setProducts,
         bookId,
         setBookId,
         product,

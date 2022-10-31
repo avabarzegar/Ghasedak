@@ -24,19 +24,9 @@ const ImageProductBook = () => {
    const [slide, setSlide] = useState([]);
 
    const [thumbsSwiper, setThumbsSwiper] = useState(null);
-   const { products, BookId, product, setProduct } = useProductsContext();
+   const { product } = useProductsContext();
 
-   useEffect(() => {
-      products.map((item) => {
-         if (item.name === BookId) {
-            setProduct(item);
-         }
-      });
-
-
-
-   }, [BookId]);
-
+  
    return (
 
       <section>

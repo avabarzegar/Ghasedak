@@ -20,18 +20,14 @@ const SearchContext = ({ children }) => {
   const [translators, setTranslators] = useState([]);
   const [hashtags, setHashtags] = useState([]);
   const [available, setAvailable] = useState(false);
-  const [loading, setLoading] = useState(false);
+
   //   define states and variables end
 
   useEffect(() => {
-
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
+   
 
     // api config
-    const token = "DzTwF4yts6KjdR8NLdQdUtN0Y4YbcT35pVTy1Kek";
+    const token = "qtjAvo6VkoiFRlQ7lufYbRh3R4u6vEnKEN19JKSz";
 
     const config = {
       headers: { Authorization: `Bearer ${token}` },
@@ -191,7 +187,6 @@ const SearchContext = ({ children }) => {
         publishers,
         available,
         setAvailable,
-        loading
       }}
     >
       {children}

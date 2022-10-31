@@ -35,7 +35,7 @@ const NearestShopsSlides =()=>{
 
   
   useEffect(()=>{
-    const token ='DzTwF4yts6KjdR8NLdQdUtN0Y4YbcT35pVTy1Kek';
+    const token ='qtjAvo6VkoiFRlQ7lufYbRh3R4u6vEnKEN19JKSz';
    
     const config = {
       headers: { Authorization: `Bearer ${token}` }

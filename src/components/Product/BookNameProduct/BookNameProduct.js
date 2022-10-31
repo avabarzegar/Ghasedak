@@ -6,31 +6,9 @@ import './BookNameProduct.css';
 
 import { useProductsContext } from "../../../Context/ProductContext/ProductContext";
 
-const BookNameProduct = (porps) => {
-   const { products, BookId, product, setProduct } = useProductsContext();
-   // const [product, setProduct] = useState({});
+const BookNameProduct = () => {
+   const { product } = useProductsContext();
 
-
-   useEffect(() => {
-      products.map((item) => {
-         if (item.name === BookId) {
-            setProduct({
-               id: item.id,
-               name: item.name,
-               img: item.img,
-               category: item.category,
-               author: item.author,
-               translator: item.translator,
-               hashtag: item.hashtag,
-               price: item.price,
-               available: item.available,
-               publisher: item.publisher,
-            });
-         }
-      });
-
-
-   }, [BookId]);
    return (
       <Container className="BookNameProduct_parent_section">
          {product.img ? product.img.slice(0 , 1).map((item, index) => (

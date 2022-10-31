@@ -7,6 +7,10 @@ import SliderTopLine from "../../SliderTopLine/SliderTopLine";
 import SliderNavigation from "../../SliderNavigation/SliderNavigation";
 import LinkedCard from "../../LinkedCard/LinkedCard";
 import "./BookSlidesFirst.css";
+// context
+import { useProductsContext } from "../../../Context/ProductContext/ProductContext";
+import { useHomeContext } from "../../../Context/HomeContext/HomeContext";
+// context
 
 // Import Swiper styles
 import "swiper/css";
@@ -21,46 +25,47 @@ const BookSlidesFirst = () => {
 
   // refer hook end
 
-  // state hook
+  // states and variables
   const [swiperRef, setSwiperRef] = useState();
   const [slide, setSlide] = useState([]);
-  const [title, setTitle] = useState("");
-  // state hook end
+  const { setBookId } = useProductsContext();
+  const { bookSliderOne, bookOneTitle } = useHomeContext();
+  // states and variables end
 
-  useEffect(() => {
-    const token = "DzTwF4yts6KjdR8NLdQdUtN0Y4YbcT35pVTy1Kek";
+  // useEffect(() => {
+  //   const token = "qtjAvo6VkoiFRlQ7lufYbRh3R4u6vEnKEN19JKSz";
 
-    const config = {
-      headers: { Authorization: `Bearer ${token}` },
-    };
+  //   const config = {
+  //     headers: { Authorization: `Bearer ${token}` },
+  //   };
 
-    const bodyParameters = {
-      key: "value",
-    };
-    axios.post("/user/pwa/home", bodyParameters, config).then((response) => {
-      let slideData = [];
-      const responseData = response.data.daily_discounts.data;
+  //   const bodyParameters = {
+  //     key: "value",
+  //   };
+  //   axios.post("/user/pwa/home", bodyParameters, config).then((response) => {
+  //     let slideData = [];
+  //     const responseData = response.data.daily_discounts.data;
 
-      if (responseData === [] || responseData.length === 0) {
-        slideData = [];
-      } else {
-        responseData.map((item) => {
-          slideData.push({
-            id: item.id,
-            name: item.name,
-            image: item.images.data[0].image_url,
-          });
-        });
-        setTitle(response.data.daily_discount.title);
-      }
+  //     if (responseData === [] || responseData.length === 0) {
+  //       slideData = [];
+  //     } else {
+  //       responseData.map((item) => {
+  //         slideData.push({
+  //           id: item.id,
+  //           name: item.name,
+  //           image: item.images.data[0].image_url,
+  //         });
+  //       });
+  //       setTitle(response.data.daily_discount.title);
+  //     }
 
-      setSlide(slideData);
+  //     setSlide(slideData);
 
-      //    === get slides data from api ===
-    });
+  //     //    === get slides data from api ===
+  //   });
 
-    //    === get slides data from api ===
-  }, []);
+  //   //    === get slides data from api ===
+  // }, []);
 
   // == use swiper core autoplay / navigation ==
   SwiperCore.use([Autoplay, Navigation]);
@@ -81,7 +86,7 @@ const BookSlidesFirst = () => {
       {slide === [] || slide.length === 0 ? null : (
         <div className="special-discount">
           <SliderTopLine
-            text={title?title:null}
+            text={bookOneTitle ? bookOneTitle : null}
             textBorder="orange-bottom"
             containerBorder="off-bottom"
           >
@@ -145,12 +150,17 @@ const BookSlidesFirst = () => {
               },
             }}
           >
-            {slide.map((item) => {
+            {bookSliderOne.map((item) => {
               return (
                 // == return swiper slides ==
 
                 <SwiperSlide className="book-slide" key={item.id}>
-                  <LinkedCard name={item.name} img={item.image} />
+                  <LinkedCard
+                    name={item.name}
+                    img={item.image}
+                    click={() => setBookId(item.id)}
+                    Link={`/books/${item.id}`}
+                  />
                 </SwiperSlide>
                 // == return swiper slides end ==
               );

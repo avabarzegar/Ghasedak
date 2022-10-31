@@ -11,19 +11,10 @@ import StarRating from "../../../../assets/Images/icon/start-rating.svg";
 import axios from "axios";
 import { useProductsContext } from "../../../../Context/ProductContext/ProductContext";
 
-const IntroBooks = (props) => {
+const IntroBooks = () => {
 
 
-   const { products, BookId, product, setProduct } = useProductsContext();
-
-   useEffect(() => {
-      products.map((item) => {
-         if (item.name === BookId) {
-            setProduct(item);
-         }
-
-      });
-   }, [BookId]);
+   const {  product } = useProductsContext();
 
 
 

@@ -8,11 +8,11 @@ import Search from "./Cotainers/Search/Search";
 import SearchNull from "./Cotainers/SearchNull/SearchNull";
 import SingleBlog from "./Cotainers/SingleBlog/SingleBlog";
 import Loader from "./components/UI/Loader/Loader";
-import { useAppContext } from "./Context/SearchContext/SearchContext";
+import { useHomeContext } from "./Context/HomeContext/HomeContext";
 
 const App = () => {
   
-const {loading}=useAppContext();
+const {loading}=useHomeContext();
 
 //   useEffect(() => {
 //     setLoading(true);

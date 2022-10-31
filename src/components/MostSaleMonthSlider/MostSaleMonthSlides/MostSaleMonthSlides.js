@@ -8,15 +8,16 @@ import SliderTopLine from "../../SliderTopLine/SliderTopLine";
 import SliderNavigation from "../../SliderNavigation/SliderNavigation";
 import LinkedCard from "../../LinkedCard/LinkedCard";
 import SeeAllShops from "../../seeallshops/Seeallshops";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 import SliderLayout from "../../SliderLayout/SliderLayout";
-import InfoBooksDetail from "../../Product/DetailProductPage/InfoBooksDetail/InfoBooksDetail";
 
+// context
 import { useProductsContext } from "../../../Context/ProductContext/ProductContext";
+import { useHomeContext } from "../../../Context/HomeContext/HomeContext";
+// context
 
 // === mapping swiper slides ===
 const MostSaleMonthSlides = (props) => {
@@ -25,62 +26,11 @@ const MostSaleMonthSlides = (props) => {
   const navigationNextRef = useRef(null);
   // refer hook end
 
-  // state hook
+  // state hook and variables
   const [swiperRef, setSwiperRef] = useState();
-  const [slide, setSlide] = useState([]);
-  const { setBookId, BookId } = useProductsContext();
-  const [title, setTitle] = useState("");
-
-  // state hook end
-
-  useEffect(() => {
-    const token = "DzTwF4yts6KjdR8NLdQdUtN0Y4YbcT35pVTy1Kek";
-
-    const config = {
-      headers: { Authorization: `Bearer ${token}` },
-    };
-
-    const bodyParameters = {
-      key: "value",
-    };
-
-
-    
-
-
-
-    //    === get slides data from api ===
-    axios
-      .post("/user/pwa/home", bodyParameters, config)
-      .then((response) => {
-        const slideData = [];
-        const responseData = response.data.book_lists[1].books.data;
-
-        if (responseData === [] || responseData.length === 0) {
-          slideData = [];
-        } else {
-          responseData.map((item) => {
-            slideData.push({
-              id: item.id,
-              name: item.name,
-              image: item.images.data[0].image_url,
-              price: item.best_price,
-            });
-          });
-
-          setTitle(response.data.book_lists[1].title);
-        }
-
-        setSlide(slideData);
-       
-      })
-
-      .catch((err) => {
-        console.log(err.message);
-      });
-
-    //    === get slides data from api ===
-  }, []);
+  const { setBookId } = useProductsContext();
+  const { bookSliderThree, bookThreeTitle } = useHomeContext();
+  // state hook and variables end
 
   // == use swiper core autoplay / navigation ==
   SwiperCore.use([Autoplay, Navigation]);
@@ -103,7 +53,7 @@ const MostSaleMonthSlides = (props) => {
       {/* first section of slider  */}
 
       <SliderTopLine
-        text={title}
+        text={bookThreeTitle ? bookThreeTitle : null}
         textBorder="purple-bottom"
         containerBorder="gray-bottom"
       >
@@ -171,14 +121,12 @@ const MostSaleMonthSlides = (props) => {
               },
             }}
           >
-            {slide.map((item) => {
-         
-             
+            {bookSliderThree.map((item) => {
               return (
                 // == return swiper slides ==
 
                 <SwiperSlide className="book-slide-two" key={item.id}>
-                 <LinkedCard
+                  <LinkedCard
                     click={() => setBookId(item.id)}
                     Link={`/books/${item.id}`}
                     name={item.name}

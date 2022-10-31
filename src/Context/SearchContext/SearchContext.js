@@ -19,7 +19,7 @@ const SearchContext = ({ children }) => {
   const [allFilter, setAllFilter] = useState([]);
   const [translators, setTranslators] = useState([]);
   const [hashtags, setHashtags] = useState([]);
-  const [available, setAvailable] = useState(true);
+  const [available, setAvailable] = useState(false);
   //   define states and variables end
 
   useEffect(() => {

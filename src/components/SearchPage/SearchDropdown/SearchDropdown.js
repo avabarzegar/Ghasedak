@@ -93,8 +93,7 @@ function CustomDropdown() {
       });
 
       // store filter data in variable
-    }
-    else {
+    } else {
       // if we do not have any filter
       navigate("*");
       // if we do not have any filter -end
@@ -164,8 +163,7 @@ function CustomDropdown() {
       });
 
       // update all books list which will be shown -end
-    }
-    else {
+    } else {
       // if we do not have any filter
       navigate("*");
       // if we do not have any filter -end
@@ -236,8 +234,7 @@ function CustomDropdown() {
       // update all books list which will be shown -end
 
       // store filter data in variable
-    }
-    else {
+    } else {
       // if we do not have any filter
       navigate("*");
       // if we do not have any filter -end
@@ -310,8 +307,7 @@ function CustomDropdown() {
       // update all books list which will be shown -end
 
       // store filter data in variable
-    }
-    else {
+    } else {
       // if we do not have any filter
       navigate("*");
       // if we do not have any filter -end
@@ -379,8 +375,7 @@ function CustomDropdown() {
       });
 
       // update all books list which will be shown -end
-    }
-    else {
+    } else {
       // if we do not have any filter
       navigate("*");
       // if we do not have any filter -end
@@ -396,69 +391,73 @@ function CustomDropdown() {
     <div className="search-dropdown">
       <DropdownButton
         as={ButtonGroup}
-        variant={categories[0]}
-        title={categories[0]}
+        variant={categories[0] ? categories[0] : null}
+        title={categories[0] ? categories[0] : null}
       >
-        {categories.map((item) => (
-          <Dropdown.Item
+        {categories.map((item) => [
+          [<Dropdown.Item
             onClick={(event) => categoriesHandler(event, categories[0])}
             key={item.id}
           >
             {item.name}
-          </Dropdown.Item>
-        ))}
+          </Dropdown.Item>]
+        ])}
       </DropdownButton>
-      <DropdownButton as={ButtonGroup} variant={authors[0]} title={authors[0]}>
-        {authors.map((item) => (
-          <Dropdown.Item
+      <DropdownButton
+        as={ButtonGroup}
+        variant={authors[0] ? authors[0] : null}
+        title={authors[0] ? authors[0] : null}
+      >
+        {authors.map((item) => [
+          [<Dropdown.Item
             onClick={(event) => authorsHandler(event, authors[0])}
             key={item.id}
           >
             {item.name}
-          </Dropdown.Item>
-        ))}
+          </Dropdown.Item>]
+        ])}
       </DropdownButton>
       <DropdownButton
         as={ButtonGroup}
-        variant={translators[0]}
-        title={translators[0]}
+        variant={translators[0] ? translators[0] : null}
+        title={translators[0] ? translators[0] : null}
       >
-        {translators.map((item) => (
-          <Dropdown.Item
+        {translators.map((item) => [
+          [<Dropdown.Item
             onClick={(event) => translatorsHandler(event, translators[0])}
             key={item.id}
           >
             {item.name}
-          </Dropdown.Item>
-        ))}
+          </Dropdown.Item>]
+        ])}
       </DropdownButton>
       <DropdownButton
         as={ButtonGroup}
-        variant={hashtags[0]}
-        title={hashtags[0]}
+        variant={hashtags[0] ? hashtags[0] : null}
+        title={hashtags[0] ? hashtags[0] : null}
       >
-        {hashtags.map((item) => (
-          <Dropdown.Item
+        {hashtags.map((item) => [
+          [<Dropdown.Item
             onClick={(event) => hashtagsHandler(event, hashtags[0])}
             key={item.id}
           >
             {item.name}
-          </Dropdown.Item>
-        ))}
+          </Dropdown.Item>]
+        ])}
       </DropdownButton>
       <DropdownButton
         as={ButtonGroup}
-        variant={publishers[0]}
-        title={publishers[0]}
+        variant={publishers[0] ? publishers[0] : null}
+        title={publishers[0] ? publishers[0] : null}
       >
-        {publishers.map((item) => (
-          <Dropdown.Item
+        {publishers.map((item) => [
+          [<Dropdown.Item
             onClick={(event) => publishersHandler(event, publishers[0])}
             key={item.id}
           >
             {item.name}
-          </Dropdown.Item>
-        ))}
+          </Dropdown.Item>]
+        ])}
       </DropdownButton>
     </div>
   );

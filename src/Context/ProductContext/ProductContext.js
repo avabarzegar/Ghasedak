@@ -30,7 +30,7 @@ const ProductContextProvider = ({ children }) => {
           productsData.push({
             id: item.id,
             name: item.name,
-            img: item.images.data[0].image_url,
+            img: item.images.data,
             category: item.categories,
             author: item.authors,
             translator: item.translators,

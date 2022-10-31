@@ -41,26 +41,27 @@ const ImageProductBook = () => {
 
       <section>
          <div className="parent-section-img-product-book">
-            {/* <Swiper
+            <Swiper
                style={{
                   "--swiper-navigation-color": "#fff",
                   "--swiper-pagination-color": "#fff",
                }}
                spaceBetween={10}
-               navigation={true}
-               thumbs={{ swiper: thumbsSwiper }}
+               navigation={false}
                modules={[FreeMode, Navigation, Thumbs]}
                className="mySwiper2"
+               thumbs={{swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null}}
+
             >
 
-               <SwiperSlide >
-                  <img src={product.img} className="BookNameProduct_img" />
-               </SwiperSlide>
 
-
-
-            </Swiper> */}
-            {/* <Swiper
+               {product.img ? product.img.map((item, index) => (
+                 [ <SwiperSlide >
+                  <img src={item.image_url} key={index+2} className="BookNameProduct_img" />
+               </SwiperSlide>]
+               )) : <p>عکسی برای این محصول وجود ندارد</p>}
+            </Swiper>
+            <Swiper
                onSwiper={setThumbsSwiper}
                spaceBetween={10}
                slidesPerView={4}
@@ -69,12 +70,17 @@ const ImageProductBook = () => {
                modules={[FreeMode, Navigation, Thumbs]}
                className="mySwiper"
             >
-               
-                     <SwiperSlide >
-                        <img src={product.img} className="BookNameProduct_img" />
-                     </SwiperSlide>
-               
-            </Swiper> */}
+
+
+               {product.img ? product.img.map((item, index) => (
+                  [<SwiperSlide >
+                     <img src={item.image_url} key={index+1} className="BookNameProduct_img" />
+                  </SwiperSlide>]
+               )) : <p>no image</p>}
+
+
+
+            </Swiper>
          </div>
       </section>
 

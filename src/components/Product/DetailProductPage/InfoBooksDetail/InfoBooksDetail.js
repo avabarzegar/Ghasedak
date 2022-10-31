@@ -21,11 +21,9 @@ const InfoBooksDetail = (props) => {
         setProduct(item);
       }
     });
-   
   }, [bookId]);
   // state and variables -end
   
-  console.log(product)
   return (
     <>
       <div className="publisher_name">

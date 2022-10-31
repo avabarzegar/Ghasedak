@@ -1,9 +1,8 @@
 // Import Swiper React components
 import { SwiperSlide, Swiper } from "swiper/react";
 import SwiperCore, { Navigation, Autoplay } from "swiper";
-import { React, useState, useEffect, useRef, useCallback } from "react";
+import { React, useState, useRef, useCallback } from "react";
 import Col from "react-bootstrap/Col";
-import axios from "axios";
 import SliderTopLine from "../../SliderTopLine/SliderTopLine";
 import SliderNavigation from "../../SliderNavigation/SliderNavigation";
 import LinkedCard from "../../LinkedCard/LinkedCard";
@@ -15,8 +14,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 import SliderLayout from "../../SliderLayout/SliderLayout";
+
 // context
 import { useProductsContext } from "../../../Context/ProductContext/ProductContext";
+import { useHomeContext } from "../../../Context/HomeContext/HomeContext";
+// context
 
 // === mapping swiper slides ===
 const ThirdPublisherSlider = (props) => {
@@ -27,47 +29,9 @@ const ThirdPublisherSlider = (props) => {
 
   // state hook
   const [swiperRef, setSwiperRef] = useState();
-  const [slide, setSlide] = useState([]);
-  const { setBookId, BookId } = useProductsContext();
-  const [title, setTitle] = useState("");
+  const { setBookId } = useProductsContext();
+  const { bookSliderSix, bookSixTitle } = useHomeContext();
   // state hook end
-
-  useEffect(() => {
-    const token = "qtjAvo6VkoiFRlQ7lufYbRh3R4u6vEnKEN19JKSz";
-
-    const config = {
-      headers: { Authorization: `Bearer ${token}` },
-    };
-
-    const bodyParameters = {
-      key: "value",
-    };
-
-    //    === get slides data from api ===
-    axios
-      .post("/user/pwa/home", bodyParameters, config)
-      .then((response) => {
-        const slideData = [];
-        response.data.book_lists[4].books.data.map((item) => {
-          slideData.push({
-            id: item.id,
-            name: item.name,
-            image: item.images.data[0].image_url,
-            price: item.best_price,
-          });
-        });
-
-        setTitle(response.data.book_lists[4].title);
-
-        setSlide(slideData);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-      // setBookId('title')
-     
-    //    === get slides data from api ===
-  }, []);
 
   // == use swiper core autoplay / navigation ==
   SwiperCore.use([Autoplay, Navigation]);
@@ -83,13 +47,12 @@ const ThirdPublisherSlider = (props) => {
     swiperRef.slideNext();
   }, [swiperRef]);
 
-
   return (
     <section>
       {/* first section of slider  */}
 
       <SliderTopLine
-        text={title}
+        text={bookSixTitle ? bookSixTitle : null}
         textBorder="purple-bottom"
         containerBorder="gray-bottom"
       >
@@ -157,7 +120,7 @@ const ThirdPublisherSlider = (props) => {
               },
             }}
           >
-            {slide.map((item) => {
+            {bookSliderSix.map((item) => {
               return (
                 // == return swiper slides ==
 

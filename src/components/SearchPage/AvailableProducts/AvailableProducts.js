@@ -52,7 +52,7 @@ const AvailableProducts = () => {
     } else {
       //  if the toggler button be off
       // setNewData([]);
-      navigate("*");
+      // navigate("*");
       //  if the toggler button be off -end
     }
   };

@@ -21,7 +21,7 @@ const SearchInput = (props) => {
   } = useAppContext();
 
   // define variables, states and refs end
-
+// console.log(searchData)
   // handle when the input value change
   const inputChangeHandler = (event) => {
     setInputChanage(event.target.value);
@@ -56,17 +56,16 @@ const SearchInput = (props) => {
         setSearchData(DataBook);
         // save the Data of search in variable
       }
-      if (
-        DataBook === [] ||
-        DataBook === undefined ||
-        DataBook.length === 0 ||
-        DataBook === null
-      ) {
-        navigate("*");
-      }
+      // if (
+      //   DataBook === [] ||
+      //   DataBook === undefined ||
+      //   DataBook.length === 0 ||
+      //   DataBook === null
+      // ) {
+      //   navigate("*");
+      // }
     }
   };
-  console.log(newData)
 
   // console.log(searchData);
   //    show search result page by clicking enter key - end
@@ -94,17 +93,16 @@ const SearchInput = (props) => {
       setSearchData(DataBook);
       // save the Data of search in variable
     }
-    if (
-      DataBook === [] ||
-      DataBook === undefined ||
-      DataBook.length === 0 ||
-      DataBook === null
-    ) {
-      navigate("*");
-    }
+    // if (
+    //   DataBook === [] ||
+    //   DataBook === undefined ||
+    //   DataBook.length === 0 ||
+    //   DataBook === null
+    // ) {
+    //   navigate("*");
+    // }
   };
   //    show search result page by clicking on search button - end
-  console.log(newData)
 
   return (
     <div className="search-input-container">

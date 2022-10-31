@@ -13,13 +13,15 @@ const AppliedFilters = () => {
 
   return (
     <>
-      {sorting == [] || sorting.length === 0 ? null : (
-        <section className="applied-filters">
-          <SearchFilterHeadLayout icon={Icon} title="فیلترهای اعمال شده">
-            <FiltersList />
-          </SearchFilterHeadLayout>
-        </section>
-      )}
+      {/* {sorting == [] || sorting.length === 0 ? null : ( */}
+      <section
+        className={sorting.length === 0 ? "not-applied-filters" : "applied-filters"}
+      >
+        <SearchFilterHeadLayout icon={Icon} title="فیلترهای اعمال شده">
+          <FiltersList />
+        </SearchFilterHeadLayout>
+      </section>
+      {/* )} */}
     </>
   );
 };

@@ -9,23 +9,12 @@ import StyledButton from "../../../UI/Button/Button";
 import AddToCart from "../../../../assets/Images/icon/vuesax-add-to-card.svg";
 // context
 import { useProductsContext } from "../../../../Context/ProductContext/ProductContext";
-import { useEffect } from "react";
 
 const InfoBooksDetail = (props) => {
   // state and variables
-  const { products, bookId, product, setProduct } = useProductsContext();
+  const { product } = useProductsContext();
 
-  useEffect(() => {
-    products.map((item) => {
-      if (item.id === bookId) {
-        setProduct(item);
-      }
-    });
-   
-  }, [bookId]);
-  // state and variables -end
-  
-  console.log(product)
+  console.log(product);
   return (
     <>
       <div className="publisher_name">

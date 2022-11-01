@@ -15,7 +15,9 @@ import { useProductsContext } from "../../../../Context/ProductContext/ProductCo
 const InfoBooksDetail = (props) => {
   // state and variables
   const { product } = useProductsContext();
-
+  const alertshow = () => {
+    alert("میتوانید برای خرید کتاب از طریق اپلیکیشن قاصدک اقدام کنید");
+  }
 
   return (
     <>
@@ -94,7 +96,7 @@ const InfoBooksDetail = (props) => {
         <CounterBooks />
 
 
-        <StyledButton href="#" button="add-to-cart-detailpage">
+        <StyledButton onClick={alertshow}  button="add-to-cart-detailpage">
           <img src={AddToCart} alt="img" />
           <span className="btn_footer_inner_text add-to-cart-detail-page-text">
             افزودن به سبد خرید

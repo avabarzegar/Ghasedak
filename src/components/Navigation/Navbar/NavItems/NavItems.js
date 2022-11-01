@@ -9,6 +9,7 @@ import Download from "../../../../assets/Images/icon/receive-square.svg";
 // === making navbar list ===
 
 const NavItems = () => {
+  
   return (
     <Container className="navbar-parent">
       <Navbar className="nav-main" expand="md">

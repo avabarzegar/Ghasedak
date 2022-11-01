@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Layout from "./components/Layout/Layout";
 import Home from "./Cotainers/Home/Home";
 import Blog from "./Cotainers/Blog/Blog";
 import Product from "./components/Product/Product";
@@ -11,20 +10,14 @@ import Loader from "./components/UI/Loader/Loader";
 import { useHomeContext } from "./Context/HomeContext/HomeContext";
 
 const App = () => {
-  
-const {loading}=useHomeContext();
-
-//   useEffect(() => {
-//     setLoading(true);
-//     setTimeout(() => {
-//       setLoading(false);
-//     }, 2000);
-//   }, []);
-
+  const { loading } = useHomeContext();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Router>
       {loading ? (
-        <Loader/>
+        <Loader />
       ) : (
         <Routes>
           <Route path="/" exact element={<Home />} />

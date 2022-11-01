@@ -74,7 +74,7 @@ function CustomDropdown() {
     // return book data with selected category -end
 
     if (filter.length > 0) {
-      // navigate("/search");
+      navigate("/search");
 
       setNewData((prevState) => {
         const updatedData = [];
@@ -92,11 +92,9 @@ function CustomDropdown() {
 
         return returnData;
       });
-      if (newData.length > 0) {
-        navigate("/search");
-      } else {
-        navigate("*");
-      }
+      // update all books list which will be shown -end
+    } else {
+      navigate("*");
     }
   };
 
@@ -146,7 +144,7 @@ function CustomDropdown() {
     // return book data with selected author -end
 
     if (filter.length > 0) {
-      // navigate("/search");
+      navigate("/search");
 
       // update all books list which will be shown
       setNewData((prevState) => {
@@ -163,11 +161,10 @@ function CustomDropdown() {
         // make data unique -end
         return returnData;
       });
-      if (newData.length > 0) {
-        navigate("/search");
-      }
 
       // update all books list which will be shown -end
+    } else {
+      navigate("*");
     }
 
     console.log(newData);
@@ -217,7 +214,7 @@ function CustomDropdown() {
     // return book data with selected translator -end
 
     if (filter.length > 0) {
-      // navigate("/search");
+      navigate("/search");
 
       // update all books list which will be shown
       setNewData((prevState) => {
@@ -234,11 +231,10 @@ function CustomDropdown() {
         // make data unique -end
         return returnData;
       });
-      if (newData.length > 0) {
-        navigate("/search");
-      }
 
       // update all books list which will be shown -end
+    } else {
+      navigate("*");
     }
 
     console.log(newData);
@@ -290,7 +286,7 @@ function CustomDropdown() {
     // return book data with selected hashtag -end
 
     if (filter.length > 0) {
-      // navigate("/search");
+      navigate("/search");
 
       // update all books list which will be shown
       setNewData((prevState) => {
@@ -307,11 +303,10 @@ function CustomDropdown() {
         // make data unique -end
         return returnData;
       });
-      if (newData.length > 0) {
-        navigate("/search");
-      }
 
       // update all books list which will be shown -end
+    } else {
+      navigate("*");
     }
 
     console.log(newData);
@@ -360,7 +355,7 @@ function CustomDropdown() {
     // return book data with selected publisher -end
 
     if (filter.length > 0) {
-      // navigate("/search");
+      navigate("/search");
 
       // update all books list which will be shown
       setNewData((prevState) => {
@@ -377,11 +372,10 @@ function CustomDropdown() {
         // make data unique -end
         return returnData;
       });
-      if (newData.length > 0) {
-        navigate("/search");
-      }
 
       // update all books list which will be shown -end
+    } else {
+      navigate("*");
     }
 
     console.log(newData);

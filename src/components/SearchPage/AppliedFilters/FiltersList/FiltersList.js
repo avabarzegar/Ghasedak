@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 // define all applied filters list
 const FiltersList = () => {
   // define state and variables
-  const { sorting, setSorting, setNewData, newData, searchData } =
+  const { sorting, setSorting, setNewData, newData, searchData, available } =
     useAppContext();
 
   const navigate = useNavigate();
@@ -16,16 +16,21 @@ const FiltersList = () => {
   useEffect(() => {
     // set book data to null if we do not have any applied filter or search input
     if (
-      sorting === [] ||
-      sorting === undefined ||
-      sorting.length === 0 ||
-      sorting === null
+      (sorting === [] ||
+        sorting === undefined ||
+        sorting.length === 0 ||
+        sorting === null)
+         &&
+      available === false
     ) {
       setNewData(searchData);
     }
+    if (newData === [] && searchData === [] && available === false) {
+      navigate("*");
+    }
 
     // set book data to null if we do not have any applied filter or search input -end
-  }, [newData, sorting]);
+  }, [newData, sorting, available,searchData]);
   // delete specific filter by clicking on its delete button
   const deleteFilterHandler = (selected) => {
     // delete filter name

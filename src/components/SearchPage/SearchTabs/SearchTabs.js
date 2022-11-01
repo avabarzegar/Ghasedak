@@ -23,17 +23,17 @@ function SearchTabs() {
           // ) : (
             newData.map((item) => {
               return (
-                <Col className="search-page-books" xl={3} lg={4} sm={6}>
+                [<Col className="search-page-books" xl={3} lg={4} sm={6}>
                   <LinkedCard
                     className="search-book-card"
                     click={()=>setBookId(item.id)}
-                    Link={`/products/${item.id}`}
+                    Link={`/books/${item.id}`}
                     key={item.id}
-                    img={item.img}
+                    img={item.img.length >0 ? item.img[0].image_url:null}
                     name={item.name}
                     price={item.price}
                   />
-                </Col>
+                </Col>]
               );
             })
           // )

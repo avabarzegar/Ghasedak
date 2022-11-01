@@ -12,7 +12,7 @@ const AvailableProducts = () => {
   // variables and states
   const { bookData, setNewData, available, setAvailable, searchData } =
     useAppContext();
-  const [filter, setFilter] = useState([]);
+  // const [filter, setFilter] = useState([]);
   const navigate = useNavigate();
   // variables and states -end
 
@@ -21,54 +21,31 @@ const AvailableProducts = () => {
     // handle the show / hide available toggler
 
     setAvailable((current) => !current);
+
     // handle the show / hide available toggler -end
-    let previousData = [];
-    if (available === false) {
+  };
+  useEffect(() => {
+    if (available === true) {
       // return available book by clicking on button
-      // let filter = bookData;
-      setFilter(bookData.filter((item) => item.available === true));
+      let filter = bookData;
+      filter = bookData.filter((item) => item.available === true);
       console.log(filter);
       // return available book by clicking on button -end
-
-      if (
-        filter === [] ||
-        filter === undefined ||
-        filter.length === 0 ||
-        filter === null
-      ) {
-        //  if we do not have any filter list
-        navigate("*");
-      } else {
-        // update search data state
-        navigate("/search");
-        setNewData(filter);
+      setNewData(filter);
+      navigate("/search");
+    } else {
+      setNewData(searchData);
+      if (searchData.length === 0) {
+        // navigate("*");
       }
     }
-    // else {
-    //   //  if the toggler button be off
-    //   setNewData(searchData);
-    // }
-  };
-  // filter the available books -end
-  // useEffect(() => {
-  //   if (
-  //     filter === [] ||
-  //     filter === undefined ||
-  //     filter.length === 0 ||
-  //     filter === null
-  //   ) {
-  //     //  if we do not have any filter list
-  //     navigate("*");
-  //   } else {
-  //     // update search data state
-  //     navigate("/search");
-  //     setNewData(filter);
-  //   }
-  // },[filter]);
+  }, [available]);
+  console.log(available);
   return (
     <div className="available-products">
       <Form>
         <Form.Check
+          checked={available}
           type="switch"
           id="custom-switch"
           label="نمایش کتاب های موجود"

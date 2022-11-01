@@ -24,8 +24,6 @@ const SearchContext = ({ children }) => {
   //   define states and variables end
 
   useEffect(() => {
-   
-
     // api config
     const token = "qtjAvo6VkoiFRlQ7lufYbRh3R4u6vEnKEN19JKSz";
 
@@ -42,12 +40,13 @@ const SearchContext = ({ children }) => {
     axios
       .post("/books/list/all", bodyParameters, config)
       .then((response) => {
+        console.log(response.data);
         const bookApi = [];
         response.data.data.map((item) => {
           bookApi.push({
             id: item.id,
             name: item.name,
-            img: item.images.data[0].image_url,
+            img: item.images.data,
             category: item.categories,
             author: item.authors,
             translator: item.translators,
@@ -55,13 +54,16 @@ const SearchContext = ({ children }) => {
             price: item.best_price,
             available: item.is_available,
             publisher: item.publisher,
+            
           });
         });
         setBookData(bookApi);
+        console.log(bookApi);
       })
       .catch((err) => {
         console.log(err.message);
       });
+    console.log(bookData);
     // book list data -end
 
     // book  category list
@@ -159,6 +161,7 @@ const SearchContext = ({ children }) => {
       });
     // book author list -end
   }, []);
+  console.log(newData);
   return (
     <CoinsContext.Provider
       value={{

@@ -73,11 +73,9 @@ function CustomDropdown() {
     });
     // return book data with selected category -end
 
-    // store filter data in variable
     if (filter.length > 0) {
       // navigate("/search");
-      setAllData(["1", "2"]);
-      // store filter data in variable -end
+
       setNewData((prevState) => {
         const updatedData = [];
         filter.map((items) => {
@@ -99,14 +97,7 @@ function CustomDropdown() {
       } else {
         navigate("*");
       }
-
-      // store filter data in variable
     }
-    // else {
-    //   // if we do not have any filter
-    //   navigate("*");
-    //   // if we do not have any filter -end
-    // }
   };
 
   const authorsHandler = (event, title) => {
@@ -154,7 +145,6 @@ function CustomDropdown() {
     });
     // return book data with selected author -end
 
-    // store filter data in variable
     if (filter.length > 0) {
       // navigate("/search");
 
@@ -179,11 +169,7 @@ function CustomDropdown() {
 
       // update all books list which will be shown -end
     }
-    // else {
-    //   // if we do not have any filter
-    //   navigate("*");
-    //   // if we do not have any filter -end
-    // }
+
     console.log(newData);
   };
 
@@ -230,7 +216,6 @@ function CustomDropdown() {
     });
     // return book data with selected translator -end
 
-    // store filter data in variable
     if (filter.length > 0) {
       // navigate("/search");
 
@@ -254,14 +239,8 @@ function CustomDropdown() {
       }
 
       // update all books list which will be shown -end
-
-      // store filter data in variable
     }
-    // else {
-    //   // if we do not have any filter
-    //   navigate("*");
-    //   // if we do not have any filter -end
-    // }
+
     console.log(newData);
   };
 
@@ -310,7 +289,6 @@ function CustomDropdown() {
     });
     // return book data with selected hashtag -end
 
-    // store filter data in variable
     if (filter.length > 0) {
       // navigate("/search");
 
@@ -334,14 +312,8 @@ function CustomDropdown() {
       }
 
       // update all books list which will be shown -end
-
-      // store filter data in variable
     }
-    // else {
-    //   // if we do not have any filter
-    //   navigate("*");
-    //   // if we do not have any filter -end
-    // }
+
     console.log(newData);
   };
 
@@ -387,7 +359,6 @@ function CustomDropdown() {
     });
     // return book data with selected publisher -end
 
-    // store filter data in variable
     if (filter.length > 0) {
       // navigate("/search");
 
@@ -412,11 +383,7 @@ function CustomDropdown() {
 
       // update all books list which will be shown -end
     }
-    // else {
-    //   // if we do not have any filter
-    //   navigate("*");
-    //   // if we do not have any filter -end
-    // }
+
     console.log(newData);
   };
   // useEffect(() => {

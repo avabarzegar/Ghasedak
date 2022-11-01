@@ -20,6 +20,7 @@ const SearchContext = ({ children }) => {
   const [translators, setTranslators] = useState([]);
   const [hashtags, setHashtags] = useState([]);
   const [available, setAvailable] = useState(false);
+  const [productHashtag, setProductHashtag] = useState([]);
 
   //   define states and variables end
 
@@ -54,7 +55,6 @@ const SearchContext = ({ children }) => {
             price: item.best_price,
             available: item.is_available,
             publisher: item.publisher,
-            
           });
         });
         setBookData(bookApi);
@@ -190,6 +190,8 @@ const SearchContext = ({ children }) => {
         publishers,
         available,
         setAvailable,
+        productHashtag,
+        setProductHashtag,
       }}
     >
       {children}

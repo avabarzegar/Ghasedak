@@ -25,9 +25,9 @@ const FiltersList = () => {
     ) {
       setNewData(searchData);
     }
-    if (newData === [] && searchData === [] && available === false) {
-      navigate("*");
-    }
+    // if (newData === [] && searchData === [] && available === false) {
+    //   navigate("*");
+    // }
 
     // set book data to null if we do not have any applied filter or search input -end
   }, [newData, sorting, available,searchData]);

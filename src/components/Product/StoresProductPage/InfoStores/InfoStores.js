@@ -24,31 +24,23 @@ const InfoStores = () => {
 
     const bodyParameters = {
       bookId: bookId,
-      storeId: bookId
+      storeId: bookId,
     };
     // api config -end
     // shop list data
     axios
       .post("/books/stores/show", bodyParameters, config)
       .then((response) => {
-
         const dataList = response.data.data;
-        console.log(dataList)
-
-
-
         setStore(dataList);
-
       });
-    console.log(store)
 
     // shop list data -end
   }, [bookId]);
   return (
     <div className="parent-section-info-stores">
       <h1 className="shops-title">فروشندگان</h1>
-      {store ?
-
+      {store ? (
         <Container className="Container-section-infostores">
           <div className="parent-section-name-of-bookstore">
             <img src={BgGray} alt="img of bookstore" />
@@ -61,9 +53,7 @@ const InfoStores = () => {
           <div className="parent-section-price-and-situation">
             <div>
               <img src={Car} alt="img of car" />
-              <span>
-                آماده ارسال
-              </span>
+              <span>آماده ارسال</span>
             </div>
             <div>
               <span>{store.cart_price ? store.cart_price : "---"}</span>
@@ -71,8 +61,9 @@ const InfoStores = () => {
             </div>
           </div>
         </Container>
-
-        : <p>فروشنده ای برای این کتاب وجود ندارد</p>}
+      ) : (
+        <p>فروشنده ای برای این کتاب وجود ندارد</p>
+      )}
     </div>
   );
 };

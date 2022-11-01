@@ -1,12 +1,10 @@
 // Import Swiper React components
 import { SwiperSlide, Swiper } from "swiper/react";
 import SwiperCore, { Navigation, Autoplay } from "swiper";
-import { React, useState, useEffect, useRef, useCallback } from "react";
+import { React, useState, useRef, useCallback } from "react";
 import Col from "react-bootstrap/Col";
-import axios from "axios";
 import SliderTopLine from "../../SliderTopLine/SliderTopLine";
 import SliderNavigation from "../../SliderNavigation/SliderNavigation";
-import BookSimpleCard from "../../BookCard/BookSimpleCard/BookSimpleCard";
 import SeeAllShops from "../../seeallshops/Seeallshops";
 import LinkedCard from "../../LinkedCard/LinkedCard";
 // context
@@ -28,48 +26,9 @@ const MostSaleYearSlides = () => {
 
   // state hook
   const [swiperRef, setSwiperRef] = useState();
-  const [slide, setSlide] = useState([]);
-  const { setBookId, BookId } = useProductsContext();
+  const { setBookId } = useProductsContext();
   const { bookSliderTwo, bookTwoTitle } = useHomeContext();
-  const [title, setTitle] = useState("");
-
   // state hook end
-
-  // useEffect(() => {
-  //   const token = "qtjAvo6VkoiFRlQ7lufYbRh3R4u6vEnKEN19JKSz";
-
-  //   const config = {
-  //     headers: { Authorization: `Bearer ${token}` },
-  //   };
-
-  //   const bodyParameters = {
-  //     key: "value",
-  //   };
-
-  //   //    === get slides data from api ===
-  //   axios
-  //     .post("/user/pwa/home", bodyParameters, config)
-  //     .then((response) => {
-  //       const slideData = [];
-  //       response.data.book_lists[0].books.data.map((item) => {
-  //         slideData.push({
-  //           id: item.id,
-  //           name: item.name,
-  //           image: item.images.data[1].image_url,
-  //           price: item.best_price,
-  //         });
-  //       });
-
-  //       setTitle(response.data.book_lists[0].title);
-
-  //       setSlide(slideData);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err.message);
-  //     });
-
-  //   //    === get slides data from api ===
-  // }, []);
 
   // == use swiper core autoplay / navigation ==
   SwiperCore.use([Autoplay, Navigation]);

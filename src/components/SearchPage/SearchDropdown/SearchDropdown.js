@@ -29,7 +29,7 @@ function CustomDropdown() {
   const saveSelectedFilter = [];
 
   // states and ref end
-  console.log(allData);
+
   const categoriesHandler = (event, title) => {
     if (available === true) {
       setAvailable(false);
@@ -93,8 +93,6 @@ function CustomDropdown() {
         return returnData;
       });
       // update all books list which will be shown -end
-    } else {
-      navigate("*");
     }
   };
 
@@ -163,11 +161,7 @@ function CustomDropdown() {
       });
 
       // update all books list which will be shown -end
-    } else {
-      navigate("*");
     }
-
-    console.log(newData);
   };
 
   const translatorsHandler = (event, title) => {
@@ -233,11 +227,7 @@ function CustomDropdown() {
       });
 
       // update all books list which will be shown -end
-    } else {
-      navigate("*");
     }
-
-    console.log(newData);
   };
 
   const hashtagsHandler = (event, title) => {
@@ -305,11 +295,7 @@ function CustomDropdown() {
       });
 
       // update all books list which will be shown -end
-    } else {
-      navigate("*");
     }
-
-    console.log(newData);
   };
 
   const publishersHandler = (event, title) => {
@@ -374,11 +360,7 @@ function CustomDropdown() {
       });
 
       // update all books list which will be shown -end
-    } else {
-      navigate("*");
     }
-
-    console.log(newData);
   };
   // useEffect(() => {
   //   if (newData.length < 1 && searchData.length<1) {

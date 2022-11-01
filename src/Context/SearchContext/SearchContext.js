@@ -41,7 +41,6 @@ const SearchContext = ({ children }) => {
     axios
       .post("/books/list/all", bodyParameters, config)
       .then((response) => {
-        console.log(response.data);
         const bookApi = [];
         response.data.data.map((item) => {
           bookApi.push({
@@ -58,12 +57,10 @@ const SearchContext = ({ children }) => {
           });
         });
         setBookData(bookApi);
-        console.log(bookApi);
       })
       .catch((err) => {
         console.log(err.message);
       });
-    console.log(bookData);
     // book list data -end
 
     // book  category list
@@ -161,7 +158,7 @@ const SearchContext = ({ children }) => {
       });
     // book author list -end
   }, []);
-  console.log(newData);
+
   return (
     <CoinsContext.Provider
       value={{

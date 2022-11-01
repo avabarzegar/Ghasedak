@@ -29,7 +29,6 @@ const AvailableProducts = () => {
       // return available book by clicking on button
       let filter = bookData;
       filter = bookData.filter((item) => item.available === true);
-      console.log(filter);
       // return available book by clicking on button -end
       setNewData(filter);
       navigate("/search");
@@ -40,7 +39,6 @@ const AvailableProducts = () => {
       }
     }
   }, [available]);
-  console.log(available);
   return (
     <div className="available-products">
       <Form>

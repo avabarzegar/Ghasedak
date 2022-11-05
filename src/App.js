@@ -20,12 +20,12 @@ const App = () => {
         <Loader />
       ) : (
         <Routes>
-          <Route path="/" exact element={<Home />} />
-          <Route path="/books/:id" element={<Product />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/search" element={<Search />} />
-          <Route path="/" element={<SingleBlog />} />
-          <Route path="*" element={<SearchNull />} />
+            <Route path="/" exact element={<Home />} />
+            <Route path="/books/:id" element={<Product />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/" element={<SingleBlog />} />
+            <Route path="*" element={<SearchNull />} />
         </Routes>
       )}
     </Router>

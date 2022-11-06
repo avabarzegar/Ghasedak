@@ -21,6 +21,8 @@ const SearchContext = ({ children }) => {
   const [hashtags, setHashtags] = useState([]);
   const [available, setAvailable] = useState(false);
   const [productHashtag, setProductHashtag] = useState([]);
+  const [allData, setAllData] = useState([]);
+  const [prevData, setPrevData] = useState([]);
 
   //   define states and variables end
 
@@ -189,6 +191,10 @@ const SearchContext = ({ children }) => {
         setAvailable,
         productHashtag,
         setProductHashtag,
+        allData,
+        setAllData,
+        prevData,
+        setPrevData,
       }}
     >
       {children}

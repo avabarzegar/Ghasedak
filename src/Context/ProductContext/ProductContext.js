@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 
 
@@ -24,6 +25,7 @@ const ProductContextProvider = ({ children }) => {
     const bodyParameters = {
       bookId: bookId,
     };
+   
     // api config -end
     // book list data
     axios
@@ -57,10 +59,10 @@ const ProductContextProvider = ({ children }) => {
         console.log(err.message);
       });
     // book list data -end
-  }, [bookId]);
+  },[bookId]);
   //   get data from api -end
 
-
+ 
   return (
     <ProductsContext.Provider
       value={{

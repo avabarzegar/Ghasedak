@@ -34,7 +34,7 @@ const SearchBreadcrumb = (props) => {
             {`جستجوی عبارت: ${searchValue}`}
           </span>
         </OverlayTrigger>
-        <span className="search-result">{`(${newData.length} محصول)`}</span>
+        <span className="search-result">{`(${newData? newData.length : "0"} محصول)`}</span>
       </div>
     </section>
   );

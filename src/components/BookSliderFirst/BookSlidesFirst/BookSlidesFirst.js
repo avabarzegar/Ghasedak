@@ -32,40 +32,6 @@ const BookSlidesFirst = () => {
   const { bookSliderOne, bookOneTitle } = useHomeContext();
   // states and variables end
 
-  // useEffect(() => {
-  //   const token = "qtjAvo6VkoiFRlQ7lufYbRh3R4u6vEnKEN19JKSz";
-
-  //   const config = {
-  //     headers: { Authorization: `Bearer ${token}` },
-  //   };
-
-  //   const bodyParameters = {
-  //     key: "value",
-  //   };
-  //   axios.post("/user/pwa/home", bodyParameters, config).then((response) => {
-  //     let slideData = [];
-  //     const responseData = response.data.daily_discounts.data;
-
-  //     if (responseData === [] || responseData.length === 0) {
-  //       slideData = [];
-  //     } else {
-  //       responseData.map((item) => {
-  //         slideData.push({
-  //           id: item.id,
-  //           name: item.name,
-  //           image: item.images.data[0].image_url,
-  //         });
-  //       });
-  //       setTitle(response.data.daily_discount.title);
-  //     }
-
-  //     setSlide(slideData);
-
-  //     //    === get slides data from api ===
-  //   });
-
-  //   //    === get slides data from api ===
-  // }, []);
 
   // == use swiper core autoplay / navigation ==
   SwiperCore.use([Autoplay, Navigation]);

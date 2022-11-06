@@ -19,7 +19,7 @@ const BookSimpleCard = (props)=>{
     // define tooltip for book name showing by hovering end
 
     return(
-        <div className={`${props.className} simple-card-container`} onClick={props.click}>
+        <div className={`${props.className} simple-card-container`} id={props.id} onClick={props.click}>
             <div className="simple-book-card">
                 <div className="simple-card-first-section">
                     <div className="simple-book-img">

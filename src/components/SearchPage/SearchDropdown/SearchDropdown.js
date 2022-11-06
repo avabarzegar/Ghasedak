@@ -7,10 +7,11 @@ import { useAppContext } from "../../../Context/SearchContext/SearchContext";
 import "./SearchDropdown.css";
 
 function CustomDropdown() {
-  const [allData, setAllData] = useState(null);
+  // const [allData, setAllData] = useState(null);
   // states and ref
   const {
     setSorting,
+    sorting,
     categories,
     authors,
     translators,
@@ -18,21 +19,36 @@ function CustomDropdown() {
     publishers,
     setNewData,
     newData,
-    bookData,
     searchData,
-    // searchValue,
-    // setSearchValue,
+    bookData,
     available,
     setAvailable,
+    allData,
+    setAllData,
+    setPrevData,
   } = useAppContext();
   const navigate = useNavigate();
   const saveSelectedFilter = [];
 
   // states and ref end
-
+  useEffect(() => {
+    if (allData && allData.length > 0) {
+      setNewData(allData);
+      setPrevData(allData);
+      navigate("/search");
+    } 
+     else if (
+      (newData === null || newData.length === 0) &&
+      available === false &&
+      searchData.length === 0
+    ) {
+      navigate("*");
+    }
+  }, [allData]);
   const categoriesHandler = (event, title) => {
     if (available === true) {
       setAvailable(false);
+      
     }
     // selected filter name
     const eventData = event.target.innerText;
@@ -56,7 +72,7 @@ function CustomDropdown() {
       });
 
       // make data unique
-      const returnData = [...new Set(savingData.map((item) => item))];
+      const returnData = [...new Set(savingData)];
       // make data unique -end
       return returnData;
     });
@@ -76,15 +92,17 @@ function CustomDropdown() {
     if (filter.length > 0) {
       navigate("/search");
 
-      setNewData((prevState) => {
+      setAllData((prevState) => {
         const updatedData = [];
         filter.map((items) => {
           updatedData.push(items);
         });
 
-        [...prevState].map((items) => {
-          updatedData.push(items);
-        });
+        if (prevState) {
+          [...prevState].map((items) => {
+            updatedData.push(items);
+          });
+        }
 
         // make data unique
         const returnData = [...new Set(updatedData.map((item) => item))];
@@ -94,11 +112,21 @@ function CustomDropdown() {
       });
       // update all books list which will be shown -end
     }
+    // if (
+    //   (newData === null || newData.length === 0) &&
+    //   available === false &&
+    //   searchData.length === 0
+    // ) {
+    //   navigate("*");
+    // } else {
+    //   navigate("/search");
+    // }
   };
 
   const authorsHandler = (event, title) => {
     if (available === true) {
       setAvailable(false);
+      
     }
     // selected filter name
     const eventData = event.target.innerText;
@@ -123,7 +151,7 @@ function CustomDropdown() {
       });
 
       // make data unique
-      const returnData = [...new Set(savingData.map((item) => item))];
+      const returnData = [...new Set(savingData)];
       // make data unique -end
 
       return returnData;
@@ -145,15 +173,17 @@ function CustomDropdown() {
       navigate("/search");
 
       // update all books list which will be shown
-      setNewData((prevState) => {
+      setAllData((prevState) => {
         const updatedData = [];
         filter.map((items) => {
           updatedData.push(items);
         });
 
-        [...prevState].map((items) => {
-          updatedData.push(items);
-        });
+        if (prevState) {
+          [...prevState].map((items) => {
+            updatedData.push(items);
+          });
+        }
         // make data unique
         const returnData = [...new Set(updatedData.map((item) => item))];
         // make data unique -end
@@ -162,11 +192,21 @@ function CustomDropdown() {
 
       // update all books list which will be shown -end
     }
+    // if (
+    //   (newData === null || newData.length === 0) &&
+    //   available === false &&
+    //   searchData.length === 0
+    // ) {
+    //   navigate("*");
+    // } else {
+    //   navigate("/search");
+    // }
   };
 
   const translatorsHandler = (event, title) => {
     if (available === true) {
       setAvailable(false);
+      
     }
     // selected filter name
     const eventData = event.target.innerText;
@@ -190,7 +230,7 @@ function CustomDropdown() {
       });
 
       // make data unique
-      const returnData = [...new Set(savingData.map((item) => item))];
+      const returnData = [...new Set(savingData)];
       // make data unique -end
       return returnData;
     });
@@ -211,15 +251,17 @@ function CustomDropdown() {
       navigate("/search");
 
       // update all books list which will be shown
-      setNewData((prevState) => {
+      setAllData((prevState) => {
         const updatedData = [];
         filter.map((items) => {
           updatedData.push(items);
         });
 
-        [...prevState].map((items) => {
-          updatedData.push(items);
-        });
+        if (prevState) {
+          [...prevState].map((items) => {
+            updatedData.push(items);
+          });
+        }
         // make data unique
         const returnData = [...new Set(updatedData.map((item) => item))];
         // make data unique -end
@@ -228,11 +270,21 @@ function CustomDropdown() {
 
       // update all books list which will be shown -end
     }
+    // if (
+    //   (newData === null || newData.length === 0) &&
+    //   available === false &&
+    //   searchData.length === 0
+    // ) {
+    //   navigate("*");
+    // } else {
+    //   navigate("/search");
+    // }
   };
 
   const hashtagsHandler = (event, title) => {
     if (available === true) {
       setAvailable(false);
+      
     }
     // selected filter name
     const eventData = event.target.innerText;
@@ -258,7 +310,7 @@ function CustomDropdown() {
       });
 
       // make data unique
-      const returnData = [...new Set(savingData.map((item) => item))];
+      const returnData = [...new Set(savingData)];
       // make data unique -end
       return returnData;
     });
@@ -279,15 +331,17 @@ function CustomDropdown() {
       navigate("/search");
 
       // update all books list which will be shown
-      setNewData((prevState) => {
+      setAllData((prevState) => {
         const updatedData = [];
         filter.map((items) => {
           updatedData.push(items);
         });
 
-        [...prevState].map((items) => {
-          updatedData.push(items);
-        });
+        if (prevState) {
+          [...prevState].map((items) => {
+            updatedData.push(items);
+          });
+        }
         // make data unique
         const returnData = [...new Set(updatedData.map((item) => item))];
         // make data unique -end
@@ -296,11 +350,21 @@ function CustomDropdown() {
 
       // update all books list which will be shown -end
     }
+    // if (
+    //   (newData === null || newData.length === 0) &&
+    //   available === false &&
+    //   searchData.length === 0
+    // ) {
+    //   navigate("*");
+    // } else {
+    //   navigate("/search");
+    // }
   };
 
   const publishersHandler = (event, title) => {
     if (available === true) {
       setAvailable(false);
+      
     }
     // selected filter name
     const eventData = event.target.innerText;
@@ -325,7 +389,7 @@ function CustomDropdown() {
       });
 
       // make data unique
-      const returnData = [...new Set(savingData.map((item) => item))];
+      const returnData = [...new Set(savingData)];
       // make data unique -end
       return returnData;
     });
@@ -344,15 +408,17 @@ function CustomDropdown() {
       navigate("/search");
 
       // update all books list which will be shown
-      setNewData((prevState) => {
+      setAllData((prevState) => {
         const updatedData = [];
         filter.map((items) => {
           updatedData.push(items);
         });
 
-        [...prevState].map((items) => {
-          updatedData.push(items);
-        });
+        if (prevState) {
+          [...prevState].map((items) => {
+            updatedData.push(items);
+          });
+        }
         // make data unique
         const returnData = [...new Set(updatedData.map((item) => item))];
         // make data unique -end
@@ -361,12 +427,17 @@ function CustomDropdown() {
 
       // update all books list which will be shown -end
     }
+    // if (
+    //   (newData === null || newData.length === 0) &&
+    //   available === false &&
+    //   searchData.length === 0
+    // ) {
+    //   navigate("*");
+    // } else {
+    //   navigate("/search");
+    // }
   };
-  // useEffect(() => {
-  //   if (newData.length < 1 && searchData.length<1) {
-  //     navigate("*");
-  //   }
-  // }, [newData]);
+
   return (
     <div className="search-dropdown">
       <DropdownButton
@@ -374,7 +445,7 @@ function CustomDropdown() {
         variant={categories[0] ? categories[0] : null}
         title={categories[0] ? categories[0] : null}
       >
-        {categories.map((item) => [
+        {categories?.map((item) => [
           <Dropdown.Item
             onClick={(event) => categoriesHandler(event, categories[0])}
             key={item.id}
@@ -388,7 +459,7 @@ function CustomDropdown() {
         variant={authors[0] ? authors[0] : null}
         title={authors[0] ? authors[0] : null}
       >
-        {authors.map((item) => [
+        {authors?.map((item) => [
           <Dropdown.Item
             onClick={(event) => authorsHandler(event, authors[0])}
             key={item.id}
@@ -402,7 +473,7 @@ function CustomDropdown() {
         variant={translators[0] ? translators[0] : null}
         title={translators[0] ? translators[0] : null}
       >
-        {translators.map((item) => [
+        {translators?.map((item) => [
           <Dropdown.Item
             onClick={(event) => translatorsHandler(event, translators[0])}
             key={item.id}
@@ -416,7 +487,7 @@ function CustomDropdown() {
         variant={hashtags[0] ? hashtags[0] : null}
         title={hashtags[0] ? hashtags[0] : null}
       >
-        {hashtags.map((item) => [
+        {hashtags?.map((item) => [
           <Dropdown.Item
             onClick={(event) => hashtagsHandler(event, hashtags[0])}
             key={item.id}
@@ -430,7 +501,7 @@ function CustomDropdown() {
         variant={publishers[0] ? publishers[0] : null}
         title={publishers[0] ? publishers[0] : null}
       >
-        {publishers.map((item) => [
+        {publishers?.map((item) => [
           <Dropdown.Item
             onClick={(event) => publishersHandler(event, publishers[0])}
             key={item.id}

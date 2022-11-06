@@ -8,6 +8,7 @@ const LinkedCard = (props) => {
     <Link to={props.Link}>
       <BookSimpleCard
         className={props.className}
+        id={props.id}
         click={props.click}
         img={props.img}
         name={props.name}

@@ -7,30 +7,36 @@ import { useNavigate } from "react-router-dom";
 // define all applied filters list
 const FiltersList = () => {
   // define state and variables
-  const { sorting, setSorting, setNewData, newData, searchData, available } =
-    useAppContext();
+  const {
+    sorting,
+    setSorting,
+    setNewData,
+    newData,
+    searchData,
+    available,
+    allData,
+    setAllData,
+    setPrevData,
+  } = useAppContext();
 
   const navigate = useNavigate();
 
   // define state and variables -end
   useEffect(() => {
-    // set book data to null if we do not have any applied filter or search input
-    if (
-      (sorting === [] ||
-        sorting === undefined ||
-        sorting.length === 0 ||
-        sorting === null)
-         &&
-      available === false
-    ) {
-      setNewData(searchData);
+    if (allData && allData.length > 0) {
+      setNewData(allData);
+      setPrevData(allData);
+      navigate("/search");
+    }else{
+      setNewData(searchData)
+      if(searchData.length === 0){
+        navigate("*");
+        setNewData([]);
+      }
     }
-    // if (newData === [] && searchData === [] && available === false) {
-    //   navigate("*");
-    // }
 
     // set book data to null if we do not have any applied filter or search input -end
-  }, [newData, sorting, available,searchData]);
+  }, [allData, sorting, available, searchData]);
   // delete specific filter by clicking on its delete button
   const deleteFilterHandler = (selected) => {
     // delete filter name
@@ -43,10 +49,10 @@ const FiltersList = () => {
     // delete category filters
     sorting.map(() => {
       if (sortingTitle === "دسته بندی") {
-        newData.map((items) => {
+        allData?.map((items) => {
           items.category.map((item) => {
             if (item === sortingFilter) {
-              setNewData((current) =>
+              setAllData((current) =>
                 current.filter((data) => data.id !== items.id)
               );
             }
@@ -57,10 +63,10 @@ const FiltersList = () => {
 
       // delete author filters
       if (sortingTitle === "نویسندگان") {
-        newData.map((items) => {
+        allData?.map((items) => {
           items.author.map((item) => {
             if (item === sortingFilter) {
-              setNewData((current) =>
+              setAllData((current) =>
                 current.filter((data) => data.id !== items.id)
               );
             }
@@ -71,10 +77,10 @@ const FiltersList = () => {
 
       // delete translator filters
       if (sortingTitle === "مترجمان") {
-        newData.map((items) => {
+        allData?.map((items) => {
           items.translator.map((item) => {
             if (item === sortingFilter) {
-              setNewData((current) =>
+              setAllData((current) =>
                 current.filter((data) => data.id !== items.id)
               );
             }
@@ -85,10 +91,10 @@ const FiltersList = () => {
 
       // delete hashtag filters
       if (sortingTitle === "برچسب ها") {
-        newData.map((items) => {
+        allData?.map((items) => {
           items.hashtag.map((item) => {
             if (item === sortingFilter) {
-              setNewData((current) =>
+              setAllData((current) =>
                 current.filter((data) => data.id !== items.id)
               );
             }
@@ -99,9 +105,9 @@ const FiltersList = () => {
 
       // delete publisher filters
       if (sortingTitle === "ناشران") {
-        newData.map((items) => {
+        allData?.map((items) => {
           if (items.publisher === sortingFilter) {
-            setNewData((current) =>
+            setAllData((current) =>
               current.filter((data) => data.id !== items.id)
             );
           }
@@ -109,6 +115,14 @@ const FiltersList = () => {
       }
       // delete publisher filters -end
     });
+    // if (
+    //   newData.length === 0 &&
+    //   searchData.length === 0 &&
+    //   available === false
+    // ) {
+    //   console.log("yes");
+    //   navigate("*");
+    // }
   };
   return (
     <div className="filter-list">

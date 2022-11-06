@@ -10,9 +10,13 @@ import { useEffect } from "react";
 // define available products section
 const AvailableProducts = () => {
   // variables and states
-  const { bookData, setNewData, available, setAvailable, searchData } =
-    useAppContext();
-  // const [filter, setFilter] = useState([]);
+  const {
+    bookData,
+    setNewData,
+    available,
+    setAvailable,
+    prevData,
+  } = useAppContext();
   const navigate = useNavigate();
   // variables and states -end
 
@@ -25,17 +29,28 @@ const AvailableProducts = () => {
     // handle the show / hide available toggler -end
   };
   useEffect(() => {
-    if (available === true) {
-      // return available book by clicking on button
-      let filter = bookData;
-      filter = bookData.filter((item) => item.available === true);
-      // return available book by clicking on button -end
-      setNewData(filter);
-      navigate("/search");
-    } else {
-      setNewData(searchData);
-      if (searchData.length === 0) {
-        // navigate("*");
+    // setPrevData(newData);
+    if (available) {
+      if (available === true) {
+        // return available book by clicking on button
+        let filter = bookData;
+        filter = bookData.filter((item) => item.available === true);
+        // return available book by clicking on button -end
+        if (filter && filter.length > 0) {
+        setNewData(filter);
+        navigate("/search");
+        } else {
+          setNewData([]);
+          navigate("*");
+        }
+      } else {
+        if (prevData.length === 0) {
+          setNewData([]);
+          navigate("*");
+        } else {
+          setNewData(prevData);
+          navigate("/search");
+        }
       }
     }
   }, [available]);
@@ -47,7 +62,7 @@ const AvailableProducts = () => {
           type="switch"
           id="custom-switch"
           label="نمایش کتاب های موجود"
-          onClick={availableHandler}
+          onChange={availableHandler}
         />
       </Form>
     </div>

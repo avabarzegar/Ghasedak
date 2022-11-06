@@ -15,7 +15,7 @@ import HashtagDetail from "../../DetailProductPage/HashtagDetail/HashtagDetail";
 import { useNavigate } from "react-router-dom";
 
 const IntroBooks = () => {
-  const { productHashtag, setProductHashtag, bookData, newData, setNewData,setSorting } =
+  const { bookData, newData, setNewData,setSorting } =
     useAppContext();
   const { product } = useProductsContext();
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ const IntroBooks = () => {
   const hashtagHandler = (data) => {
     let filter = [];
     bookData.map((items) => {
-      items.hashtag.map((item, index) => {
+      items.hashtag.map((item) => {
         if (item === data) {
           filter.push(items);
         }
@@ -37,20 +37,9 @@ const IntroBooks = () => {
       eventFilter: data,
     });
     // update applied filter list in sorting state
-    setSorting((prevState) => {
-      const savingData = [];
-      saveSelectedFilter.map((item) => {
-        savingData.push(item);
-      });
-      [...prevState].map((item) => {
-        savingData.push(item);
-      });
+    setSorting(saveSelectedFilter);
+    // update applied filter list in sorting state -end
 
-      // make data unique
-      const returnData = [...new Set(savingData.map((item) => item))];
-      // make data unique -end
-      return returnData;
-    });
     if (filter.length > 0) {
       // update all books list which will be shown
       setNewData(filter);
@@ -60,9 +49,6 @@ const IntroBooks = () => {
         setNewData([]);
         navigate("*");
       }
-    } else {
-      setNewData([]);
-      navigate("*");
     }
   };
 
@@ -242,7 +228,7 @@ const IntroBooks = () => {
               <span
                 key={index}
                 ref={hashtag}
-                onClick={(event) => hashtagHandler(item)}
+                onClick={() => hashtagHandler(item)}
                 className="titledetail product-hashtag"
               >
                 {item}

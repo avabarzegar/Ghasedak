@@ -23,20 +23,25 @@ const FiltersList = () => {
 
   // define state and variables -end
   useEffect(() => {
-    if (allData && allData.length > 0) {
-      setNewData(allData);
-      setPrevData(allData);
-      navigate("/search");
-    } else {
+    // if (allData && allData.length > 0) {
+    //   setNewData(allData);
+    //   setPrevData(allData);
+    //   navigate("/search");
+    // }
+
+    if ((sorting.length === 0 || sorting === []) && available === false) {
       setNewData(searchData);
       if (searchData.length === 0) {
         navigate("*");
         setNewData([]);
+        setAllData([])
       }
     }
-
+    console.log(sorting);
+    console.log(allData);
+    console.log(searchData);
     // set book data to null if we do not have any applied filter or search input -end
-  }, [allData, sorting, available, searchData]);
+  }, [sorting, available, searchData]);
   // delete specific filter by clicking on its delete button
   const deleteFilterHandler = (selected) => {
     // delete filter name
@@ -45,14 +50,15 @@ const FiltersList = () => {
 
     const sortingTitle = selected.title;
     const sortingFilter = selected.eventFilter;
-
+    console.log(selected);
     // delete category filters
     sorting.map(() => {
       if (sortingTitle === "دسته بندی") {
-        allData?.map((items) => {
+        newData?.map((items) => {
           items.category.map((item) => {
-            if (item === sortingFilter) {
-              setAllData((current) =>
+            if (sortingFilter.includes(item)) {
+              console.log(item);
+              setNewData((current) =>
                 current.filter((data) => data.id !== items.id)
               );
             }
@@ -63,10 +69,10 @@ const FiltersList = () => {
 
       // delete author filters
       if (sortingTitle === "نویسندگان") {
-        allData?.map((items) => {
+        newData?.map((items) => {
           items.author.map((item) => {
-            if (item === sortingFilter) {
-              setAllData((current) =>
+            if (sortingFilter.includes(item)) {
+              setNewData((current) =>
                 current.filter((data) => data.id !== items.id)
               );
             }
@@ -77,10 +83,10 @@ const FiltersList = () => {
 
       // delete translator filters
       if (sortingTitle === "مترجمان") {
-        allData?.map((items) => {
+        newData?.map((items) => {
           items.translator.map((item) => {
-            if (item === sortingFilter) {
-              setAllData((current) =>
+            if (sortingFilter.includes(item)) {
+              setNewData((current) =>
                 current.filter((data) => data.id !== items.id)
               );
             }
@@ -91,10 +97,10 @@ const FiltersList = () => {
 
       // delete hashtag filters
       if (sortingTitle === "برچسب ها") {
-        allData?.map((items) => {
+        newData?.map((items) => {
           items.hashtag.map((item) => {
-            if (item === sortingFilter) {
-              setAllData((current) =>
+            if (sortingFilter.includes(item)) {
+              setNewData((current) =>
                 current.filter((data) => data.id !== items.id)
               );
             }
@@ -105,9 +111,9 @@ const FiltersList = () => {
 
       // delete publisher filters
       if (sortingTitle === "ناشران") {
-        allData?.map((items) => {
+        newData?.map((items) => {
           if (items.publisher === sortingFilter) {
-            setAllData((current) =>
+            setNewData((current) =>
               current.filter((data) => data.id !== items.id)
             );
           }

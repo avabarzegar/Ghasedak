@@ -19,7 +19,7 @@ const SearchInput = (props) => {
     setSearchData,
     setPrevData,
     newData,
-    setAllData
+    setAllData,
   } = useAppContext();
   // define variables, states and refs -end
 
@@ -63,8 +63,7 @@ const SearchInput = (props) => {
           });
         });
         if (inputChange !== "") {
-
-          console.log('render')
+          console.log("render");
           if (
             bookApi === [] ||
             bookApi === undefined ||
@@ -73,7 +72,8 @@ const SearchInput = (props) => {
           ) {
             // setAllData([]);
             setNewData([]);
-
+            setSearchData([]);
+            setPrevData([]);
             navigate("*");
           } else {
             // set book list shown in search page
@@ -81,10 +81,9 @@ const SearchInput = (props) => {
             navigate("/search");
             setNewData(bookApi);
             setSearchData(bookApi);
-          setPrevData(bookApi);
+            setPrevData(bookApi);
             // save the Data of search in variable
           }
-          
         }
       })
 
@@ -103,8 +102,6 @@ const SearchInput = (props) => {
       // set appied filters to null
       setSorting([]);
       // set appied filters to null -end
-
-     
     }
   };
   //    show search result page by clicking enter key - end
@@ -115,8 +112,6 @@ const SearchInput = (props) => {
     // set appied filters to null
     setSorting([]);
     // set appied filters to null -end
-
-    setAllData([]);
   };
   //    show search result page by clicking on search button - end
   return (

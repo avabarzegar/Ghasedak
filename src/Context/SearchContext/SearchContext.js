@@ -23,8 +23,12 @@ const SearchContext = ({ children }) => {
   const [productHashtag, setProductHashtag] = useState([]);
   const [allData, setAllData] = useState([]);
   const [prevData, setPrevData] = useState([]);
+  const [clickData, setClickData] = useState([]);
+
 
   //   define states and variables end
+
+ 
 
   useEffect(() => {
     // api config
@@ -64,6 +68,7 @@ const SearchContext = ({ children }) => {
         console.log(err.message);
       });
     // book list data -end
+
 
     // book  category list
     axios
@@ -195,6 +200,8 @@ const SearchContext = ({ children }) => {
         setAllData,
         prevData,
         setPrevData,
+        clickData, 
+        setClickData
       }}
     >
       {children}

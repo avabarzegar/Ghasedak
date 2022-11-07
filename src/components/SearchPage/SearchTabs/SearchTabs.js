@@ -26,7 +26,7 @@ function SearchTabs() {
                 <LinkedCard
                   className="search-book-card"
                   Link={`/books/${item.id}`}
-                  img={item.img.length > 0 ? item.img[0].image_url : null}
+                  img={item.img?.length > 0 ? item.img[0].image_url : null}
                   name={item.name}
                   price={item.price}
                 />

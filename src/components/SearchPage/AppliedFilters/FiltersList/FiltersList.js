@@ -27,9 +27,9 @@ const FiltersList = () => {
       setNewData(allData);
       setPrevData(allData);
       navigate("/search");
-    }else{
-      setNewData(searchData)
-      if(searchData.length === 0){
+    } else {
+      setNewData(searchData);
+      if (searchData.length === 0) {
         navigate("*");
         setNewData([]);
       }

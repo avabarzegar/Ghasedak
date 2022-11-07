@@ -15,41 +15,120 @@ import HashtagDetail from "../../DetailProductPage/HashtagDetail/HashtagDetail";
 import { useNavigate } from "react-router-dom";
 
 const IntroBooks = () => {
-  const { bookData, newData, setNewData,setSorting } =
-    useAppContext();
+  const {
+    bookData,
+    newData,
+    setNewData,
+    setSorting,
+    setSearchData,
+    setPrevData,
+    setSearchValue,
+    setAvailable
+  } = useAppContext();
   const { product } = useProductsContext();
+  const [data, setData] = useState("");
   const navigate = useNavigate();
   const hashtag = useRef(null);
+  const saveSelectedFilter = [];
 
-  const hashtagHandler = (data) => {
-    let filter = [];
-    bookData.map((items) => {
-      items.hashtag.map((item) => {
-        if (item === data) {
-          filter.push(items);
-        }
+  useEffect(() => {
+    if (data) {
+      // api config
+      const token = "qtjAvo6VkoiFRlQ7lufYbRh3R4u6vEnKEN19JKSz";
+
+      const config = {
+        headers: { Authorization: `Bearer ${token}` },
+      };
+      // api config -end
+
+      // save selected filter in a varible
+
+      saveSelectedFilter.push({
+        title: "برچسب ها",
+        eventFilter: data,
       });
-    });
-    // return book data with selected hashtag -end
-    const saveSelectedFilter = [];
-    saveSelectedFilter.push({
-      title: "برچسب ها",
-      eventFilter: data,
-    });
-    // update applied filter list in sorting state
-    setSorting(saveSelectedFilter);
-    // update applied filter list in sorting state -end
 
-    if (filter.length > 0) {
-      // update all books list which will be shown
-      setNewData(filter);
-      if (newData.length > 0) {
-        navigate("/search");
-      } else {
-        setNewData([]);
-        navigate("*");
-      }
+      // save selected filter in a varible -end
+
+      // update applied filter list in sorting state
+      setSorting(saveSelectedFilter);
+      setSearchData([]);
+      setPrevData([]);
+      setSearchValue("");
+      setAvailable(false);
+      // update applied filter list in sorting state
+
+      // api config
+
+      const bodyParameters = {
+        hashtag: data,
+      };
+      // api config -end
+
+      // book list data
+      axios
+        .post("/books/list/all", bodyParameters, config)
+        .then((response) => {
+          const filter = [];
+          response.data.data.map((item) => {
+            filter.push({
+              id: item.id,
+              name: item.name,
+              img: item.images.data,
+              category: item.categories,
+              author: item.authors,
+              translator: item.translators,
+              hashtag: item.hashtags,
+              price: item.best_price,
+              available: item.is_available,
+              publisher: item.publisher,
+            });
+          });
+
+          if (filter.length > 0) {
+            navigate("/search");
+
+            setNewData((current) => {
+              const updatedData = [];
+              filter.map((items) => {
+                updatedData.push(items);
+              });
+
+              if (current) {
+                [...current].map((items) => {
+                  updatedData.push(items);
+                });
+              }
+
+              // make data unique
+              const returnData = updatedData.filter(
+                (ele, ind) =>
+                  ind ===
+                  updatedData.findIndex(
+                    (elem) => elem.id === ele.id && elem.id === ele.id
+                  )
+              );
+              // make data unique -end
+
+              return returnData;
+            });
+            console.log("new");
+            navigate("/search");
+            // update all books list which will be shown -end
+          } else {
+            navigate("*");
+            setNewData([]);
+          }
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+      // book list data -end
     }
+  }, [data]);
+
+  const hashtagHandler = (item) => {
+    setData(item);
   };
 
   const div1 = React.useRef(null);

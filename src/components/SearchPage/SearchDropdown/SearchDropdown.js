@@ -8,7 +8,6 @@ import { useAppContext } from "../../../Context/SearchContext/SearchContext";
 import "./SearchDropdown.css";
 
 function CustomDropdown() {
-  const [eventData, setEventData] = useState(false);
   const [title, setTitle] = useState("");
   const [categoryEvent, setCategoryEvent] = useState("");
   const [authorEvent, setAuthorEvent] = useState("");
@@ -27,7 +26,6 @@ function CustomDropdown() {
     setNewData,
     newData,
     searchData,
-    bookData,
     available,
     setAvailable,
     allData,
@@ -48,76 +46,8 @@ function CustomDropdown() {
     setTitle(title);
     // selected filter name
     setCategoryEvent(event.target.innerText);
-    console.log(categoryEvent);
+
     // selected filter name -end
-
-    // save selected filter in a varible
-    // saveSelectedFilter.push({
-    //   title: title,
-    //   eventFilter: eventData,
-    // });
-    // // save selected filter in a varible -end
-
-    // // update applied filter list in sorting state
-    // setSorting((prevState) => {
-    //   const savingData = [];
-    //   saveSelectedFilter.map((item) => {
-    //     savingData.push(item);
-    //   });
-    //   [...prevState].map((item) => {
-    //     savingData.push(item);
-    //   });
-
-    //   // make data unique
-    //   const returnData = [...new Set(savingData)];
-    //   // make data unique -end
-    //   return returnData;
-    // });
-    // update applied filter list in sorting state -end
-
-    // return book data with selected category
-    // let filter = [];
-    // bookData.map((items) => {
-    //   items.category.map((item) => {
-    //     if (item === eventData) {
-    //       filter.push(items);
-    //     }
-    //   });
-    // });
-    // // return book data with selected category -end
-
-    // if (filter.length > 0) {
-    //   navigate("/search");
-
-    //   setAllData((prevState) => {
-    //     const updatedData = [];
-    //     filter.map((items) => {
-    //       updatedData.push(items);
-    //     });
-
-    //     if (prevState) {
-    //       [...prevState].map((items) => {
-    //         updatedData.push(items);
-    //       });
-    //     }
-
-    //     // make data unique
-    //     const returnData = [...new Set(updatedData.map((item) => item))];
-    //     // make data unique -end
-
-    //     return returnData;
-    //   });
-    //   // update all books list which will be shown -end
-    // }
-    // if (
-    //   (newData === null || newData.length === 0) &&
-    //   available === false &&
-    //   searchData.length === 0
-    // ) {
-    //   navigate("*");
-    // } else {
-    //   navigate("/search");
-    // }
   };
 
   const authorsHandler = (event, title) => {
@@ -129,78 +59,6 @@ function CustomDropdown() {
     setTitle(title);
     // selected filter name
     setAuthorEvent(event.target.innerText);
-    console.log(authorEvent);
-
-    // selected filter name -end
-
-    // save selected filter in a varible
-    // saveSelectedFilter.push({
-    //   title: title,
-    //   eventFilter: eventData,
-    // });
-    // // save selected filter in a varible -end
-
-    // // update applied filter list in sorting state
-    // setSorting((prevState) => {
-    //   const savingData = [];
-    //   saveSelectedFilter.map((item) => {
-    //     savingData.push(item);
-    //   });
-    //   [...prevState].map((item) => {
-    //     savingData.push(item);
-    //   });
-
-    //   // make data unique
-    //   const returnData = [...new Set(savingData)];
-    //   // make data unique -end
-
-    //   return returnData;
-    // });
-    // update applied filter list in sorting state -end
-
-    // return book data with selected author
-    // let filter = [];
-    // bookData.map((items) => {
-    //   items.author.map((item) => {
-    //     if (item === eventData) {
-    //       filter.push(items);
-    //     }
-    //   });
-    // });
-    // // return book data with selected author -end
-
-    // if (filter.length > 0) {
-    //   navigate("/search");
-
-    //   // update all books list which will be shown
-    //   setAllData((prevState) => {
-    //     const updatedData = [];
-    //     filter.map((items) => {
-    //       updatedData.push(items);
-    //     });
-
-    //     if (prevState) {
-    //       [...prevState].map((items) => {
-    //         updatedData.push(items);
-    //       });
-    //     }
-    //     // make data unique
-    //     const returnData = [...new Set(updatedData.map((item) => item))];
-    //     // make data unique -end
-    //     return returnData;
-    //   });
-
-    //   // update all books list which will be shown -end
-    // }
-    // if (
-    //   (newData === null || newData.length === 0) &&
-    //   available === false &&
-    //   searchData.length === 0
-    // ) {
-    //   navigate("*");
-    // } else {
-    //   navigate("/search");
-    // }
   };
 
   const translatorsHandler = (event, title) => {
@@ -212,75 +70,6 @@ function CustomDropdown() {
     setTitle(title);
     // selected filter name
     setTranslatorEvent(event.target.innerText);
-    console.log(translatorEvent);
-    // selected filter name -end
-
-    // save selected filter in a varible
-    // saveSelectedFilter.push({
-    //   title: title,
-    //   eventFilter: eventData,
-    // });
-    // // save selected filter in a varible -end
-    // // update applied filter list in sorting state
-    // setSorting((prevState) => {
-    //   const savingData = [];
-    //   saveSelectedFilter.map((item) => {
-    //     savingData.push(item);
-    //   });
-    //   [...prevState].map((item) => {
-    //     savingData.push(item);
-    //   });
-
-    //   // make data unique
-    //   const returnData = [...new Set(savingData)];
-    //   // make data unique -end
-    //   return returnData;
-    // });
-    // update applied filter list in sorting state -end
-
-    // return book data with selected translator
-    // let filter = [];
-    // bookData.map((items) => {
-    //   items.translator.map((item) => {
-    //     if (item === eventData) {
-    //       filter.push(items);
-    //     }
-    //   });
-    // });
-    // // return book data with selected translator -end
-
-    // if (filter.length > 0) {
-    //   navigate("/search");
-
-    //   // update all books list which will be shown
-    //   setAllData((prevState) => {
-    //     const updatedData = [];
-    //     filter.map((items) => {
-    //       updatedData.push(items);
-    //     });
-
-    //     if (prevState) {
-    //       [...prevState].map((items) => {
-    //         updatedData.push(items);
-    //       });
-    //     }
-    //     // make data unique
-    //     const returnData = [...new Set(updatedData.map((item) => item))];
-    //     // make data unique -end
-    //     return returnData;
-    //   });
-
-    //   // update all books list which will be shown -end
-    // }
-    // if (
-    //   (newData === null || newData.length === 0) &&
-    //   available === false &&
-    //   searchData.length === 0
-    // ) {
-    //   navigate("*");
-    // } else {
-    //   navigate("/search");
-    // }
   };
 
   const hashtagsHandler = (event, title) => {
@@ -292,156 +81,15 @@ function CustomDropdown() {
     setTitle(title);
     // selected filter name
     setHashtagEvent(event.target.innerText);
-    console.log(hashtagEvent);
-    // selected filter name -end
-
-    // save selected filter in a varible
-
-    // saveSelectedFilter.push({
-    //   title: title,
-    //   eventFilter: eventData,
-    // });
-    // // save selected filter in a varible -end
-
-    // // update applied filter list in sorting state
-    // setSorting((prevState) => {
-    //   const savingData = [];
-    //   saveSelectedFilter.map((item) => {
-    //     savingData.push(item);
-    //   });
-    //   [...prevState].map((item) => {
-    //     savingData.push(item);
-    //   });
-
-    //   // make data unique
-    //   const returnData = [...new Set(savingData)];
-    //   // make data unique -end
-    //   return returnData;
-    // });
-    // update applied filter list in sorting state -end
-
-    // return book data with selected hashtag
-    // let filter = [];
-    // bookData.map((items) => {
-    //   items.hashtag.map((item, index) => {
-    //     if (item === eventData) {
-    //       filter.push(items);
-    //     }
-    //   });
-    // });
-    // // return book data with selected hashtag -end
-
-    // if (filter.length > 0) {
-    //   navigate("/search");
-
-    //   // update all books list which will be shown
-    //   setAllData((prevState) => {
-    //     const updatedData = [];
-    //     filter.map((items) => {
-    //       updatedData.push(items);
-    //     });
-
-    //     if (prevState) {
-    //       [...prevState].map((items) => {
-    //         updatedData.push(items);
-    //       });
-    //     }
-    //     // make data unique
-    //     const returnData = [...new Set(updatedData.map((item) => item))];
-    //     // make data unique -end
-    //     return returnData;
-    //   });
-
-    //   // update all books list which will be shown -end
-    // }
-    // if (
-    //   (newData === null || newData.length === 0) &&
-    //   available === false &&
-    //   searchData.length === 0
-    // ) {
-    //   navigate("*");
-    // } else {
-    //   navigate("/search");
-    // }
   };
 
   const publishersHandler = (event, title) => {
-    // setPublisherControl((current) => !current);
-
     if (available === true) {
       setAvailable(false);
     }
     setTitle(title);
     // selected filter name
     setPublisherEvent(event.target.innerText);
-    console.log(publisherEvent);
-    // selected filter name -end
-
-    // save selected filter in a varible
-    // saveSelectedFilter.push({
-    //   title: title,
-    //   eventFilter: eventData,
-    // });
-    // // save selected filter in a varible -end
-
-    // // update applied filter list in sorting state
-    // setSorting((prevState) => {
-    //   const savingData = [];
-    //   saveSelectedFilter.map((item) => {
-    //     savingData.push(item);
-    //   });
-    //   [...prevState].map((item) => {
-    //     savingData.push(item);
-    //   });
-
-    //   // make data unique
-    //   const returnData = [...new Set(savingData)];
-    //   // make data unique -end
-    //   return returnData;
-    // });
-    // update applied filter list in sorting state -end
-
-    // return book data with selected publisher
-    // let filter = [];
-    // bookData.map((item) => {
-    //   if (item.publisher === eventData) {
-    //     filter.push(item);
-    //   }
-    // });
-    // // return book data with selected publisher -end
-
-    // if (filter.length > 0) {
-    //   navigate("/search");
-
-    //   // update all books list which will be shown
-    //   setAllData((prevState) => {
-    //     const updatedData = [];
-    //     filter.map((items) => {
-    //       updatedData.push(items);
-    //     });
-
-    //     if (prevState) {
-    //       [...prevState].map((items) => {
-    //         updatedData.push(items);
-    //       });
-    //     }
-    //     // make data unique
-    //     const returnData = [...new Set(updatedData.map((item) => item))];
-    //     // make data unique -end
-    //     return returnData;
-    //   });
-
-    //   // update all books list which will be shown -end
-    // }
-    // if (
-    //   (newData === null || newData.length === 0) &&
-    //   available === false &&
-    //   searchData.length === 0
-    // ) {
-    //   navigate("*");
-    // } else {
-    //   navigate("/search");
-    // }
   };
 
   useEffect(() => {
@@ -546,7 +194,7 @@ function CustomDropdown() {
 
               return returnData;
             });
-            console.log(allData);
+
             // update all books list which will be shown -end
           }
         })
@@ -554,18 +202,6 @@ function CustomDropdown() {
           console.log(err.message);
         });
       // book list data -end
-
-      // if (allData && allData.length > 0) {
-      //   setNewData(allData);
-      //   setPrevData(allData);
-      //   navigate("/search");
-      // } else if (
-      //   (newData === null || newData.length === 0) &&
-      //   available === false &&
-      //   searchData.length === 0
-      // ) {
-      //   navigate("*");
-      // }
     }
   }, [categoryEvent]);
 
@@ -671,7 +307,7 @@ function CustomDropdown() {
 
               return returnData;
             });
-            console.log(allData);
+
             // update all books list which will be shown -end
           }
         })
@@ -679,18 +315,6 @@ function CustomDropdown() {
           console.log(err.message);
         });
       // book list data -end
-
-      // if (allData && allData.length > 0) {
-      //   setNewData(allData);
-      //   setPrevData(allData);
-      //   navigate("/search");
-      // } else if (
-      //   (newData === null || newData.length === 0) &&
-      //   available === false &&
-      //   searchData.length === 0
-      // ) {
-      //   navigate("*");
-      // }
     }
   }, [authorEvent]);
 
@@ -796,7 +420,7 @@ function CustomDropdown() {
 
               return returnData;
             });
-            console.log(allData);
+
             // update all books list which will be shown -end
           }
         })
@@ -804,18 +428,6 @@ function CustomDropdown() {
           console.log(err.message);
         });
       // book list data -end
-
-      // if (allData && allData.length > 0) {
-      //   setNewData(allData);
-      //   setPrevData(allData);
-      //   navigate("/search");
-      // } else if (
-      //   (newData === null || newData.length === 0) &&
-      //   available === false &&
-      //   searchData.length === 0
-      // ) {
-      //   navigate("*");
-      // }
     }
   }, [translatorEvent]);
 
@@ -921,7 +533,7 @@ function CustomDropdown() {
 
               return returnData;
             });
-            console.log(allData);
+
             // update all books list which will be shown -end
           }
         })
@@ -929,18 +541,6 @@ function CustomDropdown() {
           console.log(err.message);
         });
       // book list data -end
-
-      // if (allData && allData.length > 0) {
-      //   setNewData(allData);
-      //   setPrevData(allData);
-      //   navigate("/search");
-      // } else if (
-      //   (newData === null || newData.length === 0) &&
-      //   available === false &&
-      //   searchData.length === 0
-      // ) {
-      //   navigate("*");
-      // }
     }
   }, [hashtagEvent]);
 
@@ -1046,7 +646,7 @@ function CustomDropdown() {
 
               return returnData;
             });
-            console.log(allData);
+
             // update all books list which will be shown -end
           }
         })
@@ -1054,18 +654,6 @@ function CustomDropdown() {
           console.log(err.message);
         });
       // book list data -end
-
-      // if (allData && allData.length > 0) {
-      //   setNewData(allData);
-      //   setPrevData(allData);
-      //   navigate("/search");
-      // } else if (
-      //   (newData === null || newData.length === 0) &&
-      //   available === false &&
-      //   searchData.length === 0
-      // ) {
-      //   navigate("*");
-      // }
     }
   }, [publisherEvent]);
 

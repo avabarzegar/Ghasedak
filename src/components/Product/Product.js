@@ -13,9 +13,10 @@ import Footer from "../Footer/Footer";
 const Product = (props) => {
   const { bookId } = useParams();
   const { setBookId } = useProductsContext();
- 
+
   useEffect(() => {
     setBookId(bookId);
+    window.scrollTo(0, 0);
   }, []);
   return (
     <>

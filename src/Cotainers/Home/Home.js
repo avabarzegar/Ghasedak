@@ -24,6 +24,10 @@ import HomeContextProvider from "../../Context/HomeContext/HomeContext";
 // Home page section components -end
 
 const Home = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     // the first type of slider used in home page
     <HomeContextProvider>

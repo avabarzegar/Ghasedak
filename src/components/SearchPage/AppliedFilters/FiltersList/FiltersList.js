@@ -34,12 +34,10 @@ const FiltersList = () => {
       if (searchData.length === 0) {
         navigate("*");
         setNewData([]);
-        setAllData([])
+        setAllData([]);
       }
     }
-    console.log(sorting);
-    console.log(allData);
-    console.log(searchData);
+
     // set book data to null if we do not have any applied filter or search input -end
   }, [sorting, available, searchData]);
   // delete specific filter by clicking on its delete button
@@ -50,14 +48,13 @@ const FiltersList = () => {
 
     const sortingTitle = selected.title;
     const sortingFilter = selected.eventFilter;
-    console.log(selected);
+
     // delete category filters
     sorting.map(() => {
       if (sortingTitle === "دسته بندی") {
         newData?.map((items) => {
           items.category.map((item) => {
             if (sortingFilter.includes(item)) {
-              console.log(item);
               setNewData((current) =>
                 current.filter((data) => data.id !== items.id)
               );
@@ -126,7 +123,6 @@ const FiltersList = () => {
     //   searchData.length === 0 &&
     //   available === false
     // ) {
-    //   console.log("yes");
     //   navigate("*");
     // }
   };

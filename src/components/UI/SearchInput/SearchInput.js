@@ -62,8 +62,8 @@ const SearchInput = (props) => {
             publisher: item.publisher,
           });
         });
+
         if (inputChange !== "") {
-          console.log("render");
           if (
             bookApi === [] ||
             bookApi === undefined ||

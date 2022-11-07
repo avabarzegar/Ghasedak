@@ -23,7 +23,7 @@ const IntroBooks = () => {
     setSearchData,
     setPrevData,
     setSearchValue,
-    setAvailable
+    setAvailable,
   } = useAppContext();
   const { product } = useProductsContext();
   const [data, setData] = useState("");
@@ -112,7 +112,6 @@ const IntroBooks = () => {
 
               return returnData;
             });
-            console.log("new");
             navigate("/search");
             // update all books list which will be shown -end
           } else {

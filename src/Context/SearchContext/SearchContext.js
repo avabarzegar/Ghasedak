@@ -32,7 +32,7 @@ const SearchContext = ({ children }) => {
 
   useEffect(() => {
     // api config
-    const token = "qtjAvo6VkoiFRlQ7lufYbRh3R4u6vEnKEN19JKSz";
+    const token = "nOe0ikqnjPSF1AgE9tjHt5jEZi8qQ3Iz6RW7hV5c";
 
     const config = {
       headers: { Authorization: `Bearer ${token}` },

@@ -39,7 +39,7 @@ const NavItems = () => {
             src={Download}
             alt="download application"
             title="دانلود اپلیکیشن"
-            href="#footer_id"
+            href="https://ghasedakapp.com/ghasedak.apk"
             />
         </Navbar.Collapse>
       </Navbar>

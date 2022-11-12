@@ -41,7 +41,7 @@ const HomeContextProvider = ({ children }) => {
   //   get data from api
   useEffect(() => {
     // api config
-    const token = "qtjAvo6VkoiFRlQ7lufYbRh3R4u6vEnKEN19JKSz";
+    const token = "nOe0ikqnjPSF1AgE9tjHt5jEZi8qQ3Iz6RW7hV5c";
 
     const config = {
       headers: { Authorization: `Bearer ${token}`, Accept: "application/json" },
@@ -87,7 +87,7 @@ const HomeContextProvider = ({ children }) => {
             bannerData.push({
               id: item.id,
               title: item.title,
-              images: item.image_url,
+              image: item.image_url,
             });
           });
         }
@@ -163,7 +163,7 @@ const HomeContextProvider = ({ children }) => {
             slideDataTwo.push({
               id: item.id,
               name: item.name,
-              image: item.images.data[1].image_url,
+              image: item.images.data[0].image_url,
               price: item.best_price,
             });
           });

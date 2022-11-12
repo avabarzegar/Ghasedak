@@ -1,12 +1,10 @@
 // Import Swiper React components
 import { SwiperSlide, Swiper } from "swiper/react";
 import SwiperCore, { Navigation, Autoplay } from "swiper";
-import { React, useState, useEffect, useRef, useCallback } from "react";
+import { React, useState, useRef, useCallback } from "react";
 import Col from "react-bootstrap/Col";
-import axios from "axios";
 import SliderTopLine from "../../SliderTopLine/SliderTopLine";
 import SliderNavigation from "../../SliderNavigation/SliderNavigation";
-import BookSimpleCard from "../../BookCard/BookSimpleCard/BookSimpleCard";
 import SeeAllShops from "../../seeallshops/Seeallshops";
 import "./PopularBooksSlides.css";
 import LinkedCard from "../../LinkedCard/LinkedCard";
@@ -134,7 +132,7 @@ const PopularBooksSlides = (props) => {
                     click={() => setBookId(item.id)}
                     Link={`/books/${item.id}`}
                     name={item.name}
-                    img={item.image}
+                    img={item.image?item.image:null}
                     price={item.price}
                   />
                 </SwiperSlide>

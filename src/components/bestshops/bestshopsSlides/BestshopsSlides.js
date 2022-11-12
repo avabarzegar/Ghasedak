@@ -130,7 +130,7 @@ const BestShopsSlides = () => {
                 >
                   <BestShopssingleslide
                     acticeText={item.name}
-                    activeImage={item.image}
+                    activeImage={item.image?item.image:null}
                   />
                 </SwiperSlide>
                 // == return swiper slides end ==

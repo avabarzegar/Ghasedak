@@ -35,7 +35,7 @@ const ThirdPublisherSlider = (props) => {
                            click={() => setBookId(item.id)}
                            Link={`/books/${item.id}`}
                            name={item.name}
-                           img={item.image}
+                           img={item.image?item.image:null}
                            price={item.price}
                         />
                      </div>

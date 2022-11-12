@@ -39,3 +39,9 @@
     width: 100%;
     text-align: center;
  }
+
+ .bestShops-single-container{
+   padding: 12px;
+   box-shadow: var(--web-main-shadow);
+   border-radius: 20px;
+ }

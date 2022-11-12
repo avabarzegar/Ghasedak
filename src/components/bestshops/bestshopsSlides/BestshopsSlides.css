@@ -1,37 +1,28 @@
 .swiper .swiper-wrapper .nearshop-swiper .swiper-slide {
-   width: 200px !important;
-   height: 120px !important;
-   transition: .4s;
+  width: 200px !important;
+  height: 120px !important;
+  transition: 0.4s;
 }
-
 
 .nearshop-swiper {
-   padding: 40px;
-   border-radius: 20px;
-   margin-top: 3rem;
+  padding: 40px 0;
+  border-radius: 20px;
+  margin-top: 3rem;
 }
 
-
 .purple-bottom {
-   border-bottom: 4px solid var(--main-purple);
+  border-bottom: 4px solid var(--main-purple);
 }
 
 .padding-bottom {
-   padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
 }
-
-@media screen and (min-width:576px) {
-
-   .width-slides {
-      max-width: 150px !important;
-      max-height: 130px !important;
-   }
+.nearshop-swiper .book-slide-two {
+  box-shadow: none;
 }
-
-@media screen and (max-width:576px) {
-   .nearshop-swiper .book-slide-two {
-      margin: auto 5px !important;
-      border-radius:20px;
-   }
-
+@media screen and (min-width: 576px) {
+  .width-slides {
+    max-width: 150px !important;
+    max-height: 130px !important;
+  }
 }

@@ -123,7 +123,7 @@ const BookSlidesFirst = () => {
                 <SwiperSlide className="book-slide" key={item.id}>
                   <LinkedCard
                     name={item.name}
-                    img={item.image}
+                    img={item.image?item.image:null}
                     click={() => setBookId(item.id)}
                     Link={`/books/${item.id}`}
                   />

@@ -17,7 +17,7 @@ const OfferSliderBook = () => {
         {middleSlider.map((item) => {
           return (
             <Carousel.Item key={item.id}>
-              <BannerSlider image={item.image} />
+              <BannerSlider image={item.image?item.image:null} />
             </Carousel.Item>
           )
         })}

@@ -32,7 +32,7 @@ const Herosuggest = () => {
                 edition={item.edition}
                 price={item.price}
                 publisher={item.publisher}
-                image={item.image}
+                image={item.image?item.image:null}
                 alt={"book img"}
               />
             </Carousel.Item>

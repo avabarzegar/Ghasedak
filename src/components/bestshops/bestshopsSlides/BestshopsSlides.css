@@ -22,7 +22,16 @@
 }
 @media screen and (min-width: 576px) {
   .width-slides {
-    max-width: 150px !important;
     max-height: 130px !important;
+  }
+}
+@media screen and (max-width:400px) {
+  .nearshop-swiper .book-slide-two {
+    padding: 30px 12px 30px 0 !important;
+  }
+}
+@media screen and (max-width:320px) {
+  .nearshop-swiper .book-slide-two {
+    padding: 30px 12px 30px 12px !important;
   }
 }

@@ -29,7 +29,7 @@ const BestShopsSlides = () => {
 
   // state hook
   const [swiperRef, setSwiperRef] = useState();
-  const {storeSlider}=useHomeContext();
+  const { storeSlider } = useHomeContext();
   // state hook end
 
   // == use swiper autoplay & navigation ==
@@ -78,6 +78,7 @@ const BestShopsSlides = () => {
             slidesPerView={1}
             initialSlide={0}
             slidesPerGroup={1}
+            spaceBetween={12}
             loop={false}
             slideToClickedSlide={(0, false, false)}
             navigation={{
@@ -97,26 +98,31 @@ const BestShopsSlides = () => {
                 slidesPerView: 1,
                 spaceBetween: 0,
               },
+              320:{
+                slidesPerView: 1.2,
+              },
+              420: {
+                slidesPerView: 2.1,
+              },
               576: {
-                slidesPerView: 1.5,
-                spaceBetween: 25,
+                slidesPerView: 2.5,
               },
 
               768: {
-                slidesPerView: 1.5,
-                spaceBetween: 25,
+                slidesPerView: 2.8,
+                spaceBetween: 10,
               },
 
               992: {
-                slidesPerView: 3,
+                slidesPerView: 5,
               },
 
               1200: {
-                slidesPerView: 3.5,
+                slidesPerView: 5.5,
               },
 
               1400: {
-                slidesPerView: 4,
+                slidesPerView: 6,
               },
             }}
           >
@@ -130,7 +136,7 @@ const BestShopsSlides = () => {
                 >
                   <BestShopssingleslide
                     acticeText={item.name}
-                    activeImage={item.image?item.image:null}
+                    activeImage={item.image ? item.image : null}
                   />
                 </SwiperSlide>
                 // == return swiper slides end ==

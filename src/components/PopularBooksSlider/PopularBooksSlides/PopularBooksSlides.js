@@ -33,7 +33,6 @@ const PopularBooksSlides = (props) => {
   const { bookSliderFive, bookFiveTitle } = useHomeContext();
   // state hook end
 
-
   // == use swiper core autoplay / navigation ==
   SwiperCore.use([Autoplay, Navigation]);
   // == use swiper autoplay core autoplay / navigation end ==
@@ -83,6 +82,7 @@ const PopularBooksSlides = (props) => {
             onSwiper={setSwiperRef}
             autoplay={{ delay: 2000 }}
             slidesPerGroup={1}
+            spaceBetween={12}
             navigation={{
               prevEl: navigationPrevRef.current,
               nextEl: navigationNextRef.current,
@@ -100,14 +100,20 @@ const PopularBooksSlides = (props) => {
                 slidesPerView: 1,
                 spaceBetween: 0,
               },
-              576: {
+             400:{
+                slidesPerView: 1.2,
+                spaceBetween: 10,
+              },
+              450:{
                 slidesPerView: 1.5,
-                spaceBetween: 25,
+              },
+              576: {
+                slidesPerView: 1.8,
               },
 
               768: {
-                slidesPerView: 1.5,
-                spaceBetween: 25,
+                slidesPerView: 2.3,
+                spaceBetween: 15,
               },
 
               992: {
@@ -132,7 +138,7 @@ const PopularBooksSlides = (props) => {
                     click={() => setBookId(item.id)}
                     Link={`/books/${item.id}`}
                     name={item.name}
-                    img={item.image?item.image:null}
+                    img={item.image}
                     price={item.price}
                   />
                 </SwiperSlide>

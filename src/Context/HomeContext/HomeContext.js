@@ -53,10 +53,10 @@ const HomeContextProvider = ({ children }) => {
 
     // api config -end
 
+    // Hero Banner Slider
     axios
       .post("/user/pwa/home", bodyParameters, config)
       .then((response) => {
-        // Hero Banner Slider
         const heroBanner = [];
         const heroBannerData = response.data.banners.data[0].items.data;
 
@@ -104,36 +104,43 @@ const HomeContextProvider = ({ children }) => {
           storeSliderData.map((item) => {
             storeData.push({
               id: item.id,
-              name: item.name,
+              name: item.name ? item.name : null,
               image: item.logo_url,
             });
           });
         }
         setStoreSlider(storeData);
+
         // Stores Slider  -end
 
         // Ghasedak Suggestion
+
         const suggestionData = [];
         const suggestionResponse = response.data.suggestions.data;
         if (suggestionResponse === [] || suggestionResponse.length === 0) {
-          storeData = [];
+          suggestionData = [];
         } else {
           suggestionResponse.map((item) => {
             suggestionData.push({
               id: item.id,
-              name: item.name,
-              author: item.authors,
-              publisher: item.publisher,
-              image: item.images.data[0].image_url,
-              price: item.best_price,
-              edition: item.edition,
+              name: item.name ? item.name : null,
+              author: item.authors ? item.authors : null,
+              publisher: item.publisher ? item.publisher : null,
+              image:
+                item.images.data.length > 0
+                  ? item.images.data[0].image_url
+                  : null,
+              price: item.best_price ? item.best_price : null,
+              edition: item.edition ? item.edition : null,
             });
           });
         }
         setSuggestSlider(suggestionData);
+
         // Ghasedak Suggestion -end
 
         // bookSlider One book list data
+
         let slideDataOne = [];
         const responseDataOne = response.data.daily_discounts.data;
 
@@ -143,17 +150,22 @@ const HomeContextProvider = ({ children }) => {
           responseDataOne.map((item) => {
             slideDataOne.push({
               id: item.id,
-              name: item.name,
-              image: item.images.data[0].image_url,
+              name: item.name ? item.name : null,
+              image:
+                item.images.data.length > 0
+                  ? item.images.data[0].image_url
+                  : null,
             });
           });
           setBookOneTitle(response.data.daily_discount.title);
         }
         setBookSliderOne(slideDataOne);
+
         // bookSlider One book list data -end
 
         // bookSlider Two book list data
-        const slideDataTwo = [];
+
+        let slideDataTwo = [];
         const responseDataTwo = response.data.book_lists[0].books.data;
 
         if (responseDataTwo === [] || responseDataTwo.length === 0) {
@@ -162,18 +174,23 @@ const HomeContextProvider = ({ children }) => {
           responseDataTwo.map((item) => {
             slideDataTwo.push({
               id: item.id,
-              name: item.name,
-              image: item.images.data[0].image_url,
-              price: item.best_price,
+              name: item.name ? item.name : null,
+              image:
+                item.images.data.length > 0
+                  ? item.images.data[0].image_url
+                  : null,
+              price: item.best_price ? item.best_price : null,
             });
           });
         }
         setBookTwoTitle(response.data.book_lists[0].title);
         setBookSliderTwo(slideDataTwo);
+
         // bookSlider Two book list data -end
 
         // bookSlider Three book list data
-        const slideDataThree = [];
+
+        let slideDataThree = [];
         const responseDataThree = response.data.book_lists[1].books.data;
 
         if (responseDataThree === [] || responseDataThree.length === 0) {
@@ -182,105 +199,128 @@ const HomeContextProvider = ({ children }) => {
           responseDataThree.map((item) => {
             slideDataThree.push({
               id: item.id,
-              name: item.name,
-              image: item.images.data[0].image_url,
-              price: item.best_price,
+              name: item.name ? item.name : null,
+              image:
+                item.images.data.length > 0
+                  ? item.images.data[0].image_url
+                  : null,
+              price: item.best_price ? item.best_price : null,
             });
           });
 
           setBookThreeTitle(response.data.book_lists[1].title);
         }
         setBookSliderThree(slideDataThree);
+
         // bookSlider Three book list data -end
 
         // bookSlider Four book list data
-        const slideDataFour = [];
+
+        let slideDataFour = [];
         const responseDataFour = response.data.book_lists[2].books.data;
 
         if (responseDataFour === [] || responseDataFour.length === 0) {
-          slideDataThree = [];
+          slideDataFour = [];
         } else {
           responseDataFour.map((item) => {
             slideDataFour.push({
               id: item.id,
-              name: item.name,
-              image: item.images.data[0].image_url,
-              price: item.best_price,
+              name: item.name ? item.name : null,
+              image:
+                item.images.data.length > 0
+                  ? item.images.data[0].image_url
+                  : null,
+              price: item.best_price ? item.best_price : null,
             });
           });
 
           setBookFourTitle(response.data.book_lists[2].title);
         }
         setBookSliderFour(slideDataFour);
+
         // bookSlider Four book list data -end
 
         // bookSlider Five book list data
-        const slideDataFive = [];
+
+        let slideDataFive = [];
         const responseDataFive = response.data.book_lists[3].books.data;
         if (responseDataFive === [] || responseDataFive.length === 0) {
-          slideDataThree = [];
+          slideDataFive = [];
         } else {
           responseDataFive.map((item) => {
             slideDataFive.push({
               id: item.id,
-              name: item.name,
-              image: item.images.data[0].image_url,
-              price: item.best_price,
+              name: item.name ? item.name : null,
+              image:
+                item.images.data.length > 0
+                  ? item.images.data[0].image_url
+                  : null,
+              price: item.best_price ? item.best_price : null,
             });
           });
 
           setBookFiveTitle(response.data.book_lists[3].title);
         }
         setBookSliderFive(slideDataFive);
+
         // bookSlider Five book list data -end
 
         // bookSlider Six book list data
-        const slideDataSix = [];
+
+        let slideDataSix = [];
         const responseDataSix = response.data.book_lists[4].books.data;
         if (responseDataSix === [] || responseDataSix.length === 0) {
-          slideDataThree = [];
+          slideDataSix = [];
         } else {
           responseDataSix.map((item) => {
             slideDataSix.push({
               id: item.id,
-              name: item.name,
-              image: item.images.data[0].image_url,
-              price: item.best_price,
+              name: item.name ? item.name : null,
+              image:
+                item.images.data.length > 0
+                  ? item.images.data[0].image_url
+                  : null,
+              price: item.best_price ? item.best_price : null,
             });
           });
           setBookSixTitle(response.data.book_lists[4].title);
         }
         setBookSliderSix(slideDataSix);
+
         // bookSlider Six book list data -end
+        
         // bookSlider Seven book list data
-        const slideDataSeven = [];
+
+        let slideDataSeven = [];
         const responseDataSeven = response.data.book_lists[5].books.data;
         if (responseDataSeven === [] || responseDataSeven.length === 0) {
-          slideDataThree = [];
+          slideDataSeven = [];
         } else {
           responseDataSeven.map((item) => {
             slideDataSeven.push({
               id: item.id,
-              name: item.name,
-              image: item.images.data[0].image_url,
-              price: item.best_price,
+              name: item.name ? item.name : null,
+              image:
+                item.images.data.length > 0
+                  ? item.images.data[0].image_url
+                  : null,
+              price: item.best_price ? item.best_price : null,
             });
           });
           setBookSevenTitle(response.data.book_lists[5].title);
         }
         setBookSliderSeven(slideDataSeven);
-
-        // bookSlider Seven book list data -end
-
-        // loader timeout
-        setTimeout(() => {
-          setLoading(false);
-        }, 2000);
-        // loader timeout -end
       })
       .catch((err) => {
         console.log(err.message);
       });
+    // bookSlider Seven book list data -end
+
+    // loader timeout
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+    // loader timeout -end
   }, []);
   //   get data from api -end
 

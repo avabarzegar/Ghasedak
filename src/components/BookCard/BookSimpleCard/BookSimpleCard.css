@@ -4,6 +4,7 @@
   padding: 1rem;
   border-radius: 20px;
   position: relative;
+  box-shadow: var(--web-main-shadow);
 }
 
 .simple-book-card {
@@ -69,8 +70,4 @@
   display: flex;
   flex-direction: column;
 }
-@media screen and (max-width: 576px) {
-  .simple-card-container {
-    box-shadow: var(--web-main-shadow);
-  }
-}
+

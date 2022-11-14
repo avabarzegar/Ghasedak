@@ -1,10 +1,7 @@
 .special-discount .header-slider-txt {
     margin-bottom: -.6rem;
 }
-.swiper-slide{
-    margin-left: 0 !important;
-   
-}
+
 .book-slide{
     padding:24px 12px !important;
     background-color: var(--off-color);

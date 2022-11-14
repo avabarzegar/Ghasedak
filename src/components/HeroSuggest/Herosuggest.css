@@ -80,8 +80,6 @@
 }
 
 .outest_section_suggest_book_hero {
-   background-color: var(--white-color);
-   box-shadow: var(--main-shadow);
    width: 100%;
    border-radius: 20px;
    position: relative;

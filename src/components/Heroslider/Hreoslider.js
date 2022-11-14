@@ -17,7 +17,7 @@ const Hreoslider = (props) => {
         {heroSlider.map((item) => {
           return (
             <Carousel.Item interval={1200} key={item.id}>
-              <BannerSlider image={item.image?item.image:null} />
+              <BannerSlider image={item.image} />
             </Carousel.Item>
           );
         })}

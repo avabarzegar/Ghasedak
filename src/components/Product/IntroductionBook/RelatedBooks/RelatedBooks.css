@@ -19,10 +19,7 @@
 }
 
 @media screen and (max-width:576px) {
-    .type-two-book-slider-container{
-      display: flex;
-      overflow-x: scroll;
-   }
+  
   .span-section-related-books{
       display: flex;
       justify-content: center;

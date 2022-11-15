@@ -35,9 +35,11 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    transition: all .2s cubic-bezier(0.1, 0.7, 0.6, 0.9);
+    transition: all .2s linear;
 }
-
+.nav-main .collapse:not(.show) {
+    transition: all .2s linear;
+}
 .responsive-btn-container .custom-btn {
     display: none;
 }

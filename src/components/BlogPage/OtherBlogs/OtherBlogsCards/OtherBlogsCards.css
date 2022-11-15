@@ -57,7 +57,13 @@
 .swiper-pagination-bullets.swiper-pagination-horizontal {
   bottom: -20px;
 }
+.blog-navigate-container{
+  display: flex;
+  justify-content:center;
+  margin-top: 2rem;
+}
 .blog-navigation{
   width:20px;
   height:20px;
+  margin-left: .5rem;
 }

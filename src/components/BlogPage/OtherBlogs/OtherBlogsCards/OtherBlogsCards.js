@@ -85,7 +85,7 @@ const OtherBlogsCards = () => {
                   <Col xl={4} md={6}>
                     <OtherBlogsCard
                       img={Img}
-                      title={`روز جهانی کتاب هراه با قاصدک ${index}`}
+                      title={`روز جهانی کتاب همراه با قاصدک ${index}`}
                       text="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی ..."
                       message="21"
                       view="334"
@@ -99,7 +99,7 @@ const OtherBlogsCards = () => {
           </SwiperSlide>
         );
       })}
-      <div>
+      <div className="blog-navigate-container">
         <button onClick={handleRightClick} ref={navigationNextRef}>
           <div className="blog-navigation">
             <img src={Right} width="100%" height="100%" alt="prev button" />

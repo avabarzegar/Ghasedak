@@ -9,7 +9,7 @@ import SearchContext from "./Context/SearchContext/SearchContext";
 import ProductContextProvider from "./Context/ProductContext/ProductContext";
 import HomeContextProvider from "./Context/HomeContext/HomeContext";
 
-axios.defaults.baseURL = "http://store.ghasedakapp.com/api/v1";
+axios.defaults.baseURL = "https://store.ghasedakapp.com/api/v1";
 
 const container = document.getElementById("root");
 

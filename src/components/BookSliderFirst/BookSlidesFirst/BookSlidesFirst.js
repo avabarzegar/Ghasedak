@@ -27,7 +27,6 @@ const BookSlidesFirst = () => {
 
   // states and variables
   const [swiperRef, setSwiperRef] = useState();
-  const [slide, setSlide] = useState([]);
   const { setBookId } = useProductsContext();
   const { bookSliderOne, bookOneTitle } = useHomeContext();
   // states and variables end
@@ -49,7 +48,7 @@ const BookSlidesFirst = () => {
 
   return (
     <section>
-      {slide === [] || slide.length === 0 ? null : (
+      {bookSliderOne === [] || bookSliderOne.length === 0 ? null : (
         <div className="special-discount">
           <SliderTopLine
             text={bookOneTitle ? bookOneTitle : null}

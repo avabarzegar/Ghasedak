@@ -49,7 +49,9 @@ const MostSaleYearSlides = () => {
   //  let SwiperSlide;
 
   return (
-    <section>
+    <>
+     {bookSliderFour === [] || bookSliderFour.length === 0 ? null : (
+      <section>
       {/* first section of slider  */}
 
       <SliderTopLine
@@ -159,6 +161,9 @@ const MostSaleYearSlides = () => {
       </SliderLayout>
       {/* slider container section end */}
     </section>
+     )}
+    </>
+    
   );
 };
 

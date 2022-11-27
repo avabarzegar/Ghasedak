@@ -8,19 +8,21 @@ import BannerSlider from "../BannerSlider/BannerSlider";
 import { useHomeContext } from "../../Context/HomeContext/HomeContext";
 // context
 
-const Hreoslider = (props) => {
+const Hreoslider = () => {
   const { heroSlider } = useHomeContext();
 
   return (
     <Container className="container_section_heroslider">
       <Carousel className="slider-banner-hero slider_parent_section">
-        {heroSlider.map((item) => {
-          return (
-            <Carousel.Item interval={1200} key={item.id}>
-              <BannerSlider image={item.image} />
-            </Carousel.Item>
-          );
-        })}
+        {heroSlider === [] || heroSlider.length === 0
+          ? null
+          : heroSlider.map((item) => {
+              return (
+                <Carousel.Item interval={1200} key={item.id}>
+                  <BannerSlider image={item.image} />
+                </Carousel.Item>
+              );
+            })}
       </Carousel>
     </Container>
   );

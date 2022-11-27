@@ -57,7 +57,7 @@ const HomeContextProvider = ({ children }) => {
     axios
       .post("/user/pwa/home", bodyParameters, config)
       .then((response) => {
-        const heroBanner = [];
+        let heroBanner = [];
         const heroBannerData = response.data.banners.data[0].items.data;
 
         if (heroBannerData === [] || heroBannerData.length === 0) {
@@ -77,7 +77,7 @@ const HomeContextProvider = ({ children }) => {
 
         // Middle Banner Slider
 
-        const bannerData = [];
+        let bannerData = [];
         const MiddleBannerData = response.data.banners.data[1].items.data;
 
         if (MiddleBannerData === [] || MiddleBannerData.length === 0) {
@@ -96,7 +96,7 @@ const HomeContextProvider = ({ children }) => {
         // Middle Banner Slider -end
 
         // Stores Slider
-        const storeData = [];
+        let storeData = [];
         const storeSliderData = response.data.top_stores.data;
         if (storeSliderData === [] || storeSliderData.length === 0) {
           storeData = [];
@@ -115,7 +115,7 @@ const HomeContextProvider = ({ children }) => {
 
         // Ghasedak Suggestion
 
-        const suggestionData = [];
+        let suggestionData = [];
         const suggestionResponse = response.data.suggestions.data;
         if (suggestionResponse === [] || suggestionResponse.length === 0) {
           suggestionData = [];

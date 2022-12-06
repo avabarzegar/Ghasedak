@@ -1,77 +1,76 @@
 .publisher_name {
-   border-bottom: 1px solid #EFF3F8;
-   display: flex;
-   align-items: center;
-   padding: 2.25rem 0;
+  border-bottom: 1px solid #eff3f8;
+  display: flex;
+  align-items: center;
+  padding: 2.25rem 0;
 }
 
 .publisher_name img {
-   margin: 0 1.25rem 0 .25rem;
+  margin: 0 1.25rem 0 0.25rem;
 }
 
 .publisher_name_custom_style {
-   margin-right: 1rem;
-   font-weight: 700;
-   font-size: 16px;
+  margin-right: 1rem;
+  font-weight: 700;
+  font-size: 16px;
 }
 
 .parent_section_info_books {
-   display: flex;
-   align-items: center;
-   padding: .75rem 0;
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0;
 }
 
 .more_info_parent_section {
-   display: flex;
-   align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .more_info_parent_section span {
-   font-weight: 700;
-   font-size: 16px;
-   color: var(--main-purple);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--main-purple);
 }
 
 .more_info_parent_section img {
-   margin-left: 1.5rem;
+  margin-left: 1.5rem;
 }
 
-.parent_section_info_books-more_info{
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
+.parent_section_info_books-more_info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.parent-section-counter-btn-add-to-cart{
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
+.parent-section-counter-btn-add-to-cart {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-@media screen and (max-width:768px) {
-   .parent-section-counter-btn-add-to-cart{
-      flex-direction: column;
-   }
-  
-   .parent-section-counter-btn-add-to-cart{
-      align-items: flex-start;
-   }
+@media screen and (max-width: 768px) {
+  .parent-section-counter-btn-add-to-cart {
+    flex-direction: column;
+  }
+
+  .parent-section-counter-btn-add-to-cart {
+    align-items: flex-start;
+  }
 }
 
-@media screen and (max-width:400px) {
-   .more_info_parent_section img {
-      margin-left: .75rem;
-   }
-  
+@media screen and (max-width: 400px) {
+  .more_info_parent_section img {
+    margin-left: 0.75rem;
+  }
 }
 
-@media screen and (max-width:325px) {
-   .more_info_parent_section span {
-      font-weight: 700;
-      font-size: 11px;
-      color: var(--main-purple);
-   }
-   .more_info_parent_section img {
-      margin-left: .25rem;
-   }
+@media screen and (max-width: 325px) {
+  .more_info_parent_section span {
+    font-weight: 700;
+    font-size: 11px;
+    color: var(--main-purple);
+  }
+  .more_info_parent_section img {
+    margin-left: 0.25rem;
+  }
 }

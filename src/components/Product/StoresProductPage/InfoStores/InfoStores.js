@@ -24,45 +24,57 @@ const InfoStores = () => {
 
     const bodyParameters = {
       bookId: bookId,
-      storeId: bookId,
+      // storeId: bookId,
     };
     // api config -end
     // shop list data
     axios
-      .post("/books/stores/show", bodyParameters, config)
+      .post("/user/books/stores/list/all", bodyParameters, config)
       .then((response) => {
+        let data = [];
         const dataList = response.data.data;
-        setStore(dataList);
+        dataList.map((item) => {
+          data.push({
+            name: item.store.name,
+            price: item.cart_price,
+          });
+        });
+        setStore(data);
       });
 
     // shop list data -end
   }, [bookId]);
+  console.log(store);
   return (
     <div className="parent-section-info-stores">
       <h1 className="shops-title">فروشندگان</h1>
-      {store ? (
-        <Container className="Container-section-infostores">
-          <div className="parent-section-name-of-bookstore">
-            <img src={BgGray} alt="img of bookstore" />
-            <span>فروشگاه:</span>
-            <span>{store.store.name ? store.store.name : "---"}</span>
-          </div>
-          <div className="title-address-bookstore">
-            <span>استان فارس - شیراز</span>
-          </div>
-          <div className="parent-section-price-and-situation">
-            <div>
-              <img src={Car} alt="img of car" />
-              <span>آماده ارسال</span>
-            </div>
-            <div>
-              <span>{store.cart_price ? store.cart_price : "---"}</span>
-              <img src={Toman} alt="toman price" />
-            </div>
-          </div>
-        </Container>
-      ) : (
+      {store == [] || store == undefined > 0 ? (
         <p>فروشنده ای برای این کتاب وجود ندارد</p>
+      ) : (
+        store?.map((item) => {
+          return (
+            <Container className="Container-section-infostores">
+              <div className="parent-section-name-of-bookstore">
+                <img src={BgGray} alt="img of bookstore" />
+                <span>فروشگاه:</span>
+                <span>{item.name ? item.name : "---"}</span>
+              </div>
+              <div className="title-address-bookstore">
+                <span>استان فارس - شیراز</span>
+              </div>
+              <div className="parent-section-price-and-situation">
+                <div>
+                  <img src={Car} alt="img of car" />
+                  <span>آماده ارسال</span>
+                </div>
+                <div>
+                  <span>{item.price ? item.price : "---"}</span>
+                  <img src={Toman} alt="toman price" />
+                </div>
+              </div>
+            </Container>
+          );
+        })
       )}
     </div>
   );

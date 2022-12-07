@@ -13,7 +13,7 @@ const InfoStores = () => {
   const { products, product, bookId } = useProductsContext();
   const [store, setStore] = useState();
   // state and variables
-
+console.log(bookId)
   useEffect(() => {
     // api config
     const token = "nOe0ikqnjPSF1AgE9tjHt5jEZi8qQ3Iz6RW7hV5c";
@@ -31,24 +31,24 @@ const InfoStores = () => {
     axios
       .post("/user/books/stores/list/all", bodyParameters, config)
       .then((response) => {
-        let data = [];
         const dataList = response.data.data;
-        dataList.map((item) => {
-          data.push({
+        setStore(
+          dataList.map((item) => ({
+            id:item.store.id,
             name: item.store.name,
             price: item.cart_price,
-          });
-        });
-        setStore(data);
+          }))
+        );
       });
 
     // shop list data -end
   }, [bookId]);
- 
+  console.log(store);
+  
   return (
     <div className="parent-section-info-stores">
       <h1 className="shops-title">فروشندگان</h1>
-      {store == [] || store == undefined > 0 ? (
+      {store === [] || store === undefined ? (
         <p>فروشنده ای برای این کتاب وجود ندارد</p>
       ) : (
         store?.map((item) => {
@@ -78,6 +78,7 @@ const InfoStores = () => {
       )}
     </div>
   );
+ 
 };
 
 export default InfoStores;

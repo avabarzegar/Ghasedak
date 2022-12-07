@@ -44,7 +44,7 @@ const InfoStores = () => {
 
     // shop list data -end
   }, [bookId]);
-  console.log(store);
+ 
   return (
     <div className="parent-section-info-stores">
       <h1 className="shops-title">فروشندگان</h1>

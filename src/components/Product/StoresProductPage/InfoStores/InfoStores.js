@@ -6,14 +6,12 @@ import Car from "../../../../assets/Images/icon/big-car-product.svg";
 import BgGray from "../../../../assets/Images/icon/bg-gray-product.svg";
 import "./InfoStores.css";
 import { useProductsContext } from "../../../../Context/ProductContext/ProductContext";
-import { type } from "@testing-library/user-event/dist/type";
 
 const InfoStores = () => {
   // state and variables
-  const { products, product, bookId } = useProductsContext();
+  const { bookId } = useProductsContext();
   const [store, setStore] = useState();
   // state and variables
-  console.log(bookId);
   useEffect(() => {
     // api config
     const token = "nOe0ikqnjPSF1AgE9tjHt5jEZi8qQ3Iz6RW7hV5c";
@@ -37,14 +35,13 @@ const InfoStores = () => {
             id: item.store.id,
             name: item.store.name,
             price: item.cart_price,
-            address:item.store.postalAddress
+            address: item.store.postalAddress,
           }))
         );
       });
 
     // shop list data -end
   }, [bookId]);
-  console.log(store);
 
   return (
     <div className="parent-section-info-stores">

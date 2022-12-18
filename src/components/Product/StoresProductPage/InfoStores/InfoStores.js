@@ -13,7 +13,7 @@ const InfoStores = () => {
   const { products, product, bookId } = useProductsContext();
   const [store, setStore] = useState();
   // state and variables
-
+  console.log(bookId);
   useEffect(() => {
     // api config
     const token = "nOe0ikqnjPSF1AgE9tjHt5jEZi8qQ3Iz6RW7hV5c";
@@ -34,20 +34,22 @@ const InfoStores = () => {
         const dataList = response.data.data;
         setStore(
           dataList.map((item) => ({
-            id:item.store.id,
+            id: item.store.id,
             name: item.store.name,
             price: item.cart_price,
+            address:item.store.postalAddress
           }))
         );
       });
 
     // shop list data -end
   }, [bookId]);
-  
+  console.log(store);
+
   return (
     <div className="parent-section-info-stores">
       <h1 className="shops-title">فروشندگان</h1>
-      {store === [] || store === undefined ? (
+      {store && store.length === 0 ? (
         <p>فروشنده ای برای این کتاب وجود ندارد</p>
       ) : (
         store?.map((item) => {
@@ -59,7 +61,7 @@ const InfoStores = () => {
                 <span>{item.name ? item.name : "---"}</span>
               </div>
               <div className="title-address-bookstore">
-                <span>استان فارس - شیراز</span>
+                <span>{item.address ? item.address : "---"}</span>
               </div>
               <div className="parent-section-price-and-situation">
                 <div>
@@ -77,7 +79,6 @@ const InfoStores = () => {
       )}
     </div>
   );
- 
 };
 
 export default InfoStores;

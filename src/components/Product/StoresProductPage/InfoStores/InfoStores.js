@@ -13,7 +13,7 @@ const InfoStores = () => {
   const { products, product, bookId } = useProductsContext();
   const [store, setStore] = useState();
   // state and variables
-console.log(bookId)
+
   useEffect(() => {
     // api config
     const token = "nOe0ikqnjPSF1AgE9tjHt5jEZi8qQ3Iz6RW7hV5c";
@@ -43,7 +43,6 @@ console.log(bookId)
 
     // shop list data -end
   }, [bookId]);
-  console.log(store);
   
   return (
     <div className="parent-section-info-stores">
